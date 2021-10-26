@@ -18,6 +18,7 @@
 #define UART0_END_CHAR_2 '\r'
 
 
+
 void uart0_hal_init();
 void uart0_hal_send_message(uint8_t msg[], uint8_t length);
 bool uart0_hal_message_ready();

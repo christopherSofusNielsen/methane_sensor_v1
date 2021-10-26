@@ -1,0 +1,1533 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
+                              MODULES/ADC_module/ADC_module.o (__subsf3)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o) (__addsf3x)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
+                              MODULES/ADC_module/ADC_module.o (__divsf3)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3x.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o) (__divsf3x)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
+                              MODULES/ADC_module/ADC_module.o (__fixunssfsi)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
+                              MODULES/ADC_module/ADC_module.o (__floatunsisf)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_inf.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o) (__fp_inf)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_nan.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o) (__fp_nan)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscA.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o) (__fp_pscA)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscB.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o) (__fp_pscB)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_round.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o) (__fp_round)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_split3.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o) (__fp_split3)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_zero.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o) (__fp_zero)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3.o)
+                              MODULES/ADC_module/ADC_module.o (__mulsf3)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3.o) (__mulsf3x)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+                              C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o (exit)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+                              MODULES/lora_module/join_network/join_network.o (__tablejump2__)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+                              MODULES/ADC_module/ADC_module.o (__do_copy_data)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+                              TEST/ADC_module/test_ADC_module.o (__movmemx_qi)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
+                              MODULES/lora_module/RN2483_protocol/RN2483_protocol.o (memcpy)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcmp_M.o)
+                              MODULES/lora_module/send_uplink/send_uplink.o (strcmp)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
+                              MODULES/lora_module/send_uplink/send_uplink.o (strncmp)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
+                              MODULES/EEPROM_module/EEPROM_module.o (strlen)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
+                              MODULES/lora_module/RN2483_protocol/RN2483_protocol.o (strcpy)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
+                              MODULES/lora_module/RN2483_protocol/RN2483_protocol.o (sprintf)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o) (vfprintf)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o) (strnlen)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o) (fputc)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o) (__ultoa_invert)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+                              MODULES/EEPROM_module/EEPROM_module.o (eeprom_read_block)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+                              MODULES/EEPROM_module/EEPROM_module.o (eeprom_read_byte)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+                              MODULES/EEPROM_module/EEPROM_module.o (eeprom_update_block)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+                              MODULES/EEPROM_module/EEPROM_module.o (eeprom_update_byte)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o) (__prologue_saves__)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o) (__epilogue_restores__)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+                              C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o) (__xload_1)
+
+Allocating common symbols
+Common symbol       size              file
+
+lm_msg              0xc8              MODULES/lora_module/util/util.o
+rx_buffer           0x64              HAL/UART0/UART0_HAL.o
+tx_buffer           0xc8              HAL/UART0/UART0_HAL.o
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+ .bss           0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+ .text          0x0000000000000000        0x0 HAL/PM/PM_HAL.o
+ .data          0x0000000000000000        0x0 HAL/PM/PM_HAL.o
+ .bss           0x0000000000000000        0x0 HAL/PM/PM_HAL.o
+ .text.PM_HAL_enter_power_down
+                0x0000000000000000       0x42 HAL/PM/PM_HAL.o
+ .text          0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
+ .data          0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
+ .bss           0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
+ .text.rn2483_init
+                0x0000000000000000        0x8 HAL/RN2483/RN2483_HAL.o
+ .text.rn2483_reset_active
+                0x0000000000000000        0x8 HAL/RN2483/RN2483_HAL.o
+ .text.rn2483_reset_deactive
+                0x0000000000000000        0x8 HAL/RN2483/RN2483_HAL.o
+ .debug_info    0x0000000000000000      0x2d9 HAL/RN2483/RN2483_HAL.o
+ .debug_abbrev  0x0000000000000000       0x44 HAL/RN2483/RN2483_HAL.o
+ .debug_aranges
+                0x0000000000000000       0x30 HAL/RN2483/RN2483_HAL.o
+ .debug_ranges  0x0000000000000000       0x20 HAL/RN2483/RN2483_HAL.o
+ .debug_line    0x0000000000000000       0xbb HAL/RN2483/RN2483_HAL.o
+ .debug_str     0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
+ .comment       0x0000000000000000       0x30 HAL/RN2483/RN2483_HAL.o
+ .debug_frame   0x0000000000000000       0x44 HAL/RN2483/RN2483_HAL.o
+ .text          0x0000000000000000        0x0 HAL/SCD30/SCD30_HAL.o
+ .data          0x0000000000000000        0x0 HAL/SCD30/SCD30_HAL.o
+ .bss           0x0000000000000000        0x0 HAL/SCD30/SCD30_HAL.o
+ .text          0x0000000000000000        0x0 HAL/TWI/TWI_API.o
+ .data          0x0000000000000000        0x0 HAL/TWI/TWI_API.o
+ .bss           0x0000000000000000        0x0 HAL/TWI/TWI_API.o
+ .text.TWI_API_write_data
+                0x0000000000000000        0x6 HAL/TWI/TWI_API.o
+ .text          0x0000000000000000        0x0 HAL/TWI/TWI_HAL.o
+ .data          0x0000000000000000        0x0 HAL/TWI/TWI_HAL.o
+ .bss           0x0000000000000000        0x0 HAL/TWI/TWI_HAL.o
+ .text.TWI_HAL_init
+                0x0000000000000000       0x12 HAL/TWI/TWI_HAL.o
+ .text          0x0000000000000000        0x0 HAL/UART0/UART0_HAL.o
+ .data          0x0000000000000000        0x0 HAL/UART0/UART0_HAL.o
+ .bss           0x0000000000000000        0x0 HAL/UART0/UART0_HAL.o
+ .text.copy_buffer
+                0x0000000000000000       0x2e HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_init
+                0x0000000000000000       0x3c HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_send_message
+                0x0000000000000000       0x34 HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_message_ready
+                0x0000000000000000        0xe HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_clear_rx_buffer
+                0x0000000000000000        0xa HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_read_message
+                0x0000000000000000       0x16 HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_read_message_as_str
+                0x0000000000000000       0x28 HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_send_break
+                0x0000000000000000       0x46 HAL/UART0/UART0_HAL.o
+ .text          0x0000000000000000        0x0 HAL/UART1/UART1_HAL.o
+ .data          0x0000000000000000        0x0 HAL/UART1/UART1_HAL.o
+ .bss           0x0000000000000000        0x0 HAL/UART1/UART1_HAL.o
+ .text.copy_buffer
+                0x0000000000000000       0x2e HAL/UART1/UART1_HAL.o
+ .text.uart1_hal_message_ready
+                0x0000000000000000        0xe HAL/UART1/UART1_HAL.o
+ .text.uart1_hal_clear_rx_buffer
+                0x0000000000000000        0xa HAL/UART1/UART1_HAL.o
+ .text.uart1_hal_read_message
+                0x0000000000000000       0x16 HAL/UART1/UART1_HAL.o
+ .text.uart1_hal_read_message_as_str
+                0x0000000000000000       0x28 HAL/UART1/UART1_HAL.o
+ .text          0x0000000000000000        0x0 main.o
+ .data          0x0000000000000000        0x0 main.o
+ .bss           0x0000000000000000        0x0 main.o
+ .text          0x0000000000000000        0x0 MODULES/ADC_module/ADC_module.o
+ .data          0x0000000000000000        0x0 MODULES/ADC_module/ADC_module.o
+ .bss           0x0000000000000000        0x0 MODULES/ADC_module/ADC_module.o
+ .text.ADC_init
+                0x0000000000000000       0x1e MODULES/ADC_module/ADC_module.o
+ .text.calc_ppm_methane
+                0x0000000000000000       0x96 MODULES/ADC_module/ADC_module.o
+ .text.ADC_get_reading
+                0x0000000000000000       0x54 MODULES/ADC_module/ADC_module.o
+ .data.PPM_factor
+                0x0000000000000000        0x4 MODULES/ADC_module/ADC_module.o
+ .data.RRL      0x0000000000000000        0x4 MODULES/ADC_module/ADC_module.o
+ .data.Vc       0x0000000000000000        0x4 MODULES/ADC_module/ADC_module.o
+ .debug_info    0x0000000000000000      0x518 MODULES/ADC_module/ADC_module.o
+ .debug_abbrev  0x0000000000000000      0x12b MODULES/ADC_module/ADC_module.o
+ .debug_loc     0x0000000000000000      0x221 MODULES/ADC_module/ADC_module.o
+ .debug_aranges
+                0x0000000000000000       0x30 MODULES/ADC_module/ADC_module.o
+ .debug_ranges  0x0000000000000000       0x20 MODULES/ADC_module/ADC_module.o
+ .debug_line    0x0000000000000000      0x165 MODULES/ADC_module/ADC_module.o
+ .debug_str     0x0000000000000000       0x49 MODULES/ADC_module/ADC_module.o
+ .comment       0x0000000000000000       0x30 MODULES/ADC_module/ADC_module.o
+ .debug_frame   0x0000000000000000       0x90 MODULES/ADC_module/ADC_module.o
+ .text          0x0000000000000000        0x0 MODULES/EEPROM_module/EEPROM_module.o
+ .data          0x0000000000000000        0x0 MODULES/EEPROM_module/EEPROM_module.o
+ .bss           0x0000000000000000        0x0 MODULES/EEPROM_module/EEPROM_module.o
+ .text.EM_clear_lora_prameters
+                0x0000000000000000       0x20 MODULES/EEPROM_module/EEPROM_module.o
+ .text.EM_has_deveui
+                0x0000000000000000       0x16 MODULES/EEPROM_module/EEPROM_module.o
+ .text.EM_has_appeui
+                0x0000000000000000       0x16 MODULES/EEPROM_module/EEPROM_module.o
+ .text.EM_has_appkey
+                0x0000000000000000       0x16 MODULES/EEPROM_module/EEPROM_module.o
+ .text.EM_set_deveui
+                0x0000000000000000       0x38 MODULES/EEPROM_module/EEPROM_module.o
+ .text.EM_get_deveui
+                0x0000000000000000       0x30 MODULES/EEPROM_module/EEPROM_module.o
+ .text.EM_set_appeui
+                0x0000000000000000       0x38 MODULES/EEPROM_module/EEPROM_module.o
+ .text.EM_get_appeui
+                0x0000000000000000       0x30 MODULES/EEPROM_module/EEPROM_module.o
+ .text.EM_set_appkey
+                0x0000000000000000       0x38 MODULES/EEPROM_module/EEPROM_module.o
+ .text.EM_get_appkey
+                0x0000000000000000       0x30 MODULES/EEPROM_module/EEPROM_module.o
+ .debug_info    0x0000000000000000      0x746 MODULES/EEPROM_module/EEPROM_module.o
+ .debug_abbrev  0x0000000000000000       0xf9 MODULES/EEPROM_module/EEPROM_module.o
+ .debug_loc     0x0000000000000000      0x2be MODULES/EEPROM_module/EEPROM_module.o
+ .debug_aranges
+                0x0000000000000000       0x68 MODULES/EEPROM_module/EEPROM_module.o
+ .debug_ranges  0x0000000000000000       0x58 MODULES/EEPROM_module/EEPROM_module.o
+ .debug_line    0x0000000000000000      0x262 MODULES/EEPROM_module/EEPROM_module.o
+ .debug_str     0x0000000000000000       0x4a MODULES/EEPROM_module/EEPROM_module.o
+ .comment       0x0000000000000000       0x30 MODULES/EEPROM_module/EEPROM_module.o
+ .debug_frame   0x0000000000000000      0x114 MODULES/EEPROM_module/EEPROM_module.o
+ .text          0x0000000000000000        0x0 MODULES/lora_module/join_network/join_network.o
+ .data          0x0000000000000000        0x0 MODULES/lora_module/join_network/join_network.o
+ .bss           0x0000000000000000        0x0 MODULES/lora_module/join_network/join_network.o
+ .progmemx.data
+                0x0000000000000000       0x38 MODULES/lora_module/join_network/join_network.o
+ .text.JN_join_network
+                0x0000000000000000      0x296 MODULES/lora_module/join_network/join_network.o
+ .progmem.gcc_sw_table.JN_join_network
+                0x0000000000000000       0x1a MODULES/lora_module/join_network/join_network.o
+ .debug_info    0x0000000000000000      0xbf9 MODULES/lora_module/join_network/join_network.o
+ .debug_abbrev  0x0000000000000000      0x17a MODULES/lora_module/join_network/join_network.o
+ .debug_loc     0x0000000000000000      0x18a MODULES/lora_module/join_network/join_network.o
+ .debug_aranges
+                0x0000000000000000       0x20 MODULES/lora_module/join_network/join_network.o
+ .debug_ranges  0x0000000000000000       0x10 MODULES/lora_module/join_network/join_network.o
+ .debug_line    0x0000000000000000      0x3e4 MODULES/lora_module/join_network/join_network.o
+ .debug_str     0x0000000000000000      0x141 MODULES/lora_module/join_network/join_network.o
+ .comment       0x0000000000000000       0x30 MODULES/lora_module/join_network/join_network.o
+ .debug_frame   0x0000000000000000       0x3c MODULES/lora_module/join_network/join_network.o
+ .text          0x0000000000000000        0x0 MODULES/lora_module/lora_module.o
+ .data          0x0000000000000000        0x0 MODULES/lora_module/lora_module.o
+ .bss           0x0000000000000000        0x0 MODULES/lora_module/lora_module.o
+ .text.LM_join_network
+                0x0000000000000000        0x6 MODULES/lora_module/lora_module.o
+ .text.LM_send_uplink
+                0x0000000000000000        0xc MODULES/lora_module/lora_module.o
+ .text.LM_put_to_sleep
+                0x0000000000000000        0x6 MODULES/lora_module/lora_module.o
+ .text.LM_wake_up
+                0x0000000000000000        0x6 MODULES/lora_module/lora_module.o
+ .debug_info    0x0000000000000000      0x429 MODULES/lora_module/lora_module.o
+ .debug_abbrev  0x0000000000000000       0xc8 MODULES/lora_module/lora_module.o
+ .debug_loc     0x0000000000000000       0x62 MODULES/lora_module/lora_module.o
+ .debug_aranges
+                0x0000000000000000       0x38 MODULES/lora_module/lora_module.o
+ .debug_ranges  0x0000000000000000       0x28 MODULES/lora_module/lora_module.o
+ .debug_line    0x0000000000000000      0x1ac MODULES/lora_module/lora_module.o
+ .debug_str     0x0000000000000000       0x3a MODULES/lora_module/lora_module.o
+ .comment       0x0000000000000000       0x30 MODULES/lora_module/lora_module.o
+ .debug_frame   0x0000000000000000       0x54 MODULES/lora_module/lora_module.o
+ .text          0x0000000000000000        0x0 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .data          0x0000000000000000        0x0 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .bss           0x0000000000000000        0x0 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .progmemx.data
+                0x0000000000000000       0x73 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text.tohex    0x0000000000000000       0x84 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text.attach_ending
+                0x0000000000000000       0x1c MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text.cmd_with_ending
+                0x0000000000000000       0x32 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text.sys_sleep_cmd
+                0x0000000000000000       0x5e MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_set_parameter
+                0x0000000000000000       0x4e MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_set_deveui
+                0x0000000000000000       0x48 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_set_appeui
+                0x0000000000000000       0x48 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_set_appkey
+                0x0000000000000000       0x48 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_set_ADR
+                0x0000000000000000       0x30 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_tx_confirmed
+                0x0000000000000000       0xac MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .debug_info    0x0000000000000000      0x8ab MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .debug_abbrev  0x0000000000000000      0x16f MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .debug_loc     0x0000000000000000      0x8a0 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .debug_aranges
+                0x0000000000000000       0x68 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .debug_ranges  0x0000000000000000       0x58 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .debug_line    0x0000000000000000      0x26b MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .debug_str     0x0000000000000000        0x7 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .comment       0x0000000000000000       0x30 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .debug_frame   0x0000000000000000      0x218 MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+ .text          0x0000000000000000        0x0 MODULES/lora_module/send_uplink/send_uplink.o
+ .data          0x0000000000000000        0x0 MODULES/lora_module/send_uplink/send_uplink.o
+ .bss           0x0000000000000000        0x0 MODULES/lora_module/send_uplink/send_uplink.o
+ .text.beginsWidth
+                0x0000000000000000       0x4a MODULES/lora_module/send_uplink/send_uplink.o
+ .progmemx.data
+                0x0000000000000000       0x27 MODULES/lora_module/send_uplink/send_uplink.o
+ .text.decode_tx_response
+                0x0000000000000000       0x52 MODULES/lora_module/send_uplink/send_uplink.o
+ .text.SU_send_uplink
+                0x0000000000000000       0xf8 MODULES/lora_module/send_uplink/send_uplink.o
+ .progmem.gcc_sw_table.SU_send_uplink
+                0x0000000000000000       0x12 MODULES/lora_module/send_uplink/send_uplink.o
+ .debug_info    0x0000000000000000      0x875 MODULES/lora_module/send_uplink/send_uplink.o
+ .debug_abbrev  0x0000000000000000      0x158 MODULES/lora_module/send_uplink/send_uplink.o
+ .debug_loc     0x0000000000000000      0x2d0 MODULES/lora_module/send_uplink/send_uplink.o
+ .debug_aranges
+                0x0000000000000000       0x30 MODULES/lora_module/send_uplink/send_uplink.o
+ .debug_ranges  0x0000000000000000       0x20 MODULES/lora_module/send_uplink/send_uplink.o
+ .debug_line    0x0000000000000000      0x29a MODULES/lora_module/send_uplink/send_uplink.o
+ .debug_str     0x0000000000000000       0x91 MODULES/lora_module/send_uplink/send_uplink.o
+ .comment       0x0000000000000000       0x30 MODULES/lora_module/send_uplink/send_uplink.o
+ .debug_frame   0x0000000000000000       0xa8 MODULES/lora_module/send_uplink/send_uplink.o
+ .text          0x0000000000000000        0x0 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .data          0x0000000000000000        0x0 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .bss           0x0000000000000000        0x0 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .progmemx.data
+                0x0000000000000000        0x3 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .text.SC_put_to_sleep
+                0x0000000000000000       0x4c MODULES/lora_module/sleep_controller/sleep_controller.o
+ .text.SC_wake_up
+                0x0000000000000000       0x32 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .debug_info    0x0000000000000000      0x48a MODULES/lora_module/sleep_controller/sleep_controller.o
+ .debug_abbrev  0x0000000000000000       0xd6 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .debug_aranges
+                0x0000000000000000       0x28 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .debug_ranges  0x0000000000000000       0x18 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .debug_line    0x0000000000000000      0x231 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .debug_str     0x0000000000000000       0x69 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .comment       0x0000000000000000       0x30 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .debug_frame   0x0000000000000000       0x34 MODULES/lora_module/sleep_controller/sleep_controller.o
+ .text          0x0000000000000000        0x0 MODULES/lora_module/util/util.o
+ .data          0x0000000000000000        0x0 MODULES/lora_module/util/util.o
+ .bss           0x0000000000000000        0x0 MODULES/lora_module/util/util.o
+ .text.LM_strbeginswith
+                0x0000000000000000       0x44 MODULES/lora_module/util/util.o
+ .progmemx.data
+                0x0000000000000000       0x43 MODULES/lora_module/util/util.o
+ .text.util_get_deveui_as_string
+                0x0000000000000000       0x10 MODULES/lora_module/util/util.o
+ .text.util_get_appkey_as_string
+                0x0000000000000000       0x10 MODULES/lora_module/util/util.o
+ .text.util_get_appeui_as_string
+                0x0000000000000000       0x10 MODULES/lora_module/util/util.o
+ .text.util_setPendingStates
+                0x0000000000000000        0xc MODULES/lora_module/util/util.o
+ .text.util_setMatchCase
+                0x0000000000000000        0xc MODULES/lora_module/util/util.o
+ .text.util_matchMessage
+                0x0000000000000000       0x5e MODULES/lora_module/util/util.o
+ .text.util_transmit_msg
+                0x0000000000000000       0x1c MODULES/lora_module/util/util.o
+ .text.util_read_msg
+                0x0000000000000000        0x6 MODULES/lora_module/util/util.o
+ .debug_info    0x0000000000000000      0x7c2 MODULES/lora_module/util/util.o
+ .debug_abbrev  0x0000000000000000      0x1b0 MODULES/lora_module/util/util.o
+ .debug_loc     0x0000000000000000      0x316 MODULES/lora_module/util/util.o
+ .debug_aranges
+                0x0000000000000000       0x60 MODULES/lora_module/util/util.o
+ .debug_ranges  0x0000000000000000       0x50 MODULES/lora_module/util/util.o
+ .debug_line    0x0000000000000000      0x20b MODULES/lora_module/util/util.o
+ .debug_str     0x0000000000000000       0x4b MODULES/lora_module/util/util.o
+ .comment       0x0000000000000000       0x30 MODULES/lora_module/util/util.o
+ .debug_frame   0x0000000000000000       0xe0 MODULES/lora_module/util/util.o
+ COMMON         0x0000000000000000       0xc8 MODULES/lora_module/util/util.o
+ .text          0x0000000000000000        0x0 MODULES/SCD30_module/SCD30_module.o
+ .data          0x0000000000000000        0x0 MODULES/SCD30_module/SCD30_module.o
+ .bss           0x0000000000000000        0x0 MODULES/SCD30_module/SCD30_module.o
+ .text.SCD30_data_ready
+                0x0000000000000000       0x5a MODULES/SCD30_module/SCD30_module.o
+ .progmemx.data.DATA_READY_CMD
+                0x0000000000000000        0x2 MODULES/SCD30_module/SCD30_module.o
+ .text          0x0000000000000000        0x0 TEST/ADC_module/test_ADC_module.o
+ .data          0x0000000000000000        0x0 TEST/ADC_module/test_ADC_module.o
+ .bss           0x0000000000000000        0x0 TEST/ADC_module/test_ADC_module.o
+ .progmemx.data
+                0x0000000000000000        0xb TEST/ADC_module/test_ADC_module.o
+ .text.test_calc_ppm_methane
+                0x0000000000000000       0x6e TEST/ADC_module/test_ADC_module.o
+ .text.test_ADC_module_start
+                0x0000000000000000       0x52 TEST/ADC_module/test_ADC_module.o
+ .debug_info    0x0000000000000000      0x4c0 TEST/ADC_module/test_ADC_module.o
+ .debug_abbrev  0x0000000000000000      0x155 TEST/ADC_module/test_ADC_module.o
+ .debug_loc     0x0000000000000000      0x11b TEST/ADC_module/test_ADC_module.o
+ .debug_aranges
+                0x0000000000000000       0x28 TEST/ADC_module/test_ADC_module.o
+ .debug_ranges  0x0000000000000000       0x18 TEST/ADC_module/test_ADC_module.o
+ .debug_line    0x0000000000000000      0x1ae TEST/ADC_module/test_ADC_module.o
+ .debug_str     0x0000000000000000       0x37 TEST/ADC_module/test_ADC_module.o
+ .comment       0x0000000000000000       0x30 TEST/ADC_module/test_ADC_module.o
+ .debug_frame   0x0000000000000000       0x60 TEST/ADC_module/test_ADC_module.o
+ .text          0x0000000000000000        0x0 TEST/EEPROM_module/test_EEPROM_module.o
+ .data          0x0000000000000000        0x0 TEST/EEPROM_module/test_EEPROM_module.o
+ .bss           0x0000000000000000        0x0 TEST/EEPROM_module/test_EEPROM_module.o
+ .progmemx.data
+                0x0000000000000000       0x4e TEST/EEPROM_module/test_EEPROM_module.o
+ .text.test_EEPROM_module_start
+                0x0000000000000000       0x4e TEST/EEPROM_module/test_EEPROM_module.o
+ .text.test_set_get_parameter
+                0x0000000000000000      0x1b6 TEST/EEPROM_module/test_EEPROM_module.o
+ .text.set_deveui
+                0x0000000000000000       0xb0 TEST/EEPROM_module/test_EEPROM_module.o
+ .text.clear_lora_parameters
+                0x0000000000000000       0x6e TEST/EEPROM_module/test_EEPROM_module.o
+ .debug_info    0x0000000000000000      0x9c9 TEST/EEPROM_module/test_EEPROM_module.o
+ .debug_abbrev  0x0000000000000000      0x172 TEST/EEPROM_module/test_EEPROM_module.o
+ .debug_loc     0x0000000000000000      0x3b0 TEST/EEPROM_module/test_EEPROM_module.o
+ .debug_aranges
+                0x0000000000000000       0x38 TEST/EEPROM_module/test_EEPROM_module.o
+ .debug_ranges  0x0000000000000000       0x28 TEST/EEPROM_module/test_EEPROM_module.o
+ .debug_line    0x0000000000000000      0x2c3 TEST/EEPROM_module/test_EEPROM_module.o
+ .debug_str     0x0000000000000000       0xa0 TEST/EEPROM_module/test_EEPROM_module.o
+ .comment       0x0000000000000000       0x30 TEST/EEPROM_module/test_EEPROM_module.o
+ .debug_frame   0x0000000000000000       0xe4 TEST/EEPROM_module/test_EEPROM_module.o
+ .text          0x0000000000000000        0x0 TEST/lora-module/test_lora_module.o
+ .data          0x0000000000000000        0x0 TEST/lora-module/test_lora_module.o
+ .bss           0x0000000000000000        0x0 TEST/lora-module/test_lora_module.o
+ .progmemx.data
+                0x0000000000000000        0x5 TEST/lora-module/test_lora_module.o
+ .text.test_wake_up
+                0x0000000000000000       0x7a TEST/lora-module/test_lora_module.o
+ .text.test_lora_module_start
+                0x0000000000000000       0x20 TEST/lora-module/test_lora_module.o
+ .text.test_put_to_sleep
+                0x0000000000000000       0x7a TEST/lora-module/test_lora_module.o
+ .text.test_send_uplink
+                0x0000000000000000       0xb4 TEST/lora-module/test_lora_module.o
+ .text.test_join_network
+                0x0000000000000000       0x7a TEST/lora-module/test_lora_module.o
+ .debug_info    0x0000000000000000      0x873 TEST/lora-module/test_lora_module.o
+ .debug_abbrev  0x0000000000000000      0x159 TEST/lora-module/test_lora_module.o
+ .debug_loc     0x0000000000000000      0x1ce TEST/lora-module/test_lora_module.o
+ .debug_aranges
+                0x0000000000000000       0x40 TEST/lora-module/test_lora_module.o
+ .debug_ranges  0x0000000000000000       0x30 TEST/lora-module/test_lora_module.o
+ .debug_line    0x0000000000000000      0x305 TEST/lora-module/test_lora_module.o
+ .debug_str     0x0000000000000000       0x73 TEST/lora-module/test_lora_module.o
+ .comment       0x0000000000000000       0x30 TEST/lora-module/test_lora_module.o
+ .debug_frame   0x0000000000000000       0xa4 TEST/lora-module/test_lora_module.o
+ .text          0x0000000000000000        0x0 TEST/SCD30_module/test_SCD30_module.o
+ .data          0x0000000000000000        0x0 TEST/SCD30_module/test_SCD30_module.o
+ .bss           0x0000000000000000        0x0 TEST/SCD30_module/test_SCD30_module.o
+ .text.read_measure_interval
+                0x0000000000000000       0x72 TEST/SCD30_module/test_SCD30_module.o
+ .text.test_data_ready
+                0x0000000000000000       0x5a TEST/SCD30_module/test_SCD30_module.o
+ .text.throw_error
+                0x0000000000000000       0x2a TEST/SCD30_module/test_SCD30_module.o
+ .text.read_firmware_api
+                0x0000000000000000       0x74 TEST/SCD30_module/test_SCD30_module.o
+ .text.read_firmware
+                0x0000000000000000       0x9e TEST/SCD30_module/test_SCD30_module.o
+ .text.test_HAL
+                0x0000000000000000       0x30 TEST/SCD30_module/test_SCD30_module.o
+ .progmemx.data._SET_MEASUREMENT_INTERVAL
+                0x0000000000000000        0x5 TEST/SCD30_module/test_SCD30_module.o
+ .text          0x0000000000000000        0x0 TEST/PM_HAL/test_PM_HAL.o
+ .data          0x0000000000000000        0x0 TEST/PM_HAL/test_PM_HAL.o
+ .bss           0x0000000000000000        0x0 TEST/PM_HAL/test_PM_HAL.o
+ .progmemx.data
+                0x0000000000000000       0x1e TEST/PM_HAL/test_PM_HAL.o
+ .text.test_sleep_cmd
+                0x0000000000000000       0xa6 TEST/PM_HAL/test_PM_HAL.o
+ .text.test_PM_HAL_start
+                0x0000000000000000       0x52 TEST/PM_HAL/test_PM_HAL.o
+ .debug_info    0x0000000000000000      0x500 TEST/PM_HAL/test_PM_HAL.o
+ .debug_abbrev  0x0000000000000000      0x158 TEST/PM_HAL/test_PM_HAL.o
+ .debug_loc     0x0000000000000000      0x139 TEST/PM_HAL/test_PM_HAL.o
+ .debug_aranges
+                0x0000000000000000       0x28 TEST/PM_HAL/test_PM_HAL.o
+ .debug_ranges  0x0000000000000000       0x18 TEST/PM_HAL/test_PM_HAL.o
+ .debug_line    0x0000000000000000      0x1a6 TEST/PM_HAL/test_PM_HAL.o
+ .debug_str     0x0000000000000000       0x3e TEST/PM_HAL/test_PM_HAL.o
+ .comment       0x0000000000000000       0x30 TEST/PM_HAL/test_PM_HAL.o
+ .debug_frame   0x0000000000000000       0x60 TEST/PM_HAL/test_PM_HAL.o
+ .text          0x0000000000000000        0x0 util/CRC8/CRC8.o
+ .data          0x0000000000000000        0x0 util/CRC8/CRC8.o
+ .bss           0x0000000000000000        0x0 util/CRC8/CRC8.o
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
+ .text.avrlibc.fplib
+                0x0000000000000000        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o)
+ .text.avrlibc.fplib
+                0x0000000000000000       0xce c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
+ .text.avrlibc.fplib
+                0x0000000000000000        0x8 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3x.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3x.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3x.o)
+ .text.avrlibc.fplib
+                0x0000000000000000       0xde c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3x.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
+ .text.avrlibc.fplib
+                0x0000000000000000       0x7a c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_inf.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_inf.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_inf.o)
+ .text.avrlibc.fplib
+                0x0000000000000000        0xc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_inf.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_nan.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_nan.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_nan.o)
+ .text.avrlibc.fplib
+                0x0000000000000000        0x6 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_nan.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscA.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscA.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscA.o)
+ .text.avrlibc.fplib
+                0x0000000000000000        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscA.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscB.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscB.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscB.o)
+ .text.avrlibc.fplib
+                0x0000000000000000        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscB.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_round.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_round.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_round.o)
+ .text.avrlibc.fplib
+                0x0000000000000000       0x22 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_round.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_split3.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_split3.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_split3.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_zero.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_zero.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_zero.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3.o)
+ .text.avrlibc.fplib
+                0x0000000000000000        0x8 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
+ .text.avrlibc.fplib
+                0x0000000000000000       0xd4 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc   0x0000000000000000        0xc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
+ .text.avrlibc  0x0000000000000000       0x32 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
+ .comment       0x0000000000000000       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcmp_M.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcmp_M.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcmp_M.o)
+ .text.avrlibc  0x0000000000000000       0x42 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcmp_M.o)
+ .comment       0x0000000000000000       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcmp_M.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
+ .text.avrlibc  0x0000000000000000       0x6a c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
+ .comment       0x0000000000000000       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
+ .text.avrlibc  0x0000000000000000       0x1e c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
+ .comment       0x0000000000000000       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
+ .text          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .data          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .bss           0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .text.avrlibc  0x0000000000000000       0x24 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .stack.descriptors
+                0x0000000000000000       0x3e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .debug_line    0x0000000000000000       0xba C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .debug_info    0x0000000000000000       0xad C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .debug_abbrev  0x0000000000000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .debug_aranges
+                0x0000000000000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .text          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .data          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .bss           0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .text.avrlibc  0x0000000000000000       0x12 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .stack.descriptors
+                0x0000000000000000       0x1e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .debug_line    0x0000000000000000       0x82 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .debug_info    0x0000000000000000       0xac C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .debug_abbrev  0x0000000000000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .debug_aranges
+                0x0000000000000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .text          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .data          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .bss           0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .text.avrlibc  0x0000000000000000       0x44 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .stack.descriptors
+                0x0000000000000000       0x21 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .debug_line    0x0000000000000000      0x110 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .debug_info    0x0000000000000000       0xb0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .debug_abbrev  0x0000000000000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .debug_aranges
+                0x0000000000000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .text          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .data          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .bss           0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .text.avrlibc  0x0000000000000000       0x24 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .stack.descriptors
+                0x0000000000000000       0x3f C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .debug_line    0x0000000000000000       0xb9 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .debug_info    0x0000000000000000       0xad C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .debug_abbrev  0x0000000000000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .debug_aranges
+                0x0000000000000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+ .text.libgcc   0x0000000000000000        0xa c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x0000000000000000 0x0000000000010000 xr
+data             0x0000000000800100 0x0000000000001000 rw !x
+eeprom           0x0000000000810000 0x0000000000000800 rw !x
+fuse             0x0000000000820000 0x0000000000000003 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+user_signatures  0x0000000000850000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+LOAD HAL/PM/PM_HAL.o
+LOAD HAL/RN2483/RN2483_HAL.o
+LOAD HAL/SCD30/SCD30_HAL.o
+LOAD HAL/TWI/TWI_API.o
+LOAD HAL/TWI/TWI_HAL.o
+LOAD HAL/UART0/UART0_HAL.o
+LOAD HAL/UART1/UART1_HAL.o
+LOAD main.o
+LOAD MODULES/ADC_module/ADC_module.o
+LOAD MODULES/EEPROM_module/EEPROM_module.o
+LOAD MODULES/lora_module/join_network/join_network.o
+LOAD MODULES/lora_module/lora_module.o
+LOAD MODULES/lora_module/RN2483_protocol/RN2483_protocol.o
+LOAD MODULES/lora_module/send_uplink/send_uplink.o
+LOAD MODULES/lora_module/sleep_controller/sleep_controller.o
+LOAD MODULES/lora_module/util/util.o
+LOAD MODULES/SCD30_module/SCD30_module.o
+LOAD TEST/ADC_module/test_ADC_module.o
+LOAD TEST/EEPROM_module/test_EEPROM_module.o
+LOAD TEST/lora-module/test_lora_module.o
+LOAD TEST/SCD30_module/test_SCD30_module.o
+LOAD TEST/PM_HAL/test_PM_HAL.o
+LOAD util/CRC8/CRC8.o
+START GROUP
+LOAD c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
+END GROUP
+START GROUP
+LOAD c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a
+LOAD c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
+LOAD c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a
+END GROUP
+                0x0000000000000000                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                [0x0000000000800100]                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800060
+                [0x0000000000010000]                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
+                [0x0000000000001000]                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
+                [0x0000000000000800]                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x0000000000000003]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x0000000000000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x0000000000000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x0000000000000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0000000000000000       0xd6
+ *(.vectors)
+ .vectors       0x0000000000000000       0x7c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+                0x0000000000000000                __vector_default
+                0x0000000000000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.dinit)
+ .dinit         0x000000000000007c        0x5 data_init
+                0x0000000000000082                . = ALIGN (0x2)
+ *fill*         0x0000000000000081        0x1 
+                0x0000000000000082                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000000000000082        0x0 linker stubs
+ *(.trampolines*)
+                0x0000000000000082                __trampolines_end = .
+ *libprintf_flt.a:*(.progmem.data)
+ *libc.a:*(.progmem.data)
+                0x0000000000000082                . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000000000000082                __ctors_start = .
+ *(.ctors)
+                0x0000000000000082                __ctors_end = .
+                0x0000000000000082                __dtors_start = .
+ *(.dtors)
+                0x0000000000000082                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000000000000082        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+                0x0000000000000082                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000000000000082        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000000000000008e       0x3c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+                0x000000000000008e                __do_copy_data
+                0x00000000000000bc                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000000000000ca        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+ *(.init9)
+                0x00000000000000d2                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000000000000d2        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+                0x00000000000000d2                _exit
+                0x00000000000000d2                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000000000000d2        0x4 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000000000000d6                _etext = .
+
+.data           0x0000000000800100        0x0 load address 0x00000000000000d6
+                [!provide]                        PROVIDE (__data_start, .)
+ *(.gnu.linkonce.d*)
+ *(.gnu.linkonce.r*)
+                0x0000000000800100                . = ALIGN (0x2)
+                0x0000000000800100                _edata = .
+                [!provide]                        PROVIDE (__data_end, .)
+
+.bss            0x0000000000800100      0x12c
+                [!provide]                        PROVIDE (__bss_start, .)
+ *(COMMON)
+ COMMON         0x0000000000800100      0x12c HAL/UART0/UART0_HAL.o
+                0x0000000000800100                rx_buffer
+                0x0000000000800164                tx_buffer
+                [!provide]                        PROVIDE (__bss_end, .)
+                0x00000000000000d6                __data_load_start = LOADADDR (.data)
+                0x00000000000000d6                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x000000000080022c        0x0
+                [!provide]                        PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                [!provide]                        PROVIDE (__noinit_end, .)
+                0x000000000080022c                _end = .
+
+.eeprom         0x0000000000810000        0x0
+ *(.eeprom*)
+                0x0000000000810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x5b
+ *(.comment)
+ .comment       0x0000000000000000       0x2f HAL/PM/PM_HAL.o
+                                         0x30 (size before relaxing)
+ .comment       0x000000000000002f       0x30 HAL/SCD30/SCD30_HAL.o
+ .comment       0x000000000000002f       0x30 HAL/TWI/TWI_API.o
+ .comment       0x000000000000002f       0x30 HAL/TWI/TWI_HAL.o
+ .comment       0x000000000000002f       0x30 HAL/UART0/UART0_HAL.o
+ .comment       0x000000000000002f       0x30 HAL/UART1/UART1_HAL.o
+ .comment       0x000000000000002f       0x30 main.o
+ .comment       0x000000000000002f       0x30 MODULES/SCD30_module/SCD30_module.o
+ .comment       0x000000000000002f       0x30 TEST/SCD30_module/test_SCD30_module.o
+ .comment       0x000000000000002f       0x30 util/CRC8/CRC8.o
+ .comment       0x000000000000002f       0x2c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
+                                         0x2d (size before relaxing)
+ .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
+ .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
+ .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
+ .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x278
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x28 HAL/PM/PM_HAL.o
+ .debug_aranges
+                0x0000000000000028       0x28 HAL/SCD30/SCD30_HAL.o
+ .debug_aranges
+                0x0000000000000050       0x38 HAL/TWI/TWI_API.o
+ .debug_aranges
+                0x0000000000000088       0x48 HAL/TWI/TWI_HAL.o
+ .debug_aranges
+                0x00000000000000d0       0x68 HAL/UART0/UART0_HAL.o
+ .debug_aranges
+                0x0000000000000138       0x60 HAL/UART1/UART1_HAL.o
+ .debug_aranges
+                0x0000000000000198       0x20 main.o
+ .debug_aranges
+                0x00000000000001b8       0x40 MODULES/SCD30_module/SCD30_module.o
+ .debug_aranges
+                0x00000000000001f8       0x60 TEST/SCD30_module/test_SCD30_module.o
+ .debug_aranges
+                0x0000000000000258       0x20 util/CRC8/CRC8.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x3d18
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000      0x6cc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+ .debug_info    0x00000000000006cc      0x2ae HAL/PM/PM_HAL.o
+ .debug_info    0x000000000000097a      0x2c1 HAL/SCD30/SCD30_HAL.o
+ .debug_info    0x0000000000000c3b      0x572 HAL/TWI/TWI_API.o
+ .debug_info    0x00000000000011ad      0x3f1 HAL/TWI/TWI_HAL.o
+ .debug_info    0x000000000000159e      0x6ea HAL/UART0/UART0_HAL.o
+ .debug_info    0x0000000000001c88      0x5b4 HAL/UART1/UART1_HAL.o
+ .debug_info    0x000000000000223c      0x289 main.o
+ .debug_info    0x00000000000024c5      0x830 MODULES/SCD30_module/SCD30_module.o
+ .debug_info    0x0000000000002cf5      0xd2d TEST/SCD30_module/test_SCD30_module.o
+ .debug_info    0x0000000000003a22      0x2f6 util/CRC8/CRC8.o
+
+.debug_abbrev   0x0000000000000000     0x1139
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x66e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+ .debug_abbrev  0x000000000000066e       0x5c HAL/PM/PM_HAL.o
+ .debug_abbrev  0x00000000000006ca       0x5c HAL/SCD30/SCD30_HAL.o
+ .debug_abbrev  0x0000000000000726      0x13b HAL/TWI/TWI_API.o
+ .debug_abbrev  0x0000000000000861       0xbd HAL/TWI/TWI_HAL.o
+ .debug_abbrev  0x000000000000091e      0x1db HAL/UART0/UART0_HAL.o
+ .debug_abbrev  0x0000000000000af9      0x146 HAL/UART1/UART1_HAL.o
+ .debug_abbrev  0x0000000000000c3f       0x5d main.o
+ .debug_abbrev  0x0000000000000c9c      0x1fc MODULES/SCD30_module/SCD30_module.o
+ .debug_abbrev  0x0000000000000e98      0x211 TEST/SCD30_module/test_SCD30_module.o
+ .debug_abbrev  0x00000000000010a9       0x90 util/CRC8/CRC8.o
+
+.debug_line     0x0000000000000000     0x13c2
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000      0x154 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+ .debug_line    0x0000000000000154       0xd9 HAL/PM/PM_HAL.o
+ .debug_line    0x000000000000022d       0xaf HAL/SCD30/SCD30_HAL.o
+ .debug_line    0x00000000000002dc      0x168 HAL/TWI/TWI_API.o
+ .debug_line    0x0000000000000444      0x1c1 HAL/TWI/TWI_HAL.o
+ .debug_line    0x0000000000000605      0x2d7 HAL/UART0/UART0_HAL.o
+ .debug_line    0x00000000000008dc      0x242 HAL/UART1/UART1_HAL.o
+ .debug_line    0x0000000000000b1e       0x6d main.o
+ .debug_line    0x0000000000000b8b      0x314 MODULES/SCD30_module/SCD30_module.o
+ .debug_line    0x0000000000000e9f      0x43f TEST/SCD30_module/test_SCD30_module.o
+ .debug_line    0x00000000000012de       0xe4 util/CRC8/CRC8.o
+
+.debug_frame    0x0000000000000000      0x5a4
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x40 HAL/PM/PM_HAL.o
+ .debug_frame   0x0000000000000040       0x34 HAL/SCD30/SCD30_HAL.o
+ .debug_frame   0x0000000000000074       0x90 HAL/TWI/TWI_API.o
+ .debug_frame   0x0000000000000104       0x74 HAL/TWI/TWI_HAL.o
+ .debug_frame   0x0000000000000178      0x11c HAL/UART0/UART0_HAL.o
+ .debug_frame   0x0000000000000294       0xfc HAL/UART1/UART1_HAL.o
+ .debug_frame   0x0000000000000390       0x24 main.o
+ .debug_frame   0x00000000000003b4       0x9c MODULES/SCD30_module/SCD30_module.o
+ .debug_frame   0x0000000000000450      0x130 TEST/SCD30_module/test_SCD30_module.o
+ .debug_frame   0x0000000000000580       0x24 util/CRC8/CRC8.o
+
+.debug_str      0x0000000000000000      0x45c
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x252 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+ .debug_str     0x0000000000000252        0x0 HAL/PM/PM_HAL.o
+ .debug_str     0x0000000000000252        0x0 HAL/SCD30/SCD30_HAL.o
+ .debug_str     0x0000000000000252       0x73 HAL/TWI/TWI_API.o
+ .debug_str     0x00000000000002c5        0x0 HAL/TWI/TWI_HAL.o
+ .debug_str     0x00000000000002c5        0x0 HAL/UART0/UART0_HAL.o
+ .debug_str     0x00000000000002c5        0x0 HAL/UART1/UART1_HAL.o
+ .debug_str     0x00000000000002c5       0x18 main.o
+ .debug_str     0x00000000000002dd       0x71 MODULES/SCD30_module/SCD30_module.o
+ .debug_str     0x000000000000034e      0x10e TEST/SCD30_module/test_SCD30_module.o
+ .debug_str     0x000000000000045c        0x0 util/CRC8/CRC8.o
+
+.debug_loc      0x0000000000000000     0x11da
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0x2f HAL/PM/PM_HAL.o
+ .debug_loc     0x000000000000002f      0x31b HAL/TWI/TWI_API.o
+ .debug_loc     0x000000000000034a       0xab HAL/TWI/TWI_HAL.o
+ .debug_loc     0x00000000000003f5      0x310 HAL/UART0/UART0_HAL.o
+ .debug_loc     0x0000000000000705      0x255 HAL/UART1/UART1_HAL.o
+ .debug_loc     0x000000000000095a      0x2fd MODULES/SCD30_module/SCD30_module.o
+ .debug_loc     0x0000000000000c57      0x4f2 TEST/SCD30_module/test_SCD30_module.o
+ .debug_loc     0x0000000000001149       0x91 util/CRC8/CRC8.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000      0x1f0
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000       0x18 HAL/PM/PM_HAL.o
+ .debug_ranges  0x0000000000000018       0x18 HAL/SCD30/SCD30_HAL.o
+ .debug_ranges  0x0000000000000030       0x28 HAL/TWI/TWI_API.o
+ .debug_ranges  0x0000000000000058       0x38 HAL/TWI/TWI_HAL.o
+ .debug_ranges  0x0000000000000090       0x58 HAL/UART0/UART0_HAL.o
+ .debug_ranges  0x00000000000000e8       0x50 HAL/UART1/UART1_HAL.o
+ .debug_ranges  0x0000000000000138       0x10 main.o
+ .debug_ranges  0x0000000000000148       0x30 MODULES/SCD30_module/SCD30_module.o
+ .debug_ranges  0x0000000000000178       0x50 TEST/SCD30_module/test_SCD30_module.o
+ .debug_ranges  0x00000000000001c8       0x28 util/CRC8/CRC8.o
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(methane_sensor_v1.elf elf32-avr)
+LOAD linker stubs
+LOAD data_init
+
+.note.gnu.avr.deviceinfo
+                0x0000000000000000       0x40
+ .note.gnu.avr.deviceinfo
+                0x0000000000000000       0x40 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+
+.bss.rx_buffer_has_message
+                0x0000000000800358        0x1
+ .bss.rx_buffer_has_message
+                0x0000000000800358        0x1 HAL/UART0/UART0_HAL.o
+                0x0000000000800358                rx_buffer_has_message
+
+.bss.rx_buffer_data_len
+                0x0000000000800359        0x1
+ .bss.rx_buffer_data_len
+                0x0000000000800359        0x1 HAL/UART0/UART0_HAL.o
+                0x0000000000800359                rx_buffer_data_len
+
+.bss.tx_buffer_cursor
+                0x000000000080035a        0x1
+ .bss.tx_buffer_cursor
+                0x000000000080035a        0x1 HAL/UART0/UART0_HAL.o
+                0x000000000080035a                tx_buffer_cursor
+
+.bss.tx_buffer_data_len
+                0x000000000080035b        0x1
+ .bss.tx_buffer_data_len
+                0x000000000080035b        0x1 HAL/UART0/UART0_HAL.o
+                0x000000000080035b                tx_buffer_data_len
+
+.bss.rx_buffer_has_message
+                0x000000000080035c        0x1
+ .bss.rx_buffer_has_message
+                0x000000000080035c        0x1 HAL/UART1/UART1_HAL.o
+
+.bss.rx_buffer_data_len
+                0x000000000080035d        0x1
+ .bss.rx_buffer_data_len
+                0x000000000080035d        0x1 HAL/UART1/UART1_HAL.o
+
+.bss.rx_buffer  0x00000000008002f4       0x64
+ .bss.rx_buffer
+                0x00000000008002f4       0x64 HAL/UART1/UART1_HAL.o
+
+.bss.tx_buffer_cursor
+                0x000000000080035e        0x1
+ .bss.tx_buffer_cursor
+                0x000000000080035e        0x1 HAL/UART1/UART1_HAL.o
+
+.bss.tx_buffer_data_len
+                0x000000000080035f        0x1
+ .bss.tx_buffer_data_len
+                0x000000000080035f        0x1 HAL/UART1/UART1_HAL.o
+
+.bss.tx_buffer  0x000000000080022c       0xc8
+ .bss.tx_buffer
+                0x000000000080022c       0xc8 HAL/UART1/UART1_HAL.o
+
+.progmemx.data  0x00000000000000d6        0x9
+ .progmemx.data
+                0x00000000000000d6        0x9 TEST/SCD30_module/test_SCD30_module.o
+
+.progmemx.data.SET_MEASUREMENT_INTERVAL
+                0x00000000000000df        0x5
+ .progmemx.data.SET_MEASUREMENT_INTERVAL
+                0x00000000000000df        0x5 MODULES/SCD30_module/SCD30_module.o
+                0x00000000000000df                SET_MEASUREMENT_INTERVAL
+
+.progmemx.data.TRIGGER_CONT_MEASUREMENT
+                0x00000000000000e4        0x5
+ .progmemx.data.TRIGGER_CONT_MEASUREMENT
+                0x00000000000000e4        0x5 MODULES/SCD30_module/SCD30_module.o
+                0x00000000000000e4                TRIGGER_CONT_MEASUREMENT
+
+.progmemx.data.READ_DATA_CMD
+                0x00000000000000e9        0x2
+ .progmemx.data.READ_DATA_CMD
+                0x00000000000000e9        0x2 MODULES/SCD30_module/SCD30_module.o
+                0x00000000000000e9                READ_DATA_CMD
+
+.text.avrlibc   0x00000000000000ec      0x448
+ .text.avrlibc  0x00000000000000ec      0x448 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
+                0x00000000000000ec                vfprintf
+
+.text.avrlibc   0x0000000000000534       0xbc
+ .text.avrlibc  0x0000000000000534       0xbc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
+                0x0000000000000534                __ultoa_invert
+
+.text.test_get_reading
+                0x00000000000005f0       0x9e
+ .text.test_get_reading
+                0x00000000000005f0       0x9e TEST/SCD30_module/test_SCD30_module.o
+                0x00000000000005f0                test_get_reading
+
+.text.SCD30_get_reading
+                0x000000000000068e       0x98
+ .text.SCD30_get_reading
+                0x000000000000068e       0x98 MODULES/SCD30_module/SCD30_module.o
+                0x000000000000068e                SCD30_get_reading
+
+.text.test_init
+                0x0000000000000726       0x7e
+ .text.test_init
+                0x0000000000000726       0x7e TEST/SCD30_module/test_SCD30_module.o
+                0x0000000000000726                test_init
+
+.text.avrlibc   0x00000000000007a4       0x78
+ .text.avrlibc  0x00000000000007a4       0x78 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+                0x00000000000007a4                fputc
+
+.text.__vector_20
+                0x000000000000081c       0x74
+ .text.__vector_20
+                0x000000000000081c       0x74 HAL/UART0/UART0_HAL.o
+                0x000000000000081c                __vector_20
+
+.text.__vector_28
+                0x0000000000000890       0x70
+ .text.__vector_28
+                0x0000000000000890       0x70 HAL/UART1/UART1_HAL.o
+                0x0000000000000890                __vector_28
+
+.text.TWI_API_read_data_ack_end_nack_stop
+                0x0000000000000900       0x64
+ .text.TWI_API_read_data_ack_end_nack_stop
+                0x0000000000000900       0x64 HAL/TWI/TWI_API.o
+                0x0000000000000900                TWI_API_read_data_ack_end_nack_stop
+
+.text.avrlibc.fplib
+                0x0000000000000964       0x5e
+ .text.avrlibc.fplib
+                0x0000000000000964       0x5e c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
+                0x0000000000000964                __fixunssfsi
+
+.text.start_and_write_data
+                0x00000000000009c2       0x4c
+ .text.start_and_write_data
+                0x00000000000009c2       0x4c HAL/TWI/TWI_API.o
+
+.text.__vector_22
+                0x0000000000000a0e       0x4a
+ .text.__vector_22
+                0x0000000000000a0e       0x4a HAL/UART0/UART0_HAL.o
+                0x0000000000000a0e                __vector_22
+
+.text.__vector_30
+                0x0000000000000a58       0x4a
+ .text.__vector_30
+                0x0000000000000a58       0x4a HAL/UART1/UART1_HAL.o
+                0x0000000000000a58                __vector_30
+
+.text.TWI_HAL_start
+                0x0000000000000aa2       0x48
+ .text.TWI_HAL_start
+                0x0000000000000aa2       0x48 HAL/TWI/TWI_HAL.o
+                0x0000000000000aa2                TWI_HAL_start
+
+.text.avrlibc   0x0000000000000aea       0x46
+ .text.avrlibc  0x0000000000000aea       0x46 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
+                0x0000000000000aea                sprintf
+
+.text.avrlibc.fplib
+                0x0000000000000b30       0x44
+ .text.avrlibc.fplib
+                0x0000000000000b30       0x44 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_split3.o)
+                0x0000000000000b30                __fp_split3
+                0x0000000000000b40                __fp_splitA
+
+.text.uart1_hal_init
+                0x0000000000000b74       0x3c
+ .text.uart1_hal_init
+                0x0000000000000b74       0x3c HAL/UART1/UART1_HAL.o
+                0x0000000000000b74                uart1_hal_init
+
+.text.SCD30_init
+                0x0000000000000bb0       0x3c
+ .text.SCD30_init
+                0x0000000000000bb0       0x3c MODULES/SCD30_module/SCD30_module.o
+                0x0000000000000bb0                SCD30_init
+
+.text.libgcc.prologue
+                0x0000000000000bec       0x38
+ .text.libgcc.prologue
+                0x0000000000000bec       0x38 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+                0x0000000000000bec                __prologue_saves__
+
+.text.calc_crc8
+                0x0000000000000c24       0x36
+ .text.calc_crc8
+                0x0000000000000c24       0x36 util/CRC8/CRC8.o
+                0x0000000000000c24                calc_crc8
+
+.text.avrlibc   0x0000000000000c5a       0x36
+ .text.avrlibc  0x0000000000000c5a       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
+                0x0000000000000c5a                strnlen
+
+.text.libgcc.prologue
+                0x0000000000000c90       0x36
+ .text.libgcc.prologue
+                0x0000000000000c90       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+                0x0000000000000c90                __epilogue_restores__
+
+.text.uart1_hal_send_message
+                0x0000000000000cc6       0x34
+ .text.uart1_hal_send_message
+                0x0000000000000cc6       0x34 HAL/UART1/UART1_HAL.o
+                0x0000000000000cc6                uart1_hal_send_message
+
+.text.validate_data
+                0x0000000000000cfa       0x32
+ .text.validate_data
+                0x0000000000000cfa       0x32 MODULES/SCD30_module/SCD30_module.o
+
+.text.avrlibc   0x0000000000000d2c       0x2c
+ .text.avrlibc  0x0000000000000d2c       0x2c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
+                0x0000000000000d2c                strlen
+
+.text.TWI_HAL_write_byte
+                0x0000000000000d58       0x20
+ .text.TWI_HAL_write_byte
+                0x0000000000000d58       0x20 HAL/TWI/TWI_HAL.o
+                0x0000000000000d58                TWI_HAL_write_byte
+
+.text.test_SCD30_module_start
+                0x0000000000000d78       0x20
+ .text.test_SCD30_module_start
+                0x0000000000000d78       0x20 TEST/SCD30_module/test_SCD30_module.o
+                0x0000000000000d78                test_SCD30_module_start
+
+.text.bytes_2_uint
+                0x0000000000000d98       0x1a
+ .text.bytes_2_uint
+                0x0000000000000d98       0x1a MODULES/SCD30_module/SCD30_module.o
+
+.text.libgcc    0x0000000000000db2       0x1a
+ .text.libgcc   0x0000000000000db2       0x1a c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+                0x0000000000000db2                __movmemx_qi
+                0x0000000000000db4                __movmemx_hi
+
+.text.__vector_1
+                0x0000000000000dcc       0x14
+ .text.__vector_1
+                0x0000000000000dcc       0x14 HAL/PM/PM_HAL.o
+                0x0000000000000dcc                __vector_1
+
+.text.TWI_HAL_read_byte_ack
+                0x0000000000000de0       0x14
+ .text.TWI_HAL_read_byte_ack
+                0x0000000000000de0       0x14 HAL/TWI/TWI_HAL.o
+                0x0000000000000de0                TWI_HAL_read_byte_ack
+
+.text.TWI_HAL_read_byte_nack
+                0x0000000000000df4       0x14
+ .text.TWI_HAL_read_byte_nack
+                0x0000000000000df4       0x14 HAL/TWI/TWI_HAL.o
+                0x0000000000000df4                TWI_HAL_read_byte_nack
+
+.text.TWI_API_write_data_stop
+                0x0000000000000e08       0x10
+ .text.TWI_API_write_data_stop
+                0x0000000000000e08       0x10 HAL/TWI/TWI_API.o
+                0x0000000000000e08                TWI_API_write_data_stop
+
+.text.TWI_HAL_stop
+                0x0000000000000e18       0x10
+ .text.TWI_HAL_stop
+                0x0000000000000e18       0x10 HAL/TWI/TWI_HAL.o
+                0x0000000000000e18                TWI_HAL_stop
+
+.text.SCD30_HAL_init
+                0x0000000000000e28        0xe
+ .text.SCD30_HAL_init
+                0x0000000000000e28        0xe HAL/SCD30/SCD30_HAL.o
+                0x0000000000000e28                SCD30_HAL_init
+
+.text.avrlibc.fplib
+                0x0000000000000e36        0xe
+ .text.avrlibc.fplib
+                0x0000000000000e36        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_zero.o)
+                0x0000000000000e36                __fp_zero
+                0x0000000000000e38                __fp_szero
+
+.text.SCD30_HAL_data_ready
+                0x0000000000000e44        0xa
+ .text.SCD30_HAL_data_ready
+                0x0000000000000e44        0xa HAL/SCD30/SCD30_HAL.o
+                0x0000000000000e44                SCD30_HAL_data_ready
+
+.text.main      0x0000000000000e4e        0x6
+ .text.main     0x0000000000000e4e        0x6 main.o
+                0x0000000000000e4e                main
+
+.text           0x0000000000000e54        0x4
+ .text          0x0000000000000e54        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+                0x0000000000000e54                __vector_24
+                0x0000000000000e54                __vector_12
+                0x0000000000000e54                __bad_interrupt
+                0x0000000000000e54                __vector_6
+                0x0000000000000e54                __vector_3
+                0x0000000000000e54                __vector_23
+                0x0000000000000e54                __vector_25
+                0x0000000000000e54                __vector_11
+                0x0000000000000e54                __vector_13
+                0x0000000000000e54                __vector_17
+                0x0000000000000e54                __vector_19
+                0x0000000000000e54                __vector_7
+                0x0000000000000e54                __vector_27
+                0x0000000000000e54                __vector_5
+                0x0000000000000e54                __vector_4
+                0x0000000000000e54                __vector_9
+                0x0000000000000e54                __vector_2
+                0x0000000000000e54                __vector_21
+                0x0000000000000e54                __vector_15
+                0x0000000000000e54                __vector_29
+                0x0000000000000e54                __vector_8
+                0x0000000000000e54                __vector_26
+                0x0000000000000e54                __vector_14
+                0x0000000000000e54                __vector_10
+                0x0000000000000e54                __vector_16
+                0x0000000000000e54                __vector_18

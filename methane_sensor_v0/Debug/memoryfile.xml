@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="methane_sensor_v0.elf">                 
+  <executable name="methane_sensor_v1.elf">                 
     <memory name="program">              
       <units>bytes</units>                 
-      <length>32768</length>                 
-      <used>3921</used>                     
-      <free>28847</free>                     
+      <length>65536</length>                 
+      <used>3671</used>                     
+      <free>61865</free>                     
     </memory>                              
     <memory name="data">                 
       <units>bytes</units>                 
-      <length>2048</length>                 
-      <used>620</used>                     
-      <free>1428</free>                     
+      <length>4096</length>                 
+      <used>608</used>                     
+      <free>3488</free>                     
     </memory>                              
   </executable>                            
 </project>                                 

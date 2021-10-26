@@ -8,11 +8,13 @@
 
 
 #include "UART1_HAL.h"
-
+#include <util/delay.h>
 #include <xc.h>
 #include "../../util/bit_operators.h"
 #include <avr/interrupt.h>
 #include <stdbool.h>
+
+static void copy_buffer(uint8_t msg[]);
 
 static uint8_t tx_buffer[UART1_TX_BUFF_LENGTH];
 static uint8_t tx_buffer_data_len=0;
@@ -49,18 +51,52 @@ bool uart1_hal_message_ready(){
 	return rx_buffer_has_message>0;
 }
 
+//uint8_t uart1_hal_read_message(uint8_t msg[]){
+	//for (uint8_t i=0; i<rx_buffer_data_len-2; i++)
+	//{
+		//msg[i]=rx_buffer[i];
+	//}
+	//uart1_hal_clear_rx_buffer();
+	//return rx_buffer_data_len-2;
+//}
+
 uint8_t uart1_hal_read_message(uint8_t msg[]){
-	for (uint8_t i=0; i<rx_buffer_data_len-2; i++)
-	{
-		msg[i]=rx_buffer[i];
-	}
+	copy_buffer(msg);
+	uint8_t len= rx_buffer_data_len-2;
 	uart1_hal_clear_rx_buffer();
-	return rx_buffer_data_len-2;
+	return len;
+}
+
+uint8_t uart1_hal_read_message_as_str(uint8_t msg[]){
+	copy_buffer(msg);
+	uint8_t len= rx_buffer_data_len-2;
+	msg[len]='\0';
+	uart1_hal_clear_rx_buffer();
+	return len;
 }
 
 void uart1_hal_clear_rx_buffer(){
 	rx_buffer_has_message=0;
 	rx_buffer_data_len=0;
+}
+
+//void uart1_hal_send_break(uint8_t followUpByte){
+	//set_bit(DDRD, 1); //Set TX0 (PD1) as output
+	//clear_bit(UCSR0B, 3); //Disable Tx
+	//clear_bit(PORTD, 1); //pull PD1 low
+	//_delay_ms(2); //Wait one ms
+	//set_bit(UCSR0B, 3); //Enable Tx
+	//
+	//uint8_t data[1];
+	//data[0]=followUpByte;
+	//uart0_hal_send_message(data, 1);
+//}
+
+static void copy_buffer(uint8_t msg[]){
+	for (uint8_t i=0; i<rx_buffer_data_len-2; i++)
+	{
+		msg[i]=rx_buffer[i];
+	}
 }
 
 

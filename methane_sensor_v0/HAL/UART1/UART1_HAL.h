@@ -14,15 +14,17 @@
 
 #define UART1_TX_BUFF_LENGTH 200
 #define UART1_RX_BUFF_LENGTH 100
-#define UART1_END_CHAR_1 '\r'
-#define UART1_END_CHAR_2 '\n'
+#define UART1_END_CHAR_1 '\n'
+#define UART1_END_CHAR_2 '\r'
 
 
 void uart1_hal_init();
 void uart1_hal_send_message(uint8_t msg[], uint8_t length);
 bool uart1_hal_message_ready();
 uint8_t uart1_hal_read_message(uint8_t msg[]);
+uint8_t uart1_hal_read_message_as_str(uint8_t msg[]);
 void uart1_hal_clear_rx_buffer();
+//void uart0_hal_send_break(uint8_t followUpByte);
 
 
 

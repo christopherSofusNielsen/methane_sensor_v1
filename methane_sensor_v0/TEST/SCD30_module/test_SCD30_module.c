@@ -16,7 +16,7 @@
 
 #include "test_SCD30_module.h"
 #include "../../HAL/TWI/TWI_HAL.h"
-#include "../../HAL/UART0/UART0_HAL.h"
+#include "../../HAL/UART1/UART1_HAL.h"
 #include "../../HAL/TWI/TWI_API.h"
 #include "../../MODULES/SCD30_module/SCD30_module.h"
 
@@ -30,7 +30,7 @@ void test_data_ready();
 void read_measure_interval();
 
 void test_SCD30_module_start(){
-		uart0_hal_init();
+		uart1_hal_init();
 		test_init();
 		
 		while(1){
@@ -63,7 +63,7 @@ void read_measure_interval(){
 	
 	TWI_API_read_data_ack_end_nack_stop(0x61, data, 3);
 	
-	uart0_hal_send_message(data, 3);
+	uart1_hal_send_message(data, 3);
 	
 }
 
@@ -71,10 +71,10 @@ void test_data_ready(){
 	bool ready=SCD30_data_ready();
 	if(ready==true){
 		char msg[]="OK";
-		uart0_hal_send_message((uint8_t*)msg, 3);
+		uart1_hal_send_message((uint8_t*)msg, 3);
 	}else{
 		char msg[]="FAIL";
-		uart0_hal_send_message((uint8_t*)msg, 5);
+		uart1_hal_send_message((uint8_t*)msg, 5);
 	}
 }
 
@@ -82,13 +82,13 @@ void test_init(){
 		SCD30_STATUS status=SCD30_init(2);
 		if(status==SCD30_STATUS_SUCCESS){
 			char msg[]="OK";
-			uart0_hal_send_message((uint8_t*)msg, 3);
+			uart1_hal_send_message((uint8_t*)msg, 3);
 		}else if(status==SCD30_STATUS_TRY_AGAIN){
 			char msg[]="TRY";
-			uart0_hal_send_message((uint8_t*)msg, 4);
+			uart1_hal_send_message((uint8_t*)msg, 4);
 		}else{
 			char msg[]="FAIL";
-			uart0_hal_send_message((uint8_t*)msg, 5);
+			uart1_hal_send_message((uint8_t*)msg, 5);
 		}
 }
 
@@ -99,13 +99,13 @@ void test_get_reading(){
 	SCD30_STATUS status=SCD30_get_reading(&value);
 	if(status==SCD30_STATUS_SUCCESS){
 		sprintf(data, "%u ", value);
-		uart0_hal_send_message(data, strlen(data));
+		uart1_hal_send_message(data, strlen(data));
 	}else if(status==SCD30_STATUS_TRY_AGAIN){
 		char msg[]={0xEE, 0xEE};
-		uart0_hal_send_message((uint8_t*)msg, 2);
+		uart1_hal_send_message((uint8_t*)msg, 2);
 	}else{
 		char msg[]={0xFF, 0xFF};
-		uart0_hal_send_message((uint8_t*)msg, 2);
+		uart1_hal_send_message((uint8_t*)msg, 2);
 	}
 }
 
@@ -123,7 +123,7 @@ void read_firmware_api(){
 	if(status!=TWI_CODE_SUCCESS)
 		return throw_error(status, 1);
 	
-	uart0_hal_send_message(read, 3);
+	uart1_hal_send_message(read, 3);
 }
 
 void read_firmware(){
@@ -157,7 +157,7 @@ void read_firmware(){
 	
 	TWI_HAL_stop();
 	
-	uart0_hal_send_message(data, 3);
+	uart1_hal_send_message(data, 3);
 	
 }
 
@@ -166,7 +166,7 @@ void throw_error(uint8_t status, uint8_t index){
 	msg[0]=status;
 	msg[1]=index;
 	msg[2]=0xFF;
-	uart0_hal_send_message(msg, 3);
+	uart1_hal_send_message(msg, 3);
 }
 
 void test_HAL(){
@@ -175,15 +175,15 @@ void test_HAL(){
 	uint8_t msg[2];
 	msg[0]=status;
 	msg[1]=0xff;
-	uart0_hal_send_message(msg, 2);
+	uart1_hal_send_message(msg, 2);
 	//if(status==0){
 		//char msg[]="0 ";
-		//uart0_hal_send_message((uint8_t*)msg, 3);
+		//uart1_hal_send_message((uint8_t*)msg, 3);
 	//}else if(status==1){
 		//char msg[]="OK";
-		//uart0_hal_send_message((uint8_t*)msg, 5);
+		//uart1_hal_send_message((uint8_t*)msg, 5);
 	//}else {
 		//char msg[]="OK";
-		//uart0_hal_send_message((uint8_t*)msg, 5);
+		//uart1_hal_send_message((uint8_t*)msg, 5);
 	//}
 }

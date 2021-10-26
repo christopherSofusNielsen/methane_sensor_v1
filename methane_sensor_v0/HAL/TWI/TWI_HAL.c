@@ -24,9 +24,9 @@
 
 
 void TWI_HAL_init(){
-	TWBR0=TWI_TWBR; //Set bit generator
+	TWBR=TWI_TWBR; //Set bit generator
 	if(TWI_PRESCALE==1)
-		clear_byte(TWSR0, 0b00000011); //set prescale to 1
+		clear_byte(TWSR, 0b00000011); //set prescale to 1
 	
 }
 
@@ -34,18 +34,18 @@ uint8_t TWI_HAL_start(uint8_t addr, TWI_HAL_START_TYPE type){
 	uint8_t addr_type=(addr<<1) | type;
 	uint8_t status;
 	
-	TWCR0=twi_start_transmission |(1<<TWSTA); //Send start condition
+	TWCR=twi_start_transmission |(1<<TWSTA); //Send start condition
 	
-	while (!get_bit(TWCR0, TWINT)); //Wait to finish job
-	status=twi_read_status(TWSR0);
+	while (!get_bit(TWCR, TWINT)); //Wait to finish job
+	status=twi_read_status(TWSR);
 	
 	if(status != TWI_CODE_START) return status; //Check status is success
 	
-	TWDR0=addr_type; //Set Write addr
-	TWCR0=twi_start_transmission; //Start transmission of addr
+	TWDR=addr_type; //Set Write addr
+	TWCR=twi_start_transmission; //Start transmission of addr
 	
-	while (!get_bit(TWCR0, TWINT)); //Wait to finish job
-	status=twi_read_status(TWSR0);
+	while (!get_bit(TWCR, TWINT)); //Wait to finish job
+	status=twi_read_status(TWSR);
 	
 	if(status == TWI_CODE_ADDR_W_TRANS_ACK_REC || status==TWI_CODE_ADDR_R_TRANS_ACK_REC) return TWI_CODE_SUCCESS; //Success
 	
@@ -55,32 +55,32 @@ uint8_t TWI_HAL_start(uint8_t addr, TWI_HAL_START_TYPE type){
 uint8_t TWI_HAL_write_byte(uint8_t data){
 	uint8_t status;
 	
-	TWDR0=data;	//Set data
-	TWCR0=twi_start_transmission;
+	TWDR=data;	//Set data
+	TWCR=twi_start_transmission;
 	
-	while (!get_bit(TWCR0, TWINT)); 
-	status=twi_read_status(TWSR0);
+	while (!get_bit(TWCR, TWINT)); 
+	status=twi_read_status(TWSR);
 	
 	if(status==TWI_CODE_DATA_TRANS_ACK_REC) return TWI_CODE_SUCCESS; //Success
 	return status;
 }
 
 uint8_t TWI_HAL_read_byte_ack(){
-	TWCR0=twi_start_transmission|(1<<TWEA);
-	while (!get_bit(TWCR0, TWINT)); 
+	TWCR=twi_start_transmission|(1<<TWEA);
+	while (!get_bit(TWCR, TWINT)); 
 	
-	return TWDR0;
+	return TWDR;
 }
 
 uint8_t TWI_HAL_read_byte_nack(){
-	TWCR0=twi_start_transmission;
-	while (!get_bit(TWCR0, TWINT));
+	TWCR=twi_start_transmission;
+	while (!get_bit(TWCR, TWINT));
 	
-	return TWDR0;
+	return TWDR;
 }
 
 void TWI_HAL_stop(){
-	 TWCR0=twi_start_transmission|(1<<TWSTO);
-	 while(TWCR0&(1<<TWSTO));
+	 TWCR=twi_start_transmission|(1<<TWSTO);
+	 while(TWCR&(1<<TWSTO));
 }
 
