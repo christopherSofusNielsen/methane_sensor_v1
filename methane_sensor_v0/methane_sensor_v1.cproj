@@ -226,6 +226,12 @@
     <Compile Include="TEST\lora-module\test_lora_module.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="TEST\RTC_module\test_RTC_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\RTC_module\test_RTC_module.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="TEST\SCD30_module\test_SCD30_module.c">
       <SubType>compile</SubType>
     </Compile>
@@ -274,6 +280,7 @@
     <Folder Include="TEST\lora-module" />
     <Folder Include="TEST\EEPROM_module" />
     <Folder Include="TEST\ADC_module" />
+    <Folder Include="TEST\RTC_module" />
     <Folder Include="TEST\PM_HAL" />
     <Folder Include="TEST\SCD30_module" />
     <Folder Include="util" />

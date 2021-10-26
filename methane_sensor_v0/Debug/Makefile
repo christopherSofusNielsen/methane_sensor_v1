@@ -55,6 +55,7 @@ SUBDIRS :=  \
 ../TEST/lora-module \
 ../TEST/EEPROM_module \
 ../TEST/ADC_module \
+../TEST/RTC_module \
 ../TEST/PM_HAL \
 ../TEST/SCD30_module \
 ../util \
@@ -83,6 +84,7 @@ C_SRCS +=  \
 ../TEST/ADC_module/test_ADC_module.c \
 ../TEST/EEPROM_module/test_EEPROM_module.c \
 ../TEST/lora-module/test_lora_module.c \
+../TEST/RTC_module/test_RTC_module.c \
 ../TEST/SCD30_module/test_SCD30_module.c \
 ../TEST/PM_HAL/test_PM_HAL.c \
 ../util/CRC8/CRC8.c
@@ -115,6 +117,7 @@ MODULES/SCD30_module/SCD30_module.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
 TEST/lora-module/test_lora_module.o \
+TEST/RTC_module/test_RTC_module.o \
 TEST/SCD30_module/test_SCD30_module.o \
 TEST/PM_HAL/test_PM_HAL.o \
 util/CRC8/CRC8.o
@@ -140,6 +143,7 @@ MODULES/SCD30_module/SCD30_module.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
 TEST/lora-module/test_lora_module.o \
+TEST/RTC_module/test_RTC_module.o \
 TEST/SCD30_module/test_SCD30_module.o \
 TEST/PM_HAL/test_PM_HAL.o \
 util/CRC8/CRC8.o
@@ -165,6 +169,7 @@ MODULES/SCD30_module/SCD30_module.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
 TEST/lora-module/test_lora_module.d \
+TEST/RTC_module/test_RTC_module.d \
 TEST/SCD30_module/test_SCD30_module.d \
 TEST/PM_HAL/test_PM_HAL.d \
 util/CRC8/CRC8.d
@@ -190,6 +195,7 @@ MODULES/SCD30_module/SCD30_module.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
 TEST/lora-module/test_lora_module.d \
+TEST/RTC_module/test_RTC_module.d \
 TEST/SCD30_module/test_SCD30_module.d \
 TEST/PM_HAL/test_PM_HAL.d \
 util/CRC8/CRC8.d
@@ -342,6 +348,13 @@ TEST/EEPROM_module/test_EEPROM_module.o: ../TEST/EEPROM_module/test_EEPROM_modul
 	
 
 TEST/lora-module/test_lora_module.o: ../TEST/lora-module/test_lora_module.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+TEST/RTC_module/test_RTC_module.o: ../TEST/RTC_module/test_RTC_module.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

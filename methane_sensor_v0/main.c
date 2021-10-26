@@ -14,14 +14,17 @@
 #include "TEST/PM_HAL/test_PM_HAL.h"
 #include "TEST/EEPROM_module/test_EEPROM_module.h"
 #include "TEST/ADC_module/test_ADC_module.h"
+#include "TEST/RTC_module/test_RTC_module.h"
 
 int main(void)
 {
 	//test_lora_module_start();
-	test_SCD30_module_start();
+	//test_SCD30_module_start();
     //test_PM_HAL_start();
 	//test_EEPROM_module_start();
 	//test_ADC_module_start();
+	test_RTC_module_start();
+	
 	while(1)
     {
         //TODO:: Please write your application code 

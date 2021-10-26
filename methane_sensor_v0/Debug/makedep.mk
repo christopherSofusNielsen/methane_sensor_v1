@@ -42,6 +42,8 @@ TEST\EEPROM_module\test_EEPROM_module.c
 
 TEST\lora-module\test_lora_module.c
 
+TEST\RTC_module\test_RTC_module.c
+
 TEST\SCD30_module\test_SCD30_module.c
 
 TEST\PM_HAL\test_PM_HAL.c
