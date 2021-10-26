@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.microchip.xc8</ToolchainName>
+    <ProjectGuid>2285C48D-296E-43FD-A7B6-69885F64CFFD</ProjectGuid>
+    <avrdevice>ATmega328PB</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>methane_sensor_v0</AssemblyName>
+    <Name>methane_sensor_v1</Name>
+    <RootNamespace>methane_sensor_v0</RootNamespace>
+    <ToolchainFlavour>XC8_2.31</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <EraseKey />
+    <avrtool>com.atmel.avrdbg.tool.avrdragon</avrtool>
+    <avrtoolserialnumber>00A200051040</avrtoolserialnumber>
+    <avrdeviceexpectedsignature>0x1E9516</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_avrdragon>
+      <ToolOptions>
+        <InterfaceProperties>
+          <IspClock>125000</IspClock>
+        </InterfaceProperties>
+        <InterfaceName>debugWIRE</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.avrdragon</ToolType>
+      <ToolNumber>00A200051040</ToolNumber>
+      <ToolName>AVR Dragon</ToolName>
+    </com_atmel_avrdbg_tool_avrdragon>
+    <avrtoolinterface>debugWIRE</avrtoolinterface>
+    <avrtoolinterfaceclock>125000</avrtoolinterfaceclock>
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.49.1" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <com.microchip.xc8>
+        <com.microchip.xc8.common.optimization.RelaxBranches>True</com.microchip.xc8.common.optimization.RelaxBranches>
+        <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <com.microchip.xc8.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>(%24DeviceMacro)</Value>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </com.microchip.xc8.compiler.symbols.DefSymbols>
+        <com.microchip.xc8.compiler.optimization.level>Optimize for size (-Os)</com.microchip.xc8.compiler.optimization.level>
+        <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
+        <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
+        <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
+        <com.microchip.xc8.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </com.microchip.xc8.linker.libraries.Libraries>
+      </com.microchip.xc8>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <com.microchip.xc8>
+        <com.microchip.xc8.common.outputfiles.hex>True</com.microchip.xc8.common.outputfiles.hex>
+        <com.microchip.xc8.common.outputfiles.eep>True</com.microchip.xc8.common.outputfiles.eep>
+        <com.microchip.xc8.common.outputfiles.usersignatures>False</com.microchip.xc8.common.outputfiles.usersignatures>
+        <com.microchip.xc8.common.outputfiles.lss>True</com.microchip.xc8.common.outputfiles.lss>
+        <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <com.microchip.xc8.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>(%24DeviceMacro)</Value>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </com.microchip.xc8.compiler.symbols.DefSymbols>
+        <com.microchip.xc8.compiler.optimization.level>Optimize debugging experience (-Og)</com.microchip.xc8.compiler.optimization.level>
+        <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
+        <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
+        <com.microchip.xc8.compiler.optimization.DebugLevel>Default (-g2)</com.microchip.xc8.compiler.optimization.DebugLevel>
+        <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
+        <com.microchip.xc8.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </com.microchip.xc8.linker.libraries.Libraries>
+        <com.microchip.xc8.linker.miscellaneous.LinkerFlags>-gc-sections</com.microchip.xc8.linker.miscellaneous.LinkerFlags>
+        <com.microchip.xc8.assembler.debugging.DebugLevel>Default (-Wa,-g)</com.microchip.xc8.assembler.debugging.DebugLevel>
+      </com.microchip.xc8>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="HAL\PM\PM_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\PM\PM_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\RN2483\RN2483_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\RN2483\RN2483_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\SCD30\SCD30_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\SCD30\SCD30_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\TWI\TWI_API.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\TWI\TWI_API.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\TWI\TWI_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\TWI\TWI_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\UART0\UART0_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\UART0\UART0_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\UART1\UART1_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\UART1\UART1_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\ADC_module\ADC_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\ADC_module\ADC_module.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\EEPROM_module\EEPROM_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\EEPROM_module\EEPROM_module.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\join_network\join_network.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\join_network\join_network.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\lora_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\lora_module.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\RN2483_protocol\RN2483_protocol.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\RN2483_protocol\RN2483_protocol.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\send_uplink\send_uplink.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\send_uplink\send_uplink.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\sleep_controller\sleep_controller.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\sleep_controller\sleep_controller.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\util\util.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\lora_module\util\util.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\SCD30_module\SCD30_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\SCD30_module\SCD30_module.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\ADC_module\test_ADC_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\ADC_module\test_ADC_module.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\EEPROM_module\test_EEPROM_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\EEPROM_module\test_EEPROM_module.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\lora-module\test_lora_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\lora-module\test_lora_module.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\SCD30_module\test_SCD30_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\SCD30_module\test_SCD30_module.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\PM_HAL\test_PM_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\PM_HAL\test_PM_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="util\bit_operators.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="util\CRC8\CRC8.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="util\CRC8\CRC8.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="util\to_float.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HAL" />
+    <Folder Include="HAL\PM" />
+    <Folder Include="HAL\TC1" />
+    <Folder Include="HAL\SCD30" />
+    <Folder Include="HAL\TWI" />
+    <Folder Include="HAL\RN2483" />
+    <Folder Include="HAL\UART1" />
+    <Folder Include="HAL\UART0" />
+    <Folder Include="MODULES" />
+    <Folder Include="MODULES\lora_module" />
+    <Folder Include="MODULES\lora_module\join_network" />
+    <Folder Include="MODULES\lora_module\sleep_controller" />
+    <Folder Include="MODULES\lora_module\send_uplink" />
+    <Folder Include="MODULES\lora_module\util" />
+    <Folder Include="MODULES\lora_module\RN2483_protocol" />
+    <Folder Include="MODULES\EEPROM_module" />
+    <Folder Include="MODULES\ADC_module" />
+    <Folder Include="MODULES\SCD30_module" />
+    <Folder Include="TEST" />
+    <Folder Include="TEST\lora-module" />
+    <Folder Include="TEST\EEPROM_module" />
+    <Folder Include="TEST\ADC_module" />
+    <Folder Include="TEST\PM_HAL" />
+    <Folder Include="TEST\SCD30_module" />
+    <Folder Include="util" />
+    <Folder Include="util\CRC8" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
