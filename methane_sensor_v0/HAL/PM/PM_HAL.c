@@ -8,8 +8,48 @@
 #include <xc.h>
 #include <avr/sleep.h>
 #include <avr/interrupt.h>
+#include <stdbool.h>
 #include "PM_HAL.h"
 #include "../../util/bit_operators.h"
+
+void PM_HAL_adc_power_init(){
+	set_bit(DDRA, 3);
+	clear_bit(PORTA, 3);
+}
+
+void PM_HAL_adc_power(bool on){
+	if(on){
+		set_bit(PORTA, 3);
+	}else{
+		clear_bit(PORTA, 3);
+	}
+}
+
+void PM_HAL_meth_power_init(){
+	set_bit(DDRA, 5);
+	clear_bit(PORTA, 5);
+}
+
+void PM_HAL_meth_power(bool on){
+	if(on){
+		set_bit(PORTA, 5);
+	}else{
+		clear_bit(PORTA, 5);
+	}
+}
+
+void PM_HAL_SCD30_power_init(){
+	set_bit(DDRA, 4);
+	clear_bit(PORTA, 4);
+}
+
+void PM_HAL_SCD30_power(bool on){
+	if(on){
+		set_bit(PORTA, 4);
+	}else{
+		clear_bit(PORTA, 4);
+	}
+}
 
 void PM_HAL_enter_power_down(){
 	clear_bit(DDRD, 2); //set PD2 as input

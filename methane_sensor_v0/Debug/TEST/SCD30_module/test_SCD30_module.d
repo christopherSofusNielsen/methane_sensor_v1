@@ -18,6 +18,10 @@ TEST/SCD30_module/test_SCD30_module.d \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
  ../TEST/SCD30_module/test_SCD30_module.h \
  ../TEST/SCD30_module/../../HAL/TWI/TWI_HAL.h \
  ../TEST/SCD30_module/../../HAL/UART1/UART1_HAL.h \
@@ -57,6 +61,14 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
 
 ../TEST/SCD30_module/test_SCD30_module.h:
 

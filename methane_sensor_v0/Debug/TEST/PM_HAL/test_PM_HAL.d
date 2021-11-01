@@ -19,8 +19,8 @@ TEST/PM_HAL/test_PM_HAL.d TEST/PM_HAL/test_PM_HAL.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
  ../TEST/PM_HAL/test_PM_HAL.h ../TEST/PM_HAL/../../HAL/PM/PM_HAL.h \
- ../TEST/PM_HAL/../../HAL/UART0/UART0_HAL.h \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ ../TEST/PM_HAL/../../HAL/UART0/UART0_HAL.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -62,6 +62,6 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
 
 ../TEST/PM_HAL/../../HAL/PM/PM_HAL.h:
 
-../TEST/PM_HAL/../../HAL/UART0/UART0_HAL.h:
-
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
+../TEST/PM_HAL/../../HAL/UART0/UART0_HAL.h:

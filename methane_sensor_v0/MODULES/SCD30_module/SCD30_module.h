@@ -19,7 +19,7 @@ typedef enum {
 	SCD30_STATUS_TRY_AGAIN
 }SCD30_STATUS;
 
-SCD30_STATUS SCD30_init(uint16_t interval);
+SCD30_STATUS SCD30_init(uint16_t samplingInterval, uint16_t nSamples, uint16_t data[]);
 SCD30_STATUS SCD30_get_reading(uint16_t *value);
 bool SCD30_data_ready();
 

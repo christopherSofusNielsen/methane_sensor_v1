@@ -13,21 +13,44 @@
 #include "../../HAL/SCD30/SCD30_HAL.h"
 #include "../../util/CRC8/CRC8.h"
 #include "../../util/to_float.h"
+#include "../../HAL/PM/PM_HAL.h"
 
-
+/************************************************************************/
+/* Constants                                                            */
+/************************************************************************/
 #define SCD30_ADDR 0x61
 
 const uint8_t TRIGGER_CONT_MEASUREMENT[]={0x00, 0x10, 0x00, 0x00, 0x81};
 const uint8_t SET_MEASUREMENT_INTERVAL[]={0x46, 0x00, 0x00, 0x02, 0xE3};
 const uint8_t READ_DATA_CMD[]={0x03, 0x00};
 const uint8_t DATA_READY_CMD[]={0x02, 0x02};
+
+/************************************************************************/
+/* Variables                                                            */
+/************************************************************************/
+uint16_t _nSamples;
+uint16_t *_data;
+uint16_t cntSamples;
 	
+/************************************************************************/
+/* Functions                                                            */
+/************************************************************************/
 static bool validate_data(uint8_t data[]);
 static uint16_t bytes_2_uint(uint8_t data[]);
 
-SCD30_STATUS SCD30_init(uint16_t interval){
+
+
+SCD30_STATUS SCD30_init(uint16_t samplingInterval, uint16_t nSamples, uint16_t data[]){
 	uint8_t status;
+	_nSamples=nSamples;
+	cntSamples=0;
+	_data=data;
+	
+	//Init
 	SCD30_HAL_init();
+	
+	PM_HAL_SCD30_power(true);
+	
 	
 	status=TWI_API_write_data_stop(SCD30_ADDR,  SET_MEASUREMENT_INTERVAL, 5);
 	if(status != TWI_CODE_SUCCESS) return SCD30_STATUS_FATAL_ERROR;

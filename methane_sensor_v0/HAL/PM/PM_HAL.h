@@ -8,8 +8,22 @@
 
 #ifndef PM_HAL_H_
 #define PM_HAL_H_
+#include <stdbool.h>
 
 void PM_HAL_enter_power_down();
+
+//ADC
+void PM_HAL_adc_power_init();
+void PM_HAL_adc_power(bool on);
+
+//Methane Sensor
+void PM_HAL_meth_power_init();
+void PM_HAL_meth_power(bool on);
+
+//SCD30
+void PM_HAL_SCD30_power_init();
+void PM_HAL_SCD30_power(bool on);
+
 
 
 #endif /* PM_HAL_H_ */

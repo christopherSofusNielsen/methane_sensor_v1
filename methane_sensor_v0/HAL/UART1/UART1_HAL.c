@@ -13,6 +13,7 @@
 #include "../../util/bit_operators.h"
 #include <avr/interrupt.h>
 #include <stdbool.h>
+#include <string.h>
 
 static void copy_buffer(uint8_t msg[]);
 
@@ -34,7 +35,16 @@ void uart1_hal_init(){
 	UBRR1=(8000000/(8*57600))-1; //set baudrate
 	sei();
 }
-
+void uart1_hal_send_string(const char msg[]){
+	for (uint8_t i=0; i<strlen(msg); i++)
+	{
+		tx_buffer[i]=(uint8_t)msg[i];
+	}
+	
+	tx_buffer_data_len=strlen(msg);
+	tx_buffer_cursor=1;
+	UDR1=tx_buffer[0];
+}
 
 void uart1_hal_send_message(uint8_t msg[], uint8_t length){
 	for (uint8_t i=0; i<length; i++)

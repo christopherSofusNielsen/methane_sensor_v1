@@ -17,7 +17,8 @@ main.d main.o: .././main.c \
  .././TEST/PM_HAL/test_PM_HAL.h \
  .././TEST/EEPROM_module/test_EEPROM_module.h \
  .././TEST/ADC_module/test_ADC_module.h \
- .././TEST/RTC_module/test_RTC_module.h
+ .././TEST/RTC_module/test_RTC_module.h .././TEST/TC0_HAL/test_TC0_HAL.h \
+ .././TEST/TC1_HAL/test_TC1_HAL.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -56,3 +57,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 .././TEST/ADC_module/test_ADC_module.h:
 
 .././TEST/RTC_module/test_RTC_module.h:
+
+.././TEST/TC0_HAL/test_TC0_HAL.h:
+
+.././TEST/TC1_HAL/test_TC1_HAL.h:

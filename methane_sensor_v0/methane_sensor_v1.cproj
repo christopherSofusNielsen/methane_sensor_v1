@@ -61,30 +61,35 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <com.microchip.xc8>
-  <com.microchip.xc8.common.optimization.RelaxBranches>True</com.microchip.xc8.common.optimization.RelaxBranches>
-  <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
-  <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
-  <com.microchip.xc8.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>(%24DeviceMacro)</Value>
-      <Value>NDEBUG</Value>
-    </ListValues>
-  </com.microchip.xc8.compiler.symbols.DefSymbols>
-  <com.microchip.xc8.compiler.optimization.level>Optimize for size (-Os)</com.microchip.xc8.compiler.optimization.level>
-  <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
-  <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
-  <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
-  <com.microchip.xc8.linker.libraries.Libraries>
-    <ListValues>
-      <Value>libm</Value>
-    </ListValues>
-  </com.microchip.xc8.linker.libraries.Libraries>
-</com.microchip.xc8>
+        <com.microchip.xc8.common.optimization.RelaxBranches>True</com.microchip.xc8.common.optimization.RelaxBranches>
+        <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <com.microchip.xc8.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>(%24DeviceMacro)</Value>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </com.microchip.xc8.compiler.symbols.DefSymbols>
+        <com.microchip.xc8.compiler.optimization.level>Optimize for size (-Os)</com.microchip.xc8.compiler.optimization.level>
+        <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
+        <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
+        <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
+        <com.microchip.xc8.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </com.microchip.xc8.linker.libraries.Libraries>
+      </com.microchip.xc8>
     </ToolchainSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <com.microchip.xc8>
+  <com.microchip.xc8.common.outputfiles.hex>True</com.microchip.xc8.common.outputfiles.hex>
+  <com.microchip.xc8.common.outputfiles.eep>True</com.microchip.xc8.common.outputfiles.eep>
+  <com.microchip.xc8.common.outputfiles.usersignatures>False</com.microchip.xc8.common.outputfiles.usersignatures>
+  <com.microchip.xc8.common.outputfiles.lss>True</com.microchip.xc8.common.outputfiles.lss>
+  <com.microchip.xc8.common.miscellaneous.CommonFlags>-D F_CPU=8000000UL</com.microchip.xc8.common.miscellaneous.CommonFlags>
   <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
   <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
   <com.microchip.xc8.compiler.symbols.DefSymbols>
@@ -127,6 +132,18 @@
     <Compile Include="HAL\SCD30\SCD30_HAL.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\TC0\TC0_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\TC0\TC0_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\TC1\TC1_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\TC1\TC1_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\TWI\TWI_API.c">
       <SubType>compile</SubType>
     </Compile>
@@ -137,6 +154,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\TWI\TWI_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\types.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\UART0\UART0_HAL.c">
@@ -244,6 +264,18 @@
     <Compile Include="TEST\PM_HAL\test_PM_HAL.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="TEST\TC0_HAL\test_TC0_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\TC0_HAL\test_TC0_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\TC1_HAL\test_TC1_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\TC1_HAL\test_TC1_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="util\bit_operators.h">
       <SubType>compile</SubType>
     </Compile>
@@ -259,6 +291,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HAL" />
+    <Folder Include="HAL\TC0" />
     <Folder Include="HAL\PM" />
     <Folder Include="HAL\TC1" />
     <Folder Include="HAL\SCD30" />
@@ -280,6 +313,8 @@
     <Folder Include="TEST\lora-module" />
     <Folder Include="TEST\EEPROM_module" />
     <Folder Include="TEST\ADC_module" />
+    <Folder Include="TEST\TC1_HAL" />
+    <Folder Include="TEST\TC0_HAL" />
     <Folder Include="TEST\RTC_module" />
     <Folder Include="TEST\PM_HAL" />
     <Folder Include="TEST\SCD30_module" />

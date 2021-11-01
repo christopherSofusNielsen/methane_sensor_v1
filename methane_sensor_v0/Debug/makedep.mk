@@ -8,6 +8,10 @@ HAL\RN2483\RN2483_HAL.c
 
 HAL\SCD30\SCD30_HAL.c
 
+HAL\TC0\TC0_HAL.c
+
+HAL\TC1\TC1_HAL.c
+
 HAL\TWI\TWI_API.c
 
 HAL\TWI\TWI_HAL.c
@@ -47,6 +51,10 @@ TEST\RTC_module\test_RTC_module.c
 TEST\SCD30_module\test_SCD30_module.c
 
 TEST\PM_HAL\test_PM_HAL.c
+
+TEST\TC0_HAL\test_TC0_HAL.c
+
+TEST\TC1_HAL\test_TC1_HAL.c
 
 util\CRC8\CRC8.c
 

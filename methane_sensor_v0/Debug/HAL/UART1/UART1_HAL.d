@@ -18,7 +18,9 @@ HAL/UART1/UART1_HAL.d HAL/UART1/UART1_HAL.o: ../HAL/UART1/UART1_HAL.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
  ../HAL/UART1/../../util/bit_operators.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h
 
 ../HAL/UART1/UART1_HAL.h:
 
@@ -59,3 +61,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 ../HAL/UART1/../../util/bit_operators.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:

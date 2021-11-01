@@ -14,6 +14,7 @@ HAL/PM/PM_HAL.d HAL/PM/PM_HAL.o: ../HAL/PM/PM_HAL.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\sleep.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  ../HAL/PM/PM_HAL.h ../HAL/PM/../../util/bit_operators.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
@@ -45,6 +46,8 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\sleep.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
 ../HAL/PM/PM_HAL.h:
 

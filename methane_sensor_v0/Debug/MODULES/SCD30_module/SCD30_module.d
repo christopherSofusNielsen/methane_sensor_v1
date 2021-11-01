@@ -22,7 +22,8 @@ MODULES/SCD30_module/SCD30_module.d MODULES/SCD30_module/SCD30_module.o: \
  ../MODULES/SCD30_module/../../HAL/TWI/TWI_HAL.h \
  ../MODULES/SCD30_module/../../HAL/SCD30/SCD30_HAL.h \
  ../MODULES/SCD30_module/../../util/CRC8/CRC8.h \
- ../MODULES/SCD30_module/../../util/to_float.h
+ ../MODULES/SCD30_module/../../util/to_float.h \
+ ../MODULES/SCD30_module/../../HAL/PM/PM_HAL.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
 
@@ -69,3 +70,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../MODULES/SCD30_module/../../util/CRC8/CRC8.h:
 
 ../MODULES/SCD30_module/../../util/to_float.h:
+
+../MODULES/SCD30_module/../../HAL/PM/PM_HAL.h:
