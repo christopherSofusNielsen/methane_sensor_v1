@@ -21,31 +21,27 @@
 #include "../../HAL/UART1/UART1_HAL.h"
 #include "../../HAL/TWI/TWI_API.h"
 #include "../../MODULES/SCD30_module/SCD30_module.h"
+#include "../../HAL/PM/PM_HAL.h"
 
 
 
 
 void read_firmware_api();
 void throw_error(uint8_t status, uint8_t index);
-void test_init();
+static void test_sampling();
 void test_get_reading();
-void test_data_ready();
 void read_measure_interval();
 
 void test_SCD30_module_start(){
 		uart1_hal_init();
-		test_init();
+		PM_HAL_SCD30_power_init();
 		
 		while(1){
 			//read_firmware_api();
-			test_init();
-			
-			
-			//Old
+			test_sampling();
 			//test_get_reading();
-			//test_data_ready();
 			
-			//read_measure_interval();
+
 		
 			_delay_ms(1500);
 		}
@@ -56,65 +52,36 @@ void test_SCD30_module_start(){
 /************************************************************************/
 /* Test init of SCD30 and timer                                         */
 /************************************************************************/
-void test_init(){
-	//SCD30_STATUS status=SCD30_init();
-	SCD30_STATUS status=SCD30_STATUS_ERROR;
-	if(status==SCD30_STATUS_SUCCESS){
-		uart1_hal_send_string("OK ");
-	}else{
+static void test_sampling(){
+	uint16_t data[10];
+	
+	SCD30_STATUS status=SCD30_init_sampling(20000, 10, data);
+	if(status!=SCD30_STATUS_SUCCESS){
 		uart1_hal_send_string("FAIL ");
 	}
-}
-
-
-
-
-
-void read_measure_interval(){
-	const  uint8_t SET_MEASUREMENT_INTERVAL[]={0x46, 0x00, 0x00, 0x09, 0x09};
-	uint8_t write[]={0x46, 0x00};
-	uint8_t data[3];
 	
-	TWI_API_write_data_stop(0x61, SET_MEASUREMENT_INTERVAL, 5);
-	_delay_ms(10);
 	
-	TWI_API_write_data_stop(0x61, write, 2);
-	_delay_ms(10);
+	SCD30_start_sampling();
+	while(!SCD30_is_sampling_done()){};
 	
-	TWI_API_read_data_ack_end_nack_stop(0x61, data, 3);
-	
-	uart1_hal_send_message(data, 3);
-	
-}
-
-void test_data_ready(){
-	bool ready=SCD30_data_ready();
-	if(ready==true){
-		char msg[]="OK";
-		uart1_hal_send_message((uint8_t*)msg, 3);
-	}else{
-		char msg[]="FAIL";
-		uart1_hal_send_message((uint8_t*)msg, 5);
+	for (uint8_t i=0; i<10; i++)
+	{
+		char msg[20];
+		sprintf(msg, " %u ", data[i]);
+		uart1_hal_send_string(msg);
+		_delay_ms(200);
 	}
 }
-
-
 
 void test_get_reading(){
-	char data[20];
-	uint16_t value;
 	
-	SCD30_STATUS status=SCD30_get_reading(&value);
-	if(status==SCD30_STATUS_SUCCESS){
-		sprintf(data, "%u ", value);
-		uart1_hal_send_message((uint8_t *)data, strlen(data));
-	}else if(status==SCD30_STATUS_TRY_AGAIN){
-		char msg[]={0xEE, 0xEE};
-		uart1_hal_send_message((uint8_t*)msg, 2);
-	}else{
-		char msg[]={0xFF, 0xFF};
-		uart1_hal_send_message((uint8_t*)msg, 2);
-	}
+	uint16_t value;
+	SCD30_get_reading(&value);
+	
+	char msg[20];
+	sprintf(msg, " %u ", value);
+	
+	uart1_hal_send_string(msg);
 }
 
 

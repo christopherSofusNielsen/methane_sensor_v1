@@ -7,6 +7,7 @@ MODULES/SCD30_module/SCD30_module.d MODULES/SCD30_module/SCD30_module.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
  ../MODULES/SCD30_module/SCD30_module.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\cci.h \
@@ -23,7 +24,9 @@ MODULES/SCD30_module/SCD30_module.d MODULES/SCD30_module/SCD30_module.o: \
  ../MODULES/SCD30_module/../../HAL/SCD30/SCD30_HAL.h \
  ../MODULES/SCD30_module/../../util/CRC8/CRC8.h \
  ../MODULES/SCD30_module/../../util/to_float.h \
- ../MODULES/SCD30_module/../../HAL/PM/PM_HAL.h
+ ../MODULES/SCD30_module/../../HAL/PM/PM_HAL.h \
+ ../MODULES/SCD30_module/../../HAL/TC1/TC1_HAL.h \
+ ../MODULES/SCD30_module/../../HAL/TC1/../types.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
 
@@ -38,6 +41,8 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
 
 ../MODULES/SCD30_module/SCD30_module.h:
 
@@ -72,3 +77,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../MODULES/SCD30_module/../../util/to_float.h:
 
 ../MODULES/SCD30_module/../../HAL/PM/PM_HAL.h:
+
+../MODULES/SCD30_module/../../HAL/TC1/TC1_HAL.h:
+
+../MODULES/SCD30_module/../../HAL/TC1/../types.h:

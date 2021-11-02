@@ -11,10 +11,10 @@
 #include <stdbool.h>
 
 void SCD30_HAL_init(){
-	clear_bit(DDRD, 3);
-	clear_bit(PORTD, 3);
+	clear_bit(DDRC, 6);
+	clear_bit(PORTC, 6);
 }
 
 bool SCD30_HAL_data_ready(){
-	return get_bit(PIND, 3);
+	return get_bit(PINC, 6);
 }

@@ -21,13 +21,13 @@
 int main(void)
 {
 	//test_lora_module_start();
-	//test_SCD30_module_start();
+	test_SCD30_module_start();
     //test_PM_HAL_start();
 	//test_EEPROM_module_start();
 	//test_ADC_module_start();
 	//test_RTC_module_start();
 	//test_TC0_HAL_start();
-	test_TC1_HAL_start();
+	//test_TC1_HAL_start();
 	
 	while(1)
     {

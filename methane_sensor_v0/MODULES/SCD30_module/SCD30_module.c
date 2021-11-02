@@ -7,6 +7,7 @@
 
 #include <util/delay.h>
 #include <stdbool.h>
+#include <stddef.h>
 #include "SCD30_module.h"
 #include "../../HAL/TWI/TWI_API.h"
 #include "../../HAL/TWI/TWI_HAL.h"
@@ -14,6 +15,7 @@
 #include "../../util/CRC8/CRC8.h"
 #include "../../util/to_float.h"
 #include "../../HAL/PM/PM_HAL.h"
+#include "../../HAL/TC1/TC1_HAL.h"
 
 /************************************************************************/
 /* Constants                                                            */
@@ -37,70 +39,61 @@ uint16_t cntSamples;
 /************************************************************************/
 static bool validate_data(uint8_t data[]);
 static uint16_t bytes_2_uint(uint8_t data[]);
+static void vect_SCD_do_sample();
+static SCD30_STATUS read_value(uint16_t *value);
+static SCD30_STATUS init_measurement();
 
 
 
-SCD30_STATUS SCD30_init(uint16_t samplingInterval, uint16_t nSamples, uint16_t data[]){
-	uint8_t status;
+SCD30_STATUS SCD30_init_sampling(uint16_t samplingInterval, uint16_t nSamples, uint16_t data[]){
 	_nSamples=nSamples;
 	cntSamples=0;
 	_data=data;
 	
 	//Init
 	SCD30_HAL_init();
-	
+	TC1_HAL_init(samplingInterval, &vect_SCD_do_sample);
 	PM_HAL_SCD30_power(true);
+	_delay_ms(2000);
 	
+	return init_measurement();
+}
+
+void SCD30_deinit(){
+	TC1_HAL_stop();
+	PM_HAL_SCD30_power(false);
+	_data=NULL;
 	
-	status=TWI_API_write_data_stop(SCD30_ADDR,  SET_MEASUREMENT_INTERVAL, 5);
-	if(status != TWI_CODE_SUCCESS) return SCD30_STATUS_FATAL_ERROR;
-	
-	status=TWI_API_write_data_stop(SCD30_ADDR,  TRIGGER_CONT_MEASUREMENT, 5);
-	if(status != TWI_CODE_SUCCESS) return SCD30_STATUS_FATAL_ERROR;
-	
-	//Wait for data_ready pin to go high
-	while(!SCD30_HAL_data_ready()){};
-		
+}
+
+SCD30_STATUS SCD30_start_sampling(){
+	vect_SCD_do_sample();
+	TC1_HAL_start();
 	return SCD30_STATUS_SUCCESS;
 }
 
-SCD30_STATUS SCD30_get_reading(uint16_t *value){
-	uint8_t status;
-	uint8_t data[6];
-	*value=0xffff;
+bool SCD30_is_sampling_done(){
+	return cntSamples>=_nSamples;
+}
 
-	if(!SCD30_HAL_data_ready()) return SCD30_STATUS_TRY_AGAIN;	
+
+SCD30_STATUS SCD30_get_reading(uint16_t *value){
+	PM_HAL_SCD30_power(true);
+	_delay_ms(2000);
 	
-	status=TWI_API_write_data_stop(SCD30_ADDR,   READ_DATA_CMD, 2);
-	if(status != TWI_CODE_SUCCESS) return SCD30_STATUS_ERROR;
+	SCD30_STATUS status=init_measurement();
+	if(status!=SCD30_STATUS_SUCCESS) return status;
 	
-	_delay_ms(4); 
-	
-	status=TWI_API_read_data_ack_end_nack_stop(SCD30_ADDR, data, 6);
-	if(status != TWI_CODE_SUCCESS) return SCD30_STATUS_ERROR;
-	
-	if(!validate_data(data)) return SCD30_STATUS_ERROR;
-	
-	*value=bytes_2_uint(data);
-	
-	return SCD30_STATUS_SUCCESS;
+	while(!SCD30_HAL_data_ready()){};
+		
+	return read_value(value);
 }
 
 bool SCD30_data_ready(){
-	uint8_t status;
-	uint8_t data[3];
-	
-	status=TWI_API_write_data_stop(SCD30_ADDR,  DATA_READY_CMD, 2);
-	if(status != TWI_CODE_SUCCESS) return false;
-	
-	_delay_ms(4); 
-	
-	status=TWI_API_read_data_ack_end_nack_stop(SCD30_ADDR, data, 3);
-	if(status != TWI_CODE_SUCCESS) return false;
-	
-	if(data[1]==0x01) return true;
-	return false;
+	return SCD30_HAL_data_ready();
 }
+
+
 
 /************************************************************************/
 /* Local functions                                                      */
@@ -128,4 +121,53 @@ static uint16_t bytes_2_uint(uint8_t data[]){
 	return (uint16_t) f.f;
 }
 
+static SCD30_STATUS init_measurement(){
+	SCD30_STATUS status;
+	status=TWI_API_write_data_stop(SCD30_ADDR,  SET_MEASUREMENT_INTERVAL, 5);
+	if(status != TWI_CODE_SUCCESS) return SCD30_STATUS_FATAL_ERROR;
+	
+	status=TWI_API_write_data_stop(SCD30_ADDR,  TRIGGER_CONT_MEASUREMENT, 5);
+	if(status != TWI_CODE_SUCCESS) return SCD30_STATUS_FATAL_ERROR;
+	
+	//Wait for data_ready pin to go high
+	while(!SCD30_HAL_data_ready()){};
+	
+	return SCD30_STATUS_SUCCESS;
+}
+
+static SCD30_STATUS read_value(uint16_t *value){
+	uint8_t status;
+	uint8_t data[6];
+	*value=0xffff;
+
+	if(!SCD30_HAL_data_ready()){
+		*value=0xfffe;
+		return SCD30_STATUS_TRY_AGAIN;
+	}
+	
+	
+	status=TWI_API_write_data_stop(SCD30_ADDR,   READ_DATA_CMD, 2);
+	if(status != TWI_CODE_SUCCESS) return SCD30_STATUS_ERROR;
+	
+	_delay_ms(4);
+	
+	status=TWI_API_read_data_ack_end_nack_stop(SCD30_ADDR, data, 6);
+	if(status != TWI_CODE_SUCCESS) return SCD30_STATUS_ERROR;
+	
+	if(!validate_data(data)) return SCD30_STATUS_ERROR;
+	
+	*value=bytes_2_uint(data);
+	
+	return SCD30_STATUS_SUCCESS;
+}
+
+/************************************************************************/
+/* Interrupts                                                           */
+/************************************************************************/
+static void vect_SCD_do_sample(){
+	read_value(&(_data[cntSamples++]));
+	if(cntSamples>=_nSamples){
+		TC1_HAL_stop();
+	}
+}
 
