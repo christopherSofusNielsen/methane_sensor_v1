@@ -27,6 +27,7 @@ typedef enum {
 
 void TWI_HAL_init();
 uint8_t TWI_HAL_start(uint8_t addr, TWI_HAL_START_TYPE type);
+uint8_t TWI_HAL_repeated_start(uint8_t addr);
 uint8_t TWI_HAL_write_byte(uint8_t data);
 uint8_t TWI_HAL_read_byte_ack();
 uint8_t TWI_HAL_read_byte_nack();

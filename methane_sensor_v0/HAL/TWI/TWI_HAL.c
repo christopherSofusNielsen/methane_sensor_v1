@@ -13,6 +13,7 @@
 
 
 #define TWI_CODE_START 0x08
+#define TWI_CODE_REP_START 0x10
 #define TWI_CODE_ADDR_W_TRANS_ACK_REC 0x18
 #define TWI_CODE_ADDR_W_TRANS_NACK_REC 0x20
 #define TWI_CODE_ADDR_R_TRANS_ACK_REC 0x40
@@ -48,6 +49,28 @@ uint8_t TWI_HAL_start(uint8_t addr, TWI_HAL_START_TYPE type){
 	status=twi_read_status(TWSR);
 	
 	if(status == TWI_CODE_ADDR_W_TRANS_ACK_REC || status==TWI_CODE_ADDR_R_TRANS_ACK_REC) return TWI_CODE_SUCCESS; //Success
+	
+	return status;
+}
+
+uint8_t TWI_HAL_repeated_start(uint8_t addr){
+	uint8_t addr_type=(addr<<1) | 1;
+	uint8_t status;
+	
+	TWCR=twi_start_transmission |(1<<TWSTA); //Send start condition
+	
+	while (!get_bit(TWCR, TWINT)); //Wait to finish job
+	status=twi_read_status(TWSR);
+	
+	if(status != TWI_CODE_REP_START) return status; //Check status is success
+	
+	TWDR=addr_type; //Set Write addr
+	TWCR=twi_start_transmission; //Start transmission of addr
+	
+	while (!get_bit(TWCR, TWINT)); //Wait to finish job
+	status=twi_read_status(TWSR);
+	
+	if(status==TWI_CODE_ADDR_R_TRANS_ACK_REC) return TWI_CODE_SUCCESS;
 	
 	return status;
 }

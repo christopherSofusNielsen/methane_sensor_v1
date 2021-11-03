@@ -15,6 +15,7 @@
 
 
 static uint8_t start_and_write_data(uint8_t slaveAddr, const uint8_t data[], uint8_t length);
+static uint8_t read_and_stop(uint8_t data[], uint8_t length);
 
 uint8_t TWI_API_write_data(uint8_t slaveAddr, const uint8_t data[], uint8_t length){
 	return start_and_write_data(slaveAddr, data, length);
@@ -33,14 +34,26 @@ uint8_t TWI_API_read_data_ack_end_nack_stop(uint8_t slaveAddr, uint8_t data[], u
 	status=TWI_HAL_start(slaveAddr, READ);
 	if(status!=TWI_CODE_SUCCESS) return status;
 	
-	for (uint8_t i=0; i<length-1; i++)
-	{
-		data[i]=TWI_HAL_read_byte_ack();
-	}
-	data[length-1]=TWI_HAL_read_byte_nack();
+	return read_and_stop(data, length);
 	
-	TWI_HAL_stop();
-	return TWI_CODE_SUCCESS;
+	//for (uint8_t i=0; i<length-1; i++)
+	//{
+		//data[i]=TWI_HAL_read_byte_ack();
+	//}
+	//data[length-1]=TWI_HAL_read_byte_nack();
+	//
+	//TWI_HAL_stop();
+	//return TWI_CODE_SUCCESS;
+}
+
+uint8_t TWI_API_repeat_read_data_stop(uint8_t slaveAddr, uint8_t data[], uint8_t length){
+	uint8_t status;
+	
+	status=TWI_HAL_repeated_start(slaveAddr);
+	if(status!=TWI_CODE_SUCCESS) return status;
+	
+	return read_and_stop(data, length);
+	
 }
 
 
@@ -61,6 +74,17 @@ static uint8_t start_and_write_data(uint8_t slaveAddr, const uint8_t data[], uin
 		status=TWI_HAL_write_byte(data[i]);
 		if(status!=TWI_CODE_SUCCESS) return status;
 	}
+	return TWI_CODE_SUCCESS;
+}
+
+static uint8_t read_and_stop(uint8_t data[], uint8_t length){
+	for (uint8_t i=0; i<length-1; i++)
+	{
+		data[i]=TWI_HAL_read_byte_ack();
+	}
+	data[length-1]=TWI_HAL_read_byte_nack();
+	
+	TWI_HAL_stop();
 	return TWI_CODE_SUCCESS;
 }
 

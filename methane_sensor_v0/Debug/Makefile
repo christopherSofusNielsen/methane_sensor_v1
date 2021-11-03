@@ -51,6 +51,7 @@ SUBDIRS :=  \
 ../MODULES/lora_module/RN2483_protocol \
 ../MODULES/EEPROM_module \
 ../MODULES/ADC_module \
+../MODULES/RTC_module \
 ../MODULES/SCD30_module \
 ../TEST \
 ../TEST/lora-module \
@@ -85,6 +86,7 @@ C_SRCS +=  \
 ../MODULES/lora_module/send_uplink/send_uplink.c \
 ../MODULES/lora_module/sleep_controller/sleep_controller.c \
 ../MODULES/lora_module/util/util.c \
+../MODULES/RTC_module/RTC_module.c \
 ../MODULES/SCD30_module/SCD30_module.c \
 ../TEST/ADC_module/test_ADC_module.c \
 ../TEST/EEPROM_module/test_EEPROM_module.c \
@@ -122,6 +124,7 @@ MODULES/lora_module/RN2483_protocol/RN2483_protocol.o \
 MODULES/lora_module/send_uplink/send_uplink.o \
 MODULES/lora_module/sleep_controller/sleep_controller.o \
 MODULES/lora_module/util/util.o \
+MODULES/RTC_module/RTC_module.o \
 MODULES/SCD30_module/SCD30_module.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
@@ -152,6 +155,7 @@ MODULES/lora_module/RN2483_protocol/RN2483_protocol.o \
 MODULES/lora_module/send_uplink/send_uplink.o \
 MODULES/lora_module/sleep_controller/sleep_controller.o \
 MODULES/lora_module/util/util.o \
+MODULES/RTC_module/RTC_module.o \
 MODULES/SCD30_module/SCD30_module.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
@@ -182,6 +186,7 @@ MODULES/lora_module/RN2483_protocol/RN2483_protocol.d \
 MODULES/lora_module/send_uplink/send_uplink.d \
 MODULES/lora_module/sleep_controller/sleep_controller.d \
 MODULES/lora_module/util/util.d \
+MODULES/RTC_module/RTC_module.d \
 MODULES/SCD30_module/SCD30_module.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
@@ -212,6 +217,7 @@ MODULES/lora_module/RN2483_protocol/RN2483_protocol.d \
 MODULES/lora_module/send_uplink/send_uplink.d \
 MODULES/lora_module/sleep_controller/sleep_controller.d \
 MODULES/lora_module/util/util.d \
+MODULES/RTC_module/RTC_module.d \
 MODULES/SCD30_module/SCD30_module.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
@@ -357,6 +363,13 @@ MODULES/lora_module/sleep_controller/sleep_controller.o: ../MODULES/lora_module/
 	
 
 MODULES/lora_module/util/util.o: ../MODULES/lora_module/util/util.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MODULES/RTC_module/RTC_module.o: ../MODULES/RTC_module/RTC_module.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

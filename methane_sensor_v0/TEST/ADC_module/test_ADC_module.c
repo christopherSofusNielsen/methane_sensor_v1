@@ -30,7 +30,7 @@ void test_heater();
 
 void test_ADC_module_start(){
 	uart1_hal_init();
-	
+	TWI_HAL_init();
 	while(1){
 		test_calc_ppm_methane();
 		//read_adc();

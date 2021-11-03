@@ -38,6 +38,8 @@ MODULES\lora_module\sleep_controller\sleep_controller.c
 
 MODULES\lora_module\util\util.c
 
+MODULES\RTC_module\RTC_module.c
+
 MODULES\SCD30_module\SCD30_module.c
 
 TEST\ADC_module\test_ADC_module.c

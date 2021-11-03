@@ -53,9 +53,9 @@ void test_SCD30_module_start(){
 /* Test init of SCD30 and timer                                         */
 /************************************************************************/
 static void test_sampling(){
-	uint16_t data[10];
+	uint16_t data[5];
 	
-	SCD30_STATUS status=SCD30_init_sampling(20000, 10, data);
+	SCD30_STATUS status=SCD30_init_sampling(20000, 5, data);
 	if(status!=SCD30_STATUS_SUCCESS){
 		uart1_hal_send_string("FAIL ");
 	}
@@ -64,7 +64,7 @@ static void test_sampling(){
 	SCD30_start_sampling();
 	while(!SCD30_is_sampling_done()){};
 	
-	for (uint8_t i=0; i<10; i++)
+	for (uint8_t i=0; i<5; i++)
 	{
 		char msg[20];
 		sprintf(msg, " %u ", data[i]);

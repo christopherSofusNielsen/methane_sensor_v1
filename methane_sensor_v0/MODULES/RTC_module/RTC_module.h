@@ -1,0 +1,46 @@
+/*
+ * RTC_module.h
+ *
+ * Created: 02-11-2021 16:14:44
+ *  Author: Mainframe
+ */ 
+
+
+#ifndef RTC_MODULE_H_
+#define RTC_MODULE_H_
+
+#include <xc.h>
+
+typedef enum {
+	RTC_STATUS_SUCCESS,
+	RTC_STATUS_ERROR,
+	RTC_STATUS_FATAL_ERROR,
+	RTC_STATUS_TRY_AGAIN
+}RTC_STATUS;
+
+typedef struct Datetimes{
+	uint8_t second;
+	uint8_t minute;
+	uint8_t hour;
+	uint8_t day;
+	uint8_t month;
+	uint8_t year;
+}Datetime;
+
+typedef struct DatetimesBCD{
+	uint8_t second;
+	uint8_t minute;
+	uint8_t hour;
+	uint8_t day;
+	uint8_t month;
+	uint8_t year;
+}DatetimeBCD;
+
+
+
+RTC_STATUS RTC_get_current_time(Datetime *dt);
+RTC_STATUS RTC_set_current_time(Datetime dt);
+void datetime_to_BCD(Datetime dt, DatetimeBCD *bcd);
+void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt);
+
+#endif /* RTC_MODULE_H_ */

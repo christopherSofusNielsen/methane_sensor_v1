@@ -10,49 +10,160 @@
 #include <xc.h>
 #include <util/delay.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "test_RTC_module.h"
 #include "../../HAL/TWI/TWI_HAL.h"
 #include "../../HAL/UART1/UART1_HAL.h"
 #include "../../HAL/TWI/TWI_API.h"
 #include "../../util/bit_operators.h"
+#include "../../MODULES/RTC_module/RTC_module.h"
 
 #define SLAVE_ADDR 0x51
 
-void test_read_clk();
-void test_write_clk();
+static void test_read_clk();
+static void test_write_clk();
+static void test_read_time();
+static void test_dec_to_bcd();
+static void test_bcd_to_dec();
+static void test_get_current_time();
+static void sendTime(uint8_t val);
+static void sendISO(Datetime dt, char msg[]);
+static void test_set_current_time();
+
+
 
 void test_RTC_module_start(){
 	uart1_hal_init();
-	
-	
 	TWI_HAL_init();
-	
 
 	while(1){
+		
+		
+		//Old shit
 		//test_read_clk();
-		test_write_clk();
+		//test_write_clk();
+		//test_read_time();
+		//test_dec_to_bcd();
+		//test_bcd_to_dec();
+		//test_set_current_time();
+		//test_get_current_time();
 		
 		_delay_ms(1500);
 	}
 }
 
-void test_read_clk(){
+
+static void test_get_current_time(){
+	Datetime dt;
+	
+	RTC_STATUS status= RTC_get_current_time(&dt);
+	
+	if(status != RTC_STATUS_SUCCESS){
+		uart1_hal_send_string("Fail");
+		return;
+	}
+	
+	//sendTime(dt.hour);
+	//sendTime(dt.minute);
+	//sendTime(dt.second);
+	
+	char msg[50];
+	sendISO(dt, msg);
+	uart1_hal_send_string(msg);
+	
+	_delay_ms(2000);
+}
+
+static void test_set_current_time(){
+	Datetime dt={
+		.second=0,
+		.minute=0,
+		.hour=10,
+		.day=3,
+		.month=11,
+		.year=21	
+	};
+	
+	RTC_STATUS status= RTC_set_current_time(dt);
+	if(status!=RTC_STATUS_SUCCESS) {
+		uart1_hal_send_string(" Fail ");
+		return;
+	}else{
+		uart1_hal_send_string(" OK ");
+	}
+	_delay_ms(1000);
+}
+
+static void sendTime(uint8_t val){
+	char msg[10];
+	sprintf(msg, " %u ", val);
+	uart1_hal_send_string(msg);
+	_delay_ms(20);
+}
+
+static void sendISO(Datetime dt, char msg[]){
+	sprintf(msg, "%04u-%02u-%02uT%02u:%02u:%02u", dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second);
+}
+
+static void test_dec_to_bcd(){
+	DatetimeBCD bcd;
+	Datetime dt={
+		.second=11,
+		.minute=22,
+		.hour=33,
+		.day=44,
+		.month=55,
+		.year=66
+	};
+	
+	datetime_to_BCD(dt, &bcd);
+	uart1_hal_send_message(&bcd.second, 6);
+	_delay_ms(1000);
+}
+
+static void test_bcd_to_dec(){
+	DatetimeBCD bcd={
+		.second=0x11,
+		.minute=0x22,
+		.hour=0x33,
+		.day=0x44,
+		.month=0x55,
+		.year=0x66
+	};
+	Datetime dt;
+	
+	BCD_to_datetime(bcd, &dt);
+	uart1_hal_send_message(&dt.second, 6);
+	_delay_ms(1000);
+}
+
+
+/************************************************************************/
+/* Direct debug functions                                               */
+/************************************************************************/
+
+static void test_read_clk(){
 	uint8_t CMD_READ_CLK[]={0x0D};
 	uint8_t data[10];
+	uint8_t status1;
+	uint8_t status2;
 	
 	
 	//Set register pointer
-	TWI_API_write_data_stop(SLAVE_ADDR, CMD_READ_CLK, 1);
+	status1=TWI_API_write_data_stop(SLAVE_ADDR, CMD_READ_CLK, 1);
 	
 	//Read value
-	TWI_API_read_data_ack_end_nack_stop(SLAVE_ADDR, data, 1);
+	status2=TWI_API_read_data_ack_end_nack_stop(SLAVE_ADDR, data, 1);
 	
-	uart1_hal_send_message(data, 1);
+	data[1]=status1;
+	data[2]=status2;
+	
+	uart1_hal_send_message(data, 3);
 	
 }
 
-void test_write_clk(){
+static void test_write_clk(){
 	//Set pull up
 	set_bit(PORTB, 0);
 	set_bit(PORTB, 1);
@@ -75,5 +186,23 @@ void test_write_clk(){
 	
 	uart1_hal_send_message(data, 1);
 	
+}
+
+static void test_read_time(){
+	uint8_t CMD_SET_POINTER[]={0x02};
+	uint8_t data[9];
+	uint8_t status1;
+	uint8_t status2;
+	
+	status1=TWI_API_write_data(SLAVE_ADDR, CMD_SET_POINTER, 1);
+	status2=TWI_API_repeat_read_data_stop(SLAVE_ADDR, data, 7);
+	
+	
+	data[7]=status1;
+	data[8]=status2;
+	
+	
+	uart1_hal_send_message(data, 9);
+	_delay_ms(3000);
 }
 
