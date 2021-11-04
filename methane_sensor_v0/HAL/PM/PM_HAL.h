@@ -24,6 +24,10 @@ void PM_HAL_meth_power(bool on);
 void PM_HAL_SCD30_power_init();
 void PM_HAL_SCD30_power(bool on);
 
+//Boost Converter BC
+void PM_HAL_BC_power_init();
+void PM_HAL_BC_power(bool on);
+
 
 
 #endif /* PM_HAL_H_ */

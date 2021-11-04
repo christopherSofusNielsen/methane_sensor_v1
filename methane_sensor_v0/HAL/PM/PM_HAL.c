@@ -51,6 +51,19 @@ void PM_HAL_SCD30_power(bool on){
 	}
 }
 
+void PM_HAL_BC_power_init(){
+	set_bit(DDRD, 4);
+	clear_bit(PORTD, 4);
+}
+
+void PM_HAL_BC_power(bool on){
+	if(on){
+		set_bit(PORTD, 4);
+	}else{
+		clear_bit(PORTD, 4);
+	}
+}
+
 void PM_HAL_enter_power_down(){
 	clear_bit(DDRB, 2); //set PB2 as input
 	set_bit(PORTB, 2); //Enbale pull up
