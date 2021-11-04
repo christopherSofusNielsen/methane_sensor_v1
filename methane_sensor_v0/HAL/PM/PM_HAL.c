@@ -52,24 +52,24 @@ void PM_HAL_SCD30_power(bool on){
 }
 
 void PM_HAL_enter_power_down(){
-	clear_bit(DDRD, 2); //set PD2 as input
-	set_bit(PORTD, 2); //Enbale pull up
+	clear_bit(DDRB, 2); //set PB2 as input
+	set_bit(PORTB, 2); //Enbale pull up
 	
 	//Set faling edge interrupt
-	clear_bit(EICRA, 0);
-	set_bit(EICRA, 1);
+	clear_bit(EICRA, 4);
+	set_bit(EICRA, 5);
 	
 	//Enable interrupt
-	set_bit(EIMSK, 0);
+	set_bit(EIMSK, 2);
 	
 	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 	sleep_enable();
 	sei();
 	sleep_cpu();
 	sleep_disable();
-	clear_bit(EIMSK, 0);
+	clear_bit(EIMSK, 2);
 }
 
-ISR(INT0_vect){
+ISR(INT2_vect){
 	
 }

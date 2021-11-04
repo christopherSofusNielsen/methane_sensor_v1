@@ -18,6 +18,7 @@
 #include "../../HAL/TWI/TWI_API.h"
 #include "../../util/bit_operators.h"
 #include "../../MODULES/RTC_module/RTC_module.h"
+#include "../../HAL/PM/PM_HAL.h"
 
 #define SLAVE_ADDR 0x51
 
@@ -30,6 +31,7 @@ static void test_get_current_time();
 static void sendTime(uint8_t val);
 static void sendISO(Datetime dt, char msg[]);
 static void test_set_current_time();
+static void test_set_wake_up();
 
 
 
@@ -48,8 +50,45 @@ void test_RTC_module_start(){
 		//test_bcd_to_dec();
 		//test_set_current_time();
 		//test_get_current_time();
+		//test_set_wake_up();
 		
 		_delay_ms(1500);
+	}
+}
+
+static void test_set_wake_up(){
+	RTC_STATUS status;
+	Datetime dt={
+		.second=0,
+		.minute=59,
+		.hour=9,
+		.day=3,
+		.month=11,
+		.year=21
+	};
+	
+	status = RTC_set_current_time(dt);
+	if(status != RTC_STATUS_SUCCESS){
+		uart1_hal_send_string("Failed set time ");
+		return;
+	}
+	
+	status=RTC_set_wake_up_interrupt(1);
+	if(status != RTC_STATUS_SUCCESS){
+		uart1_hal_send_string("Failed set intr ");
+		return;
+	}
+	
+	uart1_hal_send_string("Sleep ");
+	_delay_ms(200);
+	PM_HAL_enter_power_down();
+	uart1_hal_send_string("Awake ");
+	_delay_ms(200);
+	
+	status=RTC_clear_wake_up_interrupt();
+	if(status != RTC_STATUS_SUCCESS){
+		uart1_hal_send_string("Failed to clear ");
+		return;
 	}
 }
 

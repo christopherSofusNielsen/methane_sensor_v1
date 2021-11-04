@@ -40,6 +40,8 @@ typedef struct DatetimesBCD{
 
 RTC_STATUS RTC_get_current_time(Datetime *dt);
 RTC_STATUS RTC_set_current_time(Datetime dt);
+RTC_STATUS RTC_set_wake_up_interrupt(uint8_t hours);
+RTC_STATUS RTC_clear_wake_up_interrupt();
 void datetime_to_BCD(Datetime dt, DatetimeBCD *bcd);
 void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt);
 

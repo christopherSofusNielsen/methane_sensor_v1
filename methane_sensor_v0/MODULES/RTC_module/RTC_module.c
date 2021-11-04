@@ -16,6 +16,37 @@
 #define RTC_ADDR 0x51
 
 const uint8_t CMD_READ_TIME_POINTER[]={0x02};
+	
+RTC_STATUS RTC_set_wake_up_interrupt(uint8_t hours){
+	uint8_t CMD_ENABLE_RTC_INT[]={0x01, 0b00000010};
+	uint8_t CMD_SET_ALARM_TIME[]={0x09, 0x80, 0x80, 0x80, 0x80};
+	
+	//Read time 
+	Datetime dt;
+	RTC_get_current_time(&dt);
+	
+	//add hours
+	dt.hour += hours;
+	dt.hour %= 24;
+	
+	//Enable int
+	uint8_t status = TWI_API_write_data_stop(RTC_ADDR, CMD_ENABLE_RTC_INT, 2);
+	if(status != TWI_CODE_SUCCESS) return RTC_STATUS_FATAL_ERROR;
+	
+	//Set time
+	CMD_SET_ALARM_TIME[2]=decToBCD(dt.hour);
+	status = TWI_API_write_data_stop(RTC_ADDR, CMD_SET_ALARM_TIME, 5);
+	if(status != TWI_CODE_SUCCESS) return RTC_STATUS_FATAL_ERROR;
+	
+	return RTC_STATUS_SUCCESS;
+}
+
+RTC_STATUS RTC_clear_wake_up_interrupt(){
+	uint8_t CMD_ENABLE_RTC_CLEAR_INT[]={0x01, 0b00000000};
+	uint8_t status = TWI_API_write_data_stop(RTC_ADDR, CMD_ENABLE_RTC_CLEAR_INT, 2);
+	if(status != TWI_CODE_SUCCESS) return RTC_STATUS_FATAL_ERROR;
+	return RTC_STATUS_SUCCESS;
+}
 
 RTC_STATUS RTC_get_current_time(Datetime *dt){
 	uint8_t data[7];
