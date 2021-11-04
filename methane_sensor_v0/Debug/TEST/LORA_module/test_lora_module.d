@@ -1,10 +1,13 @@
-HAL/UART0/UART0_HAL.d HAL/UART0/UART0_HAL.o: ../HAL/UART0/UART0_HAL.c \
+TEST/LORA_module/test_lora_module.d TEST/LORA_module/test_lora_module.o: \
+ ../TEST/LORA_module/test_lora_module.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\inttypes.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdint.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdint.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
+ ../TEST/LORA_module/test_lora_module.h \
+ ../TEST/LORA_module/../../HAL/UART0/UART0_HAL.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\cci.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h \
@@ -15,11 +18,9 @@ HAL/UART0/UART0_HAL.d HAL/UART0/UART0_HAL.o: ../HAL/UART0/UART0_HAL.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
- ../HAL/UART0/UART0_HAL.h ../HAL/UART0/../../util/bit_operators.h
+ ../TEST/LORA_module/../../HAL/RN2483/RN2483_HAL.h \
+ ../TEST/LORA_module/../../MODULES/LORA_module/lora_module.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
 
@@ -32,6 +33,10 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdint.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
+
+../TEST/LORA_module/test_lora_module.h:
+
+../TEST/LORA_module/../../HAL/UART0/UART0_HAL.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -53,14 +58,8 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h:
-
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
+../TEST/LORA_module/../../HAL/RN2483/RN2483_HAL.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
-
-../HAL/UART0/UART0_HAL.h:
-
-../HAL/UART0/../../util/bit_operators.h:
+../TEST/LORA_module/../../MODULES/LORA_module/lora_module.h:

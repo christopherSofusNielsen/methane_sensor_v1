@@ -4,13 +4,13 @@
  * Created: 04-10-2021 16:51:38
  *  Author: Mainframe
  */ 
-#define F_CPU 8000000UL	
+
 #include <util/delay.h>
 
 #include "test_lora_module.h"
 #include "../../HAL/UART0/UART0_HAL.h"
 #include "../../HAL/RN2483/RN2483_HAL.h"
-#include "../../MODULES/lora_module/lora_module.h"
+#include "../../MODULES/LORA_module/lora_module.h"
 
 void test_join_network();
 void test_send_uplink();
@@ -23,11 +23,13 @@ void test_lora_module_start(){
 	uart0_hal_init();
 	rn2483_init();
 	
+	
 	while(1){
-		//test_join_network();
+		uart0_hal_send_string("Starting: ");
+		test_join_network();
 		//test_send_uplink();
 		//test_put_to_sleep();
-		test_wake_up();
+		//test_wake_up();
 		_delay_ms(3000);
 	}
 }

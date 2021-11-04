@@ -9,7 +9,7 @@
 #define F_CPU 8000000UL	
 
 #include <xc.h>
-#include "TEST/lora-module/test_lora_module.h"
+#include "TEST/LORA_module/test_lora_module.h"
 #include "TEST/SCD30_module/test_SCD30_module.h"
 #include "TEST/PM_HAL/test_PM_HAL.h"
 #include "TEST/EEPROM_module/test_EEPROM_module.h"
@@ -18,6 +18,8 @@
 #include "TEST/TC0_HAL/test_TC0_HAL.h"
 #include "TEST/TC1_HAL/test_TC1_HAL.h"
 #include "TEST/RTC_module/test_RTC_module.h"
+#include "TEST/UART0_HAL/test_UART0_HAL.h"
+#include "TEST/TC2_HAL/test_TC2_HAL.h"
 
 int main(void)
 {
@@ -29,7 +31,9 @@ int main(void)
 	//test_RTC_module_start();
 	//test_TC0_HAL_start();
 	//test_TC1_HAL_start();
-	test_RTC_module_start();
+	//test_RTC_module_start();
+	//test_UART0_HAL_start();
+	test_TC2_HAL_start();
 	
 	while(1)
     {

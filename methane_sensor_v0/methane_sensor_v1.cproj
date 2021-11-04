@@ -144,6 +144,12 @@
     <Compile Include="HAL\TC1\TC1_HAL.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\TC2\TC2_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\TC2\TC2_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\TWI\TWI_API.c">
       <SubType>compile</SubType>
     </Compile>
@@ -186,40 +192,40 @@
     <Compile Include="MODULES\EEPROM_module\EEPROM_module.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\join_network\join_network.c">
+    <Compile Include="MODULES\LORA_module\join_network\join_network.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\join_network\join_network.h">
+    <Compile Include="MODULES\LORA_module\join_network\join_network.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\lora_module.c">
+    <Compile Include="MODULES\LORA_module\lora_module.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\lora_module.h">
+    <Compile Include="MODULES\LORA_module\lora_module.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\RN2483_protocol\RN2483_protocol.c">
+    <Compile Include="MODULES\LORA_module\RN2483_protocol\RN2483_protocol.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\RN2483_protocol\RN2483_protocol.h">
+    <Compile Include="MODULES\LORA_module\RN2483_protocol\RN2483_protocol.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\send_uplink\send_uplink.c">
+    <Compile Include="MODULES\LORA_module\send_uplink\send_uplink.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\send_uplink\send_uplink.h">
+    <Compile Include="MODULES\LORA_module\send_uplink\send_uplink.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\sleep_controller\sleep_controller.c">
+    <Compile Include="MODULES\LORA_module\sleep_controller\sleep_controller.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\sleep_controller\sleep_controller.h">
+    <Compile Include="MODULES\LORA_module\sleep_controller\sleep_controller.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\util\util.c">
+    <Compile Include="MODULES\LORA_module\util\util.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MODULES\lora_module\util\util.h">
+    <Compile Include="MODULES\LORA_module\util\util.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MODULES\RTC_module\RTC_module.c">
@@ -246,10 +252,10 @@
     <Compile Include="TEST\EEPROM_module\test_EEPROM_module.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="TEST\lora-module\test_lora_module.c">
+    <Compile Include="TEST\LORA_module\test_lora_module.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="TEST\lora-module\test_lora_module.h">
+    <Compile Include="TEST\LORA_module\test_lora_module.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="TEST\RTC_module\test_RTC_module.c">
@@ -282,6 +288,18 @@
     <Compile Include="TEST\TC1_HAL\test_TC1_HAL.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="TEST\TC2_HAL\test_TC2_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\TC2_HAL\test_TC2_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\UART0_HAL\test_UART0_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\UART0_HAL\test_UART0_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="util\bit_operators.h">
       <SubType>compile</SubType>
     </Compile>
@@ -297,6 +315,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HAL" />
+    <Folder Include="HAL\TC2" />
     <Folder Include="HAL\TC0" />
     <Folder Include="HAL\PM" />
     <Folder Include="HAL\TC1" />
@@ -306,20 +325,22 @@
     <Folder Include="HAL\UART1" />
     <Folder Include="HAL\UART0" />
     <Folder Include="MODULES" />
-    <Folder Include="MODULES\lora_module" />
-    <Folder Include="MODULES\lora_module\join_network" />
-    <Folder Include="MODULES\lora_module\sleep_controller" />
-    <Folder Include="MODULES\lora_module\send_uplink" />
-    <Folder Include="MODULES\lora_module\util" />
-    <Folder Include="MODULES\lora_module\RN2483_protocol" />
+    <Folder Include="MODULES\LORA_module" />
+    <Folder Include="MODULES\LORA_module\join_network" />
+    <Folder Include="MODULES\LORA_module\sleep_controller" />
+    <Folder Include="MODULES\LORA_module\send_uplink" />
+    <Folder Include="MODULES\LORA_module\util" />
+    <Folder Include="MODULES\LORA_module\RN2483_protocol" />
     <Folder Include="MODULES\EEPROM_module" />
     <Folder Include="MODULES\ADC_module" />
     <Folder Include="MODULES\RTC_module" />
     <Folder Include="MODULES\SCD30_module" />
     <Folder Include="TEST" />
-    <Folder Include="TEST\lora-module" />
+    <Folder Include="TEST\LORA_module" />
     <Folder Include="TEST\EEPROM_module" />
     <Folder Include="TEST\ADC_module" />
+    <Folder Include="TEST\TC2_HAL" />
+    <Folder Include="TEST\UART0_HAL" />
     <Folder Include="TEST\TC1_HAL" />
     <Folder Include="TEST\TC0_HAL" />
     <Folder Include="TEST\RTC_module" />

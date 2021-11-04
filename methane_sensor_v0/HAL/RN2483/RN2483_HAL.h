@@ -11,9 +11,9 @@
 
 #include <xc.h>
 
-#define RN2483_DDR DDRC
-#define RN2483_PORT PORTC
-#define RN2483_PIN 2
+#define RN2483_DDR DDRB
+#define RN2483_PORT PORTB
+#define RN2483_PIN 4
 
 void rn2483_init();
 void rn2483_reset_active();

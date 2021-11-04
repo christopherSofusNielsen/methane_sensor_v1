@@ -4,12 +4,16 @@
  * Created: 04-10-2021 14:23:34
  *  Author: Mainframe
  */ 
-#include "UART0_HAL.h"
+
 #include <util/delay.h>
 #include <xc.h>
-#include "../../util/bit_operators.h"
 #include <avr/interrupt.h>
 #include <stdbool.h>
+#include <string.h>
+
+
+#include "UART0_HAL.h"
+#include "../../util/bit_operators.h"
 
 uint8_t tx_buffer[UART0_TX_BUFF_LENGTH];
 uint8_t tx_buffer_data_len=0;
@@ -33,6 +37,7 @@ void uart0_hal_init(){
 }
 
 
+
 void uart0_hal_send_message(uint8_t msg[], uint8_t length){
 	for (uint8_t i=0; i<length; i++)
 	{
@@ -40,6 +45,17 @@ void uart0_hal_send_message(uint8_t msg[], uint8_t length){
 	}
 	
 	tx_buffer_data_len=length;
+	tx_buffer_cursor=1;
+	UDR0=tx_buffer[0];
+}
+
+void uart0_hal_send_string(const char msg[]){
+	for (uint8_t i=0; i<strlen(msg); i++)
+	{
+		tx_buffer[i]=(uint8_t)msg[i];
+	}
+	
+	tx_buffer_data_len=strlen(msg);
 	tx_buffer_cursor=1;
 	UDR0=tx_buffer[0];
 }

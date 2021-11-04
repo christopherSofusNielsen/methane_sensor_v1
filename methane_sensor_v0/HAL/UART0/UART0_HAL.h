@@ -21,6 +21,7 @@
 
 void uart0_hal_init();
 void uart0_hal_send_message(uint8_t msg[], uint8_t length);
+void uart0_hal_send_string(const char msg[]);
 bool uart0_hal_message_ready();
 uint8_t uart0_hal_read_message(uint8_t msg[]);
 uint8_t uart0_hal_read_message_as_str(uint8_t msg[]);

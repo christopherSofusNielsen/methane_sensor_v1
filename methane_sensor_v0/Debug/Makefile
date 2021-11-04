@@ -34,6 +34,7 @@ LINKER_SCRIPT_DEP:=
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
 ../HAL \
+../HAL/TC2 \
 ../HAL/TC0 \
 ../HAL/PM \
 ../HAL/TC1 \
@@ -43,20 +44,22 @@ SUBDIRS :=  \
 ../HAL/UART1 \
 ../HAL/UART0 \
 ../MODULES \
-../MODULES/lora_module \
-../MODULES/lora_module/join_network \
-../MODULES/lora_module/sleep_controller \
-../MODULES/lora_module/send_uplink \
-../MODULES/lora_module/util \
-../MODULES/lora_module/RN2483_protocol \
+../MODULES/LORA_module \
+../MODULES/LORA_module/join_network \
+../MODULES/LORA_module/sleep_controller \
+../MODULES/LORA_module/send_uplink \
+../MODULES/LORA_module/util \
+../MODULES/LORA_module/RN2483_protocol \
 ../MODULES/EEPROM_module \
 ../MODULES/ADC_module \
 ../MODULES/RTC_module \
 ../MODULES/SCD30_module \
 ../TEST \
-../TEST/lora-module \
+../TEST/LORA_module \
 ../TEST/EEPROM_module \
 ../TEST/ADC_module \
+../TEST/TC2_HAL \
+../TEST/UART0_HAL \
 ../TEST/TC1_HAL \
 ../TEST/TC0_HAL \
 ../TEST/RTC_module \
@@ -73,6 +76,7 @@ C_SRCS +=  \
 ../HAL/SCD30/SCD30_HAL.c \
 ../HAL/TC0/TC0_HAL.c \
 ../HAL/TC1/TC1_HAL.c \
+../HAL/TC2/TC2_HAL.c \
 ../HAL/TWI/TWI_API.c \
 ../HAL/TWI/TWI_HAL.c \
 ../HAL/UART0/UART0_HAL.c \
@@ -80,22 +84,24 @@ C_SRCS +=  \
 ../main.c \
 ../MODULES/ADC_module/ADC_module.c \
 ../MODULES/EEPROM_module/EEPROM_module.c \
-../MODULES/lora_module/join_network/join_network.c \
-../MODULES/lora_module/lora_module.c \
-../MODULES/lora_module/RN2483_protocol/RN2483_protocol.c \
-../MODULES/lora_module/send_uplink/send_uplink.c \
-../MODULES/lora_module/sleep_controller/sleep_controller.c \
-../MODULES/lora_module/util/util.c \
+../MODULES/LORA_module/join_network/join_network.c \
+../MODULES/LORA_module/lora_module.c \
+../MODULES/LORA_module/RN2483_protocol/RN2483_protocol.c \
+../MODULES/LORA_module/send_uplink/send_uplink.c \
+../MODULES/LORA_module/sleep_controller/sleep_controller.c \
+../MODULES/LORA_module/util/util.c \
 ../MODULES/RTC_module/RTC_module.c \
 ../MODULES/SCD30_module/SCD30_module.c \
 ../TEST/ADC_module/test_ADC_module.c \
 ../TEST/EEPROM_module/test_EEPROM_module.c \
-../TEST/lora-module/test_lora_module.c \
+../TEST/LORA_module/test_lora_module.c \
 ../TEST/RTC_module/test_RTC_module.c \
 ../TEST/SCD30_module/test_SCD30_module.c \
 ../TEST/PM_HAL/test_PM_HAL.c \
 ../TEST/TC0_HAL/test_TC0_HAL.c \
 ../TEST/TC1_HAL/test_TC1_HAL.c \
+../TEST/TC2_HAL/test_TC2_HAL.c \
+../TEST/UART0_HAL/test_UART0_HAL.c \
 ../util/CRC8/CRC8.c
 
 
@@ -111,6 +117,7 @@ HAL/RN2483/RN2483_HAL.o \
 HAL/SCD30/SCD30_HAL.o \
 HAL/TC0/TC0_HAL.o \
 HAL/TC1/TC1_HAL.o \
+HAL/TC2/TC2_HAL.o \
 HAL/TWI/TWI_API.o \
 HAL/TWI/TWI_HAL.o \
 HAL/UART0/UART0_HAL.o \
@@ -118,22 +125,24 @@ HAL/UART1/UART1_HAL.o \
 main.o \
 MODULES/ADC_module/ADC_module.o \
 MODULES/EEPROM_module/EEPROM_module.o \
-MODULES/lora_module/join_network/join_network.o \
-MODULES/lora_module/lora_module.o \
-MODULES/lora_module/RN2483_protocol/RN2483_protocol.o \
-MODULES/lora_module/send_uplink/send_uplink.o \
-MODULES/lora_module/sleep_controller/sleep_controller.o \
-MODULES/lora_module/util/util.o \
+MODULES/LORA_module/join_network/join_network.o \
+MODULES/LORA_module/lora_module.o \
+MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o \
+MODULES/LORA_module/send_uplink/send_uplink.o \
+MODULES/LORA_module/sleep_controller/sleep_controller.o \
+MODULES/LORA_module/util/util.o \
 MODULES/RTC_module/RTC_module.o \
 MODULES/SCD30_module/SCD30_module.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
-TEST/lora-module/test_lora_module.o \
+TEST/LORA_module/test_lora_module.o \
 TEST/RTC_module/test_RTC_module.o \
 TEST/SCD30_module/test_SCD30_module.o \
 TEST/PM_HAL/test_PM_HAL.o \
 TEST/TC0_HAL/test_TC0_HAL.o \
 TEST/TC1_HAL/test_TC1_HAL.o \
+TEST/TC2_HAL/test_TC2_HAL.o \
+TEST/UART0_HAL/test_UART0_HAL.o \
 util/CRC8/CRC8.o
 
 OBJS_AS_ARGS +=  \
@@ -142,6 +151,7 @@ HAL/RN2483/RN2483_HAL.o \
 HAL/SCD30/SCD30_HAL.o \
 HAL/TC0/TC0_HAL.o \
 HAL/TC1/TC1_HAL.o \
+HAL/TC2/TC2_HAL.o \
 HAL/TWI/TWI_API.o \
 HAL/TWI/TWI_HAL.o \
 HAL/UART0/UART0_HAL.o \
@@ -149,22 +159,24 @@ HAL/UART1/UART1_HAL.o \
 main.o \
 MODULES/ADC_module/ADC_module.o \
 MODULES/EEPROM_module/EEPROM_module.o \
-MODULES/lora_module/join_network/join_network.o \
-MODULES/lora_module/lora_module.o \
-MODULES/lora_module/RN2483_protocol/RN2483_protocol.o \
-MODULES/lora_module/send_uplink/send_uplink.o \
-MODULES/lora_module/sleep_controller/sleep_controller.o \
-MODULES/lora_module/util/util.o \
+MODULES/LORA_module/join_network/join_network.o \
+MODULES/LORA_module/lora_module.o \
+MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o \
+MODULES/LORA_module/send_uplink/send_uplink.o \
+MODULES/LORA_module/sleep_controller/sleep_controller.o \
+MODULES/LORA_module/util/util.o \
 MODULES/RTC_module/RTC_module.o \
 MODULES/SCD30_module/SCD30_module.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
-TEST/lora-module/test_lora_module.o \
+TEST/LORA_module/test_lora_module.o \
 TEST/RTC_module/test_RTC_module.o \
 TEST/SCD30_module/test_SCD30_module.o \
 TEST/PM_HAL/test_PM_HAL.o \
 TEST/TC0_HAL/test_TC0_HAL.o \
 TEST/TC1_HAL/test_TC1_HAL.o \
+TEST/TC2_HAL/test_TC2_HAL.o \
+TEST/UART0_HAL/test_UART0_HAL.o \
 util/CRC8/CRC8.o
 
 C_DEPS +=  \
@@ -173,6 +185,7 @@ HAL/RN2483/RN2483_HAL.d \
 HAL/SCD30/SCD30_HAL.d \
 HAL/TC0/TC0_HAL.d \
 HAL/TC1/TC1_HAL.d \
+HAL/TC2/TC2_HAL.d \
 HAL/TWI/TWI_API.d \
 HAL/TWI/TWI_HAL.d \
 HAL/UART0/UART0_HAL.d \
@@ -180,22 +193,24 @@ HAL/UART1/UART1_HAL.d \
 main.d \
 MODULES/ADC_module/ADC_module.d \
 MODULES/EEPROM_module/EEPROM_module.d \
-MODULES/lora_module/join_network/join_network.d \
-MODULES/lora_module/lora_module.d \
-MODULES/lora_module/RN2483_protocol/RN2483_protocol.d \
-MODULES/lora_module/send_uplink/send_uplink.d \
-MODULES/lora_module/sleep_controller/sleep_controller.d \
-MODULES/lora_module/util/util.d \
+MODULES/LORA_module/join_network/join_network.d \
+MODULES/LORA_module/lora_module.d \
+MODULES/LORA_module/RN2483_protocol/RN2483_protocol.d \
+MODULES/LORA_module/send_uplink/send_uplink.d \
+MODULES/LORA_module/sleep_controller/sleep_controller.d \
+MODULES/LORA_module/util/util.d \
 MODULES/RTC_module/RTC_module.d \
 MODULES/SCD30_module/SCD30_module.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
-TEST/lora-module/test_lora_module.d \
+TEST/LORA_module/test_lora_module.d \
 TEST/RTC_module/test_RTC_module.d \
 TEST/SCD30_module/test_SCD30_module.d \
 TEST/PM_HAL/test_PM_HAL.d \
 TEST/TC0_HAL/test_TC0_HAL.d \
 TEST/TC1_HAL/test_TC1_HAL.d \
+TEST/TC2_HAL/test_TC2_HAL.d \
+TEST/UART0_HAL/test_UART0_HAL.d \
 util/CRC8/CRC8.d
 
 C_DEPS_AS_ARGS +=  \
@@ -204,6 +219,7 @@ HAL/RN2483/RN2483_HAL.d \
 HAL/SCD30/SCD30_HAL.d \
 HAL/TC0/TC0_HAL.d \
 HAL/TC1/TC1_HAL.d \
+HAL/TC2/TC2_HAL.d \
 HAL/TWI/TWI_API.d \
 HAL/TWI/TWI_HAL.d \
 HAL/UART0/UART0_HAL.d \
@@ -211,22 +227,24 @@ HAL/UART1/UART1_HAL.d \
 main.d \
 MODULES/ADC_module/ADC_module.d \
 MODULES/EEPROM_module/EEPROM_module.d \
-MODULES/lora_module/join_network/join_network.d \
-MODULES/lora_module/lora_module.d \
-MODULES/lora_module/RN2483_protocol/RN2483_protocol.d \
-MODULES/lora_module/send_uplink/send_uplink.d \
-MODULES/lora_module/sleep_controller/sleep_controller.d \
-MODULES/lora_module/util/util.d \
+MODULES/LORA_module/join_network/join_network.d \
+MODULES/LORA_module/lora_module.d \
+MODULES/LORA_module/RN2483_protocol/RN2483_protocol.d \
+MODULES/LORA_module/send_uplink/send_uplink.d \
+MODULES/LORA_module/sleep_controller/sleep_controller.d \
+MODULES/LORA_module/util/util.d \
 MODULES/RTC_module/RTC_module.d \
 MODULES/SCD30_module/SCD30_module.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
-TEST/lora-module/test_lora_module.d \
+TEST/LORA_module/test_lora_module.d \
 TEST/RTC_module/test_RTC_module.d \
 TEST/SCD30_module/test_SCD30_module.d \
 TEST/PM_HAL/test_PM_HAL.d \
 TEST/TC0_HAL/test_TC0_HAL.d \
 TEST/TC1_HAL/test_TC1_HAL.d \
+TEST/TC2_HAL/test_TC2_HAL.d \
+TEST/UART0_HAL/test_UART0_HAL.d \
 util/CRC8/CRC8.d
 
 OUTPUT_FILE_PATH +=methane_sensor_v1.elf
@@ -272,6 +290,13 @@ HAL/TC0/TC0_HAL.o: ../HAL/TC0/TC0_HAL.c
 	
 
 HAL/TC1/TC1_HAL.o: ../HAL/TC1/TC1_HAL.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+HAL/TC2/TC2_HAL.o: ../HAL/TC2/TC2_HAL.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -327,42 +352,42 @@ MODULES/EEPROM_module/EEPROM_module.o: ../MODULES/EEPROM_module/EEPROM_module.c
 	@echo Finished building: $<
 	
 
-MODULES/lora_module/join_network/join_network.o: ../MODULES/lora_module/join_network/join_network.c
+MODULES/LORA_module/join_network/join_network.o: ../MODULES/LORA_module/join_network/join_network.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-MODULES/lora_module/lora_module.o: ../MODULES/lora_module/lora_module.c
+MODULES/LORA_module/lora_module.o: ../MODULES/LORA_module/lora_module.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-MODULES/lora_module/RN2483_protocol/RN2483_protocol.o: ../MODULES/lora_module/RN2483_protocol/RN2483_protocol.c
+MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o: ../MODULES/LORA_module/RN2483_protocol/RN2483_protocol.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-MODULES/lora_module/send_uplink/send_uplink.o: ../MODULES/lora_module/send_uplink/send_uplink.c
+MODULES/LORA_module/send_uplink/send_uplink.o: ../MODULES/LORA_module/send_uplink/send_uplink.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-MODULES/lora_module/sleep_controller/sleep_controller.o: ../MODULES/lora_module/sleep_controller/sleep_controller.c
+MODULES/LORA_module/sleep_controller/sleep_controller.o: ../MODULES/LORA_module/sleep_controller/sleep_controller.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-MODULES/lora_module/util/util.o: ../MODULES/lora_module/util/util.c
+MODULES/LORA_module/util/util.o: ../MODULES/LORA_module/util/util.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -397,7 +422,7 @@ TEST/EEPROM_module/test_EEPROM_module.o: ../TEST/EEPROM_module/test_EEPROM_modul
 	@echo Finished building: $<
 	
 
-TEST/lora-module/test_lora_module.o: ../TEST/lora-module/test_lora_module.c
+TEST/LORA_module/test_lora_module.o: ../TEST/LORA_module/test_lora_module.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -433,6 +458,20 @@ TEST/TC0_HAL/test_TC0_HAL.o: ../TEST/TC0_HAL/test_TC0_HAL.c
 	
 
 TEST/TC1_HAL/test_TC1_HAL.o: ../TEST/TC1_HAL/test_TC1_HAL.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+TEST/TC2_HAL/test_TC2_HAL.o: ../TEST/TC2_HAL/test_TC2_HAL.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+TEST/UART0_HAL/test_UART0_HAL.o: ../TEST/UART0_HAL/test_UART0_HAL.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
