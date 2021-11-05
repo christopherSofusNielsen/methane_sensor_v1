@@ -29,7 +29,7 @@ typedef enum {
 	JN_JOIN_FATAL_ERROR
 }JN_STATES;
 
-LM_STATUS JN_join_network();
+LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]);
 
 
 

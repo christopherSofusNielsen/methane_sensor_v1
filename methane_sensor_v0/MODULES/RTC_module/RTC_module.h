@@ -37,7 +37,7 @@ typedef struct DatetimesBCD{
 }DatetimeBCD;
 
 
-
+RTC_STATUS RTC_set_clock_out(uint8_t freq);
 RTC_STATUS RTC_get_current_time(Datetime *dt);
 RTC_STATUS RTC_set_current_time(Datetime dt);
 RTC_STATUS RTC_set_wake_up_interrupt(uint8_t hours);

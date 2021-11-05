@@ -24,7 +24,10 @@ TEST/TC0_HAL/test_TC0_HAL.d TEST/TC0_HAL/test_TC0_HAL.o: \
  ../TEST/TC0_HAL/../../HAL/UART1/UART1_HAL.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  ../TEST/TC0_HAL/../../HAL/TC0/TC0_HAL.h \
- ../TEST/TC0_HAL/../../HAL/TC0/../types.h
+ ../TEST/TC0_HAL/../../HAL/TC0/../types.h \
+ ../TEST/TC0_HAL/../../MODULES/RTC_module/RTC_module.h \
+ ../TEST/TC0_HAL/../../HAL/TWI/TWI_HAL.h \
+ ../TEST/TC0_HAL/../../util/bit_operators.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -75,3 +78,9 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 ../TEST/TC0_HAL/../../HAL/TC0/TC0_HAL.h:
 
 ../TEST/TC0_HAL/../../HAL/TC0/../types.h:
+
+../TEST/TC0_HAL/../../MODULES/RTC_module/RTC_module.h:
+
+../TEST/TC0_HAL/../../HAL/TWI/TWI_HAL.h:
+
+../TEST/TC0_HAL/../../util/bit_operators.h:

@@ -15,8 +15,7 @@
 callback_ptr _cb;
 
 
-//Only test reduce 
-uint16_t cnt=1;
+
 
 
 
@@ -37,17 +36,13 @@ void TC0_HAL_init(uint8_t match, callback_ptr cb){
 
 
 void TC0_HAL_start(){
-	TCCR0B=0b00000101; //Set clock NOTE, this should be changed!
+	TCCR0B=0b00000110; 
 }
 
 void TC0_HAL_stop(){
-	TCCR0B=0x00; //Set clock NOTE, this should be changed!
+	TCCR0B=0x00; 
 }
 
 ISR(TIMER0_COMPA_vect){
-	//Only for test
-	cnt++;
-	if(cnt%10==0){
-		_cb();		
-	}
+	_cb();
 }

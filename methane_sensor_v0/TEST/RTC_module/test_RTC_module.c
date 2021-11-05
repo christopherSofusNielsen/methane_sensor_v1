@@ -32,6 +32,7 @@ static void sendTime(uint8_t val);
 static void sendISO(Datetime dt, char msg[]);
 static void test_set_current_time();
 static void test_set_wake_up();
+static void test_clk_out();
 
 
 
@@ -51,8 +52,22 @@ void test_RTC_module_start(){
 		//test_set_current_time();
 		//test_get_current_time();
 		//test_set_wake_up();
+		test_clk_out();
 		
 		_delay_ms(1500);
+	}
+}
+
+static void test_clk_out(){
+	//Set pull up
+	set_bit(PORTB, 0);
+	set_bit(PORTB, 1);
+	
+	RTC_STATUS status=RTC_set_clock_out(1);
+	if(status==RTC_STATUS_SUCCESS){
+		uart1_hal_send_string("OK ");
+	}else{
+		uart1_hal_send_string("FAIL ");
 	}
 }
 

@@ -52,13 +52,12 @@ LM_STATUS SU_send_uplink(uint8_t port, uint8_t data[], uint8_t length){
 				
 			case SU_TRY_AGAIN:
 				return LM_STATUS_TRY_AGAIN;
-				
+			
 			case SU_NO_ACK:
 				return LM_STATUS_ERROR;
-				
+			
 			case SU_FATAL_ERROR:
-				return LM_STATUS_FATAL_ERROR;		
-				
+				return LM_STATUS_FATAL_ERROR;	
 			
 			case SU_WAIT_FOR_INCOMMING:
 				if(uart0_hal_message_ready()){

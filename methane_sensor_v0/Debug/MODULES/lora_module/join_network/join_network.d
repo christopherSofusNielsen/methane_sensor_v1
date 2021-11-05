@@ -1,6 +1,6 @@
-MODULES/lora_module/join_network/join_network.d \
- MODULES/lora_module/join_network/join_network.o: \
- ../MODULES/lora_module/join_network/join_network.c \
+MODULES/LORA_module/join_network/join_network.d \
+ MODULES/LORA_module/join_network/join_network.o: \
+ ../MODULES/LORA_module/join_network/join_network.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h \
@@ -11,8 +11,8 @@ MODULES/lora_module/join_network/join_network.d \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
- ../MODULES/lora_module/join_network/join_network.h \
- ../MODULES/lora_module/join_network/../lora_module.h \
+ ../MODULES/LORA_module/join_network/join_network.h \
+ ../MODULES/LORA_module/join_network/../lora_module.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\cci.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h \
@@ -23,11 +23,12 @@ MODULES/lora_module/join_network/join_network.d \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
- ../MODULES/lora_module/join_network/../../../HAL/RN2483/RN2483_HAL.h \
- ../MODULES/lora_module/join_network/../RN2483_protocol/RN2483_protocol.h \
- ../MODULES/lora_module/join_network/../../../HAL/UART0/UART0_HAL.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
- ../MODULES/lora_module/join_network/../util/util.h
+ ../MODULES/LORA_module/join_network/../../../HAL/RN2483/RN2483_HAL.h \
+ ../MODULES/LORA_module/join_network/../RN2483_protocol/RN2483_protocol.h \
+ ../MODULES/LORA_module/join_network/../../../HAL/UART0/UART0_HAL.h \
+ ../MODULES/LORA_module/join_network/../util/util.h \
+ ../MODULES/LORA_module/join_network/../util/../lora_module.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
 
@@ -49,9 +50,9 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 
-../MODULES/lora_module/join_network/join_network.h:
+../MODULES/LORA_module/join_network/join_network.h:
 
-../MODULES/lora_module/join_network/../lora_module.h:
+../MODULES/LORA_module/join_network/../lora_module.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -73,12 +74,14 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 
-../MODULES/lora_module/join_network/../../../HAL/RN2483/RN2483_HAL.h:
-
-../MODULES/lora_module/join_network/../RN2483_protocol/RN2483_protocol.h:
-
-../MODULES/lora_module/join_network/../../../HAL/UART0/UART0_HAL.h:
-
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
-../MODULES/lora_module/join_network/../util/util.h:
+../MODULES/LORA_module/join_network/../../../HAL/RN2483/RN2483_HAL.h:
+
+../MODULES/LORA_module/join_network/../RN2483_protocol/RN2483_protocol.h:
+
+../MODULES/LORA_module/join_network/../../../HAL/UART0/UART0_HAL.h:
+
+../MODULES/LORA_module/join_network/../util/util.h:
+
+../MODULES/LORA_module/join_network/../util/../lora_module.h:

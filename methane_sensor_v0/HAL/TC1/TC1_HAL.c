@@ -28,7 +28,7 @@ void TC1_HAL_init(uint16_t match, callback_ptr cb){
 }
 
 void TC1_HAL_start(){
-	set_byte(TCCR1B, 0b00000101);
+	set_byte(TCCR1B, 0b00000110);
 }
 
 void TC1_HAL_stop(){

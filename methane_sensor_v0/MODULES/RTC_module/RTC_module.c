@@ -17,6 +17,29 @@
 
 const uint8_t CMD_READ_TIME_POINTER[]={0x02};
 	
+RTC_STATUS RTC_set_clock_out(uint8_t freq){
+	uint8_t CMD_SET_CLOCK_OUT[2];
+	CMD_SET_CLOCK_OUT[0]=0x0D;
+	
+	switch(freq){
+		case 0:
+			CMD_SET_CLOCK_OUT[1]=0x00;
+			break;
+		case 1:
+			CMD_SET_CLOCK_OUT[1]=0x83;
+			break;
+		case 32:
+			CMD_SET_CLOCK_OUT[1]=0x82;
+			break;
+		default:
+			return RTC_STATUS_ERROR;
+	}
+	
+	uint8_t status=TWI_API_write_data_stop(RTC_ADDR, CMD_SET_CLOCK_OUT, 2);
+	if(status != TWI_CODE_SUCCESS) return RTC_STATUS_FATAL_ERROR;
+	return RTC_STATUS_SUCCESS;
+}
+	
 RTC_STATUS RTC_set_wake_up_interrupt(uint8_t hours){
 	uint8_t CMD_ENABLE_RTC_INT[]={0x01, 0b00000010};
 	uint8_t CMD_SET_ALARM_TIME[]={0x09, 0x80, 0x80, 0x80, 0x80};

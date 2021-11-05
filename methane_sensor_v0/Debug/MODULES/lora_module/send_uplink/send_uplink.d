@@ -1,10 +1,10 @@
-MODULES/lora_module/send_uplink/send_uplink.d \
- MODULES/lora_module/send_uplink/send_uplink.o: \
- ../MODULES/lora_module/send_uplink/send_uplink.c \
+MODULES/LORA_module/send_uplink/send_uplink.d \
+ MODULES/LORA_module/send_uplink/send_uplink.o: \
+ ../MODULES/LORA_module/send_uplink/send_uplink.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
- ../MODULES/lora_module/send_uplink/send_uplink.h \
+ ../MODULES/LORA_module/send_uplink/send_uplink.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\cci.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h \
@@ -18,10 +18,11 @@ MODULES/lora_module/send_uplink/send_uplink.d \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
- ../MODULES/lora_module/send_uplink/../lora_module.h \
- ../MODULES/lora_module/send_uplink/../util/util.h \
- ../MODULES/lora_module/send_uplink/../../../HAL/UART0/UART0_HAL.h \
- ../MODULES/lora_module/send_uplink/../RN2483_protocol/RN2483_protocol.h
+ ../MODULES/LORA_module/send_uplink/../lora_module.h \
+ ../MODULES/LORA_module/send_uplink/../util/util.h \
+ ../MODULES/LORA_module/send_uplink/../util/../lora_module.h \
+ ../MODULES/LORA_module/send_uplink/../../../HAL/UART0/UART0_HAL.h \
+ ../MODULES/LORA_module/send_uplink/../RN2483_protocol/RN2483_protocol.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
 
@@ -29,7 +30,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
-../MODULES/lora_module/send_uplink/send_uplink.h:
+../MODULES/LORA_module/send_uplink/send_uplink.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -57,10 +58,12 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 
-../MODULES/lora_module/send_uplink/../lora_module.h:
+../MODULES/LORA_module/send_uplink/../lora_module.h:
 
-../MODULES/lora_module/send_uplink/../util/util.h:
+../MODULES/LORA_module/send_uplink/../util/util.h:
 
-../MODULES/lora_module/send_uplink/../../../HAL/UART0/UART0_HAL.h:
+../MODULES/LORA_module/send_uplink/../util/../lora_module.h:
 
-../MODULES/lora_module/send_uplink/../RN2483_protocol/RN2483_protocol.h:
+../MODULES/LORA_module/send_uplink/../../../HAL/UART0/UART0_HAL.h:
+
+../MODULES/LORA_module/send_uplink/../RN2483_protocol/RN2483_protocol.h:

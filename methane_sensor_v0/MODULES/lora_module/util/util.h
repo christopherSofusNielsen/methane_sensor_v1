@@ -9,6 +9,7 @@
 #ifndef UTIL_H_
 #define UTIL_H_
 
+#include "../lora_module.h"
 
 #define __DEVEUI "0004A30B00F4547A"
 #define __APPKEY "B88AD6D25A3B27C69A01F74C53F9A179"
@@ -33,9 +34,7 @@ void util_setMatchCase(LM_STATE_DATA *sd, LM_MATCH_CASES matchCase, const char *
 int util_matchMessage(LM_STATE_DATA *sd, char *msg);
 void util_transmit_msg(char msg[]);
 void util_read_msg(char msg[]);
-void util_get_deveui_as_string(char deveui[]);
-void util_get_appkey_as_string(char appkey[]);
-void util_get_appeui_as_string(char appeui[]);
+LM_STATUS util_parse_err(char *msg);
 
 
 #endif /* UTIL_H_ */

@@ -16,11 +16,10 @@
 #include "../../../HAL/UART0/UART0_HAL.h"
 #include "../util/util.h"
 
-LM_STATUS JN_join_network(){
+LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]){
 	
 	JN_STATES state=JN_HW_RESET_RN2483;
 	LM_STATE_DATA stateData;
-	char parameters[33];
 	
 	
 	
@@ -47,8 +46,7 @@ LM_STATUS JN_join_network(){
 			break;
 			
 			case JN_LOAD_DEVEUI:
-				util_get_deveui_as_string(parameters);
-				mac_set_deveui(lm_msg, parameters);
+				mac_set_deveui(lm_msg, deveui);
 				attach_ending(lm_msg);
 				util_transmit_msg(lm_msg);
 				
@@ -58,8 +56,7 @@ LM_STATUS JN_join_network(){
 			break;
 			
 			case JN_LOAD_APPKEY:
-				util_get_appkey_as_string(parameters);
-				mac_set_appkey(lm_msg, parameters);
+				mac_set_appkey(lm_msg, appkey);
 				attach_ending(lm_msg);
 				util_transmit_msg(lm_msg);
 				
@@ -69,8 +66,7 @@ LM_STATUS JN_join_network(){
 			break;
 			
 			case JN_LOAD_APPEUI:
-				util_get_appeui_as_string(parameters);
-				mac_set_appeui(lm_msg, parameters);
+				mac_set_appeui(lm_msg, appeui);
 				attach_ending(lm_msg);
 				util_transmit_msg(lm_msg);
 				
@@ -120,7 +116,7 @@ LM_STATUS JN_join_network(){
 				return LM_STATUS_FATAL_ERROR;
 				
 			case JN_JOIN_NETWORK_FAILED:
-				return LM_STATUS_TRY_AGAIN;
+				return util_parse_err(lm_msg);
 				
 				
 			case JN_WAIT_FOR_INCOMMING:
@@ -133,3 +129,4 @@ LM_STATUS JN_join_network(){
 	}
 	return LM_STATUS_FATAL_ERROR;
 }
+

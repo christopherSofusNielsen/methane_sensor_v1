@@ -1,6 +1,10 @@
-MODULES/lora_module/util/util.d MODULES/lora_module/util/util.o: \
- ../MODULES/lora_module/util/util.c ../MODULES/lora_module/util/util.h \
- ../MODULES/lora_module/util/../../../HAL/UART0/UART0_HAL.h \
+MODULES/LORA_module/util/util.d MODULES/LORA_module/util/util.o: \
+ ../MODULES/LORA_module/util/util.c \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ ../MODULES/LORA_module/util/util.h \
+ ../MODULES/LORA_module/util/../lora_module.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\cci.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h \
@@ -14,13 +18,18 @@ MODULES/lora_module/util/util.d MODULES/lora_module/util/util.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h
+ ../MODULES/LORA_module/util/../../../HAL/UART0/UART0_HAL.h \
+ ../MODULES/LORA_module/util/../RN2483_protocol/RN2483_protocol.h
 
-../MODULES/lora_module/util/util.h:
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
 
-../MODULES/lora_module/util/../../../HAL/UART0/UART0_HAL.h:
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
+../MODULES/LORA_module/util/util.h:
+
+../MODULES/LORA_module/util/../lora_module.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -48,8 +57,6 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+../MODULES/LORA_module/util/../../../HAL/UART0/UART0_HAL.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
-
-c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
+../MODULES/LORA_module/util/../RN2483_protocol/RN2483_protocol.h:

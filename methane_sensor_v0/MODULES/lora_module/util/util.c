@@ -5,25 +5,19 @@
  *  Author: Mainframe
  */ 
 
-#include "util.h"
-#include "../../../HAL/UART0/UART0_HAL.h"
 #include <string.h>
 #include <stdbool.h>
+
+#include "util.h"
+#include "../lora_module.h"
+#include "../../../HAL/UART0/UART0_HAL.h"
+#include "../RN2483_protocol/RN2483_protocol.h"
+
 
 char lm_msg[200];
 static bool LM_strbeginswith(char *s1, const char *s2);
 
-void util_get_deveui_as_string(char deveui[]){
-	strcpy(deveui, __DEVEUI);
-}
 
-void util_get_appkey_as_string(char appkey[]){
-	strcpy(appkey, __APPKEY);
-}
-
-void util_get_appeui_as_string(char appeui[]){
-	strcpy(appeui, __APPEUI);
-}
 
 
 void util_setPendingStates(LM_STATE_DATA *sd, int success, int failed){
@@ -57,6 +51,18 @@ void util_transmit_msg(char msg[]){
 
 void util_read_msg(char msg[]){
 	uart0_hal_read_message_as_str((uint8_t*) msg);
+}
+
+LM_STATUS util_parse_err(char *msg){
+	if(strcmp(msg, NO_FREE_CH)==0){
+		return LM_STATUS_TRY_AGAIN;
+	}
+	
+	if(strcmp(msg, KEYS_NOT_INIT)==0){
+		return LM_STATUS_CONF_ERR;
+	}
+	
+	return LM_STATUS_FATAL_ERROR;
 }
 
 static bool LM_strbeginswith(char *s1, const char *s2){

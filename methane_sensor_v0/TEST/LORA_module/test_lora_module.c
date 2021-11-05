@@ -11,9 +11,11 @@
 #include "../../HAL/UART0/UART0_HAL.h"
 #include "../../HAL/RN2483/RN2483_HAL.h"
 #include "../../MODULES/LORA_module/lora_module.h"
+#include "../../HAL/TC2/TC2_HAL.h"
 
 void test_join_network();
 void test_send_uplink();
+void test_send_uplink_block();
 void test_put_to_sleep();
 void test_wake_up();
 
@@ -22,14 +24,15 @@ void test_lora_module_start(){
 	
 	uart0_hal_init();
 	rn2483_init();
-	
+	TC2_HAL_init();
 	
 	while(1){
 		uart0_hal_send_string("Starting: ");
-		test_join_network();
+		//test_join_network();
 		//test_send_uplink();
+		//test_send_uplink_block();
 		//test_put_to_sleep();
-		//test_wake_up();
+		test_wake_up();
 		_delay_ms(3000);
 	}
 }
@@ -37,28 +40,30 @@ void test_lora_module_start(){
 void test_wake_up(){
 	LM_STATUS status=LM_wake_up();
 	if(status==LM_STATUS_SUCCESS){
-		char msg[]="OK";
-		uart0_hal_send_message((uint8_t*)msg, 3);
-		}else if(status==LM_STATUS_TRY_AGAIN){
-		char msg[]="TRY";
-		uart0_hal_send_message((uint8_t*)msg, 4);
-		}else{
-		char msg[]="FAIL";
-		uart0_hal_send_message((uint8_t*)msg, 5);
+		uart0_hal_send_string("OK ");
+	}else if(status==LM_STATUS_TRY_AGAIN){
+		uart0_hal_send_string("TRY AGAIN ");
+	}else if(status==LM_STATUS_ERROR){
+		uart0_hal_send_string("ERROR ");
+	}else if(status==LM_STATUS_CONF_ERR){
+		uart0_hal_send_string("CONF_ERR ");
+	}else{
+		uart0_hal_send_string("FAIL ");
 	}
 }
 
 void test_put_to_sleep(){
 	LM_STATUS status=LM_put_to_sleep();
 	if(status==LM_STATUS_SUCCESS){
-		char msg[]="OK";
-		uart0_hal_send_message((uint8_t*)msg, 3);
-		}else if(status==LM_STATUS_TRY_AGAIN){
-		char msg[]="TRY";
-		uart0_hal_send_message((uint8_t*)msg, 4);
-		}else{
-		char msg[]="FAIL";
-		uart0_hal_send_message((uint8_t*)msg, 5);
+		uart0_hal_send_string("OK ");
+	}else if(status==LM_STATUS_TRY_AGAIN){
+		uart0_hal_send_string("TRY AGAIN ");
+	}else if(status==LM_STATUS_ERROR){
+		uart0_hal_send_string("ERROR ");
+	}else if(status==LM_STATUS_CONF_ERR){
+		uart0_hal_send_string("CONF_ERR ");
+	}else{
+		uart0_hal_send_string("FAIL ");
 	}
 }
 
@@ -67,30 +72,54 @@ void test_send_uplink(){
 	
 	LM_STATUS status=LM_send_uplink(data, 3);
 	if(status==LM_STATUS_SUCCESS){
-		char msg[]="OK";
-		uart0_hal_send_message((uint8_t*)msg, 3);
+		uart0_hal_send_string("OK ");
 	}else if(status==LM_STATUS_TRY_AGAIN){
-		char msg[]="TRY";
-		uart0_hal_send_message((uint8_t*)msg, 4);
+		uart0_hal_send_string("TRY AGAIN ");
 	}else if(status==LM_STATUS_ERROR){
-		char msg[]="ERR";
-		uart0_hal_send_message((uint8_t*)msg, 4);
+		uart0_hal_send_string("ERROR ");
+	}else if(status==LM_STATUS_CONF_ERR){
+		uart0_hal_send_string("CONF_ERR ");
 	}else{
-		char msg[]="FAIL";
-		uart0_hal_send_message((uint8_t*)msg, 5);
+		uart0_hal_send_string("FAIL ");
 	}
 }
 
+void test_send_uplink_block(){
+	uint8_t data[]={0xAA, 0xBB, 0xFF};
+	
+	LM_STATUS status=LM_send_uplink(data, 3);
+	if(status!=LM_STATUS_SUCCESS){
+		uart0_hal_send_string("FAIL ");
+		return;
+	}
+	
+	status=LM_send_uplink(data, 3);
+	if(status!=LM_STATUS_TRY_AGAIN){
+		uart0_hal_send_string("FAIL ");
+		return;
+	}
+	
+	while(LM_send_uplink(data, 3)==LM_STATUS_TRY_AGAIN){};
+	
+}
+
+
 void test_join_network(){
-	LM_STATUS status=LM_join_network();
+	char deveui[]="0004A30B00F4547A";
+	char appeui[]="70B3D57ED003F844";
+	char appkey[]="B88AD6D25A3B27C69A01F74C53F9A179";
+	
+	
+	LM_STATUS status=LM_join_network(deveui, appeui, appkey);
 	if(status==LM_STATUS_SUCCESS){
-		char msg[]="OK";
-		uart0_hal_send_message((uint8_t*)msg, 3);
-		}else if(status==LM_STATUS_TRY_AGAIN){
-		char msg[]="TRY";
-		uart0_hal_send_message((uint8_t*)msg, 4);
-		}else{
-		char msg[]="FAIL";
-		uart0_hal_send_message((uint8_t*)msg, 5);
+		uart0_hal_send_string("OK ");
+	}else if(status==LM_STATUS_TRY_AGAIN){
+		uart0_hal_send_string("TRY AGAIN ");
+	}else if(status==LM_STATUS_ERROR){
+		uart0_hal_send_string("ERROR ");
+	}else if(status==LM_STATUS_CONF_ERR){
+		uart0_hal_send_string("CONF_ERR ");
+	}else{
+		uart0_hal_send_string("FAIL ");
 	}
 }
