@@ -40,6 +40,12 @@ MODULES\LORA_module\sleep_controller\sleep_controller.c
 
 MODULES\LORA_module\util\util.c
 
+MODULES\MRPP_module\mrpp.c
+
+MODULES\MRPP_module\util\mrpp_data.c
+
+MODULES\MRPP_module\util\mrpp_state.c
+
 MODULES\RTC_module\RTC_module.c
 
 MODULES\SCD30_module\SCD30_module.c
@@ -49,6 +55,10 @@ TEST\ADC_module\test_ADC_module.c
 TEST\EEPROM_module\test_EEPROM_module.c
 
 TEST\LORA_module\test_lora_module.c
+
+TEST\MRPP_module\helpers\util.c
+
+TEST\MRPP_module\test_MRPP_module.c
 
 TEST\RTC_module\test_RTC_module.c
 

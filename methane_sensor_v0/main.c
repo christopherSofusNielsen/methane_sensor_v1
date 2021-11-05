@@ -20,10 +20,11 @@
 #include "TEST/RTC_module/test_RTC_module.h"
 #include "TEST/UART0_HAL/test_UART0_HAL.h"
 #include "TEST/TC2_HAL/test_TC2_HAL.h"
+#include "TEST/MRPP_module/test_MRPP_module.h"
 
 int main(void)
 {
-	test_lora_module_start();
+	//test_lora_module_start();
 	//test_SCD30_module_start();
     //test_PM_HAL_start();
 	//test_EEPROM_module_start();
@@ -34,6 +35,7 @@ int main(void)
 	//test_RTC_module_start();
 	//test_UART0_HAL_start();
 	//test_TC2_HAL_start();
+	test_MRPP_module_start();
 	
 	while(1)
     {

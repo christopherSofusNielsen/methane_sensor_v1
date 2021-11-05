@@ -228,6 +228,30 @@
     <Compile Include="MODULES\LORA_module\util\util.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MODULES\MRPP_module\mrpp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\MRPP_module\mrpp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\MRPP_module\params.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\MRPP_module\types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\MRPP_module\util\mrpp_data.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\MRPP_module\util\mrpp_data.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\MRPP_module\util\mrpp_state.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\MRPP_module\util\mrpp_state.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MODULES\RTC_module\RTC_module.c">
       <SubType>compile</SubType>
     </Compile>
@@ -256,6 +280,18 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="TEST\LORA_module\test_lora_module.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\MRPP_module\helpers\util.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\MRPP_module\helpers\util.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\MRPP_module\test_MRPP_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\MRPP_module\test_MRPP_module.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="TEST\RTC_module\test_RTC_module.c">
@@ -333,12 +369,16 @@
     <Folder Include="MODULES\LORA_module\RN2483_protocol" />
     <Folder Include="MODULES\EEPROM_module" />
     <Folder Include="MODULES\ADC_module" />
+    <Folder Include="MODULES\MRPP_module" />
+    <Folder Include="MODULES\MRPP_module\util" />
     <Folder Include="MODULES\RTC_module" />
     <Folder Include="MODULES\SCD30_module" />
     <Folder Include="TEST" />
     <Folder Include="TEST\LORA_module" />
     <Folder Include="TEST\EEPROM_module" />
     <Folder Include="TEST\ADC_module" />
+    <Folder Include="TEST\MRPP_module" />
+    <Folder Include="TEST\MRPP_module\helpers" />
     <Folder Include="TEST\TC2_HAL" />
     <Folder Include="TEST\UART0_HAL" />
     <Folder Include="TEST\TC1_HAL" />
