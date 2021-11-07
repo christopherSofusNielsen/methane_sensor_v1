@@ -50,6 +50,8 @@ MODULES\RTC_module\RTC_module.c
 
 MODULES\SCD30_module\SCD30_module.c
 
+PROGRAMS\MAINPG\MAINPG.c
+
 TEST\ADC_module\test_ADC_module.c
 
 TEST\EEPROM_module\test_EEPROM_module.c
@@ -71,6 +73,8 @@ TEST\TC0_HAL\test_TC0_HAL.c
 TEST\TC1_HAL\test_TC1_HAL.c
 
 TEST\TC2_HAL\test_TC2_HAL.c
+
+TEST\test_runner.c
 
 TEST\UART0_HAL\test_UART0_HAL.c
 

@@ -33,6 +33,7 @@ bool EM_set_deveui(const char deveui[]){
 	if(strlen(deveui)!=16) return false;
 	eeprom_update_block((const void *) deveui, (void *) EEPROM_DEVEUI_ADDR, EEPROM_DEVEUI_LENGTH );
 	eeprom_update_byte((uint8_t *) EEPROM_HAS_DEVEUI_ADDR, true);
+	return true;
 }
 
 bool EM_get_deveui(char deveui[]){
@@ -46,6 +47,7 @@ bool EM_set_appeui(const char appeui[]){
 	if(strlen(appeui)!=16) return false;
 	eeprom_update_block((const void *) appeui, (void *) EEPROM_APPEUI_ADDR, EEPROM_APPEUI_LENGTH );
 	eeprom_update_byte((uint8_t *) EEPROM_HAS_APPEUI_ADDR, true);
+	return true;
 }
 
 bool EM_get_appeui(char appeui[]){
@@ -59,6 +61,7 @@ bool EM_set_appkey(const char appkey[]){
 	if(strlen(appkey)!=32) return false;
 	eeprom_update_block((const void *) appkey, (void *) EEPROM_APPKEY_ADDR, EEPROM_APPKEY_LENGTH );
 	eeprom_update_byte((uint8_t *) EEPROM_HAS_APPKEY_ADDR, true);
+	return true;
 }
 
 bool EM_get_appkey(char appkey[]){

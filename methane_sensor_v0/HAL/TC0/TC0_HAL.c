@@ -12,11 +12,7 @@
 #include "../types.h"
 #include "../../util/bit_operators.h"
 
-callback_ptr _cb;
-
-
-
-
+static callback_ptr _cb;
 
 
 void TC0_HAL_init(uint8_t match, callback_ptr cb){

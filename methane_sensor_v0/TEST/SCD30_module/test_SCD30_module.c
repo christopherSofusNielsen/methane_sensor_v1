@@ -19,9 +19,12 @@
 #include "test_SCD30_module.h"
 #include "../../HAL/TWI/TWI_HAL.h"
 #include "../../HAL/UART1/UART1_HAL.h"
+#include "../../HAL/UART0/UART0_HAL.h"
 #include "../../HAL/TWI/TWI_API.h"
 #include "../../MODULES/SCD30_module/SCD30_module.h"
 #include "../../HAL/PM/PM_HAL.h"
+#include "../../util/bit_operators.h"
+#include "../../MODULES/RTC_module/RTC_module.h"
 
 
 
@@ -34,7 +37,19 @@ void read_measure_interval();
 
 void test_SCD30_module_start(){
 		uart1_hal_init();
+		uart0_hal_init();
 		PM_HAL_SCD30_power_init();
+		
+		//Set pull up
+		set_bit(PORTB, 0);
+		set_bit(PORTB, 1);
+		
+		TWI_HAL_init();
+		RTC_STATUS status=RTC_set_clock_out(1);
+		if(status != RTC_STATUS_SUCCESS){
+			uart1_hal_send_string("Fail ");
+			return;
+		}
 		
 		while(1){
 			//read_firmware_api();
@@ -54,10 +69,10 @@ void test_SCD30_module_start(){
 /************************************************************************/
 static void test_sampling(){
 	uint16_t data[5];
-	
-	SCD30_STATUS status=SCD30_init_sampling(20000, 5, data);
+	uart0_hal_send_string("RUN ");
+	SCD30_STATUS status=SCD30_init_sampling(3, 5, data);
 	if(status!=SCD30_STATUS_SUCCESS){
-		uart1_hal_send_string("FAIL ");
+		uart0_hal_send_string("FAIL ");
 	}
 	
 	
@@ -68,7 +83,7 @@ static void test_sampling(){
 	{
 		char msg[20];
 		sprintf(msg, " %u ", data[i]);
-		uart1_hal_send_string(msg);
+		uart0_hal_send_string(msg);
 		_delay_ms(200);
 	}
 }

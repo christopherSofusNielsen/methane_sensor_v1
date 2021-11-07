@@ -58,6 +58,10 @@ LM_STATUS util_parse_err(char *msg){
 		return LM_STATUS_TRY_AGAIN;
 	}
 	
+	if(strcmp(msg, DENIED)==0){
+		return LM_STATUS_TRY_AGAIN;
+	}
+	
 	if(strcmp(msg, KEYS_NOT_INIT)==0){
 		return LM_STATUS_CONF_ERR;
 	}

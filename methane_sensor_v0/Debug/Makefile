@@ -56,6 +56,9 @@ SUBDIRS :=  \
 ../MODULES/MRPP_module/util \
 ../MODULES/RTC_module \
 ../MODULES/SCD30_module \
+../PROGRAMS \
+../PROGRAMS/CONFIG_MODE \
+../PROGRAMS/MAINPG \
 ../TEST \
 ../TEST/LORA_module \
 ../TEST/EEPROM_module \
@@ -99,6 +102,7 @@ C_SRCS +=  \
 ../MODULES/MRPP_module/util/mrpp_state.c \
 ../MODULES/RTC_module/RTC_module.c \
 ../MODULES/SCD30_module/SCD30_module.c \
+../PROGRAMS/MAINPG/MAINPG.c \
 ../TEST/ADC_module/test_ADC_module.c \
 ../TEST/EEPROM_module/test_EEPROM_module.c \
 ../TEST/LORA_module/test_lora_module.c \
@@ -110,6 +114,7 @@ C_SRCS +=  \
 ../TEST/TC0_HAL/test_TC0_HAL.c \
 ../TEST/TC1_HAL/test_TC1_HAL.c \
 ../TEST/TC2_HAL/test_TC2_HAL.c \
+../TEST/test_runner.c \
 ../TEST/UART0_HAL/test_UART0_HAL.c \
 ../util/CRC8/CRC8.c
 
@@ -145,6 +150,7 @@ MODULES/MRPP_module/util/mrpp_data.o \
 MODULES/MRPP_module/util/mrpp_state.o \
 MODULES/RTC_module/RTC_module.o \
 MODULES/SCD30_module/SCD30_module.o \
+PROGRAMS/MAINPG/MAINPG.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
 TEST/LORA_module/test_lora_module.o \
@@ -156,6 +162,7 @@ TEST/PM_HAL/test_PM_HAL.o \
 TEST/TC0_HAL/test_TC0_HAL.o \
 TEST/TC1_HAL/test_TC1_HAL.o \
 TEST/TC2_HAL/test_TC2_HAL.o \
+TEST/test_runner.o \
 TEST/UART0_HAL/test_UART0_HAL.o \
 util/CRC8/CRC8.o
 
@@ -184,6 +191,7 @@ MODULES/MRPP_module/util/mrpp_data.o \
 MODULES/MRPP_module/util/mrpp_state.o \
 MODULES/RTC_module/RTC_module.o \
 MODULES/SCD30_module/SCD30_module.o \
+PROGRAMS/MAINPG/MAINPG.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
 TEST/LORA_module/test_lora_module.o \
@@ -195,6 +203,7 @@ TEST/PM_HAL/test_PM_HAL.o \
 TEST/TC0_HAL/test_TC0_HAL.o \
 TEST/TC1_HAL/test_TC1_HAL.o \
 TEST/TC2_HAL/test_TC2_HAL.o \
+TEST/test_runner.o \
 TEST/UART0_HAL/test_UART0_HAL.o \
 util/CRC8/CRC8.o
 
@@ -223,6 +232,7 @@ MODULES/MRPP_module/util/mrpp_data.d \
 MODULES/MRPP_module/util/mrpp_state.d \
 MODULES/RTC_module/RTC_module.d \
 MODULES/SCD30_module/SCD30_module.d \
+PROGRAMS/MAINPG/MAINPG.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
 TEST/LORA_module/test_lora_module.d \
@@ -234,6 +244,7 @@ TEST/PM_HAL/test_PM_HAL.d \
 TEST/TC0_HAL/test_TC0_HAL.d \
 TEST/TC1_HAL/test_TC1_HAL.d \
 TEST/TC2_HAL/test_TC2_HAL.d \
+TEST/test_runner.d \
 TEST/UART0_HAL/test_UART0_HAL.d \
 util/CRC8/CRC8.d
 
@@ -262,6 +273,7 @@ MODULES/MRPP_module/util/mrpp_data.d \
 MODULES/MRPP_module/util/mrpp_state.d \
 MODULES/RTC_module/RTC_module.d \
 MODULES/SCD30_module/SCD30_module.d \
+PROGRAMS/MAINPG/MAINPG.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
 TEST/LORA_module/test_lora_module.d \
@@ -273,6 +285,7 @@ TEST/PM_HAL/test_PM_HAL.d \
 TEST/TC0_HAL/test_TC0_HAL.d \
 TEST/TC1_HAL/test_TC1_HAL.d \
 TEST/TC2_HAL/test_TC2_HAL.d \
+TEST/test_runner.d \
 TEST/UART0_HAL/test_UART0_HAL.d \
 util/CRC8/CRC8.d
 
@@ -458,6 +471,13 @@ MODULES/SCD30_module/SCD30_module.o: ../MODULES/SCD30_module/SCD30_module.c
 	@echo Finished building: $<
 	
 
+PROGRAMS/MAINPG/MAINPG.o: ../PROGRAMS/MAINPG/MAINPG.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 TEST/ADC_module/test_ADC_module.o: ../TEST/ADC_module/test_ADC_module.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
@@ -529,6 +549,13 @@ TEST/TC1_HAL/test_TC1_HAL.o: ../TEST/TC1_HAL/test_TC1_HAL.c
 	
 
 TEST/TC2_HAL/test_TC2_HAL.o: ../TEST/TC2_HAL/test_TC2_HAL.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+TEST/test_runner.o: ../TEST/test_runner.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

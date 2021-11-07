@@ -5,7 +5,7 @@
  *  Author: Mainframe
  */ 
 
-//#define F_CPU 8000000UL
+
 #include <xc.h>
 #include <util/delay.h>
 #include <string.h>
@@ -38,7 +38,6 @@ void test_ADC_module_start(){
 		//init_sampling();
 		//test_sampling();
 		//test_heater();
-		
 		
 		_delay_ms(1000);
 	}
@@ -146,3 +145,4 @@ void read_adc(){
 	
 	uart1_hal_send_message(data, 2);
 }
+

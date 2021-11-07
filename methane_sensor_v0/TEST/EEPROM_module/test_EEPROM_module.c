@@ -12,7 +12,7 @@
 #include <stdio.h>
 
 #include "test_EEPROM_module.h"
-#include "../../HAL/UART0/UART0_HAL.h"
+#include "../../HAL/UART1/UART1_HAL.h"
 #include "../../MODULES/EEPROM_module/EEPROM_module.h"
 
 void clear_lora_parameters();
@@ -20,9 +20,8 @@ void set_deveui();
 void test_set_get_parameter();
 
 void test_EEPROM_module_start(){
-	uart0_hal_init();
-	char msg[]="Init ";
-	uart0_hal_send_message(msg, strlen(msg));
+	uart1_hal_init();
+	uart1_hal_send_string("Init ");
 	
 	while(1){
 		//clear_lora_parameters();
@@ -44,21 +43,21 @@ void test_set_get_parameter(){
 	EM_set_appkey(appkey);
 	
 	EM_get_deveui(data);
-	uart0_hal_send_message(data, strlen(data));
+	uart1_hal_send_string(data);
 	_delay_ms(200);
-	uart0_hal_send_message(space, strlen(space));
+	uart1_hal_send_string(space);
 	_delay_ms(200);
 	
 	EM_get_appeui(data);
-	uart0_hal_send_message(data, strlen(data));
+	uart1_hal_send_string(data);
 	_delay_ms(200);
-	uart0_hal_send_message(space, strlen(space));
+	uart1_hal_send_string(space);;
 	_delay_ms(200);
 	
 	EM_get_appkey(data);
-	uart0_hal_send_message(data, strlen(data));
+	uart1_hal_send_string(data);
 	_delay_ms(200);
-	uart0_hal_send_message(space, strlen(space));
+	uart1_hal_send_string(space);
 	_delay_ms(200);
 	
 }
@@ -69,22 +68,19 @@ void set_deveui(){
 	
 	EM_set_deveui(deveui);
 	if(!EM_has_deveui()){
-		char msg[]="FAIL";
-		uart0_hal_send_message(msg, strlen(msg));
+		uart1_hal_send_string("FAIL");
 		return;
 	}
 	EM_get_deveui(deveui_read);
-	uart0_hal_send_message(deveui_read, strlen(deveui_read));
+	uart1_hal_send_string(deveui_read);
 }
 
 void clear_lora_parameters(){
 	EM_clear_lora_prameters();
 	uint8_t status=EM_has_deveui();
 	if(status){
-		char msg[]="T ";
-		uart0_hal_send_message(msg, strlen(msg));
+		uart1_hal_send_string("T ");
 	}else{
-		char msg[]="F ";
-		uart0_hal_send_message(msg, strlen(msg));
+		uart1_hal_send_string("F ");
 	}
 }

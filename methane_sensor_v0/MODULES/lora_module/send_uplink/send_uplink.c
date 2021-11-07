@@ -54,7 +54,7 @@ LM_STATUS SU_send_uplink(uint8_t port, uint8_t data[], uint8_t length){
 				return LM_STATUS_TRY_AGAIN;
 			
 			case SU_NO_ACK:
-				return LM_STATUS_ERROR;
+				return LM_STATUS_MAC_ERR;
 			
 			case SU_FATAL_ERROR:
 				return LM_STATUS_FATAL_ERROR;	

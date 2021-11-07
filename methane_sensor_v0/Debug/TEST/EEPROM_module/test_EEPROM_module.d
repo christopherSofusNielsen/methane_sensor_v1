@@ -22,7 +22,7 @@ TEST/EEPROM_module/test_EEPROM_module.d \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
  ../TEST/EEPROM_module/test_EEPROM_module.h \
- ../TEST/EEPROM_module/../../HAL/UART0/UART0_HAL.h \
+ ../TEST/EEPROM_module/../../HAL/UART1/UART1_HAL.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  ../TEST/EEPROM_module/../../MODULES/EEPROM_module/EEPROM_module.h
 
@@ -68,7 +68,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
 
 ../TEST/EEPROM_module/test_EEPROM_module.h:
 
-../TEST/EEPROM_module/../../HAL/UART0/UART0_HAL.h:
+../TEST/EEPROM_module/../../HAL/UART1/UART1_HAL.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 

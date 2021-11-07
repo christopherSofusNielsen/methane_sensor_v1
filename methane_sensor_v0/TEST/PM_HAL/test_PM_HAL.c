@@ -11,14 +11,13 @@
 
 #include "test_PM_HAL.h"
 #include "../../HAL/PM/PM_HAL.h"
-#include "../../HAL/UART0/UART0_HAL.h"
+#include "../../HAL/UART1/UART1_HAL.h"
 
 void test_sleep_cmd();
 
 void test_PM_HAL_start(){
-	uart0_hal_init();
-	char msg[]="Init";
-	uart0_hal_send_message(msg, strlen(msg));
+	uart1_hal_init();
+	uart1_hal_send_string("Init ");
 	_delay_ms(500);
 	while(1){
 		test_sleep_cmd();
@@ -27,11 +26,10 @@ void test_PM_HAL_start(){
 }
 
 void test_sleep_cmd(){
-	char msg1[]="Before sleep";
-	uart0_hal_send_message(msg1, strlen(msg1));
+	
+	uart1_hal_send_string("Before sleep");
 	_delay_ms(200);
 	PM_HAL_enter_power_down();
-	char msg2[]="After sleep";
-	uart0_hal_send_message(msg2, strlen(msg2));
+	uart1_hal_send_string("After sleep");
 	_delay_ms(200);
 }

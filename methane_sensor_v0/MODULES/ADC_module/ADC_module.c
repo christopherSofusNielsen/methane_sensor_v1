@@ -24,11 +24,11 @@ float PPM_factor=1.00;
 uint16_t _nSamples;
 uint16_t *_data;
 uint16_t cntSamples;
-uint8_t _powerUpTime;
-uint8_t cntPowerUpTime;
+static uint8_t _powerUpTime;
+static uint8_t cntPowerUpTime;
 
 void vect_ADC_do_sample();
-void vect_ADC_heat_timeout();
+static void vect_ADC_heat_timeout();
 
 ADC_STATUS ADC_init_sampling(uint8_t samplingInterval, uint16_t nSamples, uint16_t data[]){
 	_data=data;
@@ -94,7 +94,8 @@ ADC_STATUS ADC_meth_sens_power_on(uint8_t powerUpTime){
 	PM_HAL_meth_power(true);
 	
 	//Setup timer
-	TC0_HAL_init(60, &vect_ADC_heat_timeout);
+	//TC0_HAL_init(60, &vect_ADC_heat_timeout);
+	TC0_HAL_init(1, &vect_ADC_heat_timeout);
 	TC0_HAL_start();
 	return ADC_STATUS_SUCCESS;
 }
@@ -132,9 +133,9 @@ void vect_ADC_do_sample(){
 	}
 }
 
-void vect_ADC_heat_timeout(){
+static void vect_ADC_heat_timeout(){
 	cntPowerUpTime++;
-	if(cntPowerUpTime==_powerUpTime){
+	if(cntPowerUpTime>=_powerUpTime){
 		TC0_HAL_stop();
 	}
 }

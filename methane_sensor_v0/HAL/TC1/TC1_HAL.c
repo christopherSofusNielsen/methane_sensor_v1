@@ -11,7 +11,7 @@
 
 #include "../../util/bit_operators.h"
 
-callback_ptr _cb;
+static callback_ptr _cb;
 
 void TC1_HAL_init(uint16_t match, callback_ptr cb){
 	TCCR1A=0x00;
