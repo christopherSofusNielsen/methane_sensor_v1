@@ -43,12 +43,15 @@ static MAINPG_STATES decode_stage_response(STAGE_STATUS status, MAINPG_STATES on
 static STAGE_STATUS stage_0();
 static STAGE_STATUS stage_1();
 static STAGE_STATUS stage_2();
+static STAGE_STATUS stage_3();
 
 
 //Global variabels
 static STAGE_STATES state_s0=STAGE_INIT;
 static STAGE_STATES state_s1=STAGE_INIT;
 static STAGE_STATES state_s2=STAGE_INIT;
+static STAGE_STATES state_s3=STAGE_INIT;
+
 static int16_t bodyIndex=-1;
 static uint16_t co2_data[MAX_CO2_SAMLPES];
 static uint16_t meth_data[MAX_METH_SAMLPES];
@@ -60,8 +63,10 @@ static COLLECTION cols[]={
 	{.samplingInterval=2, .samplings=2, .type=T_INT16},
 	{.samplingInterval=2, .samplings=2, .type=T_INT16},
 	{.samplingInterval=2, .samplings=2, .type=T_INT16},
+	{.samplingInterval=2, .samplings=2, .type=T_INT16},
+	{.samplingInterval=2, .samplings=2, .type=T_INT16},
 };
-static uint8_t colsNumber=5;
+static uint8_t colsNumber=7;
 
 static void send_msg(const char msg[]);
 
@@ -160,7 +165,6 @@ void MAINPG_start(){
 				}
 				lmStatus=send_header();
 				state=decode_header_tail_response(lmStatus, MAINPG_STAGE_0, MAINPG_SEND_HEADER);
-				//state=decode_header_tail_response(lmStatus, MAINPG_STAGE_2, MAINPG_SEND_HEADER);
 			break;
 			
 			case MAINPG_STAGE_0:
@@ -178,6 +182,12 @@ void MAINPG_start(){
 			case MAINPG_STAGE_2:
 				comeBackToState=MAINPG_STAGE_2;
 				stageStatus=stage_2();
+				state=decode_stage_response(stageStatus, MAINPG_STAGE_3);
+			break;
+			
+			case MAINPG_STAGE_3:
+				comeBackToState=MAINPG_STAGE_3;
+				stageStatus=stage_3();
 				state=decode_stage_response(stageStatus, MAINPG_SEND_ALL_DATA);
 			break;
 			
@@ -400,6 +410,59 @@ static STAGE_STATUS stage_2(){
 	}
 }
 
+
+/************************************************************************/
+/* Stage 3                                                              */
+/************************************************************************/
+static STAGE_STATUS stage_3(){
+	ADC_STATUS adcStatus;
+	SCD30_STATUS scd30Status;
+	while(1){
+		switch(state_s3){
+			case STAGE_INIT:
+				scd30Status=SCD30_init_sampling(cols[5].samplingInterval, cols[5].samplings, co2_data);
+				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
+				
+				adcStatus=ADC_init_sampling(cols[6].samplingInterval, cols[6].samplings, meth_data);
+				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
+			
+				state_s3=STAGE_GET_TIME;
+			break;
+			
+			case STAGE_GET_TIME:
+				RTC_get_current_time(&dt);
+				
+				state_s3=STAGE_START;
+			break;
+			
+			case STAGE_START:
+				SCD30_start_sampling();
+				ADC_start_sampling();
+				
+				state_s3=STAGE_WAIT;
+			break;
+			
+			case STAGE_WAIT:
+				if(!SCD30_is_sampling_done() || !ADC_is_sampling_done()) return STAGE_RUNNING;
+				state_s3=STAGE_UPDATE_MRPP;
+			break;
+			
+			case STAGE_UPDATE_MRPP:
+				RTC_datetime_to_ts(dt, ts);
+				MRPP_add_collection_data_INT16(6, ts, co2_data);
+				MRPP_add_collection_data_INT16(7, ts, meth_data);
+				state_s3=STAGE_DEINIT;
+			break;
+			
+			case STAGE_DEINIT:
+				SCD30_deinit_sampling();
+				ADC_deinit_sampling();
+				return STAGE_DONE;
+			break;
+		}
+	}
+}
+
 /************************************************************************/
 /* Helper functions                                                     */
 /************************************************************************/
@@ -419,7 +482,7 @@ static MAINPG_STATES decode_stage_response(STAGE_STATUS status, MAINPG_STATES on
 static RTC_STATUS set_wakeup(){
 	//uint8_t samplingProcessInterval=1;
 	//return RTC_set_wake_up_interrupt(samplingProcessInterval);
-	return RTC_set_wake_up_interrupt_minutes(4);
+	return RTC_set_wake_up_interrupt_minutes(6);
 }
 
 static LM_STATUS join_lora(){
@@ -487,6 +550,7 @@ static MAINPG_STATES decode_header_tail_response(LM_STATUS status, MAINPG_STATES
 	switch(status){
 		case LM_STATUS_SUCCESS:
 		case LM_STATUS_MAC_ERR:
+		case LM_STATUS_INV_DATA_LEN:
 			return success;
 			
 		case LM_STATUS_TRY_AGAIN:
