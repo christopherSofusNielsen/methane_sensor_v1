@@ -455,6 +455,7 @@ static MAINPG_STATES decode_body_response(int16_t bodyIndex, LM_STATUS status, M
 	switch(status){
 		case LM_STATUS_SUCCESS:
 		case LM_STATUS_MAC_ERR:
+		case LM_STATUS_INV_DATA_LEN:
 			MRPP_set_body_sent(bodyIndex);
 			return success;
 		

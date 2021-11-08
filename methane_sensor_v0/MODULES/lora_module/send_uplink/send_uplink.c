@@ -55,6 +55,9 @@ LM_STATUS SU_send_uplink(uint8_t port, uint8_t data[], uint8_t length){
 			
 			case SU_NO_ACK:
 				return LM_STATUS_MAC_ERR;
+				
+			case SU_INV_DATA_LEN:
+				return LM_STATUS_INV_DATA_LEN;
 			
 			case SU_FATAL_ERROR:
 				return LM_STATUS_FATAL_ERROR;	
@@ -73,6 +76,7 @@ static SU_STATES decode_tx_response(const char msg[]){
 	if(strcmp(msg, NO_FREE_CH)==0)return SU_TRY_AGAIN;
 	if(strcmp(msg, MAC_ERR)==0)return SU_NO_ACK;
 	if(beginsWidth(msg, MAC_RX)) return SU_HANDLE_DOWNLINK;
+	if(beginsWidth(msg, INVALID_DATA_LEN)) return SU_INV_DATA_LEN;
 	
 	return SU_FATAL_ERROR;
 }

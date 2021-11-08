@@ -21,7 +21,8 @@ typedef enum {
 	SU_WAIT_FOR_INCOMMING,
 	SU_FATAL_ERROR,
 	SU_TRY_AGAIN,
-	SU_NO_ACK
+	SU_NO_ACK,
+	SU_INV_DATA_LEN
 }SU_STATES;
 
 LM_STATUS SU_send_uplink(uint8_t port, uint8_t data[], uint8_t length);

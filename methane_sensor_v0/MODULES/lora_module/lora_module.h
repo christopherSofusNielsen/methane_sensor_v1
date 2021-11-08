@@ -21,7 +21,8 @@ typedef enum {
 	LM_STATUS_FATAL_ERROR,
 	LM_STATUS_TRY_AGAIN,
 	LM_STATUS_CONF_ERR,
-	LM_STATUS_MAC_ERR
+	LM_STATUS_MAC_ERR,
+	LM_STATUS_INV_DATA_LEN,
 }LM_STATUS;
 
 LM_STATUS LM_join_network(char deveui[], char appeui[], char appkey[]);
