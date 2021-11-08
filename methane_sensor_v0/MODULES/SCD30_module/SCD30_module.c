@@ -30,9 +30,9 @@ const uint8_t DATA_READY_CMD[]={0x02, 0x02};
 /************************************************************************/
 /* Variables                                                            */
 /************************************************************************/
-uint16_t _nSamples;
-uint16_t *_data;
-uint16_t cntSamples;
+static uint16_t _nSamples;
+static uint16_t *_data;
+static uint16_t cntSamples;
 	
 /************************************************************************/
 /* Functions                                                            */
@@ -59,7 +59,7 @@ SCD30_STATUS SCD30_init_sampling(uint16_t samplingInterval, uint16_t nSamples, u
 	return init_measurement();
 }
 
-void SCD30_deinit(){
+void SCD30_deinit_sampling(){
 	TC1_HAL_stop();
 	PM_HAL_SCD30_power(false);
 	_data=NULL;

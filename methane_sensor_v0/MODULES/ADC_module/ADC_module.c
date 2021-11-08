@@ -18,16 +18,16 @@
 
 #define ADC_BIT_RESOLUTION 4096
 
-float Vc=5.00;
-float RRL=2500.00;
-float PPM_factor=1.00;
-uint16_t _nSamples;
-uint16_t *_data;
-uint16_t cntSamples;
+static float Vc=5.00;
+static float RRL=2500.00;
+static float PPM_factor=1.00;
+static uint16_t _nSamples;
+static uint16_t *_data;
+static uint16_t cntSamples;
 static uint8_t _powerUpTime;
 static uint8_t cntPowerUpTime;
 
-void vect_ADC_do_sample();
+static void vect_ADC_do_sample();
 static void vect_ADC_heat_timeout();
 
 ADC_STATUS ADC_init_sampling(uint8_t samplingInterval, uint16_t nSamples, uint16_t data[]){
@@ -126,7 +126,7 @@ uint16_t calc_ppm_methane(uint16_t bit_value){
 	return PPM;
 }
 
-void vect_ADC_do_sample(){
+static void vect_ADC_do_sample(){
 	ADC_get_value(&(_data[cntSamples++]));
 	if(cntSamples>=_nSamples){
 		TC0_HAL_stop();
