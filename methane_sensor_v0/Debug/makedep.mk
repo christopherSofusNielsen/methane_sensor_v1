@@ -28,6 +28,8 @@ MODULES\ADC_module\ADC_module.c
 
 MODULES\EEPROM_module\EEPROM_module.c
 
+MODULES\LED_module\LED_module.c
+
 MODULES\LORA_module\join_network\join_network.c
 
 MODULES\LORA_module\lora_module.c
@@ -57,6 +59,8 @@ PROGRAMS\MAINPG\MAINPG.c
 TEST\ADC_module\test_ADC_module.c
 
 TEST\EEPROM_module\test_EEPROM_module.c
+
+TEST\LED_module\test_LED_module.c
 
 TEST\LORA_module\test_lora_module.c
 

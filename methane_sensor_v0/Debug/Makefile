@@ -54,6 +54,7 @@ SUBDIRS :=  \
 ../MODULES/ADC_module \
 ../MODULES/MRPP_module \
 ../MODULES/MRPP_module/util \
+../MODULES/LED_module \
 ../MODULES/PUMP_module \
 ../MODULES/RTC_module \
 ../MODULES/SCD30_module \
@@ -66,6 +67,7 @@ SUBDIRS :=  \
 ../TEST/ADC_module \
 ../TEST/MRPP_module \
 ../TEST/MRPP_module/helpers \
+../TEST/LED_module \
 ../TEST/PUMP_module \
 ../TEST/TC2_HAL \
 ../TEST/UART0_HAL \
@@ -93,6 +95,7 @@ C_SRCS +=  \
 ../main.c \
 ../MODULES/ADC_module/ADC_module.c \
 ../MODULES/EEPROM_module/EEPROM_module.c \
+../MODULES/LED_module/LED_module.c \
 ../MODULES/LORA_module/join_network/join_network.c \
 ../MODULES/LORA_module/lora_module.c \
 ../MODULES/LORA_module/RN2483_protocol/RN2483_protocol.c \
@@ -108,6 +111,7 @@ C_SRCS +=  \
 ../PROGRAMS/MAINPG/MAINPG.c \
 ../TEST/ADC_module/test_ADC_module.c \
 ../TEST/EEPROM_module/test_EEPROM_module.c \
+../TEST/LED_module/test_LED_module.c \
 ../TEST/LORA_module/test_lora_module.c \
 ../TEST/MRPP_module/helpers/util.c \
 ../TEST/MRPP_module/test_MRPP_module.c \
@@ -143,6 +147,7 @@ HAL/UART1/UART1_HAL.o \
 main.o \
 MODULES/ADC_module/ADC_module.o \
 MODULES/EEPROM_module/EEPROM_module.o \
+MODULES/LED_module/LED_module.o \
 MODULES/LORA_module/join_network/join_network.o \
 MODULES/LORA_module/lora_module.o \
 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o \
@@ -158,6 +163,7 @@ MODULES/SCD30_module/SCD30_module.o \
 PROGRAMS/MAINPG/MAINPG.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
+TEST/LED_module/test_LED_module.o \
 TEST/LORA_module/test_lora_module.o \
 TEST/MRPP_module/helpers/util.o \
 TEST/MRPP_module/test_MRPP_module.o \
@@ -186,6 +192,7 @@ HAL/UART1/UART1_HAL.o \
 main.o \
 MODULES/ADC_module/ADC_module.o \
 MODULES/EEPROM_module/EEPROM_module.o \
+MODULES/LED_module/LED_module.o \
 MODULES/LORA_module/join_network/join_network.o \
 MODULES/LORA_module/lora_module.o \
 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o \
@@ -201,6 +208,7 @@ MODULES/SCD30_module/SCD30_module.o \
 PROGRAMS/MAINPG/MAINPG.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
+TEST/LED_module/test_LED_module.o \
 TEST/LORA_module/test_lora_module.o \
 TEST/MRPP_module/helpers/util.o \
 TEST/MRPP_module/test_MRPP_module.o \
@@ -229,6 +237,7 @@ HAL/UART1/UART1_HAL.d \
 main.d \
 MODULES/ADC_module/ADC_module.d \
 MODULES/EEPROM_module/EEPROM_module.d \
+MODULES/LED_module/LED_module.d \
 MODULES/LORA_module/join_network/join_network.d \
 MODULES/LORA_module/lora_module.d \
 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.d \
@@ -244,6 +253,7 @@ MODULES/SCD30_module/SCD30_module.d \
 PROGRAMS/MAINPG/MAINPG.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
+TEST/LED_module/test_LED_module.d \
 TEST/LORA_module/test_lora_module.d \
 TEST/MRPP_module/helpers/util.d \
 TEST/MRPP_module/test_MRPP_module.d \
@@ -272,6 +282,7 @@ HAL/UART1/UART1_HAL.d \
 main.d \
 MODULES/ADC_module/ADC_module.d \
 MODULES/EEPROM_module/EEPROM_module.d \
+MODULES/LED_module/LED_module.d \
 MODULES/LORA_module/join_network/join_network.d \
 MODULES/LORA_module/lora_module.d \
 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.d \
@@ -287,6 +298,7 @@ MODULES/SCD30_module/SCD30_module.d \
 PROGRAMS/MAINPG/MAINPG.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
+TEST/LED_module/test_LED_module.d \
 TEST/LORA_module/test_lora_module.d \
 TEST/MRPP_module/helpers/util.d \
 TEST/MRPP_module/test_MRPP_module.d \
@@ -406,6 +418,13 @@ MODULES/EEPROM_module/EEPROM_module.o: ../MODULES/EEPROM_module/EEPROM_module.c
 	@echo Finished building: $<
 	
 
+MODULES/LED_module/LED_module.o: ../MODULES/LED_module/LED_module.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 MODULES/LORA_module/join_network/join_network.o: ../MODULES/LORA_module/join_network/join_network.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
@@ -505,6 +524,13 @@ TEST/ADC_module/test_ADC_module.o: ../TEST/ADC_module/test_ADC_module.c
 	
 
 TEST/EEPROM_module/test_EEPROM_module.o: ../TEST/EEPROM_module/test_EEPROM_module.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+TEST/LED_module/test_LED_module.o: ../TEST/LED_module/test_LED_module.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

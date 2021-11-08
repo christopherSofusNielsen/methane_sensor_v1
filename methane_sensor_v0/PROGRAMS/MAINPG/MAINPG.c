@@ -225,6 +225,11 @@ void MAINPG_start(){
 				lmStatus=LM_put_to_sleep();
 				// Set to false, so when it starts up it will do a restart of LORA module
 				fromSleep=lmStatus==LM_STATUS_SUCCESS;
+				//Make sure all peripherals are turned of
+				PM_HAL_adc_power(false);
+				PM_HAL_SCD30_power(false);
+				PM_HAL_BC_power(false);
+				PM_HAL_meth_power(false);
 				
 				state=MAINPG_SLEEP;
 			break;

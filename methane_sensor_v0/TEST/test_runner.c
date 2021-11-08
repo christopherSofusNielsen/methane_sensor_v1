@@ -22,6 +22,7 @@
 #include "TC2_HAL/test_TC2_HAL.h"
 #include "MRPP_module/test_MRPP_module.h"
 #include "PUMP_module/test_PUMP_module.h"
+#include "LED_module/test_LED_module.h"
 
 void test_runner(){
 	//test_lora_module_start();
@@ -36,5 +37,6 @@ void test_runner(){
 	//test_UART0_HAL_start();
 	//test_TC2_HAL_start();
 	//test_MRPP_module_start();
-	test_PUMP_module_start();
+	//test_PUMP_module_start();
+	test_LED_module_start();
 }

@@ -197,6 +197,12 @@
     <Compile Include="MODULES\EEPROM_module\EEPROM_module.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MODULES\LED_module\LED_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MODULES\LED_module\LED_module.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MODULES\LORA_module\join_network\join_network.c">
       <SubType>compile</SubType>
     </Compile>
@@ -291,6 +297,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="TEST\EEPROM_module\test_EEPROM_module.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\LED_module\test_LED_module.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TEST\LED_module\test_LED_module.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="TEST\LORA_module\test_lora_module.c">
@@ -400,6 +412,7 @@
     <Folder Include="MODULES\ADC_module" />
     <Folder Include="MODULES\MRPP_module" />
     <Folder Include="MODULES\MRPP_module\util" />
+    <Folder Include="MODULES\LED_module" />
     <Folder Include="MODULES\PUMP_module" />
     <Folder Include="MODULES\RTC_module" />
     <Folder Include="MODULES\SCD30_module" />
@@ -412,6 +425,7 @@
     <Folder Include="TEST\ADC_module" />
     <Folder Include="TEST\MRPP_module" />
     <Folder Include="TEST\MRPP_module\helpers" />
+    <Folder Include="TEST\LED_module" />
     <Folder Include="TEST\PUMP_module" />
     <Folder Include="TEST\TC2_HAL" />
     <Folder Include="TEST\UART0_HAL" />
