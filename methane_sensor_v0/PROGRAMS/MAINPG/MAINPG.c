@@ -28,6 +28,7 @@
 #include "../../MODULES/ADC_module/ADC_module.h"
 #include "../../MODULES/SCD30_module/SCD30_module.h"
 #include "../../MODULES/LORA_module/lora_module.h"
+#include "../../MODULES/PUMP_module/PUMP_module.h"
 
 //Functions
 static RTC_STATUS set_wakeup();
@@ -41,22 +42,26 @@ static LM_STATUS send_tail();
 static MAINPG_STATES decode_stage_response(STAGE_STATUS status, MAINPG_STATES onDone);
 static STAGE_STATUS stage_0();
 static STAGE_STATUS stage_1();
+static STAGE_STATUS stage_2();
 
 
 //Global variabels
 static STAGE_STATES state_s0=STAGE_INIT;
 static STAGE_STATES state_s1=STAGE_INIT;
+static STAGE_STATES state_s2=STAGE_INIT;
 static int16_t bodyIndex=-1;
 static uint16_t co2_data[MAX_CO2_SAMLPES];
 static uint16_t meth_data[MAX_METH_SAMLPES];
 static uint8_t ts[4];
 static Datetime dt;
 static COLLECTION cols[]={
-	{.samplingInterval=3, .samplings=3, .type=T_INT16},
-	{.samplingInterval=3, .samplings=3, .type=T_INT16},
-	{.samplingInterval=3, .samplings=3, .type=T_INT16},
+	{.samplingInterval=2, .samplings=2, .type=T_INT16},
+	{.samplingInterval=2, .samplings=2, .type=T_INT16},
+	{.samplingInterval=2, .samplings=2, .type=T_INT16},
+	{.samplingInterval=2, .samplings=2, .type=T_INT16},
+	{.samplingInterval=2, .samplings=2, .type=T_INT16},
 };
-static uint8_t colsNumber=3;
+static uint8_t colsNumber=5;
 
 static void send_msg(const char msg[]);
 
@@ -154,20 +159,25 @@ void MAINPG_start(){
 					break;
 				}
 				lmStatus=send_header();
-				//state=decode_header_tail_response(lmStatus, MAINPG_STAGE_0, MAINPG_SEND_HEADER);
 				state=decode_header_tail_response(lmStatus, MAINPG_STAGE_0, MAINPG_SEND_HEADER);
+				//state=decode_header_tail_response(lmStatus, MAINPG_STAGE_2, MAINPG_SEND_HEADER);
 			break;
 			
 			case MAINPG_STAGE_0:
 				comeBackToState=MAINPG_STAGE_0;
 				stageStatus=stage_0();
 				state=decode_stage_response(stageStatus, MAINPG_STAGE_1);
-				//state=decode_stage_response(stageStatus, MAINPG_SEND_ALL_DATA);
 			break;
 			
 			case MAINPG_STAGE_1:
 				comeBackToState=MAINPG_STAGE_1;
 				stageStatus=stage_1();
+				state=decode_stage_response(stageStatus, MAINPG_STAGE_2);
+			break;
+			
+			case MAINPG_STAGE_2:
+				comeBackToState=MAINPG_STAGE_2;
+				stageStatus=stage_2();
 				state=decode_stage_response(stageStatus, MAINPG_SEND_ALL_DATA);
 			break;
 			
@@ -323,6 +333,61 @@ static STAGE_STATUS stage_1(){
 				MRPP_add_collection_data_INT16(2, ts, co2_data);
 				MRPP_add_collection_data_INT16(3, ts, meth_data);
 				state_s1=STAGE_DEINIT;
+			break;
+			
+			case STAGE_DEINIT:
+				SCD30_deinit_sampling();
+				ADC_deinit_sampling();
+				return STAGE_DONE;
+			break;
+			
+		}
+	}
+}
+
+/************************************************************************/
+/* Stage 2                                                              */
+/************************************************************************/
+static STAGE_STATUS stage_2(){
+	ADC_STATUS adcStatus;
+	SCD30_STATUS scd30Status;
+	uint16_t seconds=10;
+	while(1){
+		switch(state_s2){
+			case STAGE_INIT:
+				scd30Status=SCD30_init_sampling(cols[3].samplingInterval, cols[3].samplings, co2_data);
+				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
+			
+				adcStatus=ADC_init_sampling(cols[4].samplingInterval, cols[4].samplings, meth_data);
+				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
+			
+				state_s2=STAGE_GET_TIME;
+			break;
+			
+			case STAGE_GET_TIME:
+				RTC_get_current_time(&dt);
+			
+				state_s2=STAGE_START;
+			break;
+			
+			case STAGE_START:
+				SCD30_start_sampling();
+				ADC_start_sampling();
+				PUMP_start(seconds);
+			
+				state_s2=STAGE_WAIT;
+			break;
+			
+			case STAGE_WAIT:
+				if(!SCD30_is_sampling_done() || !ADC_is_sampling_done() || !PUMP_is_done()) return STAGE_RUNNING;
+				state_s2=STAGE_UPDATE_MRPP;
+			break;
+			
+			case STAGE_UPDATE_MRPP:
+				RTC_datetime_to_ts(dt, ts);
+				MRPP_add_collection_data_INT16(4, ts, co2_data);
+				MRPP_add_collection_data_INT16(5, ts, meth_data);
+				state_s2=STAGE_DEINIT;
 			break;
 			
 			case STAGE_DEINIT:

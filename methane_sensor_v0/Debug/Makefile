@@ -54,6 +54,7 @@ SUBDIRS :=  \
 ../MODULES/ADC_module \
 ../MODULES/MRPP_module \
 ../MODULES/MRPP_module/util \
+../MODULES/PUMP_module \
 ../MODULES/RTC_module \
 ../MODULES/SCD30_module \
 ../PROGRAMS \
@@ -65,6 +66,7 @@ SUBDIRS :=  \
 ../TEST/ADC_module \
 ../TEST/MRPP_module \
 ../TEST/MRPP_module/helpers \
+../TEST/PUMP_module \
 ../TEST/TC2_HAL \
 ../TEST/UART0_HAL \
 ../TEST/TC1_HAL \
@@ -100,6 +102,7 @@ C_SRCS +=  \
 ../MODULES/MRPP_module/mrpp.c \
 ../MODULES/MRPP_module/util/mrpp_data.c \
 ../MODULES/MRPP_module/util/mrpp_state.c \
+../MODULES/PUMP_module/PUMP_module.c \
 ../MODULES/RTC_module/RTC_module.c \
 ../MODULES/SCD30_module/SCD30_module.c \
 ../PROGRAMS/MAINPG/MAINPG.c \
@@ -108,6 +111,7 @@ C_SRCS +=  \
 ../TEST/LORA_module/test_lora_module.c \
 ../TEST/MRPP_module/helpers/util.c \
 ../TEST/MRPP_module/test_MRPP_module.c \
+../TEST/PUMP_module/test_PUMP_module.c \
 ../TEST/RTC_module/test_RTC_module.c \
 ../TEST/SCD30_module/test_SCD30_module.c \
 ../TEST/PM_HAL/test_PM_HAL.c \
@@ -148,6 +152,7 @@ MODULES/LORA_module/util/util.o \
 MODULES/MRPP_module/mrpp.o \
 MODULES/MRPP_module/util/mrpp_data.o \
 MODULES/MRPP_module/util/mrpp_state.o \
+MODULES/PUMP_module/PUMP_module.o \
 MODULES/RTC_module/RTC_module.o \
 MODULES/SCD30_module/SCD30_module.o \
 PROGRAMS/MAINPG/MAINPG.o \
@@ -156,6 +161,7 @@ TEST/EEPROM_module/test_EEPROM_module.o \
 TEST/LORA_module/test_lora_module.o \
 TEST/MRPP_module/helpers/util.o \
 TEST/MRPP_module/test_MRPP_module.o \
+TEST/PUMP_module/test_PUMP_module.o \
 TEST/RTC_module/test_RTC_module.o \
 TEST/SCD30_module/test_SCD30_module.o \
 TEST/PM_HAL/test_PM_HAL.o \
@@ -189,6 +195,7 @@ MODULES/LORA_module/util/util.o \
 MODULES/MRPP_module/mrpp.o \
 MODULES/MRPP_module/util/mrpp_data.o \
 MODULES/MRPP_module/util/mrpp_state.o \
+MODULES/PUMP_module/PUMP_module.o \
 MODULES/RTC_module/RTC_module.o \
 MODULES/SCD30_module/SCD30_module.o \
 PROGRAMS/MAINPG/MAINPG.o \
@@ -197,6 +204,7 @@ TEST/EEPROM_module/test_EEPROM_module.o \
 TEST/LORA_module/test_lora_module.o \
 TEST/MRPP_module/helpers/util.o \
 TEST/MRPP_module/test_MRPP_module.o \
+TEST/PUMP_module/test_PUMP_module.o \
 TEST/RTC_module/test_RTC_module.o \
 TEST/SCD30_module/test_SCD30_module.o \
 TEST/PM_HAL/test_PM_HAL.o \
@@ -230,6 +238,7 @@ MODULES/LORA_module/util/util.d \
 MODULES/MRPP_module/mrpp.d \
 MODULES/MRPP_module/util/mrpp_data.d \
 MODULES/MRPP_module/util/mrpp_state.d \
+MODULES/PUMP_module/PUMP_module.d \
 MODULES/RTC_module/RTC_module.d \
 MODULES/SCD30_module/SCD30_module.d \
 PROGRAMS/MAINPG/MAINPG.d \
@@ -238,6 +247,7 @@ TEST/EEPROM_module/test_EEPROM_module.d \
 TEST/LORA_module/test_lora_module.d \
 TEST/MRPP_module/helpers/util.d \
 TEST/MRPP_module/test_MRPP_module.d \
+TEST/PUMP_module/test_PUMP_module.d \
 TEST/RTC_module/test_RTC_module.d \
 TEST/SCD30_module/test_SCD30_module.d \
 TEST/PM_HAL/test_PM_HAL.d \
@@ -271,6 +281,7 @@ MODULES/LORA_module/util/util.d \
 MODULES/MRPP_module/mrpp.d \
 MODULES/MRPP_module/util/mrpp_data.d \
 MODULES/MRPP_module/util/mrpp_state.d \
+MODULES/PUMP_module/PUMP_module.d \
 MODULES/RTC_module/RTC_module.d \
 MODULES/SCD30_module/SCD30_module.d \
 PROGRAMS/MAINPG/MAINPG.d \
@@ -279,6 +290,7 @@ TEST/EEPROM_module/test_EEPROM_module.d \
 TEST/LORA_module/test_lora_module.d \
 TEST/MRPP_module/helpers/util.d \
 TEST/MRPP_module/test_MRPP_module.d \
+TEST/PUMP_module/test_PUMP_module.d \
 TEST/RTC_module/test_RTC_module.d \
 TEST/SCD30_module/test_SCD30_module.d \
 TEST/PM_HAL/test_PM_HAL.d \
@@ -457,6 +469,13 @@ MODULES/MRPP_module/util/mrpp_state.o: ../MODULES/MRPP_module/util/mrpp_state.c
 	@echo Finished building: $<
 	
 
+MODULES/PUMP_module/PUMP_module.o: ../MODULES/PUMP_module/PUMP_module.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 MODULES/RTC_module/RTC_module.o: ../MODULES/RTC_module/RTC_module.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
@@ -507,6 +526,13 @@ TEST/MRPP_module/helpers/util.o: ../TEST/MRPP_module/helpers/util.c
 	
 
 TEST/MRPP_module/test_MRPP_module.o: ../TEST/MRPP_module/test_MRPP_module.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+TEST/PUMP_module/test_PUMP_module.o: ../TEST/PUMP_module/test_PUMP_module.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
