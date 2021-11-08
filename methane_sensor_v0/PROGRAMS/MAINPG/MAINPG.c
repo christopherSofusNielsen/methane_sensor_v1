@@ -43,13 +43,13 @@ static STAGE_STATUS stage_0();
 
 
 //Global variabels
-static S0_STATES state_s0=S0_INIT;
-static COLLECTION collections[]={{.samplingInterval=3, .samplings=3, .type=T_INT16}};
+static STAGE_STATES state_s0=STAGE_INIT;
+static COLLECTION cols[]={{.samplingInterval=3, .samplings=3, .type=T_INT16}};
 static int16_t bodyIndex=-1;
 static uint16_t co2_data[100];
 static uint8_t ts[4];
+static Datetime dt;
 
-static uint8_t fakeTS[]={0xaa,0xbb, 0xcc, 0xdd};
 static void send_msg(const char msg[]);
 
 
@@ -136,7 +136,7 @@ void MAINPG_start(){
 			/************************************************************************/
 			case MAINPG_INIT_MRPP:
 				print_debug("Mrpp init\n\r");
-				MRPP_init_group(collections, 1);
+				MRPP_init_group(cols, 1);
 				state=MAINPG_SEND_HEADER;
 			break;
 			
@@ -226,39 +226,51 @@ static STAGE_STATUS stage_0(){
 	SCD30_STATUS scd30Status;
 	while(1){
 		switch(state_s0){
-			case S0_INIT:
-				scd30Status=SCD30_init_sampling(collections[0].samplingInterval, collections[0].samplings, co2_data);
+			case STAGE_INIT:
+				scd30Status=SCD30_init_sampling(cols[0].samplingInterval, cols[0].samplings, co2_data);
 				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 			
-				state_s0=S0_START;
+				state_s0=STAGE_GET_TIME;
 			break;
 			
-			case S0_START:
+			case STAGE_GET_TIME:
+				RTC_get_current_time(&dt);
+				state_s0=STAGE_START;
+			break;
+			
+			case STAGE_START:
 				adcStatus=ADC_meth_sens_power_on(1); //Should be changed
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 			
 				SCD30_start_sampling();
 			
-				state_s0=S0_WAIT;
+				state_s0=STAGE_WAIT;
 			break;
 			
-			case S0_WAIT:
+			case STAGE_WAIT:
 				if(!ADC_meth_sens_ready() || !SCD30_is_sampling_done()) return STAGE_RUNNING;
-				state_s0=S0_UPDATE_MRPP;
+				state_s0=STAGE_UPDATE_MRPP;
 			break;
 			
-			case S0_UPDATE_MRPP:
-				MRPP_add_collection_data_INT16(1, fakeTS, co2_data);
-				state_s0=S0_DEINIT;
+			case STAGE_UPDATE_MRPP:
+				RTC_datetime_to_ts(dt, ts);
+				MRPP_add_collection_data_INT16(1, ts, co2_data);
+				state_s0=STAGE_DEINIT;
 			break;
 			
-			case S0_DEINIT:
+			case STAGE_DEINIT:
 				SCD30_deinit();
 				return STAGE_DONE;
 			break;
 		}
 	}
 }
+
+/************************************************************************/
+/* Stage 0                                                              */
+/************************************************************************/
+
+
 /************************************************************************/
 /* Helper functions                                                     */
 /************************************************************************/

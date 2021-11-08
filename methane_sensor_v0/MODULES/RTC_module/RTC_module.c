@@ -15,6 +15,11 @@
 
 #define RTC_ADDR 0x51
 
+typedef union {
+	uint8_t ts[4];
+	uint32_t tsbit;
+} tsbit;
+
 const uint8_t CMD_READ_TIME_POINTER[]={0x02};
 	
 RTC_STATUS RTC_set_clock_out(uint8_t freq){
@@ -136,7 +141,19 @@ RTC_STATUS RTC_set_current_time(Datetime dt){
 }
 
 void RTC_datetime_to_ts(Datetime dt, uint8_t ts[]){
+	tsbit _tsbit;
+	_tsbit.tsbit=0x00000000;
+	_tsbit.tsbit |= ((uint32_t) dt.year)<<26;
+	_tsbit.tsbit |= ((uint32_t) dt.month)<<22;
+	_tsbit.tsbit |= ((uint32_t) dt.day)<<17;
+	_tsbit.tsbit |= ((uint32_t) dt.hour)<<12;
+	_tsbit.tsbit |= ((uint32_t) dt.minute)<<6;
+	_tsbit.tsbit |= dt.second;
 	
+	ts[0]=_tsbit.ts[3];
+	ts[1]=_tsbit.ts[2];
+	ts[2]=_tsbit.ts[1];
+	ts[3]=_tsbit.ts[0];
 }
 
 

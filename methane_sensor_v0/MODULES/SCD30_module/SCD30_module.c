@@ -122,7 +122,7 @@ static uint16_t bytes_2_uint(uint8_t data[]){
 }
 
 static SCD30_STATUS init_measurement(){
-	SCD30_STATUS status;
+	uint8_t status;
 	status=TWI_API_write_data_stop(SCD30_ADDR,  SET_MEASUREMENT_INTERVAL, 5);
 	if(status != TWI_CODE_SUCCESS) return SCD30_STATUS_FATAL_ERROR;
 	

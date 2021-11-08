@@ -15,6 +15,7 @@
 #include "test_RTC_module.h"
 #include "../../HAL/TWI/TWI_HAL.h"
 #include "../../HAL/UART1/UART1_HAL.h"
+#include "../../HAL/UART0/UART0_HAL.h"
 #include "../../HAL/TWI/TWI_API.h"
 #include "../../util/bit_operators.h"
 #include "../../MODULES/RTC_module/RTC_module.h"
@@ -33,6 +34,7 @@ static void sendISO(Datetime dt, char msg[]);
 static void test_set_current_time();
 static void test_set_wake_up();
 static void test_clk_out();
+static void test_format_dt_to_ts();
 
 
 
@@ -50,9 +52,10 @@ void test_RTC_module_start(){
 		//test_dec_to_bcd();
 		//test_bcd_to_dec();
 		//test_set_current_time();
-		//test_get_current_time();
+		test_get_current_time();
 		//test_set_wake_up();
-		test_clk_out();
+		//test_clk_out();
+		//test_format_dt_to_ts();
 		
 		_delay_ms(1500);
 	}
@@ -109,12 +112,13 @@ static void test_set_wake_up(){
 
 
 static void test_get_current_time(){
+	uart0_hal_init();
 	Datetime dt;
 	
 	RTC_STATUS status= RTC_get_current_time(&dt);
 	
 	if(status != RTC_STATUS_SUCCESS){
-		uart1_hal_send_string("Fail");
+		uart0_hal_send_string("Fail");
 		return;
 	}
 	
@@ -124,27 +128,28 @@ static void test_get_current_time(){
 	
 	char msg[50];
 	sendISO(dt, msg);
-	uart1_hal_send_string(msg);
+	uart0_hal_send_string(msg);
 	
 	_delay_ms(2000);
 }
 
 static void test_set_current_time(){
+	uart0_hal_init();
 	Datetime dt={
 		.second=0,
 		.minute=0,
-		.hour=10,
-		.day=3,
-		.month=11,
+		.hour=0,
+		.day=10,
+		.month=10,
 		.year=21	
 	};
 	
 	RTC_STATUS status= RTC_set_current_time(dt);
 	if(status!=RTC_STATUS_SUCCESS) {
-		uart1_hal_send_string(" Fail ");
+		uart0_hal_send_string(" Fail ");
 		return;
 	}else{
-		uart1_hal_send_string(" OK ");
+		uart0_hal_send_string(" OK ");
 	}
 	_delay_ms(1000);
 }
@@ -190,6 +195,23 @@ static void test_bcd_to_dec(){
 	BCD_to_datetime(bcd, &dt);
 	uart1_hal_send_message(&dt.second, 6);
 	_delay_ms(1000);
+}
+
+static void test_format_dt_to_ts(){
+	uart0_hal_init();
+	uint8_t ts[4];
+	Datetime dt={
+		.second=11,
+		.minute=04,
+		.hour=13,
+		.day=8,
+		.month=11,
+		.year=21
+	};
+	
+	RTC_datetime_to_ts(dt, ts);
+	
+	uart0_hal_send_message(ts, 4);
 }
 
 
@@ -259,4 +281,6 @@ static void test_read_time(){
 	uart1_hal_send_message(data, 9);
 	_delay_ms(3000);
 }
+
+
 

@@ -23,6 +23,7 @@ TEST/RTC_module/test_RTC_module.d TEST/RTC_module/test_RTC_module.o: \
  ../TEST/RTC_module/test_RTC_module.h \
  ../TEST/RTC_module/../../HAL/TWI/TWI_HAL.h \
  ../TEST/RTC_module/../../HAL/UART1/UART1_HAL.h \
+ ../TEST/RTC_module/../../HAL/UART0/UART0_HAL.h \
  ../TEST/RTC_module/../../HAL/TWI/TWI_API.h \
  ../TEST/RTC_module/../../util/bit_operators.h \
  ../TEST/RTC_module/../../MODULES/RTC_module/RTC_module.h \
@@ -73,6 +74,8 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
 ../TEST/RTC_module/../../HAL/TWI/TWI_HAL.h:
 
 ../TEST/RTC_module/../../HAL/UART1/UART1_HAL.h:
+
+../TEST/RTC_module/../../HAL/UART0/UART0_HAL.h:
 
 ../TEST/RTC_module/../../HAL/TWI/TWI_API.h:
 
