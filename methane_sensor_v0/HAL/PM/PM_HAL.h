@@ -28,6 +28,12 @@ void PM_HAL_SCD30_power(bool on);
 void PM_HAL_BC_power_init();
 void PM_HAL_BC_power(bool on);
 
+//LED
+void PM_HAL_LED_power_init();
+void PM_HAL_LED_power(bool on);
+void PM_HAL_LED_toggle();
+
+
 
 
 #endif /* PM_HAL_H_ */

@@ -107,6 +107,10 @@ Discarded input sections
                 0x0000000000000000        0xe HAL/PM/PM_HAL.o
  .text.PM_HAL_BC_power
                 0x0000000000000000       0x14 HAL/PM/PM_HAL.o
+ .text.PM_HAL_LED_power
+                0x0000000000000000       0x14 HAL/PM/PM_HAL.o
+ .text.PM_HAL_LED_toggle
+                0x0000000000000000        0x8 HAL/PM/PM_HAL.o
  .text.PM_HAL_enter_power_down
                 0x0000000000000000       0x42 HAL/PM/PM_HAL.o
  .text          0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
@@ -170,8 +174,6 @@ Discarded input sections
                 0x0000000000000000        0x8 HAL/TC2/TC2_HAL.o
  .text.stop_timer
                 0x0000000000000000        0x6 HAL/TC2/TC2_HAL.o
- .text.TC2_HAL_init
-                0x0000000000000000       0x20 HAL/TC2/TC2_HAL.o
  .text.TC2_HAL_kill
                 0x0000000000000000        0xa HAL/TC2/TC2_HAL.o
  .text.TC2_HAL_subscribe
@@ -239,6 +241,8 @@ Discarded input sections
                 0x0000000000000000       0x2e HAL/UART0/UART0_HAL.o
  .text.uart0_hal_send_message
                 0x0000000000000000       0x34 HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_send_string
+                0x0000000000000000       0x6a HAL/UART0/UART0_HAL.o
  .text.uart0_hal_message_ready
                 0x0000000000000000        0xe HAL/UART0/UART0_HAL.o
  .text.uart0_hal_clear_rx_buffer
@@ -357,9 +361,35 @@ Discarded input sections
  .text          0x0000000000000000        0x0 MODULES/LED_module/LED_module.o
  .data          0x0000000000000000        0x0 MODULES/LED_module/LED_module.o
  .bss           0x0000000000000000        0x0 MODULES/LED_module/LED_module.o
- .debug_line    0x0000000000000000        0x0 MODULES/LED_module/LED_module.o
- .debug_str     0x0000000000000000        0x0 MODULES/LED_module/LED_module.o
+ .text.cb_blink
+                0x0000000000000000        0x6 MODULES/LED_module/LED_module.o
+ .text.blink    0x0000000000000000       0x4c MODULES/LED_module/LED_module.o
+ .text.err_code
+                0x0000000000000000       0x38 MODULES/LED_module/LED_module.o
+ .text.LED_start_try_join
+                0x0000000000000000        0xe MODULES/LED_module/LED_module.o
+ .text.LED_stop_try_join
+                0x0000000000000000       0x10 MODULES/LED_module/LED_module.o
+ .text.LED_join_success
+                0x0000000000000000       0x40 MODULES/LED_module/LED_module.o
+ .text.LED_join_denied
+                0x0000000000000000        0x8 MODULES/LED_module/LED_module.o
+ .text.LED_join_conf_err
+                0x0000000000000000        0x8 MODULES/LED_module/LED_module.o
+ .text.LED_fatal_err
+                0x0000000000000000        0x8 MODULES/LED_module/LED_module.o
+ .bss.cbPointer
+                0x0000000000000000        0x1 MODULES/LED_module/LED_module.o
+ .debug_info    0x0000000000000000      0x717 MODULES/LED_module/LED_module.o
+ .debug_abbrev  0x0000000000000000      0x16d MODULES/LED_module/LED_module.o
+ .debug_loc     0x0000000000000000      0x2b9 MODULES/LED_module/LED_module.o
+ .debug_aranges
+                0x0000000000000000       0x60 MODULES/LED_module/LED_module.o
+ .debug_ranges  0x0000000000000000       0x50 MODULES/LED_module/LED_module.o
+ .debug_line    0x0000000000000000      0x2bc MODULES/LED_module/LED_module.o
+ .debug_str     0x0000000000000000       0x44 MODULES/LED_module/LED_module.o
  .comment       0x0000000000000000       0x30 MODULES/LED_module/LED_module.o
+ .debug_frame   0x0000000000000000       0xc0 MODULES/LED_module/LED_module.o
  .text          0x0000000000000000        0x0 MODULES/LORA_module/join_network/join_network.o
  .data          0x0000000000000000        0x0 MODULES/LORA_module/join_network/join_network.o
  .bss           0x0000000000000000        0x0 MODULES/LORA_module/join_network/join_network.o
@@ -1236,6 +1266,8 @@ Discarded input sections
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
+ .text.avrlibc  0x0000000000000000       0x2c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
+ .comment       0x0000000000000000       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
@@ -1680,7 +1712,7 @@ END GROUP
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment        0x0000000000000000       0x5b
+.comment        0x0000000000000000       0x2f
  *(.comment)
  .comment       0x0000000000000000       0x2f HAL/PM/PM_HAL.o
                                          0x30 (size before relaxing)
@@ -1692,8 +1724,6 @@ END GROUP
  .comment       0x000000000000002f       0x30 main.o
  .comment       0x000000000000002f       0x30 TEST/LED_module/test_LED_module.o
  .comment       0x000000000000002f       0x30 TEST/test_runner.o
- .comment       0x000000000000002f       0x2c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
-                                         0x2d (size before relaxing)
 
 .note.gnu.build-id
  *(.note.gnu.build-id)
@@ -1710,44 +1740,44 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x268
+.debug_aranges  0x0000000000000000      0x280
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x68 HAL/PM/PM_HAL.o
+                0x0000000000000000       0x80 HAL/PM/PM_HAL.o
  .debug_aranges
-                0x0000000000000068       0x38 HAL/TC0/TC0_HAL.o
+                0x0000000000000080       0x38 HAL/TC0/TC0_HAL.o
  .debug_aranges
-                0x00000000000000a0       0x38 HAL/TC1/TC1_HAL.o
+                0x00000000000000b8       0x38 HAL/TC1/TC1_HAL.o
  .debug_aranges
-                0x00000000000000d8       0x58 HAL/TC2/TC2_HAL.o
+                0x00000000000000f0       0x58 HAL/TC2/TC2_HAL.o
  .debug_aranges
-                0x0000000000000130       0x70 HAL/UART0/UART0_HAL.o
+                0x0000000000000148       0x70 HAL/UART0/UART0_HAL.o
  .debug_aranges
-                0x00000000000001a0       0x68 HAL/UART1/UART1_HAL.o
+                0x00000000000001b8       0x68 HAL/UART1/UART1_HAL.o
  .debug_aranges
-                0x0000000000000208       0x20 main.o
+                0x0000000000000220       0x20 main.o
  .debug_aranges
-                0x0000000000000228       0x20 TEST/LED_module/test_LED_module.o
+                0x0000000000000240       0x20 TEST/LED_module/test_LED_module.o
  .debug_aranges
-                0x0000000000000248       0x20 TEST/test_runner.o
+                0x0000000000000260       0x20 TEST/test_runner.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x2ce7
+.debug_info     0x0000000000000000     0x2d6b
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x6cc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
- .debug_info    0x00000000000006cc      0x432 HAL/PM/PM_HAL.o
- .debug_info    0x0000000000000afe      0x33b HAL/TC0/TC0_HAL.o
- .debug_info    0x0000000000000e39      0x34b HAL/TC1/TC1_HAL.o
- .debug_info    0x0000000000001184      0x4b4 HAL/TC2/TC2_HAL.o
- .debug_info    0x0000000000001638      0x781 HAL/UART0/UART0_HAL.o
- .debug_info    0x0000000000001db9      0x64b HAL/UART1/UART1_HAL.o
- .debug_info    0x0000000000002404      0x341 main.o
- .debug_info    0x0000000000002745      0x38e TEST/LED_module/test_LED_module.o
- .debug_info    0x0000000000002ad3      0x214 TEST/test_runner.o
+ .debug_info    0x00000000000006cc      0x4b2 HAL/PM/PM_HAL.o
+ .debug_info    0x0000000000000b7e      0x33b HAL/TC0/TC0_HAL.o
+ .debug_info    0x0000000000000eb9      0x34b HAL/TC1/TC1_HAL.o
+ .debug_info    0x0000000000001204      0x4b4 HAL/TC2/TC2_HAL.o
+ .debug_info    0x00000000000016b8      0x781 HAL/UART0/UART0_HAL.o
+ .debug_info    0x0000000000001e39      0x64b HAL/UART1/UART1_HAL.o
+ .debug_info    0x0000000000002484      0x341 main.o
+ .debug_info    0x00000000000027c5      0x392 TEST/LED_module/test_LED_module.o
+ .debug_info    0x0000000000002b57      0x214 TEST/test_runner.o
 
-.debug_abbrev   0x0000000000000000      0xf51
+.debug_abbrev   0x0000000000000000      0xf3a
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x66e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  .debug_abbrev  0x000000000000066e       0x85 HAL/PM/PM_HAL.o
@@ -1757,35 +1787,35 @@ END GROUP
  .debug_abbrev  0x000000000000099d      0x208 HAL/UART0/UART0_HAL.o
  .debug_abbrev  0x0000000000000ba5      0x198 HAL/UART1/UART1_HAL.o
  .debug_abbrev  0x0000000000000d3d       0xdb main.o
- .debug_abbrev  0x0000000000000e18       0xee TEST/LED_module/test_LED_module.o
- .debug_abbrev  0x0000000000000f06       0x4b TEST/test_runner.o
+ .debug_abbrev  0x0000000000000e18       0xd7 TEST/LED_module/test_LED_module.o
+ .debug_abbrev  0x0000000000000eef       0x4b TEST/test_runner.o
 
-.debug_line     0x0000000000000000      0xfd0
+.debug_line     0x0000000000000000     0x1083
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x154 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
- .debug_line    0x0000000000000154      0x1d3 HAL/PM/PM_HAL.o
- .debug_line    0x0000000000000327      0x10e HAL/TC0/TC0_HAL.o
- .debug_line    0x0000000000000435      0x114 HAL/TC1/TC1_HAL.o
- .debug_line    0x0000000000000549      0x232 HAL/TC2/TC2_HAL.o
- .debug_line    0x000000000000077b      0x333 HAL/UART0/UART0_HAL.o
- .debug_line    0x0000000000000aae      0x29d HAL/UART1/UART1_HAL.o
- .debug_line    0x0000000000000d4b       0xed main.o
- .debug_line    0x0000000000000e38      0x127 TEST/LED_module/test_LED_module.o
- .debug_line    0x0000000000000f5f       0x71 TEST/test_runner.o
+ .debug_line    0x0000000000000154      0x22a HAL/PM/PM_HAL.o
+ .debug_line    0x000000000000037e      0x10e HAL/TC0/TC0_HAL.o
+ .debug_line    0x000000000000048c      0x114 HAL/TC1/TC1_HAL.o
+ .debug_line    0x00000000000005a0      0x232 HAL/TC2/TC2_HAL.o
+ .debug_line    0x00000000000007d2      0x333 HAL/UART0/UART0_HAL.o
+ .debug_line    0x0000000000000b05      0x29d HAL/UART1/UART1_HAL.o
+ .debug_line    0x0000000000000da2       0xed main.o
+ .debug_line    0x0000000000000e8f      0x183 TEST/LED_module/test_LED_module.o
+ .debug_line    0x0000000000001012       0x71 TEST/test_runner.o
 
-.debug_frame    0x0000000000000000      0x5c4
+.debug_frame    0x0000000000000000      0x5f4
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0xc0 HAL/PM/PM_HAL.o
- .debug_frame   0x00000000000000c0       0x9c HAL/TC0/TC0_HAL.o
- .debug_frame   0x000000000000015c       0x9c HAL/TC1/TC1_HAL.o
- .debug_frame   0x00000000000001f8       0xe8 HAL/TC2/TC2_HAL.o
- .debug_frame   0x00000000000002e0      0x14c HAL/UART0/UART0_HAL.o
- .debug_frame   0x000000000000042c      0x12c HAL/UART1/UART1_HAL.o
- .debug_frame   0x0000000000000558       0x24 main.o
- .debug_frame   0x000000000000057c       0x24 TEST/LED_module/test_LED_module.o
- .debug_frame   0x00000000000005a0       0x24 TEST/test_runner.o
+ .debug_frame   0x0000000000000000       0xf0 HAL/PM/PM_HAL.o
+ .debug_frame   0x00000000000000f0       0x9c HAL/TC0/TC0_HAL.o
+ .debug_frame   0x000000000000018c       0x9c HAL/TC1/TC1_HAL.o
+ .debug_frame   0x0000000000000228       0xe8 HAL/TC2/TC2_HAL.o
+ .debug_frame   0x0000000000000310      0x14c HAL/UART0/UART0_HAL.o
+ .debug_frame   0x000000000000045c      0x12c HAL/UART1/UART1_HAL.o
+ .debug_frame   0x0000000000000588       0x24 main.o
+ .debug_frame   0x00000000000005ac       0x24 TEST/LED_module/test_LED_module.o
+ .debug_frame   0x00000000000005d0       0x24 TEST/test_runner.o
 
-.debug_str      0x0000000000000000      0x299
+.debug_str      0x0000000000000000      0x2a6
  *(.debug_str)
  .debug_str     0x0000000000000000      0x252 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  .debug_str     0x0000000000000252        0x0 HAL/PM/PM_HAL.o
@@ -1795,17 +1825,17 @@ END GROUP
  .debug_str     0x0000000000000252        0x0 HAL/UART0/UART0_HAL.o
  .debug_str     0x0000000000000252        0x0 HAL/UART1/UART1_HAL.o
  .debug_str     0x0000000000000252        0xc main.o
- .debug_str     0x000000000000025e       0x25 TEST/LED_module/test_LED_module.o
- .debug_str     0x0000000000000283       0x16 TEST/test_runner.o
+ .debug_str     0x000000000000025e       0x32 TEST/LED_module/test_LED_module.o
+ .debug_str     0x0000000000000290       0x16 TEST/test_runner.o
 
-.debug_loc      0x0000000000000000      0xc22
+.debug_loc      0x0000000000000000      0xc5c
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x117 HAL/PM/PM_HAL.o
- .debug_loc     0x0000000000000117       0xec HAL/TC0/TC0_HAL.o
- .debug_loc     0x0000000000000203       0xf1 HAL/TC1/TC1_HAL.o
- .debug_loc     0x00000000000002f4      0x221 HAL/TC2/TC2_HAL.o
- .debug_loc     0x0000000000000515      0x3e4 HAL/UART0/UART0_HAL.o
- .debug_loc     0x00000000000008f9      0x329 HAL/UART1/UART1_HAL.o
+ .debug_loc     0x0000000000000000      0x151 HAL/PM/PM_HAL.o
+ .debug_loc     0x0000000000000151       0xec HAL/TC0/TC0_HAL.o
+ .debug_loc     0x000000000000023d       0xf1 HAL/TC1/TC1_HAL.o
+ .debug_loc     0x000000000000032e      0x221 HAL/TC2/TC2_HAL.o
+ .debug_loc     0x000000000000054f      0x3e4 HAL/UART0/UART0_HAL.o
+ .debug_loc     0x0000000000000933      0x329 HAL/UART1/UART1_HAL.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1825,17 +1855,17 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x1d8
+.debug_ranges   0x0000000000000000      0x1f0
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x58 HAL/PM/PM_HAL.o
- .debug_ranges  0x0000000000000058       0x28 HAL/TC0/TC0_HAL.o
- .debug_ranges  0x0000000000000080       0x28 HAL/TC1/TC1_HAL.o
- .debug_ranges  0x00000000000000a8       0x48 HAL/TC2/TC2_HAL.o
- .debug_ranges  0x00000000000000f0       0x60 HAL/UART0/UART0_HAL.o
- .debug_ranges  0x0000000000000150       0x58 HAL/UART1/UART1_HAL.o
- .debug_ranges  0x00000000000001a8       0x10 main.o
- .debug_ranges  0x00000000000001b8       0x10 TEST/LED_module/test_LED_module.o
- .debug_ranges  0x00000000000001c8       0x10 TEST/test_runner.o
+ .debug_ranges  0x0000000000000000       0x70 HAL/PM/PM_HAL.o
+ .debug_ranges  0x0000000000000070       0x28 HAL/TC0/TC0_HAL.o
+ .debug_ranges  0x0000000000000098       0x28 HAL/TC1/TC1_HAL.o
+ .debug_ranges  0x00000000000000c0       0x48 HAL/TC2/TC2_HAL.o
+ .debug_ranges  0x0000000000000108       0x60 HAL/UART0/UART0_HAL.o
+ .debug_ranges  0x0000000000000168       0x58 HAL/UART1/UART1_HAL.o
+ .debug_ranges  0x00000000000001c0       0x10 main.o
+ .debug_ranges  0x00000000000001d0       0x10 TEST/LED_module/test_LED_module.o
+ .debug_ranges  0x00000000000001e0       0x10 TEST/test_runner.o
 
 .debug_macro
  *(.debug_macro)
@@ -1913,112 +1943,110 @@ LOAD data_init
  .bss.tx_buffer
                 0x0000000000800290      0x12c HAL/UART1/UART1_HAL.o
 
-.progmemx.data  0x00000000000000d6        0x9
- .progmemx.data
-                0x00000000000000d6        0x9 TEST/LED_module/test_LED_module.o
-
 .text.__vector_9
-                0x00000000000000e0       0x98
+                0x00000000000000d6       0x98
  .text.__vector_9
-                0x00000000000000e0       0x98 HAL/TC2/TC2_HAL.o
-                0x00000000000000e0                __vector_9
+                0x00000000000000d6       0x98 HAL/TC2/TC2_HAL.o
+                0x00000000000000d6                __vector_9
 
 .text.__vector_20
-                0x0000000000000178       0x74
+                0x000000000000016e       0x74
  .text.__vector_20
-                0x0000000000000178       0x74 HAL/UART0/UART0_HAL.o
-                0x0000000000000178                __vector_20
+                0x000000000000016e       0x74 HAL/UART0/UART0_HAL.o
+                0x000000000000016e                __vector_20
 
 .text.__vector_28
-                0x00000000000001ec       0x70
+                0x00000000000001e2       0x70
  .text.__vector_28
-                0x00000000000001ec       0x70 HAL/UART1/UART1_HAL.o
-                0x00000000000001ec                __vector_28
-
-.text.uart0_hal_send_string
-                0x000000000000025c       0x6a
- .text.uart0_hal_send_string
-                0x000000000000025c       0x6a HAL/UART0/UART0_HAL.o
-                0x000000000000025c                uart0_hal_send_string
+                0x00000000000001e2       0x70 HAL/UART1/UART1_HAL.o
+                0x00000000000001e2                __vector_28
 
 .text.__vector_16
-                0x00000000000002c6       0x4e
+                0x0000000000000252       0x4e
  .text.__vector_16
-                0x00000000000002c6       0x4e HAL/TC0/TC0_HAL.o
-                0x00000000000002c6                __vector_16
+                0x0000000000000252       0x4e HAL/TC0/TC0_HAL.o
+                0x0000000000000252                __vector_16
 
 .text.__vector_13
-                0x0000000000000314       0x4e
+                0x00000000000002a0       0x4e
  .text.__vector_13
-                0x0000000000000314       0x4e HAL/TC1/TC1_HAL.o
-                0x0000000000000314                __vector_13
+                0x00000000000002a0       0x4e HAL/TC1/TC1_HAL.o
+                0x00000000000002a0                __vector_13
 
 .text.__vector_22
-                0x0000000000000362       0x4a
+                0x00000000000002ee       0x4a
  .text.__vector_22
-                0x0000000000000362       0x4a HAL/UART0/UART0_HAL.o
-                0x0000000000000362                __vector_22
+                0x00000000000002ee       0x4a HAL/UART0/UART0_HAL.o
+                0x00000000000002ee                __vector_22
 
 .text.__vector_30
-                0x00000000000003ac       0x4a
+                0x0000000000000338       0x4a
  .text.__vector_30
-                0x00000000000003ac       0x4a HAL/UART1/UART1_HAL.o
-                0x00000000000003ac                __vector_30
+                0x0000000000000338       0x4a HAL/UART1/UART1_HAL.o
+                0x0000000000000338                __vector_30
 
 .text.uart0_hal_init
-                0x00000000000003f6       0x3c
+                0x0000000000000382       0x3c
  .text.uart0_hal_init
-                0x00000000000003f6       0x3c HAL/UART0/UART0_HAL.o
-                0x00000000000003f6                uart0_hal_init
+                0x0000000000000382       0x3c HAL/UART0/UART0_HAL.o
+                0x0000000000000382                uart0_hal_init
 
-.text.avrlibc   0x0000000000000432       0x2c
- .text.avrlibc  0x0000000000000432       0x2c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
-                0x0000000000000432                strlen
+.text.TC2_HAL_init
+                0x00000000000003be       0x20
+ .text.TC2_HAL_init
+                0x00000000000003be       0x20 HAL/TC2/TC2_HAL.o
+                0x00000000000003be                TC2_HAL_init
 
 .text.test_LED_module_start
-                0x000000000000045e       0x22
+                0x00000000000003de       0x20
  .text.test_LED_module_start
-                0x000000000000045e       0x22 TEST/LED_module/test_LED_module.o
-                0x000000000000045e                test_LED_module_start
+                0x00000000000003de       0x20 TEST/LED_module/test_LED_module.o
+                0x00000000000003de                test_LED_module_start
 
-.text.main      0x0000000000000480       0x18
- .text.main     0x0000000000000480       0x18 main.o
-                0x0000000000000480                main
+.text.main      0x00000000000003fe       0x18
+ .text.main     0x00000000000003fe       0x18 main.o
+                0x00000000000003fe                main
 
 .text.__vector_3
-                0x0000000000000498       0x14
+                0x0000000000000416       0x14
  .text.__vector_3
-                0x0000000000000498       0x14 HAL/PM/PM_HAL.o
-                0x0000000000000498                __vector_3
+                0x0000000000000416       0x14 HAL/PM/PM_HAL.o
+                0x0000000000000416                __vector_3
+
+.text.PM_HAL_LED_power_init
+                0x000000000000042a        0xe
+ .text.PM_HAL_LED_power_init
+                0x000000000000042a        0xe HAL/PM/PM_HAL.o
+                0x000000000000042a                PM_HAL_LED_power_init
 
 .text.test_runner
-                0x00000000000004ac        0x6
+                0x0000000000000438        0x6
  .text.test_runner
-                0x00000000000004ac        0x6 TEST/test_runner.o
-                0x00000000000004ac                test_runner
+                0x0000000000000438        0x6 TEST/test_runner.o
+                0x0000000000000438                test_runner
 
-.text           0x00000000000004b2        0x4
- .text          0x00000000000004b2        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
-                0x00000000000004b2                __vector_1
-                0x00000000000004b2                __vector_24
-                0x00000000000004b2                __vector_12
-                0x00000000000004b2                __bad_interrupt
-                0x00000000000004b2                __vector_6
-                0x00000000000004b2                __vector_23
-                0x00000000000004b2                __vector_25
-                0x00000000000004b2                __vector_11
-                0x00000000000004b2                __vector_17
-                0x00000000000004b2                __vector_19
-                0x00000000000004b2                __vector_7
-                0x00000000000004b2                __vector_27
-                0x00000000000004b2                __vector_5
-                0x00000000000004b2                __vector_4
-                0x00000000000004b2                __vector_2
-                0x00000000000004b2                __vector_21
-                0x00000000000004b2                __vector_15
-                0x00000000000004b2                __vector_29
-                0x00000000000004b2                __vector_8
-                0x00000000000004b2                __vector_26
-                0x00000000000004b2                __vector_14
-                0x00000000000004b2                __vector_10
-                0x00000000000004b2                __vector_18
+.text           0x000000000000043e        0x4
+ .text          0x000000000000043e        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+                0x000000000000043e                __vector_1
+                0x000000000000043e                __vector_24
+                0x000000000000043e                __vector_12
+                0x000000000000043e                __bad_interrupt
+                0x000000000000043e                __vector_6
+                0x000000000000043e                __vector_23
+                0x000000000000043e                __vector_25
+                0x000000000000043e                __vector_11
+                0x000000000000043e                __vector_17
+                0x000000000000043e                __vector_19
+                0x000000000000043e                __vector_7
+                0x000000000000043e                __vector_27
+                0x000000000000043e                __vector_5
+                0x000000000000043e                __vector_4
+                0x000000000000043e                __vector_2
+                0x000000000000043e                __vector_21
+                0x000000000000043e                __vector_15
+                0x000000000000043e                __vector_29
+                0x000000000000043e                __vector_8
+                0x000000000000043e                __vector_26
+                0x000000000000043e                __vector_14
+                0x000000000000043e                __vector_10
+                0x000000000000043e                __vector_18

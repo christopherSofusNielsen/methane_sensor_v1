@@ -64,6 +64,23 @@ void PM_HAL_BC_power(bool on){
 	}
 }
 
+void PM_HAL_LED_power_init(){
+	set_bit(DDRA, 7);
+	clear_bit(PORTA, 7);
+}
+
+void PM_HAL_LED_power(bool on){
+	if(on){
+		set_bit(PORTA, 7);
+	}else{
+		clear_bit(PORTA, 7);
+	}
+}
+
+void PM_HAL_LED_toggle(){
+	toggle_bit(PORTA, 7);
+}
+
 void PM_HAL_enter_power_down(){
 	clear_bit(DDRB, 2); //set PB2 as input
 	set_bit(PORTB, 2); //Enbale pull up

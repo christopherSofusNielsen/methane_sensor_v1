@@ -16,9 +16,13 @@ TEST/LED_module/test_LED_module.d TEST/LED_module/test_LED_module.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  ../TEST/LED_module/test_LED_module.h \
  ../TEST/LED_module/../../HAL/UART0/UART0_HAL.h \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h
+ ../TEST/LED_module/../../HAL/PM/PM_HAL.h \
+ ../TEST/LED_module/../../HAL/TC2/TC2_HAL.h \
+ ../TEST/LED_module/../../HAL/TC2/../types.h \
+ ../TEST/LED_module/../../MODULES/LED_module/LED_module.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -52,8 +56,16 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
 ../TEST/LED_module/test_LED_module.h:
 
 ../TEST/LED_module/../../HAL/UART0/UART0_HAL.h:
 
-c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+../TEST/LED_module/../../HAL/PM/PM_HAL.h:
+
+../TEST/LED_module/../../HAL/TC2/TC2_HAL.h:
+
+../TEST/LED_module/../../HAL/TC2/../types.h:
+
+../TEST/LED_module/../../MODULES/LED_module/LED_module.h:
