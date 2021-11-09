@@ -54,6 +54,12 @@ MODULES\RTC_module\RTC_module.c
 
 MODULES\SCD30_module\SCD30_module.c
 
+PROGRAMS\CONFIG_MODE\CONFIG_MODE.c
+
+PROGRAMS\CONFIG_MODE\RW\RW.c
+
+PROGRAMS\CONFIG_MODE\UTIL\util.c
+
 PROGRAMS\MAINPG\MAINPG.c
 
 TEST\ADC_module\test_ADC_module.c
@@ -87,4 +93,6 @@ TEST\test_runner.c
 TEST\UART0_HAL\test_UART0_HAL.c
 
 util\CRC8\CRC8.c
+
+util\str2float\str2float.c
 

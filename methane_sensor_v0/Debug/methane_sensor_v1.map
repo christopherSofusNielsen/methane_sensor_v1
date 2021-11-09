@@ -30,6 +30,8 @@ c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../av
                               MODULES/ADC_module/ADC_module.o (__mulsf3)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
                               c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3.o) (__mulsf3x)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o)
+                              (vfprintf)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o (exit)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
@@ -38,8 +40,22 @@ c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-cons
                               MODULES/ADC_module/ADC_module.o (__do_copy_data)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
                               MODULES/MRPP_module/util/mrpp_state.o (__umulhisi3)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o) (__prologue_saves__)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o) (__epilogue_restores__)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
                               PROGRAMS/MAINPG/MAINPG.o (__movmemx_qi)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atoi_M.o)
+                              util/str2float/str2float.o (atoi)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atol_M.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atoi_M.o) (atol)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strtol.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atol_M.o) (strtol)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ftoa_engine.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o) (__ftoa_engine)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(isspace.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strtol.o) (isspace)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
                               MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o (memcpy)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcmp_M.o)
@@ -50,16 +66,18 @@ c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../av
                               HAL/UART0/UART0_HAL.o (strlen)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
                               MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o (strcpy)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o) (strnlen)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o) (fputc)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
                               MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o (sprintf)
-c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
-                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o) (vfprintf)
-c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
-                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o) (strnlen)
-c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
-                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o) (fputc)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
-                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o) (__ultoa_invert)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o) (__ultoa_invert)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(errno.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strtol.o) (errno)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(cty_isfalse.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(isspace.o) (__ctype_isfalse)
 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
                               MODULES/EEPROM_module/EEPROM_module.o (eeprom_read_block)
 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
@@ -68,10 +86,12 @@ C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/l
                               MODULES/EEPROM_module/EEPROM_module.o (eeprom_update_block)
 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
                               MODULES/EEPROM_module/EEPROM_module.o (eeprom_update_byte)
-c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
-                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o) (__prologue_saves__)
-c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
-                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o) (__epilogue_restores__)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strtol.o) (__mulsi3)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strtol.o) (__udivmodsi4)
+c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+                              c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o) (__muluhisi3)
 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o) (__xload_1)
 
@@ -79,10 +99,13 @@ Allocating common symbols
 Common symbol       size              file
 
 storage             0x320             MODULES/MRPP_module/util/mrpp_data.o
+errno               0x2               c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(errno.o)
 lm_msg              0xc8              MODULES/LORA_module/util/util.o
 state               0x9a              MODULES/MRPP_module/mrpp.o
 rx_buffer           0x64              HAL/UART0/UART0_HAL.o
 tx_buffer           0x12c             HAL/UART0/UART0_HAL.o
+cnf_reply           0xc8              PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+cnf_rx_cmd          0xc8              PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
 
 Discarded input sections
 
@@ -91,65 +114,234 @@ Discarded input sections
  .text          0x0000000000000000        0x0 HAL/PM/PM_HAL.o
  .data          0x0000000000000000        0x0 HAL/PM/PM_HAL.o
  .bss           0x0000000000000000        0x0 HAL/PM/PM_HAL.o
+ .text.PM_HAL_adc_power_init
+                0x0000000000000000        0xe HAL/PM/PM_HAL.o
+ .text.PM_HAL_adc_power
+                0x0000000000000000       0x14 HAL/PM/PM_HAL.o
+ .text.PM_HAL_meth_power_init
+                0x0000000000000000        0xe HAL/PM/PM_HAL.o
+ .text.PM_HAL_meth_power
+                0x0000000000000000       0x14 HAL/PM/PM_HAL.o
+ .text.PM_HAL_SCD30_power_init
+                0x0000000000000000        0xe HAL/PM/PM_HAL.o
+ .text.PM_HAL_SCD30_power
+                0x0000000000000000       0x14 HAL/PM/PM_HAL.o
+ .text.PM_HAL_BC_power_init
+                0x0000000000000000        0xe HAL/PM/PM_HAL.o
+ .text.PM_HAL_BC_power
+                0x0000000000000000       0x14 HAL/PM/PM_HAL.o
+ .text.PM_HAL_LED_power_init
+                0x0000000000000000        0xe HAL/PM/PM_HAL.o
+ .text.PM_HAL_LED_power
+                0x0000000000000000       0x14 HAL/PM/PM_HAL.o
+ .text.PM_HAL_LED_toggle
+                0x0000000000000000        0x8 HAL/PM/PM_HAL.o
+ .text.PM_HAL_enter_power_down
+                0x0000000000000000       0x42 HAL/PM/PM_HAL.o
  .text          0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
  .data          0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
  .bss           0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
  .text.rn2483_init
                 0x0000000000000000        0x8 HAL/RN2483/RN2483_HAL.o
+ .text.rn2483_reset_active
+                0x0000000000000000        0x8 HAL/RN2483/RN2483_HAL.o
+ .text.rn2483_reset_deactive
+                0x0000000000000000        0x8 HAL/RN2483/RN2483_HAL.o
+ .debug_info    0x0000000000000000      0x2dc HAL/RN2483/RN2483_HAL.o
+ .debug_abbrev  0x0000000000000000       0x44 HAL/RN2483/RN2483_HAL.o
+ .debug_aranges
+                0x0000000000000000       0x30 HAL/RN2483/RN2483_HAL.o
+ .debug_ranges  0x0000000000000000       0x20 HAL/RN2483/RN2483_HAL.o
+ .debug_line    0x0000000000000000       0xbb HAL/RN2483/RN2483_HAL.o
+ .debug_str     0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
+ .comment       0x0000000000000000       0x30 HAL/RN2483/RN2483_HAL.o
+ .debug_frame   0x0000000000000000       0x44 HAL/RN2483/RN2483_HAL.o
  .text          0x0000000000000000        0x0 HAL/SCD30/SCD30_HAL.o
  .data          0x0000000000000000        0x0 HAL/SCD30/SCD30_HAL.o
  .bss           0x0000000000000000        0x0 HAL/SCD30/SCD30_HAL.o
+ .text.SCD30_HAL_init
+                0x0000000000000000        0xe HAL/SCD30/SCD30_HAL.o
+ .text.SCD30_HAL_data_ready
+                0x0000000000000000        0xa HAL/SCD30/SCD30_HAL.o
+ .debug_info    0x0000000000000000      0x2c4 HAL/SCD30/SCD30_HAL.o
+ .debug_abbrev  0x0000000000000000       0x5c HAL/SCD30/SCD30_HAL.o
+ .debug_aranges
+                0x0000000000000000       0x28 HAL/SCD30/SCD30_HAL.o
+ .debug_ranges  0x0000000000000000       0x18 HAL/SCD30/SCD30_HAL.o
+ .debug_line    0x0000000000000000       0xaf HAL/SCD30/SCD30_HAL.o
+ .debug_str     0x0000000000000000        0x0 HAL/SCD30/SCD30_HAL.o
+ .comment       0x0000000000000000       0x30 HAL/SCD30/SCD30_HAL.o
+ .debug_frame   0x0000000000000000       0x34 HAL/SCD30/SCD30_HAL.o
  .text          0x0000000000000000        0x0 HAL/TC0/TC0_HAL.o
  .data          0x0000000000000000        0x0 HAL/TC0/TC0_HAL.o
  .bss           0x0000000000000000        0x0 HAL/TC0/TC0_HAL.o
+ .text.TC0_HAL_init
+                0x0000000000000000       0x20 HAL/TC0/TC0_HAL.o
+ .text.TC0_HAL_start
+                0x0000000000000000        0x6 HAL/TC0/TC0_HAL.o
+ .text.TC0_HAL_stop
+                0x0000000000000000        0x4 HAL/TC0/TC0_HAL.o
  .text          0x0000000000000000        0x0 HAL/TC1/TC1_HAL.o
  .data          0x0000000000000000        0x0 HAL/TC1/TC1_HAL.o
  .bss           0x0000000000000000        0x0 HAL/TC1/TC1_HAL.o
+ .text.TC1_HAL_init
+                0x0000000000000000       0x34 HAL/TC1/TC1_HAL.o
+ .text.TC1_HAL_start
+                0x0000000000000000        0xc HAL/TC1/TC1_HAL.o
+ .text.TC1_HAL_stop
+                0x0000000000000000        0xc HAL/TC1/TC1_HAL.o
  .text          0x0000000000000000        0x0 HAL/TC2/TC2_HAL.o
  .data          0x0000000000000000        0x0 HAL/TC2/TC2_HAL.o
  .bss           0x0000000000000000        0x0 HAL/TC2/TC2_HAL.o
  .text.clear_callbacks
                 0x0000000000000000       0x20 HAL/TC2/TC2_HAL.o
+ .text.start_timer
+                0x0000000000000000        0x8 HAL/TC2/TC2_HAL.o
+ .text.stop_timer
+                0x0000000000000000        0x6 HAL/TC2/TC2_HAL.o
+ .text.TC2_HAL_init
+                0x0000000000000000       0x20 HAL/TC2/TC2_HAL.o
  .text.TC2_HAL_kill
                 0x0000000000000000        0xa HAL/TC2/TC2_HAL.o
+ .text.TC2_HAL_subscribe
+                0x0000000000000000       0x54 HAL/TC2/TC2_HAL.o
+ .text.TC2_HAL_cancel
+                0x0000000000000000       0x3a HAL/TC2/TC2_HAL.o
+ .bss.cbCounter
+                0x0000000000000000        0x1 HAL/TC2/TC2_HAL.o
  .text          0x0000000000000000        0x0 HAL/TWI/TWI_API.o
  .data          0x0000000000000000        0x0 HAL/TWI/TWI_API.o
  .bss           0x0000000000000000        0x0 HAL/TWI/TWI_API.o
+ .text.start_and_write_data
+                0x0000000000000000       0x4c HAL/TWI/TWI_API.o
+ .text.read_and_stop
+                0x0000000000000000       0x5a HAL/TWI/TWI_API.o
+ .text.TWI_API_write_data
+                0x0000000000000000        0x6 HAL/TWI/TWI_API.o
+ .text.TWI_API_write_data_stop
+                0x0000000000000000       0x10 HAL/TWI/TWI_API.o
+ .text.TWI_API_read_data_ack_end_nack_stop
+                0x0000000000000000       0x24 HAL/TWI/TWI_API.o
+ .text.TWI_API_repeat_read_data_stop
+                0x0000000000000000       0x22 HAL/TWI/TWI_API.o
+ .debug_info    0x0000000000000000      0x684 HAL/TWI/TWI_API.o
+ .debug_abbrev  0x0000000000000000      0x12c HAL/TWI/TWI_API.o
+ .debug_loc     0x0000000000000000      0x497 HAL/TWI/TWI_API.o
+ .debug_aranges
+                0x0000000000000000       0x48 HAL/TWI/TWI_API.o
+ .debug_ranges  0x0000000000000000       0x38 HAL/TWI/TWI_API.o
+ .debug_line    0x0000000000000000      0x1ae HAL/TWI/TWI_API.o
+ .debug_str     0x0000000000000000       0x8f HAL/TWI/TWI_API.o
+ .comment       0x0000000000000000       0x30 HAL/TWI/TWI_API.o
+ .debug_frame   0x0000000000000000       0xd0 HAL/TWI/TWI_API.o
  .text          0x0000000000000000        0x0 HAL/TWI/TWI_HAL.o
  .data          0x0000000000000000        0x0 HAL/TWI/TWI_HAL.o
  .bss           0x0000000000000000        0x0 HAL/TWI/TWI_HAL.o
+ .text.TWI_HAL_init
+                0x0000000000000000       0x12 HAL/TWI/TWI_HAL.o
+ .text.TWI_HAL_start
+                0x0000000000000000       0x48 HAL/TWI/TWI_HAL.o
+ .text.TWI_HAL_repeated_start
+                0x0000000000000000       0x42 HAL/TWI/TWI_HAL.o
+ .text.TWI_HAL_write_byte
+                0x0000000000000000       0x20 HAL/TWI/TWI_HAL.o
+ .text.TWI_HAL_read_byte_ack
+                0x0000000000000000       0x14 HAL/TWI/TWI_HAL.o
+ .text.TWI_HAL_read_byte_nack
+                0x0000000000000000       0x14 HAL/TWI/TWI_HAL.o
+ .text.TWI_HAL_stop
+                0x0000000000000000       0x10 HAL/TWI/TWI_HAL.o
+ .debug_info    0x0000000000000000      0x446 HAL/TWI/TWI_HAL.o
+ .debug_abbrev  0x0000000000000000       0xbd HAL/TWI/TWI_HAL.o
+ .debug_loc     0x0000000000000000       0xea HAL/TWI/TWI_HAL.o
+ .debug_aranges
+                0x0000000000000000       0x50 HAL/TWI/TWI_HAL.o
+ .debug_ranges  0x0000000000000000       0x40 HAL/TWI/TWI_HAL.o
+ .debug_line    0x0000000000000000      0x21c HAL/TWI/TWI_HAL.o
+ .debug_str     0x0000000000000000       0x11 HAL/TWI/TWI_HAL.o
+ .comment       0x0000000000000000       0x30 HAL/TWI/TWI_HAL.o
+ .debug_frame   0x0000000000000000       0x84 HAL/TWI/TWI_HAL.o
  .text          0x0000000000000000        0x0 HAL/UART0/UART0_HAL.o
  .data          0x0000000000000000        0x0 HAL/UART0/UART0_HAL.o
  .bss           0x0000000000000000        0x0 HAL/UART0/UART0_HAL.o
+ .text.copy_buffer
+                0x0000000000000000       0x2e HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_init
+                0x0000000000000000       0x3c HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_send_message
+                0x0000000000000000       0x34 HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_send_string
+                0x0000000000000000       0x6a HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_message_ready
+                0x0000000000000000        0xe HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_clear_rx_buffer
+                0x0000000000000000        0xa HAL/UART0/UART0_HAL.o
  .text.uart0_hal_read_message
                 0x0000000000000000       0x16 HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_read_message_as_str
+                0x0000000000000000       0x28 HAL/UART0/UART0_HAL.o
+ .text.uart0_hal_send_break
+                0x0000000000000000       0x46 HAL/UART0/UART0_HAL.o
  .text          0x0000000000000000        0x0 HAL/UART1/UART1_HAL.o
  .data          0x0000000000000000        0x0 HAL/UART1/UART1_HAL.o
  .bss           0x0000000000000000        0x0 HAL/UART1/UART1_HAL.o
- .text.copy_buffer
-                0x0000000000000000       0x2e HAL/UART1/UART1_HAL.o
- .text.uart1_hal_send_string
-                0x0000000000000000       0x6a HAL/UART1/UART1_HAL.o
  .text.uart1_hal_send_message
                 0x0000000000000000       0x34 HAL/UART1/UART1_HAL.o
- .text.uart1_hal_message_ready
-                0x0000000000000000        0xe HAL/UART1/UART1_HAL.o
- .text.uart1_hal_clear_rx_buffer
-                0x0000000000000000        0xa HAL/UART1/UART1_HAL.o
  .text.uart1_hal_read_message
                 0x0000000000000000       0x16 HAL/UART1/UART1_HAL.o
- .text.uart1_hal_read_message_as_str
-                0x0000000000000000       0x28 HAL/UART1/UART1_HAL.o
  .text          0x0000000000000000        0x0 main.o
  .data          0x0000000000000000        0x0 main.o
  .bss           0x0000000000000000        0x0 main.o
  .text          0x0000000000000000        0x0 MODULES/ADC_module/ADC_module.o
  .data          0x0000000000000000        0x0 MODULES/ADC_module/ADC_module.o
  .bss           0x0000000000000000        0x0 MODULES/ADC_module/ADC_module.o
+ .text.vect_ADC_heat_timeout
+                0x0000000000000000       0x18 MODULES/ADC_module/ADC_module.o
+ .text.ADC_init_sampling
+                0x0000000000000000       0x66 MODULES/ADC_module/ADC_module.o
+ .text.ADC_deinit_sampling
+                0x0000000000000000       0x14 MODULES/ADC_module/ADC_module.o
+ .text.ADC_is_sampling_done
+                0x0000000000000000       0x1c MODULES/ADC_module/ADC_module.o
+ .text.ADC_meth_sens_power_on
+                0x0000000000000000       0x20 MODULES/ADC_module/ADC_module.o
  .text.ADC_meth_sens_power_off
                 0x0000000000000000        0xa MODULES/ADC_module/ADC_module.o
+ .text.ADC_meth_sens_ready
+                0x0000000000000000       0x12 MODULES/ADC_module/ADC_module.o
  .text.ADC_set_conf_parameters
                 0x0000000000000000       0x44 MODULES/ADC_module/ADC_module.o
+ .text.calc_ppm_methane
+                0x0000000000000000       0x96 MODULES/ADC_module/ADC_module.o
+ .text.ADC_get_value
+                0x0000000000000000       0x5c MODULES/ADC_module/ADC_module.o
+ .text.vect_ADC_do_sample
+                0x0000000000000000       0x46 MODULES/ADC_module/ADC_module.o
+ .text.ADC_start_sampling
+                0x0000000000000000        0xc MODULES/ADC_module/ADC_module.o
+ .bss.cntPowerUpTime
+                0x0000000000000000        0x1 MODULES/ADC_module/ADC_module.o
+ .bss._powerUpTime
+                0x0000000000000000        0x1 MODULES/ADC_module/ADC_module.o
+ .bss.cntSamples
+                0x0000000000000000        0x2 MODULES/ADC_module/ADC_module.o
+ .bss._data     0x0000000000000000        0x2 MODULES/ADC_module/ADC_module.o
+ .bss._nSamples
+                0x0000000000000000        0x2 MODULES/ADC_module/ADC_module.o
+ .data.PPM_factor
+                0x0000000000000000        0x4 MODULES/ADC_module/ADC_module.o
+ .data.RRL      0x0000000000000000        0x4 MODULES/ADC_module/ADC_module.o
+ .data.Vc       0x0000000000000000        0x4 MODULES/ADC_module/ADC_module.o
+ .debug_info    0x0000000000000000      0x986 MODULES/ADC_module/ADC_module.o
+ .debug_abbrev  0x0000000000000000      0x218 MODULES/ADC_module/ADC_module.o
+ .debug_loc     0x0000000000000000      0x36c MODULES/ADC_module/ADC_module.o
+ .debug_aranges
+                0x0000000000000000       0x78 MODULES/ADC_module/ADC_module.o
+ .debug_ranges  0x0000000000000000       0x68 MODULES/ADC_module/ADC_module.o
+ .debug_line    0x0000000000000000      0x387 MODULES/ADC_module/ADC_module.o
+ .debug_str     0x0000000000000000       0x94 MODULES/ADC_module/ADC_module.o
+ .comment       0x0000000000000000       0x30 MODULES/ADC_module/ADC_module.o
+ .debug_frame   0x0000000000000000      0x138 MODULES/ADC_module/ADC_module.o
  .text          0x0000000000000000        0x0 MODULES/EEPROM_module/EEPROM_module.o
  .data          0x0000000000000000        0x0 MODULES/EEPROM_module/EEPROM_module.o
  .bss           0x0000000000000000        0x0 MODULES/EEPROM_module/EEPROM_module.o
@@ -186,61 +378,449 @@ Discarded input sections
  .text          0x0000000000000000        0x0 MODULES/LED_module/LED_module.o
  .data          0x0000000000000000        0x0 MODULES/LED_module/LED_module.o
  .bss           0x0000000000000000        0x0 MODULES/LED_module/LED_module.o
+ .text.cb_blink
+                0x0000000000000000        0x6 MODULES/LED_module/LED_module.o
+ .text.blink    0x0000000000000000       0x4c MODULES/LED_module/LED_module.o
+ .text.err_code
+                0x0000000000000000       0x38 MODULES/LED_module/LED_module.o
+ .text.LED_start_try_join
+                0x0000000000000000        0xe MODULES/LED_module/LED_module.o
+ .text.LED_stop_try_join
+                0x0000000000000000       0x10 MODULES/LED_module/LED_module.o
+ .text.LED_join_success
+                0x0000000000000000       0x40 MODULES/LED_module/LED_module.o
+ .text.LED_join_denied
+                0x0000000000000000        0x8 MODULES/LED_module/LED_module.o
+ .text.LED_join_conf_err
+                0x0000000000000000        0x8 MODULES/LED_module/LED_module.o
+ .text.LED_fatal_err
+                0x0000000000000000        0x8 MODULES/LED_module/LED_module.o
+ .bss.cbPointer
+                0x0000000000000000        0x1 MODULES/LED_module/LED_module.o
+ .debug_info    0x0000000000000000      0x717 MODULES/LED_module/LED_module.o
+ .debug_abbrev  0x0000000000000000      0x16d MODULES/LED_module/LED_module.o
+ .debug_loc     0x0000000000000000      0x2b9 MODULES/LED_module/LED_module.o
+ .debug_aranges
+                0x0000000000000000       0x60 MODULES/LED_module/LED_module.o
+ .debug_ranges  0x0000000000000000       0x50 MODULES/LED_module/LED_module.o
+ .debug_line    0x0000000000000000      0x2bc MODULES/LED_module/LED_module.o
+ .debug_str     0x0000000000000000       0x44 MODULES/LED_module/LED_module.o
+ .comment       0x0000000000000000       0x30 MODULES/LED_module/LED_module.o
+ .debug_frame   0x0000000000000000       0xc0 MODULES/LED_module/LED_module.o
  .text          0x0000000000000000        0x0 MODULES/LORA_module/join_network/join_network.o
  .data          0x0000000000000000        0x0 MODULES/LORA_module/join_network/join_network.o
  .bss           0x0000000000000000        0x0 MODULES/LORA_module/join_network/join_network.o
+ .progmemx.data
+                0x0000000000000000       0x38 MODULES/LORA_module/join_network/join_network.o
+ .text.JN_join_network
+                0x0000000000000000      0x296 MODULES/LORA_module/join_network/join_network.o
+ .progmem.gcc_sw_table.JN_join_network
+                0x0000000000000000       0x1a MODULES/LORA_module/join_network/join_network.o
+ .debug_info    0x0000000000000000      0xbfa MODULES/LORA_module/join_network/join_network.o
+ .debug_abbrev  0x0000000000000000      0x194 MODULES/LORA_module/join_network/join_network.o
+ .debug_loc     0x0000000000000000      0x27a MODULES/LORA_module/join_network/join_network.o
+ .debug_aranges
+                0x0000000000000000       0x20 MODULES/LORA_module/join_network/join_network.o
+ .debug_ranges  0x0000000000000000       0x10 MODULES/LORA_module/join_network/join_network.o
+ .debug_line    0x0000000000000000      0x3d2 MODULES/LORA_module/join_network/join_network.o
+ .debug_str     0x0000000000000000      0x102 MODULES/LORA_module/join_network/join_network.o
+ .comment       0x0000000000000000       0x30 MODULES/LORA_module/join_network/join_network.o
+ .debug_frame   0x0000000000000000       0x58 MODULES/LORA_module/join_network/join_network.o
  .text          0x0000000000000000        0x0 MODULES/LORA_module/lora_module.o
  .data          0x0000000000000000        0x0 MODULES/LORA_module/lora_module.o
  .bss           0x0000000000000000        0x0 MODULES/LORA_module/lora_module.o
+ .text.set_block_uplink
+                0x0000000000000000       0x18 MODULES/LORA_module/lora_module.o
+ .text.block_uplink
+                0x0000000000000000       0x1c MODULES/LORA_module/lora_module.o
+ .text.LM_join_network
+                0x0000000000000000        0x6 MODULES/LORA_module/lora_module.o
+ .text.LM_send_uplink
+                0x0000000000000000       0x2e MODULES/LORA_module/lora_module.o
+ .text.LM_put_to_sleep
+                0x0000000000000000        0x6 MODULES/LORA_module/lora_module.o
+ .text.LM_wake_up
+                0x0000000000000000        0x6 MODULES/LORA_module/lora_module.o
+ .text.LM_is_free
+                0x0000000000000000        0xa MODULES/LORA_module/lora_module.o
+ .bss.subPointer
+                0x0000000000000000        0x1 MODULES/LORA_module/lora_module.o
+ .bss.busy      0x0000000000000000        0x1 MODULES/LORA_module/lora_module.o
+ .bss.cnt       0x0000000000000000        0x1 MODULES/LORA_module/lora_module.o
+ .debug_info    0x0000000000000000      0x5d4 MODULES/LORA_module/lora_module.o
+ .debug_abbrev  0x0000000000000000      0x121 MODULES/LORA_module/lora_module.o
+ .debug_loc     0x0000000000000000      0x12b MODULES/LORA_module/lora_module.o
+ .debug_aranges
+                0x0000000000000000       0x50 MODULES/LORA_module/lora_module.o
+ .debug_ranges  0x0000000000000000       0x40 MODULES/LORA_module/lora_module.o
+ .debug_line    0x0000000000000000      0x256 MODULES/LORA_module/lora_module.o
+ .debug_str     0x0000000000000000       0x5b MODULES/LORA_module/lora_module.o
+ .comment       0x0000000000000000       0x30 MODULES/LORA_module/lora_module.o
+ .debug_frame   0x0000000000000000       0x94 MODULES/LORA_module/lora_module.o
  .text          0x0000000000000000        0x0 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
  .data          0x0000000000000000        0x0 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
  .bss           0x0000000000000000        0x0 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .progmemx.data
+                0x0000000000000000       0x73 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .text.tohex    0x0000000000000000       0x84 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .text.attach_ending
+                0x0000000000000000       0x1c MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .text.cmd_with_ending
+                0x0000000000000000       0x32 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .text.sys_sleep_cmd
+                0x0000000000000000       0x5e MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_set_parameter
+                0x0000000000000000       0x4e MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_set_deveui
+                0x0000000000000000       0x48 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_set_appeui
+                0x0000000000000000       0x48 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_set_appkey
+                0x0000000000000000       0x48 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_set_ADR
+                0x0000000000000000       0x30 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .text.mac_tx_confirmed
+                0x0000000000000000       0xac MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .debug_info    0x0000000000000000      0x8ae MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .debug_abbrev  0x0000000000000000      0x16f MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .debug_loc     0x0000000000000000      0x8a0 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .debug_aranges
+                0x0000000000000000       0x68 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .debug_ranges  0x0000000000000000       0x58 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .debug_line    0x0000000000000000      0x26b MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .debug_str     0x0000000000000000        0x7 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .comment       0x0000000000000000       0x30 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .debug_frame   0x0000000000000000      0x218 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
  .text          0x0000000000000000        0x0 MODULES/LORA_module/send_uplink/send_uplink.o
  .data          0x0000000000000000        0x0 MODULES/LORA_module/send_uplink/send_uplink.o
  .bss           0x0000000000000000        0x0 MODULES/LORA_module/send_uplink/send_uplink.o
+ .text.beginsWidth
+                0x0000000000000000       0x4a MODULES/LORA_module/send_uplink/send_uplink.o
+ .progmemx.data
+                0x0000000000000000       0x38 MODULES/LORA_module/send_uplink/send_uplink.o
+ .text.decode_tx_response
+                0x0000000000000000       0x68 MODULES/LORA_module/send_uplink/send_uplink.o
+ .text.SU_send_uplink
+                0x0000000000000000       0xfc MODULES/LORA_module/send_uplink/send_uplink.o
+ .progmem.gcc_sw_table.SU_send_uplink
+                0x0000000000000000       0x14 MODULES/LORA_module/send_uplink/send_uplink.o
+ .debug_info    0x0000000000000000      0x8f9 MODULES/LORA_module/send_uplink/send_uplink.o
+ .debug_abbrev  0x0000000000000000      0x158 MODULES/LORA_module/send_uplink/send_uplink.o
+ .debug_loc     0x0000000000000000      0x2d0 MODULES/LORA_module/send_uplink/send_uplink.o
+ .debug_aranges
+                0x0000000000000000       0x30 MODULES/LORA_module/send_uplink/send_uplink.o
+ .debug_ranges  0x0000000000000000       0x20 MODULES/LORA_module/send_uplink/send_uplink.o
+ .debug_line    0x0000000000000000      0x2ac MODULES/LORA_module/send_uplink/send_uplink.o
+ .debug_str     0x0000000000000000       0x91 MODULES/LORA_module/send_uplink/send_uplink.o
+ .comment       0x0000000000000000       0x30 MODULES/LORA_module/send_uplink/send_uplink.o
+ .debug_frame   0x0000000000000000       0xa8 MODULES/LORA_module/send_uplink/send_uplink.o
  .text          0x0000000000000000        0x0 MODULES/LORA_module/sleep_controller/sleep_controller.o
  .data          0x0000000000000000        0x0 MODULES/LORA_module/sleep_controller/sleep_controller.o
  .bss           0x0000000000000000        0x0 MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .progmemx.data
+                0x0000000000000000        0x3 MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .text.SC_put_to_sleep
+                0x0000000000000000       0x4c MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .text.SC_wake_up
+                0x0000000000000000       0x32 MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .debug_info    0x0000000000000000      0x4cf MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .debug_abbrev  0x0000000000000000       0xd6 MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .debug_aranges
+                0x0000000000000000       0x28 MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .debug_ranges  0x0000000000000000       0x18 MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .debug_line    0x0000000000000000      0x231 MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .debug_str     0x0000000000000000       0x69 MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .comment       0x0000000000000000       0x30 MODULES/LORA_module/sleep_controller/sleep_controller.o
+ .debug_frame   0x0000000000000000       0x34 MODULES/LORA_module/sleep_controller/sleep_controller.o
  .text          0x0000000000000000        0x0 MODULES/LORA_module/util/util.o
  .data          0x0000000000000000        0x0 MODULES/LORA_module/util/util.o
  .bss           0x0000000000000000        0x0 MODULES/LORA_module/util/util.o
+ .text.LM_strbeginswith
+                0x0000000000000000       0x44 MODULES/LORA_module/util/util.o
+ .text.util_setPendingStates
+                0x0000000000000000        0xc MODULES/LORA_module/util/util.o
+ .text.util_setMatchCase
+                0x0000000000000000        0xc MODULES/LORA_module/util/util.o
+ .text.util_matchMessage
+                0x0000000000000000       0x5e MODULES/LORA_module/util/util.o
+ .text.util_transmit_msg
+                0x0000000000000000       0x1c MODULES/LORA_module/util/util.o
+ .text.util_read_msg
+                0x0000000000000000        0x6 MODULES/LORA_module/util/util.o
+ .progmemx.data
+                0x0000000000000000       0x20 MODULES/LORA_module/util/util.o
+ .text.util_parse_err
+                0x0000000000000000       0x58 MODULES/LORA_module/util/util.o
+ .debug_info    0x0000000000000000      0x7b4 MODULES/LORA_module/util/util.o
+ .debug_abbrev  0x0000000000000000      0x19b MODULES/LORA_module/util/util.o
+ .debug_loc     0x0000000000000000      0x316 MODULES/LORA_module/util/util.o
+ .debug_aranges
+                0x0000000000000000       0x50 MODULES/LORA_module/util/util.o
+ .debug_ranges  0x0000000000000000       0x40 MODULES/LORA_module/util/util.o
+ .debug_line    0x0000000000000000      0x22c MODULES/LORA_module/util/util.o
+ .debug_str     0x0000000000000000       0x4b MODULES/LORA_module/util/util.o
+ .comment       0x0000000000000000       0x30 MODULES/LORA_module/util/util.o
+ .debug_frame   0x0000000000000000       0xd0 MODULES/LORA_module/util/util.o
+ COMMON         0x0000000000000000       0xc8 MODULES/LORA_module/util/util.o
  .text          0x0000000000000000        0x0 MODULES/MRPP_module/mrpp.o
  .data          0x0000000000000000        0x0 MODULES/MRPP_module/mrpp.o
  .bss           0x0000000000000000        0x0 MODULES/MRPP_module/mrpp.o
+ .text.get_group_id
+                0x0000000000000000        0x6 MODULES/MRPP_module/mrpp.o
+ .text.set_group_id
+                0x0000000000000000        0x6 MODULES/MRPP_module/mrpp.o
+ .text.MRPP_init_group
+                0x0000000000000000       0x32 MODULES/MRPP_module/mrpp.o
+ .text.MRPP_add_collection_data_INT16
+                0x0000000000000000       0x70 MODULES/MRPP_module/mrpp.o
+ .text.MRPP_is_body_package_ready
+                0x0000000000000000       0x22 MODULES/MRPP_module/mrpp.o
+ .text.MRPP_get_ready_body_package
+                0x0000000000000000       0x96 MODULES/MRPP_module/mrpp.o
+ .text.MRPP_set_body_sent
+                0x0000000000000000        0xc MODULES/MRPP_module/mrpp.o
+ .text.MRPP_get_header_package
+                0x0000000000000000       0x22 MODULES/MRPP_module/mrpp.o
+ .text.MRPP_get_tail_package
+                0x0000000000000000       0x22 MODULES/MRPP_module/mrpp.o
+ .text.MRPP_all_body_package_sent
+                0x0000000000000000        0xa MODULES/MRPP_module/mrpp.o
  .text.MRPP_validate_collections_space
                 0x0000000000000000       0x54 MODULES/MRPP_module/mrpp.o
+ .bss._groupId  0x0000000000000000        0x1 MODULES/MRPP_module/mrpp.o
+ .debug_info    0x0000000000000000      0xb28 MODULES/MRPP_module/mrpp.o
+ .debug_abbrev  0x0000000000000000      0x1df MODULES/MRPP_module/mrpp.o
+ .debug_loc     0x0000000000000000      0x5f2 MODULES/MRPP_module/mrpp.o
+ .debug_aranges
+                0x0000000000000000       0x70 MODULES/MRPP_module/mrpp.o
+ .debug_ranges  0x0000000000000000       0x78 MODULES/MRPP_module/mrpp.o
+ .debug_line    0x0000000000000000      0x2a6 MODULES/MRPP_module/mrpp.o
+ .debug_str     0x0000000000000000      0x18c MODULES/MRPP_module/mrpp.o
+ .comment       0x0000000000000000       0x30 MODULES/MRPP_module/mrpp.o
+ .debug_frame   0x0000000000000000      0x160 MODULES/MRPP_module/mrpp.o
+ COMMON         0x0000000000000000       0x9a MODULES/MRPP_module/mrpp.o
  .text          0x0000000000000000        0x0 MODULES/MRPP_module/util/mrpp_data.o
  .data          0x0000000000000000        0x0 MODULES/MRPP_module/util/mrpp_data.o
  .bss           0x0000000000000000        0x0 MODULES/MRPP_module/util/mrpp_data.o
+ .text.mrpp_data_add_int16
+                0x0000000000000000       0x92 MODULES/MRPP_module/util/mrpp_data.o
+ .text.mrpp_data_get
+                0x0000000000000000       0x30 MODULES/MRPP_module/util/mrpp_data.o
+ .debug_info    0x0000000000000000      0x43f MODULES/MRPP_module/util/mrpp_data.o
+ .debug_abbrev  0x0000000000000000       0xcb MODULES/MRPP_module/util/mrpp_data.o
+ .debug_loc     0x0000000000000000      0x1bd MODULES/MRPP_module/util/mrpp_data.o
+ .debug_aranges
+                0x0000000000000000       0x28 MODULES/MRPP_module/util/mrpp_data.o
+ .debug_ranges  0x0000000000000000       0x18 MODULES/MRPP_module/util/mrpp_data.o
+ .debug_line    0x0000000000000000      0x13e MODULES/MRPP_module/util/mrpp_data.o
+ .debug_str     0x0000000000000000        0x0 MODULES/MRPP_module/util/mrpp_data.o
+ .comment       0x0000000000000000       0x30 MODULES/MRPP_module/util/mrpp_data.o
+ .debug_frame   0x0000000000000000       0x64 MODULES/MRPP_module/util/mrpp_data.o
+ COMMON         0x0000000000000000      0x320 MODULES/MRPP_module/util/mrpp_data.o
  .text          0x0000000000000000        0x0 MODULES/MRPP_module/util/mrpp_state.o
  .data          0x0000000000000000        0x0 MODULES/MRPP_module/util/mrpp_state.o
  .bss           0x0000000000000000        0x0 MODULES/MRPP_module/util/mrpp_state.o
+ .text.add_data_types
+                0x0000000000000000       0xd8 MODULES/MRPP_module/util/mrpp_state.o
+ .text.update_bodies
+                0x0000000000000000      0x162 MODULES/MRPP_module/util/mrpp_state.o
+ .text.mrpp_state_init
+                0x0000000000000000      0x1be MODULES/MRPP_module/util/mrpp_state.o
+ .text.mrpp_state_get_header
+                0x0000000000000000       0xa2 MODULES/MRPP_module/util/mrpp_state.o
+ .text.mrpp_state_get_tail
+                0x0000000000000000       0xa4 MODULES/MRPP_module/util/mrpp_state.o
+ .text.mrpp_state_set_collection
+                0x0000000000000000       0x86 MODULES/MRPP_module/util/mrpp_state.o
+ .text.mrpp_state_is_body_ready
+                0x0000000000000000       0x30 MODULES/MRPP_module/util/mrpp_state.o
+ .text.mrpp_state_all_bodies_sent
+                0x0000000000000000       0x2a MODULES/MRPP_module/util/mrpp_state.o
+ .text.mrpp_state_get_ready_body
+                0x0000000000000000      0x11a MODULES/MRPP_module/util/mrpp_state.o
+ .text.mrpp_state_set_body_sent
+                0x0000000000000000       0x20 MODULES/MRPP_module/util/mrpp_state.o
+ .text.mrpp_state_get_collection_address
+                0x0000000000000000       0x36 MODULES/MRPP_module/util/mrpp_state.o
+ .debug_info    0x0000000000000000      0xb3f MODULES/MRPP_module/util/mrpp_state.o
+ .debug_abbrev  0x0000000000000000      0x1ea MODULES/MRPP_module/util/mrpp_state.o
+ .debug_loc     0x0000000000000000      0xb27 MODULES/MRPP_module/util/mrpp_state.o
+ .debug_aranges
+                0x0000000000000000       0x70 MODULES/MRPP_module/util/mrpp_state.o
+ .debug_ranges  0x0000000000000000       0xd8 MODULES/MRPP_module/util/mrpp_state.o
+ .debug_line    0x0000000000000000      0x5bc MODULES/MRPP_module/util/mrpp_state.o
+ .debug_str     0x0000000000000000       0xa1 MODULES/MRPP_module/util/mrpp_state.o
+ .comment       0x0000000000000000       0x30 MODULES/MRPP_module/util/mrpp_state.o
+ .debug_frame   0x0000000000000000      0x1a0 MODULES/MRPP_module/util/mrpp_state.o
  .text          0x0000000000000000        0x0 MODULES/PUMP_module/PUMP_module.o
  .data          0x0000000000000000        0x0 MODULES/PUMP_module/PUMP_module.o
  .bss           0x0000000000000000        0x0 MODULES/PUMP_module/PUMP_module.o
+ .text.cb_cnt_time
+                0x0000000000000000       0x30 MODULES/PUMP_module/PUMP_module.o
+ .text.PUMP_start
+                0x0000000000000000       0x24 MODULES/PUMP_module/PUMP_module.o
+ .text.PUMP_is_done
+                0x0000000000000000       0x1c MODULES/PUMP_module/PUMP_module.o
+ .bss.eventPointer
+                0x0000000000000000        0x1 MODULES/PUMP_module/PUMP_module.o
+ .bss.cnt       0x0000000000000000        0x2 MODULES/PUMP_module/PUMP_module.o
+ .bss._seconds  0x0000000000000000        0x2 MODULES/PUMP_module/PUMP_module.o
+ .debug_info    0x0000000000000000      0x3b8 MODULES/PUMP_module/PUMP_module.o
+ .debug_abbrev  0x0000000000000000       0xd5 MODULES/PUMP_module/PUMP_module.o
+ .debug_loc     0x0000000000000000       0x35 MODULES/PUMP_module/PUMP_module.o
+ .debug_aranges
+                0x0000000000000000       0x30 MODULES/PUMP_module/PUMP_module.o
+ .debug_ranges  0x0000000000000000       0x20 MODULES/PUMP_module/PUMP_module.o
+ .debug_line    0x0000000000000000      0x151 MODULES/PUMP_module/PUMP_module.o
+ .debug_str     0x0000000000000000       0x31 MODULES/PUMP_module/PUMP_module.o
+ .comment       0x0000000000000000       0x30 MODULES/PUMP_module/PUMP_module.o
+ .debug_frame   0x0000000000000000       0x44 MODULES/PUMP_module/PUMP_module.o
  .text          0x0000000000000000        0x0 MODULES/RTC_module/RTC_module.o
  .data          0x0000000000000000        0x0 MODULES/RTC_module/RTC_module.o
  .bss           0x0000000000000000        0x0 MODULES/RTC_module/RTC_module.o
+ .text.RTC_set_clock_out
+                0x0000000000000000       0x50 MODULES/RTC_module/RTC_module.o
+ .text.RTC_clear_wake_up_interrupt
+                0x0000000000000000       0x34 MODULES/RTC_module/RTC_module.o
+ .text.RTC_get_current_time
+                0x0000000000000000      0x140 MODULES/RTC_module/RTC_module.o
+ .rodata        0x0000000000000000        0x5 MODULES/RTC_module/RTC_module.o
  .text.RTC_set_wake_up_interrupt
                 0x0000000000000000       0xc2 MODULES/RTC_module/RTC_module.o
+ .text.RTC_set_wake_up_interrupt_minutes
+                0x0000000000000000       0xc4 MODULES/RTC_module/RTC_module.o
+ .text.RTC_datetime_to_ts
+                0x0000000000000000      0x122 MODULES/RTC_module/RTC_module.o
  .text.datetime_to_BCD
                 0x0000000000000000      0x100 MODULES/RTC_module/RTC_module.o
  .text.RTC_set_current_time
                 0x0000000000000000       0x68 MODULES/RTC_module/RTC_module.o
  .text.BCD_to_datetime
                 0x0000000000000000       0xa6 MODULES/RTC_module/RTC_module.o
+ .progmemx.data.CMD_READ_TIME_POINTER
+                0x0000000000000000        0x1 MODULES/RTC_module/RTC_module.o
+ .debug_info    0x0000000000000000      0x995 MODULES/RTC_module/RTC_module.o
+ .debug_abbrev  0x0000000000000000      0x18d MODULES/RTC_module/RTC_module.o
+ .debug_loc     0x0000000000000000      0x5ca MODULES/RTC_module/RTC_module.o
+ .debug_aranges
+                0x0000000000000000       0x60 MODULES/RTC_module/RTC_module.o
+ .debug_ranges  0x0000000000000000       0x50 MODULES/RTC_module/RTC_module.o
+ .debug_line    0x0000000000000000      0x393 MODULES/RTC_module/RTC_module.o
+ .debug_str     0x0000000000000000       0x76 MODULES/RTC_module/RTC_module.o
+ .comment       0x0000000000000000       0x30 MODULES/RTC_module/RTC_module.o
+ .debug_frame   0x0000000000000000      0x1a0 MODULES/RTC_module/RTC_module.o
  .text          0x0000000000000000        0x0 MODULES/SCD30_module/SCD30_module.o
  .data          0x0000000000000000        0x0 MODULES/SCD30_module/SCD30_module.o
  .bss           0x0000000000000000        0x0 MODULES/SCD30_module/SCD30_module.o
+ .text.bytes_2_uint
+                0x0000000000000000       0x1a MODULES/SCD30_module/SCD30_module.o
+ .text.init_measurement
+                0x0000000000000000       0x38 MODULES/SCD30_module/SCD30_module.o
+ .text.validate_data
+                0x0000000000000000       0x32 MODULES/SCD30_module/SCD30_module.o
+ .text.read_value
+                0x0000000000000000       0xa2 MODULES/SCD30_module/SCD30_module.o
+ .text.vect_SCD_do_sample
+                0x0000000000000000       0x46 MODULES/SCD30_module/SCD30_module.o
+ .text.SCD30_init_sampling
+                0x0000000000000000       0x4e MODULES/SCD30_module/SCD30_module.o
+ .text.SCD30_deinit_sampling
+                0x0000000000000000       0x14 MODULES/SCD30_module/SCD30_module.o
+ .text.SCD30_start_sampling
+                0x0000000000000000        0xc MODULES/SCD30_module/SCD30_module.o
+ .text.SCD30_is_sampling_done
+                0x0000000000000000       0x1c MODULES/SCD30_module/SCD30_module.o
  .text.SCD30_get_reading
                 0x0000000000000000       0x3a MODULES/SCD30_module/SCD30_module.o
  .text.SCD30_data_ready
                 0x0000000000000000        0x6 MODULES/SCD30_module/SCD30_module.o
+ .bss.cntSamples
+                0x0000000000000000        0x2 MODULES/SCD30_module/SCD30_module.o
+ .bss._data     0x0000000000000000        0x2 MODULES/SCD30_module/SCD30_module.o
+ .bss._nSamples
+                0x0000000000000000        0x2 MODULES/SCD30_module/SCD30_module.o
  .progmemx.data.DATA_READY_CMD
                 0x0000000000000000        0x2 MODULES/SCD30_module/SCD30_module.o
+ .progmemx.data.READ_DATA_CMD
+                0x0000000000000000        0x2 MODULES/SCD30_module/SCD30_module.o
+ .progmemx.data.SET_MEASUREMENT_INTERVAL
+                0x0000000000000000        0x5 MODULES/SCD30_module/SCD30_module.o
+ .progmemx.data.TRIGGER_CONT_MEASUREMENT
+                0x0000000000000000        0x5 MODULES/SCD30_module/SCD30_module.o
+ .debug_info    0x0000000000000000      0xa8e MODULES/SCD30_module/SCD30_module.o
+ .debug_abbrev  0x0000000000000000      0x23e MODULES/SCD30_module/SCD30_module.o
+ .debug_loc     0x0000000000000000      0x3ce MODULES/SCD30_module/SCD30_module.o
+ .debug_aranges
+                0x0000000000000000       0x70 MODULES/SCD30_module/SCD30_module.o
+ .debug_ranges  0x0000000000000000       0x60 MODULES/SCD30_module/SCD30_module.o
+ .debug_line    0x0000000000000000      0x458 MODULES/SCD30_module/SCD30_module.o
+ .debug_str     0x0000000000000000       0xac MODULES/SCD30_module/SCD30_module.o
+ .comment       0x0000000000000000       0x30 MODULES/SCD30_module/SCD30_module.o
+ .debug_frame   0x0000000000000000      0x104 MODULES/SCD30_module/SCD30_module.o
+ .text          0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .data          0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .bss           0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .text          0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/RW/RW.o
+ .data          0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/RW/RW.o
+ .bss           0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/RW/RW.o
+ .text          0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .data          0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .bss           0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/UTIL/util.o
  .text          0x0000000000000000        0x0 PROGRAMS/MAINPG/MAINPG.o
  .data          0x0000000000000000        0x0 PROGRAMS/MAINPG/MAINPG.o
  .bss           0x0000000000000000        0x0 PROGRAMS/MAINPG/MAINPG.o
+ .text.decode_stage_response
+                0x0000000000000000       0x16 PROGRAMS/MAINPG/MAINPG.o
+ .text.decode_join_response
+                0x0000000000000000       0x1c PROGRAMS/MAINPG/MAINPG.o
+ .text.decode_header_tail_response
+                0x0000000000000000       0x1e PROGRAMS/MAINPG/MAINPG.o
+ .progmemx.data
+                0x0000000000000000       0xd2 PROGRAMS/MAINPG/MAINPG.o
+ .text.join_lora
+                0x0000000000000000       0x7a PROGRAMS/MAINPG/MAINPG.o
+ .text.set_wakeup
+                0x0000000000000000        0x8 PROGRAMS/MAINPG/MAINPG.o
+ .text.send_header
+                0x0000000000000000       0x3e PROGRAMS/MAINPG/MAINPG.o
+ .text.stage_0  0x0000000000000000       0xce PROGRAMS/MAINPG/MAINPG.o
+ .text.stage_1  0x0000000000000000       0xf0 PROGRAMS/MAINPG/MAINPG.o
+ .text.stage_3  0x0000000000000000       0xf0 PROGRAMS/MAINPG/MAINPG.o
+ .text.stage_2  0x0000000000000000      0x106 PROGRAMS/MAINPG/MAINPG.o
+ .text.send_body
+                0x0000000000000000       0x40 PROGRAMS/MAINPG/MAINPG.o
+ .text.decode_body_response
+                0x0000000000000000       0x28 PROGRAMS/MAINPG/MAINPG.o
+ .text.send_tail
+                0x0000000000000000       0x3e PROGRAMS/MAINPG/MAINPG.o
+ .text.send_msg
+                0x0000000000000000       0x18 PROGRAMS/MAINPG/MAINPG.o
+ .text.MAINPG_start
+                0x0000000000000000      0x26e PROGRAMS/MAINPG/MAINPG.o
+ .progmem.gcc_sw_table.MAINPG_start
+                0x0000000000000000       0x2c PROGRAMS/MAINPG/MAINPG.o
+ .data.cols     0x0000000000000000       0x23 PROGRAMS/MAINPG/MAINPG.o
+ .bss.dt        0x0000000000000000        0x6 PROGRAMS/MAINPG/MAINPG.o
+ .bss.ts        0x0000000000000000        0x4 PROGRAMS/MAINPG/MAINPG.o
+ .bss.meth_data
+                0x0000000000000000      0x258 PROGRAMS/MAINPG/MAINPG.o
+ .bss.co2_data  0x0000000000000000      0x258 PROGRAMS/MAINPG/MAINPG.o
+ .data.bodyIndex
+                0x0000000000000000        0x2 PROGRAMS/MAINPG/MAINPG.o
+ .bss.state_s3  0x0000000000000000        0x1 PROGRAMS/MAINPG/MAINPG.o
+ .bss.state_s2  0x0000000000000000        0x1 PROGRAMS/MAINPG/MAINPG.o
+ .bss.state_s1  0x0000000000000000        0x1 PROGRAMS/MAINPG/MAINPG.o
+ .bss.state_s0  0x0000000000000000        0x1 PROGRAMS/MAINPG/MAINPG.o
+ .debug_info    0x0000000000000000     0x1b09 PROGRAMS/MAINPG/MAINPG.o
+ .debug_abbrev  0x0000000000000000      0x29e PROGRAMS/MAINPG/MAINPG.o
+ .debug_loc     0x0000000000000000      0x87a PROGRAMS/MAINPG/MAINPG.o
+ .debug_aranges
+                0x0000000000000000       0x90 PROGRAMS/MAINPG/MAINPG.o
+ .debug_ranges  0x0000000000000000       0x80 PROGRAMS/MAINPG/MAINPG.o
+ .debug_line    0x0000000000000000      0xb1b PROGRAMS/MAINPG/MAINPG.o
+ .debug_str     0x0000000000000000      0x442 PROGRAMS/MAINPG/MAINPG.o
+ .comment       0x0000000000000000       0x30 PROGRAMS/MAINPG/MAINPG.o
+ .debug_frame   0x0000000000000000      0x15c PROGRAMS/MAINPG/MAINPG.o
  .text          0x0000000000000000        0x0 TEST/ADC_module/test_ADC_module.o
  .data          0x0000000000000000        0x0 TEST/ADC_module/test_ADC_module.o
  .bss           0x0000000000000000        0x0 TEST/ADC_module/test_ADC_module.o
@@ -549,6 +1129,21 @@ Discarded input sections
  .text          0x0000000000000000        0x0 util/CRC8/CRC8.o
  .data          0x0000000000000000        0x0 util/CRC8/CRC8.o
  .bss           0x0000000000000000        0x0 util/CRC8/CRC8.o
+ .text.calc_crc8
+                0x0000000000000000       0x36 util/CRC8/CRC8.o
+ .debug_info    0x0000000000000000      0x2f9 util/CRC8/CRC8.o
+ .debug_abbrev  0x0000000000000000       0x90 util/CRC8/CRC8.o
+ .debug_loc     0x0000000000000000       0x91 util/CRC8/CRC8.o
+ .debug_aranges
+                0x0000000000000000       0x20 util/CRC8/CRC8.o
+ .debug_ranges  0x0000000000000000       0x28 util/CRC8/CRC8.o
+ .debug_line    0x0000000000000000       0xe4 util/CRC8/CRC8.o
+ .debug_str     0x0000000000000000        0x0 util/CRC8/CRC8.o
+ .comment       0x0000000000000000       0x30 util/CRC8/CRC8.o
+ .debug_frame   0x0000000000000000       0x24 util/CRC8/CRC8.o
+ .text          0x0000000000000000        0x0 util/str2float/str2float.o
+ .data          0x0000000000000000        0x0 util/str2float/str2float.o
+ .bss           0x0000000000000000        0x0 util/str2float/str2float.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
@@ -564,6 +1159,8 @@ Discarded input sections
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
+ .text.avrlibc.fplib
+                0x0000000000000000       0x5e c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
@@ -594,6 +1191,9 @@ Discarded input sections
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
@@ -655,6 +1255,34 @@ Discarded input sections
                 0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
  .text.libgcc.fixed
                 0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
@@ -662,6 +1290,7 @@ Discarded input sections
                 0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
  .text.libgcc.div
                 0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .text.libgcc   0x0000000000000000       0x1a c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
  .text.libgcc.prologue
                 0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
  .text.libgcc.builtins
@@ -670,6 +1299,21 @@ Discarded input sections
                 0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
  .text.libgcc.fixed
                 0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atoi_M.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atoi_M.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atoi_M.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atol_M.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atol_M.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atol_M.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strtol.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strtol.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strtol.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ftoa_engine.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ftoa_engine.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ftoa_engine.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(isspace.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(isspace.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(isspace.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
@@ -679,27 +1323,32 @@ Discarded input sections
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
+ .text.avrlibc  0x0000000000000000       0x6a c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
+ .comment       0x0000000000000000       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
- .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
- .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
- .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
- .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
- .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
- .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(errno.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(errno.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(errno.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(cty_isfalse.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(cty_isfalse.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(cty_isfalse.o)
  .text          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
  .data          0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
  .bss           0x0000000000000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
@@ -752,34 +1401,48 @@ Discarded input sections
  .debug_abbrev  0x0000000000000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
  .debug_aranges
                 0x0000000000000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
- .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
- .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
- .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
- .text.libgcc.mul
-                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
  .text.libgcc.div
-                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
- .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
  .text.libgcc.builtins
-                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
  .text.libgcc.fmul
-                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
  .text.libgcc.fixed
-                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
- .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
- .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
- .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
  .text.libgcc.mul
-                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
- .text.libgcc.div
-                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
- .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
+ .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
  .text.libgcc.builtins
-                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
  .text.libgcc.fmul
-                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
  .text.libgcc.fixed
-                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
+ .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc   0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_xload_1.o)
@@ -839,6 +1502,9 @@ LOAD MODULES/MRPP_module/util/mrpp_state.o
 LOAD MODULES/PUMP_module/PUMP_module.o
 LOAD MODULES/RTC_module/RTC_module.o
 LOAD MODULES/SCD30_module/SCD30_module.o
+LOAD PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+LOAD PROGRAMS/CONFIG_MODE/RW/RW.o
+LOAD PROGRAMS/CONFIG_MODE/UTIL/util.o
 LOAD PROGRAMS/MAINPG/MAINPG.o
 LOAD TEST/ADC_module/test_ADC_module.o
 LOAD TEST/EEPROM_module/test_EEPROM_module.o
@@ -856,9 +1522,12 @@ LOAD TEST/TC2_HAL/test_TC2_HAL.o
 LOAD TEST/test_runner.o
 LOAD TEST/UART0_HAL/test_UART0_HAL.o
 LOAD util/CRC8/CRC8.o
+LOAD util/str2float/str2float.o
 START GROUP
 LOAD c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
 END GROUP
+LOAD c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a
+LOAD c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
 START GROUP
 LOAD c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a
 LOAD c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
@@ -965,58 +1634,55 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x154
+.text           0x0000000000000000      0x1e2
  *(.vectors)
  .vectors       0x0000000000000000       0x7c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
                 0x0000000000000000                __vector_default
                 0x0000000000000000                __vectors
  *(.vectors)
  *(.progmem.gcc*)
- .progmem.gcc_sw_table.JN_join_network
-                0x000000000000007c       0x1a MODULES/LORA_module/join_network/join_network.o
- .progmem.gcc_sw_table.SU_send_uplink
-                0x0000000000000096       0x14 MODULES/LORA_module/send_uplink/send_uplink.o
- .progmem.gcc_sw_table.MAINPG_start
-                0x00000000000000aa       0x2c PROGRAMS/MAINPG/MAINPG.o
+ .progmem.gcc_sw_table.CONF_enter
+                0x000000000000007c       0x12 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
  *(.dinit)
- .dinit         0x00000000000000d6       0x29 data_init
-                0x0000000000000100                . = ALIGN (0x2)
- *fill*         0x00000000000000ff        0x1 
-                0x0000000000000100                __trampolines_start = .
+ .dinit         0x000000000000008e        0x5 data_init
+                0x0000000000000094                . = ALIGN (0x2)
+ *fill*         0x0000000000000093        0x1 
+                0x0000000000000094                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x0000000000000100        0x0 linker stubs
+ .trampolines   0x0000000000000094        0x0 linker stubs
  *(.trampolines*)
-                0x0000000000000100                __trampolines_end = .
+                0x0000000000000094                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
-                0x0000000000000100                . = ALIGN (0x2)
+ .progmem.data  0x0000000000000094       0xfa c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ftoa_engine.o)
+                0x000000000000018e                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x0000000000000100                __ctors_start = .
+                0x000000000000018e                __ctors_start = .
  *(.ctors)
-                0x0000000000000100                __ctors_end = .
-                0x0000000000000100                __dtors_start = .
+                0x000000000000018e                __ctors_end = .
+                0x000000000000018e                __dtors_start = .
  *(.dtors)
-                0x0000000000000100                __dtors_end = .
+                0x000000000000018e                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000000000000100        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
-                0x0000000000000100                __init
+ .init0         0x000000000000018e        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+                0x000000000000018e                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000000000000100        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+ .init2         0x000000000000018e        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000000000000010c       0x3c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
-                0x000000000000010c                __do_copy_data
-                0x000000000000013a                __do_clear_bss
+ .init4         0x000000000000019a       0x3c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_copy_data.o)
+                0x000000000000019a                __do_copy_data
+                0x00000000000001c8                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -1027,13 +1693,13 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000000000000148        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+ .init9         0x00000000000001d6        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  *(.init9)
-                0x0000000000000150                . = ALIGN (0x2)
+                0x00000000000001de                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000150        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
-                0x0000000000000150                _exit
-                0x0000000000000150                exit
+ .fini9         0x00000000000001de        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+                0x00000000000001de                _exit
+                0x00000000000001de                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1052,11 +1718,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000150        0x4 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
+ .fini0         0x00000000000001de        0x4 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000154                _etext = .
+                0x00000000000001e2                _etext = .
 
-.data           0x0000000000800100        0x0 load address 0x0000000000000154
+.data           0x0000000000800100        0x0 load address 0x00000000000001e2
                 [!provide]                        PROVIDE (__data_start, .)
  *(.gnu.linkonce.d*)
  *(.gnu.linkonce.r*)
@@ -1064,27 +1730,26 @@ END GROUP
                 0x0000000000800100                _edata = .
                 [!provide]                        PROVIDE (__data_end, .)
 
-.bss            0x0000000000800100      0x612
+.bss            0x0000000000800100      0x322
                 [!provide]                        PROVIDE (__bss_start, .)
  *(COMMON)
  COMMON         0x0000000000800100      0x190 HAL/UART0/UART0_HAL.o
                 0x0000000000800100                rx_buffer
                 0x0000000000800164                tx_buffer
- COMMON         0x0000000000800290       0xc8 MODULES/LORA_module/util/util.o
-                0x0000000000800290                lm_msg
- COMMON         0x0000000000800358       0x9a MODULES/MRPP_module/mrpp.o
-                0x0000000000800358                state
- COMMON         0x00000000008003f2      0x320 MODULES/MRPP_module/util/mrpp_data.o
-                0x00000000008003f2                storage
+ COMMON         0x0000000000800290      0x190 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+                0x0000000000800290                cnf_reply
+                0x0000000000800358                cnf_rx_cmd
+ COMMON         0x0000000000800420        0x2 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(errno.o)
+                0x0000000000800420                errno
                 [!provide]                        PROVIDE (__bss_end, .)
-                0x0000000000000154                __data_load_start = LOADADDR (.data)
-                0x0000000000000154                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000000000001e2                __data_load_start = LOADADDR (.data)
+                0x00000000000001e2                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000800712        0x0
+.noinit         0x0000000000800422        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x0000000000800712                _end = .
+                0x0000000000800422                _end = .
 
 .eeprom         0x0000000000810000        0x0
  *(.eeprom*)
@@ -1127,42 +1792,29 @@ END GROUP
  *(.comment)
  .comment       0x0000000000000000       0x2f HAL/PM/PM_HAL.o
                                          0x30 (size before relaxing)
- .comment       0x000000000000002f       0x30 HAL/RN2483/RN2483_HAL.o
- .comment       0x000000000000002f       0x30 HAL/SCD30/SCD30_HAL.o
  .comment       0x000000000000002f       0x30 HAL/TC0/TC0_HAL.o
  .comment       0x000000000000002f       0x30 HAL/TC1/TC1_HAL.o
  .comment       0x000000000000002f       0x30 HAL/TC2/TC2_HAL.o
- .comment       0x000000000000002f       0x30 HAL/TWI/TWI_API.o
- .comment       0x000000000000002f       0x30 HAL/TWI/TWI_HAL.o
  .comment       0x000000000000002f       0x30 HAL/UART0/UART0_HAL.o
  .comment       0x000000000000002f       0x30 HAL/UART1/UART1_HAL.o
  .comment       0x000000000000002f       0x30 main.o
- .comment       0x000000000000002f       0x30 MODULES/ADC_module/ADC_module.o
- .comment       0x000000000000002f       0x30 MODULES/LED_module/LED_module.o
- .comment       0x000000000000002f       0x30 MODULES/LORA_module/join_network/join_network.o
- .comment       0x000000000000002f       0x30 MODULES/LORA_module/lora_module.o
- .comment       0x000000000000002f       0x30 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
- .comment       0x000000000000002f       0x30 MODULES/LORA_module/send_uplink/send_uplink.o
- .comment       0x000000000000002f       0x30 MODULES/LORA_module/sleep_controller/sleep_controller.o
- .comment       0x000000000000002f       0x30 MODULES/LORA_module/util/util.o
- .comment       0x000000000000002f       0x30 MODULES/MRPP_module/mrpp.o
- .comment       0x000000000000002f       0x30 MODULES/MRPP_module/util/mrpp_data.o
- .comment       0x000000000000002f       0x30 MODULES/MRPP_module/util/mrpp_state.o
- .comment       0x000000000000002f       0x30 MODULES/PUMP_module/PUMP_module.o
- .comment       0x000000000000002f       0x30 MODULES/RTC_module/RTC_module.o
- .comment       0x000000000000002f       0x30 MODULES/SCD30_module/SCD30_module.o
- .comment       0x000000000000002f       0x30 PROGRAMS/MAINPG/MAINPG.o
- .comment       0x000000000000002f       0x30 util/CRC8/CRC8.o
- .comment       0x000000000000002f       0x2c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
+ .comment       0x000000000000002f       0x30 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .comment       0x000000000000002f       0x30 PROGRAMS/CONFIG_MODE/RW/RW.o
+ .comment       0x000000000000002f       0x30 PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .comment       0x000000000000002f       0x30 util/str2float/str2float.o
+ .comment       0x000000000000002f       0x2c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o)
                                          0x2d (size before relaxing)
+ .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atoi_M.o)
+ .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atol_M.o)
+ .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strtol.o)
+ .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
  .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcmp_M.o)
- .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
  .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
  .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
- .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
- .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
  .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
  .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+ .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
+ .comment       0x000000000000005b       0x2d c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(errno.o)
 
 .note.gnu.build-id
  *(.note.gnu.build-id)
@@ -1179,245 +1831,120 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x840
+.debug_aranges  0x0000000000000000      0x308
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x80 HAL/PM/PM_HAL.o
  .debug_aranges
-                0x0000000000000080       0x30 HAL/RN2483/RN2483_HAL.o
+                0x0000000000000080       0x38 HAL/TC0/TC0_HAL.o
  .debug_aranges
-                0x00000000000000b0       0x28 HAL/SCD30/SCD30_HAL.o
+                0x00000000000000b8       0x38 HAL/TC1/TC1_HAL.o
  .debug_aranges
-                0x00000000000000d8       0x38 HAL/TC0/TC0_HAL.o
+                0x00000000000000f0       0x58 HAL/TC2/TC2_HAL.o
  .debug_aranges
-                0x0000000000000110       0x38 HAL/TC1/TC1_HAL.o
+                0x0000000000000148       0x70 HAL/UART0/UART0_HAL.o
  .debug_aranges
-                0x0000000000000148       0x58 HAL/TC2/TC2_HAL.o
+                0x00000000000001b8       0x70 HAL/UART1/UART1_HAL.o
  .debug_aranges
-                0x00000000000001a0       0x48 HAL/TWI/TWI_API.o
+                0x0000000000000228       0x20 main.o
  .debug_aranges
-                0x00000000000001e8       0x50 HAL/TWI/TWI_HAL.o
+                0x0000000000000248       0x30 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
  .debug_aranges
-                0x0000000000000238       0x70 HAL/UART0/UART0_HAL.o
+                0x0000000000000278       0x38 PROGRAMS/CONFIG_MODE/RW/RW.o
  .debug_aranges
-                0x00000000000002a8       0x68 HAL/UART1/UART1_HAL.o
+                0x00000000000002b0       0x30 PROGRAMS/CONFIG_MODE/UTIL/util.o
  .debug_aranges
-                0x0000000000000310       0x20 main.o
- .debug_aranges
-                0x0000000000000330       0x78 MODULES/ADC_module/ADC_module.o
- .debug_aranges
-                0x00000000000003a8       0x60 MODULES/LED_module/LED_module.o
- .debug_aranges
-                0x0000000000000408       0x20 MODULES/LORA_module/join_network/join_network.o
- .debug_aranges
-                0x0000000000000428       0x50 MODULES/LORA_module/lora_module.o
- .debug_aranges
-                0x0000000000000478       0x68 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
- .debug_aranges
-                0x00000000000004e0       0x30 MODULES/LORA_module/send_uplink/send_uplink.o
- .debug_aranges
-                0x0000000000000510       0x28 MODULES/LORA_module/sleep_controller/sleep_controller.o
- .debug_aranges
-                0x0000000000000538       0x50 MODULES/LORA_module/util/util.o
- .debug_aranges
-                0x0000000000000588       0x70 MODULES/MRPP_module/mrpp.o
- .debug_aranges
-                0x00000000000005f8       0x28 MODULES/MRPP_module/util/mrpp_data.o
- .debug_aranges
-                0x0000000000000620       0x70 MODULES/MRPP_module/util/mrpp_state.o
- .debug_aranges
-                0x0000000000000690       0x30 MODULES/PUMP_module/PUMP_module.o
- .debug_aranges
-                0x00000000000006c0       0x60 MODULES/RTC_module/RTC_module.o
- .debug_aranges
-                0x0000000000000720       0x70 MODULES/SCD30_module/SCD30_module.o
- .debug_aranges
-                0x0000000000000790       0x90 PROGRAMS/MAINPG/MAINPG.o
- .debug_aranges
-                0x0000000000000820       0x20 util/CRC8/CRC8.o
+                0x00000000000002e0       0x28 util/str2float/str2float.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0xc947
+.debug_info     0x0000000000000000     0x3dc1
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x6cc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  .debug_info    0x00000000000006cc      0x4b2 HAL/PM/PM_HAL.o
- .debug_info    0x0000000000000b7e      0x2dc HAL/RN2483/RN2483_HAL.o
- .debug_info    0x0000000000000e5a      0x2c4 HAL/SCD30/SCD30_HAL.o
- .debug_info    0x000000000000111e      0x33b HAL/TC0/TC0_HAL.o
- .debug_info    0x0000000000001459      0x34b HAL/TC1/TC1_HAL.o
- .debug_info    0x00000000000017a4      0x4b4 HAL/TC2/TC2_HAL.o
- .debug_info    0x0000000000001c58      0x684 HAL/TWI/TWI_API.o
- .debug_info    0x00000000000022dc      0x446 HAL/TWI/TWI_HAL.o
- .debug_info    0x0000000000002722      0x781 HAL/UART0/UART0_HAL.o
- .debug_info    0x0000000000002ea3      0x64b HAL/UART1/UART1_HAL.o
- .debug_info    0x00000000000034ee      0x341 main.o
- .debug_info    0x000000000000382f      0x986 MODULES/ADC_module/ADC_module.o
- .debug_info    0x00000000000041b5      0x717 MODULES/LED_module/LED_module.o
- .debug_info    0x00000000000048cc      0xbfa MODULES/LORA_module/join_network/join_network.o
- .debug_info    0x00000000000054c6      0x5d4 MODULES/LORA_module/lora_module.o
- .debug_info    0x0000000000005a9a      0x8ae MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
- .debug_info    0x0000000000006348      0x8f9 MODULES/LORA_module/send_uplink/send_uplink.o
- .debug_info    0x0000000000006c41      0x4cf MODULES/LORA_module/sleep_controller/sleep_controller.o
- .debug_info    0x0000000000007110      0x7b4 MODULES/LORA_module/util/util.o
- .debug_info    0x00000000000078c4      0xb28 MODULES/MRPP_module/mrpp.o
- .debug_info    0x00000000000083ec      0x43f MODULES/MRPP_module/util/mrpp_data.o
- .debug_info    0x000000000000882b      0xb3f MODULES/MRPP_module/util/mrpp_state.o
- .debug_info    0x000000000000936a      0x3b8 MODULES/PUMP_module/PUMP_module.o
- .debug_info    0x0000000000009722      0x995 MODULES/RTC_module/RTC_module.o
- .debug_info    0x000000000000a0b7      0xa8e MODULES/SCD30_module/SCD30_module.o
- .debug_info    0x000000000000ab45     0x1b09 PROGRAMS/MAINPG/MAINPG.o
- .debug_info    0x000000000000c64e      0x2f9 util/CRC8/CRC8.o
+ .debug_info    0x0000000000000b7e      0x33b HAL/TC0/TC0_HAL.o
+ .debug_info    0x0000000000000eb9      0x34b HAL/TC1/TC1_HAL.o
+ .debug_info    0x0000000000001204      0x4b4 HAL/TC2/TC2_HAL.o
+ .debug_info    0x00000000000016b8      0x781 HAL/UART0/UART0_HAL.o
+ .debug_info    0x0000000000001e39      0x68b HAL/UART1/UART1_HAL.o
+ .debug_info    0x00000000000024c4      0x341 main.o
+ .debug_info    0x0000000000002805      0x60a PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .debug_info    0x0000000000002e0f      0x6d5 PROGRAMS/CONFIG_MODE/RW/RW.o
+ .debug_info    0x00000000000034e4      0x4d9 PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .debug_info    0x00000000000039bd      0x404 util/str2float/str2float.o
 
-.debug_abbrev   0x0000000000000000     0x2875
+.debug_abbrev   0x0000000000000000     0x125b
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x66e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  .debug_abbrev  0x000000000000066e       0x85 HAL/PM/PM_HAL.o
- .debug_abbrev  0x00000000000006f3       0x44 HAL/RN2483/RN2483_HAL.o
- .debug_abbrev  0x0000000000000737       0x5c HAL/SCD30/SCD30_HAL.o
- .debug_abbrev  0x0000000000000793       0xb3 HAL/TC0/TC0_HAL.o
- .debug_abbrev  0x0000000000000846       0xb3 HAL/TC1/TC1_HAL.o
- .debug_abbrev  0x00000000000008f9      0x144 HAL/TC2/TC2_HAL.o
- .debug_abbrev  0x0000000000000a3d      0x12c HAL/TWI/TWI_API.o
- .debug_abbrev  0x0000000000000b69       0xbd HAL/TWI/TWI_HAL.o
- .debug_abbrev  0x0000000000000c26      0x208 HAL/UART0/UART0_HAL.o
- .debug_abbrev  0x0000000000000e2e      0x198 HAL/UART1/UART1_HAL.o
- .debug_abbrev  0x0000000000000fc6       0xdb main.o
- .debug_abbrev  0x00000000000010a1      0x218 MODULES/ADC_module/ADC_module.o
- .debug_abbrev  0x00000000000012b9      0x16d MODULES/LED_module/LED_module.o
- .debug_abbrev  0x0000000000001426      0x194 MODULES/LORA_module/join_network/join_network.o
- .debug_abbrev  0x00000000000015ba      0x121 MODULES/LORA_module/lora_module.o
- .debug_abbrev  0x00000000000016db      0x16f MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
- .debug_abbrev  0x000000000000184a      0x158 MODULES/LORA_module/send_uplink/send_uplink.o
- .debug_abbrev  0x00000000000019a2       0xd6 MODULES/LORA_module/sleep_controller/sleep_controller.o
- .debug_abbrev  0x0000000000001a78      0x19b MODULES/LORA_module/util/util.o
- .debug_abbrev  0x0000000000001c13      0x1df MODULES/MRPP_module/mrpp.o
- .debug_abbrev  0x0000000000001df2       0xcb MODULES/MRPP_module/util/mrpp_data.o
- .debug_abbrev  0x0000000000001ebd      0x1ea MODULES/MRPP_module/util/mrpp_state.o
- .debug_abbrev  0x00000000000020a7       0xd5 MODULES/PUMP_module/PUMP_module.o
- .debug_abbrev  0x000000000000217c      0x18d MODULES/RTC_module/RTC_module.o
- .debug_abbrev  0x0000000000002309      0x23e MODULES/SCD30_module/SCD30_module.o
- .debug_abbrev  0x0000000000002547      0x29e PROGRAMS/MAINPG/MAINPG.o
- .debug_abbrev  0x00000000000027e5       0x90 util/CRC8/CRC8.o
+ .debug_abbrev  0x00000000000006f3       0xb3 HAL/TC0/TC0_HAL.o
+ .debug_abbrev  0x00000000000007a6       0xb3 HAL/TC1/TC1_HAL.o
+ .debug_abbrev  0x0000000000000859      0x144 HAL/TC2/TC2_HAL.o
+ .debug_abbrev  0x000000000000099d      0x208 HAL/UART0/UART0_HAL.o
+ .debug_abbrev  0x0000000000000ba5      0x1a3 HAL/UART1/UART1_HAL.o
+ .debug_abbrev  0x0000000000000d48       0xdb main.o
+ .debug_abbrev  0x0000000000000e23      0x13c PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .debug_abbrev  0x0000000000000f5f      0x135 PROGRAMS/CONFIG_MODE/RW/RW.o
+ .debug_abbrev  0x0000000000001094       0xf0 PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .debug_abbrev  0x0000000000001184       0xd7 util/str2float/str2float.o
 
-.debug_line     0x0000000000000000     0x4887
+.debug_line     0x0000000000000000     0x15a7
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x154 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  .debug_line    0x0000000000000154      0x22a HAL/PM/PM_HAL.o
- .debug_line    0x000000000000037e       0xbb HAL/RN2483/RN2483_HAL.o
- .debug_line    0x0000000000000439       0xaf HAL/SCD30/SCD30_HAL.o
- .debug_line    0x00000000000004e8      0x10e HAL/TC0/TC0_HAL.o
- .debug_line    0x00000000000005f6      0x114 HAL/TC1/TC1_HAL.o
- .debug_line    0x000000000000070a      0x232 HAL/TC2/TC2_HAL.o
- .debug_line    0x000000000000093c      0x1ae HAL/TWI/TWI_API.o
- .debug_line    0x0000000000000aea      0x21c HAL/TWI/TWI_HAL.o
- .debug_line    0x0000000000000d06      0x333 HAL/UART0/UART0_HAL.o
- .debug_line    0x0000000000001039      0x29d HAL/UART1/UART1_HAL.o
- .debug_line    0x00000000000012d6       0xf7 main.o
- .debug_line    0x00000000000013cd      0x387 MODULES/ADC_module/ADC_module.o
- .debug_line    0x0000000000001754      0x2bc MODULES/LED_module/LED_module.o
- .debug_line    0x0000000000001a10      0x3d2 MODULES/LORA_module/join_network/join_network.o
- .debug_line    0x0000000000001de2      0x256 MODULES/LORA_module/lora_module.o
- .debug_line    0x0000000000002038      0x26b MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
- .debug_line    0x00000000000022a3      0x2ac MODULES/LORA_module/send_uplink/send_uplink.o
- .debug_line    0x000000000000254f      0x231 MODULES/LORA_module/sleep_controller/sleep_controller.o
- .debug_line    0x0000000000002780      0x22c MODULES/LORA_module/util/util.o
- .debug_line    0x00000000000029ac      0x2a6 MODULES/MRPP_module/mrpp.o
- .debug_line    0x0000000000002c52      0x13e MODULES/MRPP_module/util/mrpp_data.o
- .debug_line    0x0000000000002d90      0x5bc MODULES/MRPP_module/util/mrpp_state.o
- .debug_line    0x000000000000334c      0x151 MODULES/PUMP_module/PUMP_module.o
- .debug_line    0x000000000000349d      0x393 MODULES/RTC_module/RTC_module.o
- .debug_line    0x0000000000003830      0x458 MODULES/SCD30_module/SCD30_module.o
- .debug_line    0x0000000000003c88      0xb1b PROGRAMS/MAINPG/MAINPG.o
- .debug_line    0x00000000000047a3       0xe4 util/CRC8/CRC8.o
+ .debug_line    0x000000000000037e      0x10e HAL/TC0/TC0_HAL.o
+ .debug_line    0x000000000000048c      0x114 HAL/TC1/TC1_HAL.o
+ .debug_line    0x00000000000005a0      0x232 HAL/TC2/TC2_HAL.o
+ .debug_line    0x00000000000007d2      0x333 HAL/UART0/UART0_HAL.o
+ .debug_line    0x0000000000000b05      0x2d7 HAL/UART1/UART1_HAL.o
+ .debug_line    0x0000000000000ddc      0x101 main.o
+ .debug_line    0x0000000000000edd      0x25d PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .debug_line    0x000000000000113a      0x17d PROGRAMS/CONFIG_MODE/RW/RW.o
+ .debug_line    0x00000000000012b7      0x1ae PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .debug_line    0x0000000000001465      0x142 util/str2float/str2float.o
 
-.debug_frame    0x0000000000000000     0x15ec
+.debug_frame    0x0000000000000000      0x85c
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0xf0 HAL/PM/PM_HAL.o
- .debug_frame   0x00000000000000f0       0x44 HAL/RN2483/RN2483_HAL.o
- .debug_frame   0x0000000000000134       0x34 HAL/SCD30/SCD30_HAL.o
- .debug_frame   0x0000000000000168       0x9c HAL/TC0/TC0_HAL.o
- .debug_frame   0x0000000000000204       0x9c HAL/TC1/TC1_HAL.o
- .debug_frame   0x00000000000002a0       0xe8 HAL/TC2/TC2_HAL.o
- .debug_frame   0x0000000000000388       0xd0 HAL/TWI/TWI_API.o
- .debug_frame   0x0000000000000458       0x84 HAL/TWI/TWI_HAL.o
- .debug_frame   0x00000000000004dc      0x14c HAL/UART0/UART0_HAL.o
- .debug_frame   0x0000000000000628      0x12c HAL/UART1/UART1_HAL.o
- .debug_frame   0x0000000000000754       0x24 main.o
- .debug_frame   0x0000000000000778      0x138 MODULES/ADC_module/ADC_module.o
- .debug_frame   0x00000000000008b0       0xc0 MODULES/LED_module/LED_module.o
- .debug_frame   0x0000000000000970       0x58 MODULES/LORA_module/join_network/join_network.o
- .debug_frame   0x00000000000009c8       0x94 MODULES/LORA_module/lora_module.o
- .debug_frame   0x0000000000000a5c      0x218 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
- .debug_frame   0x0000000000000c74       0xa8 MODULES/LORA_module/send_uplink/send_uplink.o
- .debug_frame   0x0000000000000d1c       0x34 MODULES/LORA_module/sleep_controller/sleep_controller.o
- .debug_frame   0x0000000000000d50       0xd0 MODULES/LORA_module/util/util.o
- .debug_frame   0x0000000000000e20      0x160 MODULES/MRPP_module/mrpp.o
- .debug_frame   0x0000000000000f80       0x64 MODULES/MRPP_module/util/mrpp_data.o
- .debug_frame   0x0000000000000fe4      0x1a0 MODULES/MRPP_module/util/mrpp_state.o
- .debug_frame   0x0000000000001184       0x44 MODULES/PUMP_module/PUMP_module.o
- .debug_frame   0x00000000000011c8      0x1a0 MODULES/RTC_module/RTC_module.o
- .debug_frame   0x0000000000001368      0x104 MODULES/SCD30_module/SCD30_module.o
- .debug_frame   0x000000000000146c      0x15c PROGRAMS/MAINPG/MAINPG.o
- .debug_frame   0x00000000000015c8       0x24 util/CRC8/CRC8.o
+ .debug_frame   0x00000000000000f0       0x9c HAL/TC0/TC0_HAL.o
+ .debug_frame   0x000000000000018c       0x9c HAL/TC1/TC1_HAL.o
+ .debug_frame   0x0000000000000228       0xe8 HAL/TC2/TC2_HAL.o
+ .debug_frame   0x0000000000000310      0x14c HAL/UART0/UART0_HAL.o
+ .debug_frame   0x000000000000045c      0x13c HAL/UART1/UART1_HAL.o
+ .debug_frame   0x0000000000000598       0x24 main.o
+ .debug_frame   0x00000000000005bc       0x58 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .debug_frame   0x0000000000000614      0x104 PROGRAMS/CONFIG_MODE/RW/RW.o
+ .debug_frame   0x0000000000000718       0xc0 PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .debug_frame   0x00000000000007d8       0x84 util/str2float/str2float.o
 
-.debug_str      0x0000000000000000      0xe42
+.debug_str      0x0000000000000000      0x30b
  *(.debug_str)
  .debug_str     0x0000000000000000      0x252 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  .debug_str     0x0000000000000252        0x0 HAL/PM/PM_HAL.o
- .debug_str     0x0000000000000252        0x0 HAL/RN2483/RN2483_HAL.o
- .debug_str     0x0000000000000252        0x0 HAL/SCD30/SCD30_HAL.o
  .debug_str     0x0000000000000252        0x0 HAL/TC0/TC0_HAL.o
  .debug_str     0x0000000000000252        0x0 HAL/TC1/TC1_HAL.o
  .debug_str     0x0000000000000252        0x0 HAL/TC2/TC2_HAL.o
- .debug_str     0x0000000000000252       0x8f HAL/TWI/TWI_API.o
- .debug_str     0x00000000000002e1       0x11 HAL/TWI/TWI_HAL.o
- .debug_str     0x00000000000002f2        0x0 HAL/UART0/UART0_HAL.o
- .debug_str     0x00000000000002f2        0x0 HAL/UART1/UART1_HAL.o
- .debug_str     0x00000000000002f2        0xd main.o
- .debug_str     0x00000000000002ff       0x94 MODULES/ADC_module/ADC_module.o
- .debug_str     0x0000000000000393       0x44 MODULES/LED_module/LED_module.o
- .debug_str     0x00000000000003d7      0x102 MODULES/LORA_module/join_network/join_network.o
- .debug_str     0x00000000000004d9       0x5b MODULES/LORA_module/lora_module.o
- .debug_str     0x0000000000000534        0x7 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
- .debug_str     0x000000000000053b       0x91 MODULES/LORA_module/send_uplink/send_uplink.o
- .debug_str     0x00000000000005cc       0x69 MODULES/LORA_module/sleep_controller/sleep_controller.o
- .debug_str     0x0000000000000635       0x4b MODULES/LORA_module/util/util.o
- .debug_str     0x0000000000000680      0x18c MODULES/MRPP_module/mrpp.o
- .debug_str     0x000000000000080c        0x0 MODULES/MRPP_module/util/mrpp_data.o
- .debug_str     0x000000000000080c       0xa1 MODULES/MRPP_module/util/mrpp_state.o
- .debug_str     0x00000000000008ad       0x31 MODULES/PUMP_module/PUMP_module.o
- .debug_str     0x00000000000008de       0x76 MODULES/RTC_module/RTC_module.o
- .debug_str     0x0000000000000954       0xac MODULES/SCD30_module/SCD30_module.o
- .debug_str     0x0000000000000a00      0x442 PROGRAMS/MAINPG/MAINPG.o
- .debug_str     0x0000000000000e42        0x0 util/CRC8/CRC8.o
+ .debug_str     0x0000000000000252        0x0 HAL/UART0/UART0_HAL.o
+ .debug_str     0x0000000000000252        0x0 HAL/UART1/UART1_HAL.o
+ .debug_str     0x0000000000000252        0xb main.o
+ .debug_str     0x000000000000025d       0xa0 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .debug_str     0x00000000000002fd        0xe PROGRAMS/CONFIG_MODE/RW/RW.o
+ .debug_str     0x000000000000030b        0x0 PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .debug_str     0x000000000000030b        0x0 util/str2float/str2float.o
 
-.debug_loc      0x0000000000000000     0x4fdb
+.debug_loc      0x0000000000000000     0x1875
  *(.debug_loc)
  .debug_loc     0x0000000000000000      0x151 HAL/PM/PM_HAL.o
  .debug_loc     0x0000000000000151       0xec HAL/TC0/TC0_HAL.o
  .debug_loc     0x000000000000023d       0xf1 HAL/TC1/TC1_HAL.o
  .debug_loc     0x000000000000032e      0x221 HAL/TC2/TC2_HAL.o
- .debug_loc     0x000000000000054f      0x497 HAL/TWI/TWI_API.o
- .debug_loc     0x00000000000009e6       0xea HAL/TWI/TWI_HAL.o
- .debug_loc     0x0000000000000ad0      0x3e4 HAL/UART0/UART0_HAL.o
- .debug_loc     0x0000000000000eb4      0x329 HAL/UART1/UART1_HAL.o
- .debug_loc     0x00000000000011dd      0x36c MODULES/ADC_module/ADC_module.o
- .debug_loc     0x0000000000001549      0x2b9 MODULES/LED_module/LED_module.o
- .debug_loc     0x0000000000001802      0x27a MODULES/LORA_module/join_network/join_network.o
- .debug_loc     0x0000000000001a7c      0x12b MODULES/LORA_module/lora_module.o
- .debug_loc     0x0000000000001ba7      0x8a0 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
- .debug_loc     0x0000000000002447      0x2d0 MODULES/LORA_module/send_uplink/send_uplink.o
- .debug_loc     0x0000000000002717      0x316 MODULES/LORA_module/util/util.o
- .debug_loc     0x0000000000002a2d      0x5f2 MODULES/MRPP_module/mrpp.o
- .debug_loc     0x000000000000301f      0x1bd MODULES/MRPP_module/util/mrpp_data.o
- .debug_loc     0x00000000000031dc      0xb27 MODULES/MRPP_module/util/mrpp_state.o
- .debug_loc     0x0000000000003d03       0x35 MODULES/PUMP_module/PUMP_module.o
- .debug_loc     0x0000000000003d38      0x5ca MODULES/RTC_module/RTC_module.o
- .debug_loc     0x0000000000004302      0x3ce MODULES/SCD30_module/SCD30_module.o
- .debug_loc     0x00000000000046d0      0x87a PROGRAMS/MAINPG/MAINPG.o
- .debug_loc     0x0000000000004f4a       0x91 util/CRC8/CRC8.o
+ .debug_loc     0x000000000000054f      0x3e4 HAL/UART0/UART0_HAL.o
+ .debug_loc     0x0000000000000933      0x336 HAL/UART1/UART1_HAL.o
+ .debug_loc     0x0000000000000c69      0x1f0 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .debug_loc     0x0000000000000e59      0x37b PROGRAMS/CONFIG_MODE/RW/RW.o
+ .debug_loc     0x00000000000011d4      0x411 PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .debug_loc     0x00000000000015e5      0x290 util/str2float/str2float.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1437,35 +1964,19 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x738
+.debug_ranges   0x0000000000000000      0x2a8
  *(.debug_ranges)
  .debug_ranges  0x0000000000000000       0x70 HAL/PM/PM_HAL.o
- .debug_ranges  0x0000000000000070       0x20 HAL/RN2483/RN2483_HAL.o
- .debug_ranges  0x0000000000000090       0x18 HAL/SCD30/SCD30_HAL.o
- .debug_ranges  0x00000000000000a8       0x28 HAL/TC0/TC0_HAL.o
- .debug_ranges  0x00000000000000d0       0x28 HAL/TC1/TC1_HAL.o
- .debug_ranges  0x00000000000000f8       0x48 HAL/TC2/TC2_HAL.o
- .debug_ranges  0x0000000000000140       0x38 HAL/TWI/TWI_API.o
- .debug_ranges  0x0000000000000178       0x40 HAL/TWI/TWI_HAL.o
- .debug_ranges  0x00000000000001b8       0x60 HAL/UART0/UART0_HAL.o
- .debug_ranges  0x0000000000000218       0x58 HAL/UART1/UART1_HAL.o
- .debug_ranges  0x0000000000000270       0x10 main.o
- .debug_ranges  0x0000000000000280       0x68 MODULES/ADC_module/ADC_module.o
- .debug_ranges  0x00000000000002e8       0x50 MODULES/LED_module/LED_module.o
- .debug_ranges  0x0000000000000338       0x10 MODULES/LORA_module/join_network/join_network.o
- .debug_ranges  0x0000000000000348       0x40 MODULES/LORA_module/lora_module.o
- .debug_ranges  0x0000000000000388       0x58 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
- .debug_ranges  0x00000000000003e0       0x20 MODULES/LORA_module/send_uplink/send_uplink.o
- .debug_ranges  0x0000000000000400       0x18 MODULES/LORA_module/sleep_controller/sleep_controller.o
- .debug_ranges  0x0000000000000418       0x40 MODULES/LORA_module/util/util.o
- .debug_ranges  0x0000000000000458       0x78 MODULES/MRPP_module/mrpp.o
- .debug_ranges  0x00000000000004d0       0x18 MODULES/MRPP_module/util/mrpp_data.o
- .debug_ranges  0x00000000000004e8       0xd8 MODULES/MRPP_module/util/mrpp_state.o
- .debug_ranges  0x00000000000005c0       0x20 MODULES/PUMP_module/PUMP_module.o
- .debug_ranges  0x00000000000005e0       0x50 MODULES/RTC_module/RTC_module.o
- .debug_ranges  0x0000000000000630       0x60 MODULES/SCD30_module/SCD30_module.o
- .debug_ranges  0x0000000000000690       0x80 PROGRAMS/MAINPG/MAINPG.o
- .debug_ranges  0x0000000000000710       0x28 util/CRC8/CRC8.o
+ .debug_ranges  0x0000000000000070       0x28 HAL/TC0/TC0_HAL.o
+ .debug_ranges  0x0000000000000098       0x28 HAL/TC1/TC1_HAL.o
+ .debug_ranges  0x00000000000000c0       0x48 HAL/TC2/TC2_HAL.o
+ .debug_ranges  0x0000000000000108       0x60 HAL/UART0/UART0_HAL.o
+ .debug_ranges  0x0000000000000168       0x60 HAL/UART1/UART1_HAL.o
+ .debug_ranges  0x00000000000001c8       0x10 main.o
+ .debug_ranges  0x00000000000001d8       0x40 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .debug_ranges  0x0000000000000218       0x28 PROGRAMS/CONFIG_MODE/RW/RW.o
+ .debug_ranges  0x0000000000000240       0x50 PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .debug_ranges  0x0000000000000290       0x18 util/str2float/str2float.o
 
 .debug_macro
  *(.debug_macro)
@@ -1478,1342 +1989,459 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x40 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
 
-.bss._cb        0x0000000000800d9a        0x2
- .bss._cb       0x0000000000800d9a        0x2 HAL/TC0/TC0_HAL.o
+.bss._cb        0x000000000080063e        0x2
+ .bss._cb       0x000000000080063e        0x2 HAL/TC0/TC0_HAL.o
 
-.bss._cb        0x0000000000800d9c        0x2
- .bss._cb       0x0000000000800d9c        0x2 HAL/TC1/TC1_HAL.o
+.bss._cb        0x0000000000800640        0x2
+ .bss._cb       0x0000000000800640        0x2 HAL/TC1/TC1_HAL.o
 
-.bss.cnt        0x0000000000800db0        0x1
- .bss.cnt       0x0000000000800db0        0x1 HAL/TC2/TC2_HAL.o
+.bss.cnt        0x0000000000800642        0x1
+ .bss.cnt       0x0000000000800642        0x1 HAL/TC2/TC2_HAL.o
 
-.bss.cbCounter  0x0000000000800db1        0x1
- .bss.cbCounter
-                0x0000000000800db1        0x1 HAL/TC2/TC2_HAL.o
-
-.bss.callbacks  0x0000000000800d75        0xa
+.bss.callbacks  0x0000000000800634        0xa
  .bss.callbacks
-                0x0000000000800d75        0xa HAL/TC2/TC2_HAL.o
+                0x0000000000800634        0xa HAL/TC2/TC2_HAL.o
 
 .bss.rx_buffer_has_message
-                0x0000000000800db2        0x1
+                0x0000000000800643        0x1
  .bss.rx_buffer_has_message
-                0x0000000000800db2        0x1 HAL/UART0/UART0_HAL.o
-                0x0000000000800db2                rx_buffer_has_message
+                0x0000000000800643        0x1 HAL/UART0/UART0_HAL.o
+                0x0000000000800643                rx_buffer_has_message
 
 .bss.rx_buffer_data_len
-                0x0000000000800db3        0x1
+                0x0000000000800644        0x1
  .bss.rx_buffer_data_len
-                0x0000000000800db3        0x1 HAL/UART0/UART0_HAL.o
-                0x0000000000800db3                rx_buffer_data_len
+                0x0000000000800644        0x1 HAL/UART0/UART0_HAL.o
+                0x0000000000800644                rx_buffer_data_len
 
 .bss.tx_buffer_cursor
-                0x0000000000800db4        0x1
+                0x0000000000800645        0x1
  .bss.tx_buffer_cursor
-                0x0000000000800db4        0x1 HAL/UART0/UART0_HAL.o
-                0x0000000000800db4                tx_buffer_cursor
+                0x0000000000800645        0x1 HAL/UART0/UART0_HAL.o
+                0x0000000000800645                tx_buffer_cursor
 
 .bss.tx_buffer_data_len
-                0x0000000000800db5        0x1
+                0x0000000000800646        0x1
  .bss.tx_buffer_data_len
-                0x0000000000800db5        0x1 HAL/UART0/UART0_HAL.o
-                0x0000000000800db5                tx_buffer_data_len
+                0x0000000000800646        0x1 HAL/UART0/UART0_HAL.o
+                0x0000000000800646                tx_buffer_data_len
 
 .bss.rx_buffer_has_message
-                0x0000000000800db6        0x1
+                0x0000000000800647        0x1
  .bss.rx_buffer_has_message
-                0x0000000000800db6        0x1 HAL/UART1/UART1_HAL.o
+                0x0000000000800647        0x1 HAL/UART1/UART1_HAL.o
 
 .bss.rx_buffer_data_len
-                0x0000000000800db7        0x1
+                0x0000000000800648        0x1
  .bss.rx_buffer_data_len
-                0x0000000000800db7        0x1 HAL/UART1/UART1_HAL.o
+                0x0000000000800648        0x1 HAL/UART1/UART1_HAL.o
 
-.bss.rx_buffer  0x0000000000800cee       0x64
+.bss.rx_buffer  0x000000000080054e       0x96
  .bss.rx_buffer
-                0x0000000000800cee       0x64 HAL/UART1/UART1_HAL.o
+                0x000000000080054e       0x96 HAL/UART1/UART1_HAL.o
 
 .bss.tx_buffer_cursor
-                0x0000000000800db8        0x1
+                0x0000000000800649        0x1
  .bss.tx_buffer_cursor
-                0x0000000000800db8        0x1 HAL/UART1/UART1_HAL.o
+                0x0000000000800649        0x1 HAL/UART1/UART1_HAL.o
 
 .bss.tx_buffer_data_len
-                0x0000000000800db9        0x1
+                0x000000000080064a        0x1
  .bss.tx_buffer_data_len
-                0x0000000000800db9        0x1 HAL/UART1/UART1_HAL.o
+                0x000000000080064a        0x1 HAL/UART1/UART1_HAL.o
 
-.bss.tx_buffer  0x0000000000800bc2      0x12c
+.bss.tx_buffer  0x0000000000800422      0x12c
  .bss.tx_buffer
-                0x0000000000800bc2      0x12c HAL/UART1/UART1_HAL.o
+                0x0000000000800422      0x12c HAL/UART1/UART1_HAL.o
 
-.bss.cntPowerUpTime
-                0x0000000000800dba        0x1
- .bss.cntPowerUpTime
-                0x0000000000800dba        0x1 MODULES/ADC_module/ADC_module.o
+.bss.arg        0x00000000008005e4       0x50
+ .bss.arg       0x00000000008005e4       0x50 PROGRAMS/CONFIG_MODE/RW/RW.o
 
-.bss._powerUpTime
-                0x0000000000800dbb        0x1
- .bss._powerUpTime
-                0x0000000000800dbb        0x1 MODULES/ADC_module/ADC_module.o
-
-.bss.cntSamples
-                0x0000000000800d9e        0x2
- .bss.cntSamples
-                0x0000000000800d9e        0x2 MODULES/ADC_module/ADC_module.o
-
-.bss._data      0x0000000000800da0        0x2
- .bss._data     0x0000000000800da0        0x2 MODULES/ADC_module/ADC_module.o
-
-.bss._nSamples  0x0000000000800da2        0x2
- .bss._nSamples
-                0x0000000000800da2        0x2 MODULES/ADC_module/ADC_module.o
-
-.bss.cbPointer  0x0000000000800dbc        0x1
- .bss.cbPointer
-                0x0000000000800dbc        0x1 MODULES/LED_module/LED_module.o
-
-.bss.subPointer
-                0x0000000000800dbd        0x1
- .bss.subPointer
-                0x0000000000800dbd        0x1 MODULES/LORA_module/lora_module.o
-
-.bss.busy       0x0000000000800dbe        0x1
- .bss.busy      0x0000000000800dbe        0x1 MODULES/LORA_module/lora_module.o
-
-.bss.cnt        0x0000000000800dbf        0x1
- .bss.cnt       0x0000000000800dbf        0x1 MODULES/LORA_module/lora_module.o
-
-.bss._groupId   0x0000000000800dc0        0x1
- .bss._groupId  0x0000000000800dc0        0x1 MODULES/MRPP_module/mrpp.o
-                0x0000000000800dc0                _groupId
-
-.bss.eventPointer
-                0x0000000000800dc1        0x1
- .bss.eventPointer
-                0x0000000000800dc1        0x1 MODULES/PUMP_module/PUMP_module.o
-
-.bss.cnt        0x0000000000800da4        0x2
- .bss.cnt       0x0000000000800da4        0x2 MODULES/PUMP_module/PUMP_module.o
-
-.bss._seconds   0x0000000000800da6        0x2
- .bss._seconds  0x0000000000800da6        0x2 MODULES/PUMP_module/PUMP_module.o
-
-.bss.cntSamples
-                0x0000000000800da8        0x2
- .bss.cntSamples
-                0x0000000000800da8        0x2 MODULES/SCD30_module/SCD30_module.o
-
-.bss._data      0x0000000000800daa        0x2
- .bss._data     0x0000000000800daa        0x2 MODULES/SCD30_module/SCD30_module.o
-
-.bss._nSamples  0x0000000000800dac        0x2
- .bss._nSamples
-                0x0000000000800dac        0x2 MODULES/SCD30_module/SCD30_module.o
-
-.bss.dt         0x0000000000800d7f        0x6
- .bss.dt        0x0000000000800d7f        0x6 PROGRAMS/MAINPG/MAINPG.o
-
-.bss.ts         0x0000000000800d96        0x4
- .bss.ts        0x0000000000800d96        0x4 PROGRAMS/MAINPG/MAINPG.o
-
-.bss.meth_data  0x0000000000800712      0x258
- .bss.meth_data
-                0x0000000000800712      0x258 PROGRAMS/MAINPG/MAINPG.o
-
-.bss.co2_data   0x000000000080096a      0x258
- .bss.co2_data  0x000000000080096a      0x258 PROGRAMS/MAINPG/MAINPG.o
-
-.bss.state_s3   0x0000000000800dc2        0x1
- .bss.state_s3  0x0000000000800dc2        0x1 PROGRAMS/MAINPG/MAINPG.o
-
-.bss.state_s2   0x0000000000800dc3        0x1
- .bss.state_s2  0x0000000000800dc3        0x1 PROGRAMS/MAINPG/MAINPG.o
-
-.bss.state_s1   0x0000000000800dc4        0x1
- .bss.state_s1  0x0000000000800dc4        0x1 PROGRAMS/MAINPG/MAINPG.o
-
-.bss.state_s0   0x0000000000800dc5        0x1
- .bss.state_s0  0x0000000000800dc5        0x1 PROGRAMS/MAINPG/MAINPG.o
-
-.progmemx.data  0x0000000000000154       0xd2
+.progmemx.data  0x00000000000001e2       0x32
  .progmemx.data
-                0x0000000000000154       0xd2 PROGRAMS/MAINPG/MAINPG.o
+                0x00000000000001e2       0x32 PROGRAMS/CONFIG_MODE/RW/RW.o
 
-.progmemx.data  0x0000000000000226       0x73
+.progmemx.data  0x0000000000000214       0x1d
  .progmemx.data
-                0x0000000000000226       0x73 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+                0x0000000000000214       0x1d PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
 
-.progmemx.data  0x0000000000000299       0x38
+.progmemx.data  0x0000000000000231        0x8
  .progmemx.data
-                0x0000000000000299       0x38 MODULES/LORA_module/join_network/join_network.o
+                0x0000000000000231        0x8 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o)
 
-.progmemx.data  0x00000000000002d1       0x38
- .progmemx.data
-                0x00000000000002d1       0x38 MODULES/LORA_module/send_uplink/send_uplink.o
+.text.avrlibc   0x000000000000023a      0x744
+ .text.avrlibc  0x000000000000023a      0x744 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o)
+                0x000000000000023a                vfprintf
 
-.progmemx.data  0x0000000000000309       0x20
- .progmemx.data
-                0x0000000000000309       0x20 MODULES/LORA_module/util/util.o
+.text.avrlibc   0x000000000000097e      0x2dc
+ .text.avrlibc  0x000000000000097e      0x2dc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strtol.o)
+                0x000000000000097e                strtol
 
-.progmemx.data.SET_MEASUREMENT_INTERVAL
-                0x0000000000000329        0x5
- .progmemx.data.SET_MEASUREMENT_INTERVAL
-                0x0000000000000329        0x5 MODULES/SCD30_module/SCD30_module.o
-                0x0000000000000329                SET_MEASUREMENT_INTERVAL
-
-.progmemx.data.TRIGGER_CONT_MEASUREMENT
-                0x000000000000032e        0x5
- .progmemx.data.TRIGGER_CONT_MEASUREMENT
-                0x000000000000032e        0x5 MODULES/SCD30_module/SCD30_module.o
-                0x000000000000032e                TRIGGER_CONT_MEASUREMENT
-
-.progmemx.data  0x0000000000000333        0x3
- .progmemx.data
-                0x0000000000000333        0x3 MODULES/LORA_module/sleep_controller/sleep_controller.o
-
-.progmemx.data.READ_DATA_CMD
-                0x0000000000000336        0x2
- .progmemx.data.READ_DATA_CMD
-                0x0000000000000336        0x2 MODULES/SCD30_module/SCD30_module.o
-                0x0000000000000336                READ_DATA_CMD
-
-.progmemx.data.CMD_READ_TIME_POINTER
-                0x0000000000000338        0x1
- .progmemx.data.CMD_READ_TIME_POINTER
-                0x0000000000000338        0x1 MODULES/RTC_module/RTC_module.o
-                0x0000000000000338                CMD_READ_TIME_POINTER
-
-.text.avrlibc   0x000000000000033a      0x448
- .text.avrlibc  0x000000000000033a      0x448 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
-                0x000000000000033a                vfprintf
-
-.text.JN_join_network
-                0x0000000000000782      0x296
- .text.JN_join_network
-                0x0000000000000782      0x296 MODULES/LORA_module/join_network/join_network.o
-                0x0000000000000782                JN_join_network
-
-.text.MAINPG_start
-                0x0000000000000a18      0x26e
- .text.MAINPG_start
-                0x0000000000000a18      0x26e PROGRAMS/MAINPG/MAINPG.o
-                0x0000000000000a18                MAINPG_start
-
-.text.mrpp_state_init
-                0x0000000000000c86      0x1be
- .text.mrpp_state_init
-                0x0000000000000c86      0x1be MODULES/MRPP_module/util/mrpp_state.o
-                0x0000000000000c86                mrpp_state_init
-
-.text.update_bodies
-                0x0000000000000e44      0x162
- .text.update_bodies
-                0x0000000000000e44      0x162 MODULES/MRPP_module/util/mrpp_state.o
-
-.text.RTC_get_current_time
-                0x0000000000000fa6      0x140
- .text.RTC_get_current_time
-                0x0000000000000fa6      0x140 MODULES/RTC_module/RTC_module.o
-                0x0000000000000fa6                RTC_get_current_time
-
-.text.RTC_datetime_to_ts
-                0x00000000000010e6      0x122
- .text.RTC_datetime_to_ts
-                0x00000000000010e6      0x122 MODULES/RTC_module/RTC_module.o
-                0x00000000000010e6                RTC_datetime_to_ts
-
-.text.mrpp_state_get_ready_body
-                0x0000000000001208      0x11a
- .text.mrpp_state_get_ready_body
-                0x0000000000001208      0x11a MODULES/MRPP_module/util/mrpp_state.o
-                0x0000000000001208                mrpp_state_get_ready_body
-
-.text.stage_2   0x0000000000001322      0x106
- .text.stage_2  0x0000000000001322      0x106 PROGRAMS/MAINPG/MAINPG.o
-
-.text.SU_send_uplink
-                0x0000000000001428       0xfc
- .text.SU_send_uplink
-                0x0000000000001428       0xfc MODULES/LORA_module/send_uplink/send_uplink.o
-                0x0000000000001428                SU_send_uplink
-
-.text.stage_1   0x0000000000001524       0xf0
- .text.stage_1  0x0000000000001524       0xf0 PROGRAMS/MAINPG/MAINPG.o
-
-.text.stage_3   0x0000000000001614       0xf0
- .text.stage_3  0x0000000000001614       0xf0 PROGRAMS/MAINPG/MAINPG.o
+.text.avrlibc   0x0000000000000c5a      0x1b0
+ .text.avrlibc  0x0000000000000c5a      0x1b0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ftoa_engine.o)
+                0x0000000000000c5a                __ftoa_engine
 
 .text.avrlibc.fplib
-                0x0000000000001704       0xde
+                0x0000000000000e0a       0xde
  .text.avrlibc.fplib
-                0x0000000000001704       0xde c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3x.o)
-                0x0000000000001704                __divsf3x
-                0x000000000000172c                __divsf3_pse
-
-.text.add_data_types
-                0x00000000000017e2       0xd8
- .text.add_data_types
-                0x00000000000017e2       0xd8 MODULES/MRPP_module/util/mrpp_state.o
+                0x0000000000000e0a       0xde c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3x.o)
+                0x0000000000000e0a                __divsf3x
+                0x0000000000000e32                __divsf3_pse
 
 .text.avrlibc.fplib
-                0x00000000000018ba       0xd4
+                0x0000000000000ee8       0xd4
  .text.avrlibc.fplib
-                0x00000000000018ba       0xd4 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
-                0x00000000000018ba                __mulsf3x
-                0x00000000000018e0                __mulsf3_pse
-
-.text.stage_0   0x000000000000198e       0xce
- .text.stage_0  0x000000000000198e       0xce PROGRAMS/MAINPG/MAINPG.o
+                0x0000000000000ee8       0xd4 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3x.o)
+                0x0000000000000ee8                __mulsf3x
+                0x0000000000000f0e                __mulsf3_pse
 
 .text.avrlibc.fplib
-                0x0000000000001a5c       0xce
+                0x0000000000000fbc       0xce
  .text.avrlibc.fplib
-                0x0000000000001a5c       0xce c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o)
-                0x0000000000001a5c                __addsf3x
+                0x0000000000000fbc       0xce c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3x.o)
+                0x0000000000000fbc                __addsf3x
 
-.text.RTC_set_wake_up_interrupt_minutes
-                0x0000000000001b2a       0xc4
- .text.RTC_set_wake_up_interrupt_minutes
-                0x0000000000001b2a       0xc4 MODULES/RTC_module/RTC_module.o
-                0x0000000000001b2a                RTC_set_wake_up_interrupt_minutes
+.text.CONF_enter
+                0x000000000000108a       0xcc
+ .text.CONF_enter
+                0x000000000000108a       0xcc PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+                0x000000000000108a                CONF_enter
 
-.text.avrlibc   0x0000000000001bee       0xbc
- .text.avrlibc  0x0000000000001bee       0xbc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
-                0x0000000000001bee                __ultoa_invert
+.text.handle_read
+                0x0000000000001156       0xc8
+ .text.handle_read
+                0x0000000000001156       0xc8 PROGRAMS/CONFIG_MODE/RW/RW.o
+                0x0000000000001156                handle_read
 
-.text.mac_tx_confirmed
-                0x0000000000001caa       0xac
- .text.mac_tx_confirmed
-                0x0000000000001caa       0xac MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
-                0x0000000000001caa                mac_tx_confirmed
+.text.avrlibc   0x000000000000121e       0xbc
+ .text.avrlibc  0x000000000000121e       0xbc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
+                0x000000000000121e                __ultoa_invert
 
-.text.mrpp_state_get_tail
-                0x0000000000001d56       0xa4
- .text.mrpp_state_get_tail
-                0x0000000000001d56       0xa4 MODULES/MRPP_module/util/mrpp_state.o
-                0x0000000000001d56                mrpp_state_get_tail
+.text.get_decimal
+                0x00000000000012da       0xb4
+ .text.get_decimal
+                0x00000000000012da       0xb4 util/str2float/str2float.o
 
-.text.mrpp_state_get_header
-                0x0000000000001dfa       0xa2
- .text.mrpp_state_get_header
-                0x0000000000001dfa       0xa2 MODULES/MRPP_module/util/mrpp_state.o
-                0x0000000000001dfa                mrpp_state_get_header
-
-.text.read_value
-                0x0000000000001e9c       0xa2
- .text.read_value
-                0x0000000000001e9c       0xa2 MODULES/SCD30_module/SCD30_module.o
+.text.handle_write
+                0x000000000000138e       0xac
+ .text.handle_write
+                0x000000000000138e       0xac PROGRAMS/CONFIG_MODE/RW/RW.o
+                0x000000000000138e                handle_write
 
 .text.__vector_9
-                0x0000000000001f3e       0x98
+                0x000000000000143a       0x98
  .text.__vector_9
-                0x0000000000001f3e       0x98 HAL/TC2/TC2_HAL.o
-                0x0000000000001f3e                __vector_9
+                0x000000000000143a       0x98 HAL/TC2/TC2_HAL.o
+                0x000000000000143a                __vector_9
 
-.text.calc_ppm_methane
-                0x0000000000001fd6       0x96
- .text.calc_ppm_methane
-                0x0000000000001fd6       0x96 MODULES/ADC_module/ADC_module.o
-                0x0000000000001fd6                calc_ppm_methane
+.text.get_parameter
+                0x00000000000014d2       0x96
+ .text.get_parameter
+                0x00000000000014d2       0x96 PROGRAMS/CONFIG_MODE/UTIL/util.o
+                0x00000000000014d2                get_parameter
 
-.text.MRPP_get_ready_body_package
-                0x000000000000206c       0x96
- .text.MRPP_get_ready_body_package
-                0x000000000000206c       0x96 MODULES/MRPP_module/mrpp.o
-                0x000000000000206c                MRPP_get_ready_body_package
-
-.text.mrpp_data_add_int16
-                0x0000000000002102       0x92
- .text.mrpp_data_add_int16
-                0x0000000000002102       0x92 MODULES/MRPP_module/util/mrpp_data.o
-                0x0000000000002102                mrpp_data_add_int16
-
-.text.mrpp_state_set_collection
-                0x0000000000002194       0x86
- .text.mrpp_state_set_collection
-                0x0000000000002194       0x86 MODULES/MRPP_module/util/mrpp_state.o
-                0x0000000000002194                mrpp_state_set_collection
-
-.text.tohex     0x000000000000221a       0x84
- .text.tohex    0x000000000000221a       0x84 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
-
-.text.join_lora
-                0x000000000000229e       0x7a
- .text.join_lora
-                0x000000000000229e       0x7a PROGRAMS/MAINPG/MAINPG.o
+.text.uart1_hal_send_string
+                0x0000000000001568       0x8a
+ .text.uart1_hal_send_string
+                0x0000000000001568       0x8a HAL/UART1/UART1_HAL.o
+                0x0000000000001568                uart1_hal_send_string
 
 .text.avrlibc.fplib
-                0x0000000000002318       0x7a
+                0x00000000000015f2       0x7a
  .text.avrlibc.fplib
-                0x0000000000002318       0x7a c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
-                0x0000000000002318                __floatunsisf
-                0x000000000000231c                __floatsisf
+                0x00000000000015f2       0x7a c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
+                0x00000000000015f2                __floatunsisf
+                0x00000000000015f6                __floatsisf
 
-.text.avrlibc   0x0000000000002392       0x78
- .text.avrlibc  0x0000000000002392       0x78 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
-                0x0000000000002392                fputc
+.text.avrlibc   0x000000000000166c       0x78
+ .text.avrlibc  0x000000000000166c       0x78 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+                0x000000000000166c                fputc
 
 .text.__vector_20
-                0x000000000000240a       0x74
+                0x00000000000016e4       0x74
  .text.__vector_20
-                0x000000000000240a       0x74 HAL/UART0/UART0_HAL.o
-                0x000000000000240a                __vector_20
+                0x00000000000016e4       0x74 HAL/UART0/UART0_HAL.o
+                0x00000000000016e4                __vector_20
 
 .text.__vector_28
-                0x000000000000247e       0x70
+                0x0000000000001758       0x70
  .text.__vector_28
-                0x000000000000247e       0x70 HAL/UART1/UART1_HAL.o
-                0x000000000000247e                __vector_28
+                0x0000000000001758       0x70 HAL/UART1/UART1_HAL.o
+                0x0000000000001758                __vector_28
 
-.text.MRPP_add_collection_data_INT16
-                0x00000000000024ee       0x70
- .text.MRPP_add_collection_data_INT16
-                0x00000000000024ee       0x70 MODULES/MRPP_module/mrpp.o
-                0x00000000000024ee                MRPP_add_collection_data_INT16
+.text.par_index
+                0x00000000000017c8       0x70
+ .text.par_index
+                0x00000000000017c8       0x70 PROGRAMS/CONFIG_MODE/UTIL/util.o
+                0x00000000000017c8                par_index
 
-.text.uart0_hal_send_string
-                0x000000000000255e       0x6a
- .text.uart0_hal_send_string
-                0x000000000000255e       0x6a HAL/UART0/UART0_HAL.o
-                0x000000000000255e                uart0_hal_send_string
+.text.write_PPM_factor
+                0x0000000000001838       0x58
+ .text.write_PPM_factor
+                0x0000000000001838       0x58 PROGRAMS/CONFIG_MODE/RW/RW.o
 
-.text.avrlibc   0x00000000000025c8       0x6a
- .text.avrlibc  0x00000000000025c8       0x6a c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strncmp_M.o)
-                0x00000000000025c8                strncmp
+.text.validate_cmd
+                0x0000000000001890       0x56
+ .text.validate_cmd
+                0x0000000000001890       0x56 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
 
-.text.decode_tx_response
-                0x0000000000002632       0x68
- .text.decode_tx_response
-                0x0000000000002632       0x68 MODULES/LORA_module/send_uplink/send_uplink.o
-
-.text.ADC_init_sampling
-                0x000000000000269a       0x66
- .text.ADC_init_sampling
-                0x000000000000269a       0x66 MODULES/ADC_module/ADC_module.o
-                0x000000000000269a                ADC_init_sampling
-
-.text.sys_sleep_cmd
-                0x0000000000002700       0x5e
- .text.sys_sleep_cmd
-                0x0000000000002700       0x5e MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
-                0x0000000000002700                sys_sleep_cmd
-
-.text.util_matchMessage
-                0x000000000000275e       0x5e
- .text.util_matchMessage
-                0x000000000000275e       0x5e MODULES/LORA_module/util/util.o
-                0x000000000000275e                util_matchMessage
-
-.text.avrlibc.fplib
-                0x00000000000027bc       0x5e
- .text.avrlibc.fplib
-                0x00000000000027bc       0x5e c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
-                0x00000000000027bc                __fixunssfsi
-
-.text.ADC_get_value
-                0x000000000000281a       0x5c
- .text.ADC_get_value
-                0x000000000000281a       0x5c MODULES/ADC_module/ADC_module.o
-                0x000000000000281a                ADC_get_value
-
-.text.read_and_stop
-                0x0000000000002876       0x5a
- .text.read_and_stop
-                0x0000000000002876       0x5a HAL/TWI/TWI_API.o
-
-.text.util_parse_err
-                0x00000000000028d0       0x58
- .text.util_parse_err
-                0x00000000000028d0       0x58 MODULES/LORA_module/util/util.o
-                0x00000000000028d0                util_parse_err
-
-.text.TC2_HAL_subscribe
-                0x0000000000002928       0x54
- .text.TC2_HAL_subscribe
-                0x0000000000002928       0x54 HAL/TC2/TC2_HAL.o
-                0x0000000000002928                TC2_HAL_subscribe
-
-.text.RTC_set_clock_out
-                0x000000000000297c       0x50
- .text.RTC_set_clock_out
-                0x000000000000297c       0x50 MODULES/RTC_module/RTC_module.o
-                0x000000000000297c                RTC_set_clock_out
+.text.count_parameters
+                0x00000000000018e6       0x52
+ .text.count_parameters
+                0x00000000000018e6       0x52 PROGRAMS/CONFIG_MODE/UTIL/util.o
+                0x00000000000018e6                count_parameters
 
 .text.__vector_16
-                0x00000000000029cc       0x4e
+                0x0000000000001938       0x4e
  .text.__vector_16
-                0x00000000000029cc       0x4e HAL/TC0/TC0_HAL.o
-                0x00000000000029cc                __vector_16
+                0x0000000000001938       0x4e HAL/TC0/TC0_HAL.o
+                0x0000000000001938                __vector_16
 
 .text.__vector_13
-                0x0000000000002a1a       0x4e
+                0x0000000000001986       0x4e
  .text.__vector_13
-                0x0000000000002a1a       0x4e HAL/TC1/TC1_HAL.o
-                0x0000000000002a1a                __vector_13
+                0x0000000000001986       0x4e HAL/TC1/TC1_HAL.o
+                0x0000000000001986                __vector_13
 
-.text.mac_set_parameter
-                0x0000000000002a68       0x4e
- .text.mac_set_parameter
-                0x0000000000002a68       0x4e MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
-                0x0000000000002a68                mac_set_parameter
-
-.text.SCD30_init_sampling
-                0x0000000000002ab6       0x4e
- .text.SCD30_init_sampling
-                0x0000000000002ab6       0x4e MODULES/SCD30_module/SCD30_module.o
-                0x0000000000002ab6                SCD30_init_sampling
-
-.text.start_and_write_data
-                0x0000000000002b04       0x4c
- .text.start_and_write_data
-                0x0000000000002b04       0x4c HAL/TWI/TWI_API.o
-
-.text.blink     0x0000000000002b50       0x4c
- .text.blink    0x0000000000002b50       0x4c MODULES/LED_module/LED_module.o
-
-.text.SC_put_to_sleep
-                0x0000000000002b9c       0x4c
- .text.SC_put_to_sleep
-                0x0000000000002b9c       0x4c MODULES/LORA_module/sleep_controller/sleep_controller.o
-                0x0000000000002b9c                SC_put_to_sleep
+.text.str2flaot
+                0x00000000000019d4       0x4e
+ .text.str2flaot
+                0x00000000000019d4       0x4e util/str2float/str2float.o
+                0x00000000000019d4                str2flaot
 
 .text.__vector_22
-                0x0000000000002be8       0x4a
+                0x0000000000001a22       0x4a
  .text.__vector_22
-                0x0000000000002be8       0x4a HAL/UART0/UART0_HAL.o
-                0x0000000000002be8                __vector_22
+                0x0000000000001a22       0x4a HAL/UART0/UART0_HAL.o
+                0x0000000000001a22                __vector_22
 
 .text.__vector_30
-                0x0000000000002c32       0x4a
+                0x0000000000001a6c       0x4a
  .text.__vector_30
-                0x0000000000002c32       0x4a HAL/UART1/UART1_HAL.o
-                0x0000000000002c32                __vector_30
+                0x0000000000001a6c       0x4a HAL/UART1/UART1_HAL.o
+                0x0000000000001a6c                __vector_30
 
-.text.beginsWidth
-                0x0000000000002c7c       0x4a
- .text.beginsWidth
-                0x0000000000002c7c       0x4a MODULES/LORA_module/send_uplink/send_uplink.o
-
-.text.TWI_HAL_start
-                0x0000000000002cc6       0x48
- .text.TWI_HAL_start
-                0x0000000000002cc6       0x48 HAL/TWI/TWI_HAL.o
-                0x0000000000002cc6                TWI_HAL_start
-
-.text.mac_set_deveui
-                0x0000000000002d0e       0x48
- .text.mac_set_deveui
-                0x0000000000002d0e       0x48 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
-                0x0000000000002d0e                mac_set_deveui
-
-.text.mac_set_appeui
-                0x0000000000002d56       0x48
- .text.mac_set_appeui
-                0x0000000000002d56       0x48 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
-                0x0000000000002d56                mac_set_appeui
-
-.text.mac_set_appkey
-                0x0000000000002d9e       0x48
- .text.mac_set_appkey
-                0x0000000000002d9e       0x48 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
-                0x0000000000002d9e                mac_set_appkey
-
-.text.uart0_hal_send_break
-                0x0000000000002de6       0x46
- .text.uart0_hal_send_break
-                0x0000000000002de6       0x46 HAL/UART0/UART0_HAL.o
-                0x0000000000002de6                uart0_hal_send_break
-
-.text.vect_ADC_do_sample
-                0x0000000000002e2c       0x46
- .text.vect_ADC_do_sample
-                0x0000000000002e2c       0x46 MODULES/ADC_module/ADC_module.o
-
-.text.vect_SCD_do_sample
-                0x0000000000002e72       0x46
- .text.vect_SCD_do_sample
-                0x0000000000002e72       0x46 MODULES/SCD30_module/SCD30_module.o
-
-.text.avrlibc   0x0000000000002eb8       0x46
- .text.avrlibc  0x0000000000002eb8       0x46 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
-                0x0000000000002eb8                sprintf
-
-.text.LM_strbeginswith
-                0x0000000000002efe       0x44
- .text.LM_strbeginswith
-                0x0000000000002efe       0x44 MODULES/LORA_module/util/util.o
+.text.avrlibc   0x0000000000001ab6       0x46
+ .text.avrlibc  0x0000000000001ab6       0x46 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(sprintf.o)
+                0x0000000000001ab6                sprintf
 
 .text.avrlibc.fplib
-                0x0000000000002f42       0x44
+                0x0000000000001afc       0x44
  .text.avrlibc.fplib
-                0x0000000000002f42       0x44 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_split3.o)
-                0x0000000000002f42                __fp_split3
-                0x0000000000002f52                __fp_splitA
+                0x0000000000001afc       0x44 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_split3.o)
+                0x0000000000001afc                __fp_split3
+                0x0000000000001b0c                __fp_splitA
 
-.text.PM_HAL_enter_power_down
-                0x0000000000002f86       0x42
- .text.PM_HAL_enter_power_down
-                0x0000000000002f86       0x42 HAL/PM/PM_HAL.o
-                0x0000000000002f86                PM_HAL_enter_power_down
+.text.libgcc.div
+                0x0000000000001b40       0x44
+ .text.libgcc.div
+                0x0000000000001b40       0x44 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodsi4.o)
+                0x0000000000001b40                __udivmodsi4
 
-.text.TWI_HAL_repeated_start
-                0x0000000000002fc8       0x42
- .text.TWI_HAL_repeated_start
-                0x0000000000002fc8       0x42 HAL/TWI/TWI_HAL.o
-                0x0000000000002fc8                TWI_HAL_repeated_start
-
-.text.avrlibc   0x000000000000300a       0x42
- .text.avrlibc  0x000000000000300a       0x42 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcmp_M.o)
-                0x000000000000300a                strcmp
-
-.text.LED_join_success
-                0x000000000000304c       0x40
- .text.LED_join_success
-                0x000000000000304c       0x40 MODULES/LED_module/LED_module.o
-                0x000000000000304c                LED_join_success
-
-.text.send_body
-                0x000000000000308c       0x40
- .text.send_body
-                0x000000000000308c       0x40 PROGRAMS/MAINPG/MAINPG.o
-
-.text.send_header
-                0x00000000000030cc       0x3e
- .text.send_header
-                0x00000000000030cc       0x3e PROGRAMS/MAINPG/MAINPG.o
-
-.text.send_tail
-                0x000000000000310a       0x3e
- .text.send_tail
-                0x000000000000310a       0x3e PROGRAMS/MAINPG/MAINPG.o
-
-.text.uart0_hal_init
-                0x0000000000003148       0x3c
- .text.uart0_hal_init
-                0x0000000000003148       0x3c HAL/UART0/UART0_HAL.o
-                0x0000000000003148                uart0_hal_init
+.text.avrlibc   0x0000000000001b84       0x42
+ .text.avrlibc  0x0000000000001b84       0x42 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcmp_M.o)
+                0x0000000000001b84                strcmp
 
 .text.uart1_hal_init
-                0x0000000000003184       0x3c
+                0x0000000000001bc6       0x3c
  .text.uart1_hal_init
-                0x0000000000003184       0x3c HAL/UART1/UART1_HAL.o
-                0x0000000000003184                uart1_hal_init
-
-.text.TC2_HAL_cancel
-                0x00000000000031c0       0x3a
- .text.TC2_HAL_cancel
-                0x00000000000031c0       0x3a HAL/TC2/TC2_HAL.o
-                0x00000000000031c0                TC2_HAL_cancel
-
-.text.err_code  0x00000000000031fa       0x38
- .text.err_code
-                0x00000000000031fa       0x38 MODULES/LED_module/LED_module.o
-
-.text.init_measurement
-                0x0000000000003232       0x38
- .text.init_measurement
-                0x0000000000003232       0x38 MODULES/SCD30_module/SCD30_module.o
+                0x0000000000001bc6       0x3c HAL/UART1/UART1_HAL.o
+                0x0000000000001bc6                uart1_hal_init
 
 .text.libgcc.prologue
-                0x000000000000326a       0x38
+                0x0000000000001c02       0x38
  .text.libgcc.prologue
-                0x000000000000326a       0x38 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
-                0x000000000000326a                __prologue_saves__
-
-.text.mrpp_state_get_collection_address
-                0x00000000000032a2       0x36
- .text.mrpp_state_get_collection_address
-                0x00000000000032a2       0x36 MODULES/MRPP_module/util/mrpp_state.o
-                0x00000000000032a2                mrpp_state_get_collection_address
-
-.text.calc_crc8
-                0x00000000000032d8       0x36
- .text.calc_crc8
-                0x00000000000032d8       0x36 util/CRC8/CRC8.o
-                0x00000000000032d8                calc_crc8
-
-.text.avrlibc   0x000000000000330e       0x36
- .text.avrlibc  0x000000000000330e       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
-                0x000000000000330e                strnlen
+                0x0000000000001c02       0x38 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+                0x0000000000001c02                __prologue_saves__
 
 .text.libgcc.prologue
-                0x0000000000003344       0x36
+                0x0000000000001c3a       0x36
  .text.libgcc.prologue
-                0x0000000000003344       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
-                0x0000000000003344                __epilogue_restores__
+                0x0000000000001c3a       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+                0x0000000000001c3a                __epilogue_restores__
 
-.text.TC1_HAL_init
-                0x000000000000337a       0x34
- .text.TC1_HAL_init
-                0x000000000000337a       0x34 HAL/TC1/TC1_HAL.o
-                0x000000000000337a                TC1_HAL_init
+.text.avrlibc   0x0000000000001c70       0x36
+ .text.avrlibc  0x0000000000001c70       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
+                0x0000000000001c70                strnlen
 
-.text.uart0_hal_send_message
-                0x00000000000033ae       0x34
- .text.uart0_hal_send_message
-                0x00000000000033ae       0x34 HAL/UART0/UART0_HAL.o
-                0x00000000000033ae                uart0_hal_send_message
-
-.text.RTC_clear_wake_up_interrupt
-                0x00000000000033e2       0x34
- .text.RTC_clear_wake_up_interrupt
-                0x00000000000033e2       0x34 MODULES/RTC_module/RTC_module.o
-                0x00000000000033e2                RTC_clear_wake_up_interrupt
-
-.text.cmd_with_ending
-                0x0000000000003416       0x32
- .text.cmd_with_ending
-                0x0000000000003416       0x32 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
-                0x0000000000003416                cmd_with_ending
-
-.text.SC_wake_up
-                0x0000000000003448       0x32
- .text.SC_wake_up
-                0x0000000000003448       0x32 MODULES/LORA_module/sleep_controller/sleep_controller.o
-                0x0000000000003448                SC_wake_up
-
-.text.MRPP_init_group
-                0x000000000000347a       0x32
- .text.MRPP_init_group
-                0x000000000000347a       0x32 MODULES/MRPP_module/mrpp.o
-                0x000000000000347a                MRPP_init_group
-
-.text.validate_data
-                0x00000000000034ac       0x32
- .text.validate_data
-                0x00000000000034ac       0x32 MODULES/SCD30_module/SCD30_module.o
-
-.text.avrlibc   0x00000000000034de       0x32
- .text.avrlibc  0x00000000000034de       0x32 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
-                0x00000000000034de                memcpy
-
-.text.mac_set_ADR
-                0x0000000000003510       0x30
- .text.mac_set_ADR
-                0x0000000000003510       0x30 MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
-                0x0000000000003510                mac_set_ADR
-
-.text.mrpp_data_get
-                0x0000000000003540       0x30
- .text.mrpp_data_get
-                0x0000000000003540       0x30 MODULES/MRPP_module/util/mrpp_data.o
-                0x0000000000003540                mrpp_data_get
-
-.text.mrpp_state_is_body_ready
-                0x0000000000003570       0x30
- .text.mrpp_state_is_body_ready
-                0x0000000000003570       0x30 MODULES/MRPP_module/util/mrpp_state.o
-                0x0000000000003570                mrpp_state_is_body_ready
-
-.text.cb_cnt_time
-                0x00000000000035a0       0x30
- .text.cb_cnt_time
-                0x00000000000035a0       0x30 MODULES/PUMP_module/PUMP_module.o
+.text.avrlibc   0x0000000000001ca6       0x32
+ .text.avrlibc  0x0000000000001ca6       0x32 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
+                0x0000000000001ca6                memcpy
 
 .text.copy_buffer
-                0x00000000000035d0       0x2e
+                0x0000000000001cd8       0x2e
  .text.copy_buffer
-                0x00000000000035d0       0x2e HAL/UART0/UART0_HAL.o
+                0x0000000000001cd8       0x2e HAL/UART1/UART1_HAL.o
 
-.text.LM_send_uplink
-                0x00000000000035fe       0x2e
- .text.LM_send_uplink
-                0x00000000000035fe       0x2e MODULES/LORA_module/lora_module.o
-                0x00000000000035fe                LM_send_uplink
+.text.write_deveui
+                0x0000000000001d06       0x2e
+ .text.write_deveui
+                0x0000000000001d06       0x2e PROGRAMS/CONFIG_MODE/RW/RW.o
 
-.text.avrlibc   0x000000000000362c       0x2c
- .text.avrlibc  0x000000000000362c       0x2c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
-                0x000000000000362c                strlen
+.text.avrlibc   0x0000000000001d34       0x2c
+ .text.avrlibc  0x0000000000001d34       0x2c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strlen_M.o)
+                0x0000000000001d34                strlen
 
-.text.mrpp_state_all_bodies_sent
-                0x0000000000003658       0x2a
- .text.mrpp_state_all_bodies_sent
-                0x0000000000003658       0x2a MODULES/MRPP_module/util/mrpp_state.o
-                0x0000000000003658                mrpp_state_all_bodies_sent
-
-.text.uart0_hal_read_message_as_str
-                0x0000000000003682       0x28
- .text.uart0_hal_read_message_as_str
-                0x0000000000003682       0x28 HAL/UART0/UART0_HAL.o
-                0x0000000000003682                uart0_hal_read_message_as_str
-
-.text.decode_body_response
-                0x00000000000036aa       0x28
- .text.decode_body_response
-                0x00000000000036aa       0x28 PROGRAMS/MAINPG/MAINPG.o
-
-.text.TWI_API_read_data_ack_end_nack_stop
-                0x00000000000036d2       0x24
- .text.TWI_API_read_data_ack_end_nack_stop
-                0x00000000000036d2       0x24 HAL/TWI/TWI_API.o
-                0x00000000000036d2                TWI_API_read_data_ack_end_nack_stop
-
-.text.PUMP_start
-                0x00000000000036f6       0x24
- .text.PUMP_start
-                0x00000000000036f6       0x24 MODULES/PUMP_module/PUMP_module.o
-                0x00000000000036f6                PUMP_start
-
-.text.TWI_API_repeat_read_data_stop
-                0x000000000000371a       0x22
- .text.TWI_API_repeat_read_data_stop
-                0x000000000000371a       0x22 HAL/TWI/TWI_API.o
-                0x000000000000371a                TWI_API_repeat_read_data_stop
-
-.text.MRPP_is_body_package_ready
-                0x000000000000373c       0x22
- .text.MRPP_is_body_package_ready
-                0x000000000000373c       0x22 MODULES/MRPP_module/mrpp.o
-                0x000000000000373c                MRPP_is_body_package_ready
-
-.text.MRPP_get_header_package
-                0x000000000000375e       0x22
- .text.MRPP_get_header_package
-                0x000000000000375e       0x22 MODULES/MRPP_module/mrpp.o
-                0x000000000000375e                MRPP_get_header_package
-
-.text.MRPP_get_tail_package
-                0x0000000000003780       0x22
- .text.MRPP_get_tail_package
-                0x0000000000003780       0x22 MODULES/MRPP_module/mrpp.o
-                0x0000000000003780                MRPP_get_tail_package
+.text.uart1_hal_read_message_as_str
+                0x0000000000001d60       0x28
+ .text.uart1_hal_read_message_as_str
+                0x0000000000001d60       0x28 HAL/UART1/UART1_HAL.o
+                0x0000000000001d60                uart1_hal_read_message_as_str
 
 .text.avrlibc.fplib
-                0x00000000000037a2       0x22
+                0x0000000000001d88       0x22
  .text.avrlibc.fplib
-                0x00000000000037a2       0x22 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_round.o)
-                0x00000000000037a2                __fp_round
-
-.text.TC0_HAL_init
-                0x00000000000037c4       0x20
- .text.TC0_HAL_init
-                0x00000000000037c4       0x20 HAL/TC0/TC0_HAL.o
-                0x00000000000037c4                TC0_HAL_init
-
-.text.TC2_HAL_init
-                0x00000000000037e4       0x20
- .text.TC2_HAL_init
-                0x00000000000037e4       0x20 HAL/TC2/TC2_HAL.o
-                0x00000000000037e4                TC2_HAL_init
-
-.text.TWI_HAL_write_byte
-                0x0000000000003804       0x20
- .text.TWI_HAL_write_byte
-                0x0000000000003804       0x20 HAL/TWI/TWI_HAL.o
-                0x0000000000003804                TWI_HAL_write_byte
-
-.text.ADC_meth_sens_power_on
-                0x0000000000003824       0x20
- .text.ADC_meth_sens_power_on
-                0x0000000000003824       0x20 MODULES/ADC_module/ADC_module.o
-                0x0000000000003824                ADC_meth_sens_power_on
-
-.text.mrpp_state_set_body_sent
-                0x0000000000003844       0x20
- .text.mrpp_state_set_body_sent
-                0x0000000000003844       0x20 MODULES/MRPP_module/util/mrpp_state.o
-                0x0000000000003844                mrpp_state_set_body_sent
-
-.text.decode_header_tail_response
-                0x0000000000003864       0x1e
- .text.decode_header_tail_response
-                0x0000000000003864       0x1e PROGRAMS/MAINPG/MAINPG.o
+                0x0000000000001d88       0x22 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_round.o)
+                0x0000000000001d88                __fp_round
 
 .text.libgcc.mul
-                0x0000000000003882       0x1e
+                0x0000000000001daa       0x20
  .text.libgcc.mul
-                0x0000000000003882       0x1e c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
-                0x0000000000003882                __umulhisi3
+                0x0000000000001daa       0x20 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_mulsi3.o)
+                0x0000000000001daa                __mulsi3
 
-.text.avrlibc   0x00000000000038a0       0x1e
- .text.avrlibc  0x00000000000038a0       0x1e c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
-                0x00000000000038a0                strcpy
+.text.libgcc.mul
+                0x0000000000001dca       0x1e
+ .text.libgcc.mul
+                0x0000000000001dca       0x1e c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_umulhisi3.o)
+                0x0000000000001dca                __umulhisi3
 
-.text.ADC_is_sampling_done
-                0x00000000000038be       0x1c
- .text.ADC_is_sampling_done
-                0x00000000000038be       0x1c MODULES/ADC_module/ADC_module.o
-                0x00000000000038be                ADC_is_sampling_done
+.text.avrlibc   0x0000000000001de8       0x1e
+ .text.avrlibc  0x0000000000001de8       0x1e c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strcpy_M.o)
+                0x0000000000001de8                strcpy
 
-.text.block_uplink
-                0x00000000000038da       0x1c
- .text.block_uplink
-                0x00000000000038da       0x1c MODULES/LORA_module/lora_module.o
+.text.main      0x0000000000001e06       0x18
+ .text.main     0x0000000000001e06       0x18 main.o
+                0x0000000000001e06                main
 
-.text.attach_ending
-                0x00000000000038f6       0x1c
- .text.attach_ending
-                0x00000000000038f6       0x1c MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
-                0x00000000000038f6                attach_ending
+.text.parse_cmd
+                0x0000000000001e1e       0x18
+ .text.parse_cmd
+                0x0000000000001e1e       0x18 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
 
-.text.util_transmit_msg
-                0x0000000000003912       0x1c
- .text.util_transmit_msg
-                0x0000000000003912       0x1c MODULES/LORA_module/util/util.o
-                0x0000000000003912                util_transmit_msg
-
-.text.PUMP_is_done
-                0x000000000000392e       0x1c
- .text.PUMP_is_done
-                0x000000000000392e       0x1c MODULES/PUMP_module/PUMP_module.o
-                0x000000000000392e                PUMP_is_done
-
-.text.SCD30_is_sampling_done
-                0x000000000000394a       0x1c
- .text.SCD30_is_sampling_done
-                0x000000000000394a       0x1c MODULES/SCD30_module/SCD30_module.o
-                0x000000000000394a                SCD30_is_sampling_done
-
-.text.decode_join_response
-                0x0000000000003966       0x1c
- .text.decode_join_response
-                0x0000000000003966       0x1c PROGRAMS/MAINPG/MAINPG.o
-
-.text.bytes_2_uint
-                0x0000000000003982       0x1a
- .text.bytes_2_uint
-                0x0000000000003982       0x1a MODULES/SCD30_module/SCD30_module.o
-
-.text.libgcc    0x000000000000399c       0x1a
- .text.libgcc   0x000000000000399c       0x1a c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_movmemx.o)
-                0x000000000000399c                __movmemx_qi
-                0x000000000000399e                __movmemx_hi
-
-.text.main      0x00000000000039b6       0x18
- .text.main     0x00000000000039b6       0x18 main.o
-                0x00000000000039b6                main
-
-.text.vect_ADC_heat_timeout
-                0x00000000000039ce       0x18
- .text.vect_ADC_heat_timeout
-                0x00000000000039ce       0x18 MODULES/ADC_module/ADC_module.o
-
-.text.set_block_uplink
-                0x00000000000039e6       0x18
- .text.set_block_uplink
-                0x00000000000039e6       0x18 MODULES/LORA_module/lora_module.o
-
-.text.send_msg  0x00000000000039fe       0x18
- .text.send_msg
-                0x00000000000039fe       0x18 PROGRAMS/MAINPG/MAINPG.o
-
-.text.decode_stage_response
-                0x0000000000003a16       0x16
- .text.decode_stage_response
-                0x0000000000003a16       0x16 PROGRAMS/MAINPG/MAINPG.o
-
-.text.PM_HAL_adc_power
-                0x0000000000003a2c       0x14
- .text.PM_HAL_adc_power
-                0x0000000000003a2c       0x14 HAL/PM/PM_HAL.o
-                0x0000000000003a2c                PM_HAL_adc_power
-
-.text.PM_HAL_meth_power
-                0x0000000000003a40       0x14
- .text.PM_HAL_meth_power
-                0x0000000000003a40       0x14 HAL/PM/PM_HAL.o
-                0x0000000000003a40                PM_HAL_meth_power
-
-.text.PM_HAL_SCD30_power
-                0x0000000000003a54       0x14
- .text.PM_HAL_SCD30_power
-                0x0000000000003a54       0x14 HAL/PM/PM_HAL.o
-                0x0000000000003a54                PM_HAL_SCD30_power
-
-.text.PM_HAL_BC_power
-                0x0000000000003a68       0x14
- .text.PM_HAL_BC_power
-                0x0000000000003a68       0x14 HAL/PM/PM_HAL.o
-                0x0000000000003a68                PM_HAL_BC_power
-
-.text.PM_HAL_LED_power
-                0x0000000000003a7c       0x14
- .text.PM_HAL_LED_power
-                0x0000000000003a7c       0x14 HAL/PM/PM_HAL.o
-                0x0000000000003a7c                PM_HAL_LED_power
+.text.libgcc.mul
+                0x0000000000001e36       0x16
+ .text.libgcc.mul
+                0x0000000000001e36       0x16 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_muluhisi3.o)
+                0x0000000000001e36                __muluhisi3
 
 .text.__vector_3
-                0x0000000000003a90       0x14
+                0x0000000000001e4c       0x14
  .text.__vector_3
-                0x0000000000003a90       0x14 HAL/PM/PM_HAL.o
-                0x0000000000003a90                __vector_3
+                0x0000000000001e4c       0x14 HAL/PM/PM_HAL.o
+                0x0000000000001e4c                __vector_3
 
-.text.TWI_HAL_read_byte_ack
-                0x0000000000003aa4       0x14
- .text.TWI_HAL_read_byte_ack
-                0x0000000000003aa4       0x14 HAL/TWI/TWI_HAL.o
-                0x0000000000003aa4                TWI_HAL_read_byte_ack
+.text.avrlibc   0x0000000000001e60       0x12
+ .text.avrlibc  0x0000000000001e60       0x12 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(isspace.o)
+                0x0000000000001e60                isspace
 
-.text.TWI_HAL_read_byte_nack
-                0x0000000000003ab8       0x14
- .text.TWI_HAL_read_byte_nack
-                0x0000000000003ab8       0x14 HAL/TWI/TWI_HAL.o
-                0x0000000000003ab8                TWI_HAL_read_byte_nack
+.text.uart1_hal_message_ready
+                0x0000000000001e72        0xe
+ .text.uart1_hal_message_ready
+                0x0000000000001e72        0xe HAL/UART1/UART1_HAL.o
+                0x0000000000001e72                uart1_hal_message_ready
 
-.text.ADC_deinit_sampling
-                0x0000000000003acc       0x14
- .text.ADC_deinit_sampling
-                0x0000000000003acc       0x14 MODULES/ADC_module/ADC_module.o
-                0x0000000000003acc                ADC_deinit_sampling
-
-.text.SCD30_deinit_sampling
-                0x0000000000003ae0       0x14
- .text.SCD30_deinit_sampling
-                0x0000000000003ae0       0x14 MODULES/SCD30_module/SCD30_module.o
-                0x0000000000003ae0                SCD30_deinit_sampling
-
-.text.TWI_HAL_init
-                0x0000000000003af4       0x12
- .text.TWI_HAL_init
-                0x0000000000003af4       0x12 HAL/TWI/TWI_HAL.o
-                0x0000000000003af4                TWI_HAL_init
-
-.text.ADC_meth_sens_ready
-                0x0000000000003b06       0x12
- .text.ADC_meth_sens_ready
-                0x0000000000003b06       0x12 MODULES/ADC_module/ADC_module.o
-                0x0000000000003b06                ADC_meth_sens_ready
-
-.text.TWI_API_write_data_stop
-                0x0000000000003b18       0x10
- .text.TWI_API_write_data_stop
-                0x0000000000003b18       0x10 HAL/TWI/TWI_API.o
-                0x0000000000003b18                TWI_API_write_data_stop
-
-.text.TWI_HAL_stop
-                0x0000000000003b28       0x10
- .text.TWI_HAL_stop
-                0x0000000000003b28       0x10 HAL/TWI/TWI_HAL.o
-                0x0000000000003b28                TWI_HAL_stop
-
-.text.LED_stop_try_join
-                0x0000000000003b38       0x10
- .text.LED_stop_try_join
-                0x0000000000003b38       0x10 MODULES/LED_module/LED_module.o
-                0x0000000000003b38                LED_stop_try_join
-
-.text.PM_HAL_adc_power_init
-                0x0000000000003b48        0xe
- .text.PM_HAL_adc_power_init
-                0x0000000000003b48        0xe HAL/PM/PM_HAL.o
-                0x0000000000003b48                PM_HAL_adc_power_init
-
-.text.PM_HAL_meth_power_init
-                0x0000000000003b56        0xe
- .text.PM_HAL_meth_power_init
-                0x0000000000003b56        0xe HAL/PM/PM_HAL.o
-                0x0000000000003b56                PM_HAL_meth_power_init
-
-.text.PM_HAL_SCD30_power_init
-                0x0000000000003b64        0xe
- .text.PM_HAL_SCD30_power_init
-                0x0000000000003b64        0xe HAL/PM/PM_HAL.o
-                0x0000000000003b64                PM_HAL_SCD30_power_init
-
-.text.PM_HAL_BC_power_init
-                0x0000000000003b72        0xe
- .text.PM_HAL_BC_power_init
-                0x0000000000003b72        0xe HAL/PM/PM_HAL.o
-                0x0000000000003b72                PM_HAL_BC_power_init
-
-.text.PM_HAL_LED_power_init
-                0x0000000000003b80        0xe
- .text.PM_HAL_LED_power_init
-                0x0000000000003b80        0xe HAL/PM/PM_HAL.o
-                0x0000000000003b80                PM_HAL_LED_power_init
-
-.text.SCD30_HAL_init
-                0x0000000000003b8e        0xe
- .text.SCD30_HAL_init
-                0x0000000000003b8e        0xe HAL/SCD30/SCD30_HAL.o
-                0x0000000000003b8e                SCD30_HAL_init
-
-.text.uart0_hal_message_ready
-                0x0000000000003b9c        0xe
- .text.uart0_hal_message_ready
-                0x0000000000003b9c        0xe HAL/UART0/UART0_HAL.o
-                0x0000000000003b9c                uart0_hal_message_ready
-
-.text.LED_start_try_join
-                0x0000000000003baa        0xe
- .text.LED_start_try_join
-                0x0000000000003baa        0xe MODULES/LED_module/LED_module.o
-                0x0000000000003baa                LED_start_try_join
+.text.uart1_hal_rx_full
+                0x0000000000001e80        0xe
+ .text.uart1_hal_rx_full
+                0x0000000000001e80        0xe HAL/UART1/UART1_HAL.o
+                0x0000000000001e80                uart1_hal_rx_full
 
 .text.avrlibc.fplib
-                0x0000000000003bb8        0xe
+                0x0000000000001e8e        0xe
  .text.avrlibc.fplib
-                0x0000000000003bb8        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
-                0x0000000000003bb8                __subsf3
-                0x0000000000003bba                __addsf3
+                0x0000000000001e8e        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
+                0x0000000000001e8e                __subsf3
+                0x0000000000001e90                __addsf3
 
 .text.avrlibc.fplib
-                0x0000000000003bc6        0xe
+                0x0000000000001e9c        0xe
  .text.avrlibc.fplib
-                0x0000000000003bc6        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscA.o)
-                0x0000000000003bc6                __fp_pscA
+                0x0000000000001e9c        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscA.o)
+                0x0000000000001e9c                __fp_pscA
 
 .text.avrlibc.fplib
-                0x0000000000003bd4        0xe
+                0x0000000000001eaa        0xe
  .text.avrlibc.fplib
-                0x0000000000003bd4        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscB.o)
-                0x0000000000003bd4                __fp_pscB
+                0x0000000000001eaa        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_pscB.o)
+                0x0000000000001eaa                __fp_pscB
 
 .text.avrlibc.fplib
-                0x0000000000003be2        0xe
+                0x0000000000001eb8        0xe
  .text.avrlibc.fplib
-                0x0000000000003be2        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_zero.o)
-                0x0000000000003be2                __fp_zero
-                0x0000000000003be4                __fp_szero
+                0x0000000000001eb8        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_zero.o)
+                0x0000000000001eb8                __fp_zero
+                0x0000000000001eba                __fp_szero
 
-.text.TC1_HAL_start
-                0x0000000000003bf0        0xc
- .text.TC1_HAL_start
-                0x0000000000003bf0        0xc HAL/TC1/TC1_HAL.o
-                0x0000000000003bf0                TC1_HAL_start
-
-.text.TC1_HAL_stop
-                0x0000000000003bfc        0xc
- .text.TC1_HAL_stop
-                0x0000000000003bfc        0xc HAL/TC1/TC1_HAL.o
-                0x0000000000003bfc                TC1_HAL_stop
-
-.text.ADC_start_sampling
-                0x0000000000003c08        0xc
- .text.ADC_start_sampling
-                0x0000000000003c08        0xc MODULES/ADC_module/ADC_module.o
-                0x0000000000003c08                ADC_start_sampling
-
-.text.util_setPendingStates
-                0x0000000000003c14        0xc
- .text.util_setPendingStates
-                0x0000000000003c14        0xc MODULES/LORA_module/util/util.o
-                0x0000000000003c14                util_setPendingStates
-
-.text.util_setMatchCase
-                0x0000000000003c20        0xc
- .text.util_setMatchCase
-                0x0000000000003c20        0xc MODULES/LORA_module/util/util.o
-                0x0000000000003c20                util_setMatchCase
-
-.text.MRPP_set_body_sent
-                0x0000000000003c2c        0xc
- .text.MRPP_set_body_sent
-                0x0000000000003c2c        0xc MODULES/MRPP_module/mrpp.o
-                0x0000000000003c2c                MRPP_set_body_sent
-
-.text.SCD30_start_sampling
-                0x0000000000003c38        0xc
- .text.SCD30_start_sampling
-                0x0000000000003c38        0xc MODULES/SCD30_module/SCD30_module.o
-                0x0000000000003c38                SCD30_start_sampling
+.text.avrlibc   0x0000000000001ec6        0xe
+ .text.avrlibc  0x0000000000001ec6        0xe c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atol_M.o)
+                0x0000000000001ec6                atol
 
 .text.avrlibc.fplib
-                0x0000000000003c44        0xc
+                0x0000000000001ed4        0xc
  .text.avrlibc.fplib
-                0x0000000000003c44        0xc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_inf.o)
-                0x0000000000003c44                __fp_inf
+                0x0000000000001ed4        0xc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_inf.o)
+                0x0000000000001ed4                __fp_inf
 
-.text.libgcc    0x0000000000003c50        0xc
- .text.libgcc   0x0000000000003c50        0xc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
-                0x0000000000003c50                __tablejump2__
+.text.libgcc    0x0000000000001ee0        0xc
+ .text.libgcc   0x0000000000001ee0        0xc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_tablejump2.o)
+                0x0000000000001ee0                __tablejump2__
 
-.text.SCD30_HAL_data_ready
-                0x0000000000003c5c        0xa
- .text.SCD30_HAL_data_ready
-                0x0000000000003c5c        0xa HAL/SCD30/SCD30_HAL.o
-                0x0000000000003c5c                SCD30_HAL_data_ready
-
-.text.uart0_hal_clear_rx_buffer
-                0x0000000000003c66        0xa
- .text.uart0_hal_clear_rx_buffer
-                0x0000000000003c66        0xa HAL/UART0/UART0_HAL.o
-                0x0000000000003c66                uart0_hal_clear_rx_buffer
-
-.text.LM_is_free
-                0x0000000000003c70        0xa
- .text.LM_is_free
-                0x0000000000003c70        0xa MODULES/LORA_module/lora_module.o
-                0x0000000000003c70                LM_is_free
-
-.text.MRPP_all_body_package_sent
-                0x0000000000003c7a        0xa
- .text.MRPP_all_body_package_sent
-                0x0000000000003c7a        0xa MODULES/MRPP_module/mrpp.o
-                0x0000000000003c7a                MRPP_all_body_package_sent
-
-.text.PM_HAL_LED_toggle
-                0x0000000000003c84        0x8
- .text.PM_HAL_LED_toggle
-                0x0000000000003c84        0x8 HAL/PM/PM_HAL.o
-                0x0000000000003c84                PM_HAL_LED_toggle
-
-.text.rn2483_reset_active
-                0x0000000000003c8c        0x8
- .text.rn2483_reset_active
-                0x0000000000003c8c        0x8 HAL/RN2483/RN2483_HAL.o
-                0x0000000000003c8c                rn2483_reset_active
-
-.text.rn2483_reset_deactive
-                0x0000000000003c94        0x8
- .text.rn2483_reset_deactive
-                0x0000000000003c94        0x8 HAL/RN2483/RN2483_HAL.o
-                0x0000000000003c94                rn2483_reset_deactive
-
-.text.start_timer
-                0x0000000000003c9c        0x8
- .text.start_timer
-                0x0000000000003c9c        0x8 HAL/TC2/TC2_HAL.o
-
-.text.LED_join_denied
-                0x0000000000003ca4        0x8
- .text.LED_join_denied
-                0x0000000000003ca4        0x8 MODULES/LED_module/LED_module.o
-                0x0000000000003ca4                LED_join_denied
-
-.text.LED_join_conf_err
-                0x0000000000003cac        0x8
- .text.LED_join_conf_err
-                0x0000000000003cac        0x8 MODULES/LED_module/LED_module.o
-                0x0000000000003cac                LED_join_conf_err
-
-.text.LED_fatal_err
-                0x0000000000003cb4        0x8
- .text.LED_fatal_err
-                0x0000000000003cb4        0x8 MODULES/LED_module/LED_module.o
-                0x0000000000003cb4                LED_fatal_err
-
-.text.set_wakeup
-                0x0000000000003cbc        0x8
- .text.set_wakeup
-                0x0000000000003cbc        0x8 PROGRAMS/MAINPG/MAINPG.o
+.text.uart1_hal_clear_rx_buffer
+                0x0000000000001eec        0xa
+ .text.uart1_hal_clear_rx_buffer
+                0x0000000000001eec        0xa HAL/UART1/UART1_HAL.o
+                0x0000000000001eec                uart1_hal_clear_rx_buffer
 
 .text.avrlibc.fplib
-                0x0000000000003cc4        0x8
+                0x0000000000001ef6        0x8
  .text.avrlibc.fplib
-                0x0000000000003cc4        0x8 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
-                0x0000000000003cc4                __divsf3
+                0x0000000000001ef6        0x8 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
+                0x0000000000001ef6                __divsf3
 
 .text.avrlibc.fplib
-                0x0000000000003ccc        0x8
+                0x0000000000001efe        0x8
  .text.avrlibc.fplib
-                0x0000000000003ccc        0x8 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3.o)
-                0x0000000000003ccc                __mulsf3
+                0x0000000000001efe        0x8 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(mulsf3.o)
+                0x0000000000001efe                __mulsf3
 
-.text.TC0_HAL_start
-                0x0000000000003cd4        0x6
- .text.TC0_HAL_start
-                0x0000000000003cd4        0x6 HAL/TC0/TC0_HAL.o
-                0x0000000000003cd4                TC0_HAL_start
-
-.text.stop_timer
-                0x0000000000003cda        0x6
- .text.stop_timer
-                0x0000000000003cda        0x6 HAL/TC2/TC2_HAL.o
-
-.text.TWI_API_write_data
-                0x0000000000003ce0        0x6
- .text.TWI_API_write_data
-                0x0000000000003ce0        0x6 HAL/TWI/TWI_API.o
-                0x0000000000003ce0                TWI_API_write_data
-
-.text.cb_blink  0x0000000000003ce6        0x6
- .text.cb_blink
-                0x0000000000003ce6        0x6 MODULES/LED_module/LED_module.o
-
-.text.LM_join_network
-                0x0000000000003cec        0x6
- .text.LM_join_network
-                0x0000000000003cec        0x6 MODULES/LORA_module/lora_module.o
-                0x0000000000003cec                LM_join_network
-
-.text.LM_put_to_sleep
-                0x0000000000003cf2        0x6
- .text.LM_put_to_sleep
-                0x0000000000003cf2        0x6 MODULES/LORA_module/lora_module.o
-                0x0000000000003cf2                LM_put_to_sleep
-
-.text.LM_wake_up
-                0x0000000000003cf8        0x6
- .text.LM_wake_up
-                0x0000000000003cf8        0x6 MODULES/LORA_module/lora_module.o
-                0x0000000000003cf8                LM_wake_up
-
-.text.util_read_msg
-                0x0000000000003cfe        0x6
- .text.util_read_msg
-                0x0000000000003cfe        0x6 MODULES/LORA_module/util/util.o
-                0x0000000000003cfe                util_read_msg
-
-.text.get_group_id
-                0x0000000000003d04        0x6
- .text.get_group_id
-                0x0000000000003d04        0x6 MODULES/MRPP_module/mrpp.o
-                0x0000000000003d04                get_group_id
-
-.text.set_group_id
-                0x0000000000003d0a        0x6
- .text.set_group_id
-                0x0000000000003d0a        0x6 MODULES/MRPP_module/mrpp.o
-                0x0000000000003d0a                set_group_id
+.text.avrlibc   0x0000000000001f06        0x8
+ .text.avrlibc  0x0000000000001f06        0x8 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(atoi_M.o)
+                0x0000000000001f06                atoi
 
 .text.avrlibc.fplib
-                0x0000000000003d10        0x6
+                0x0000000000001f0e        0x6
  .text.avrlibc.fplib
-                0x0000000000003d10        0x6 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_nan.o)
-                0x0000000000003d10                __fp_nan
+                0x0000000000001f0e        0x6 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_nan.o)
+                0x0000000000001f0e                __fp_nan
 
-.text           0x0000000000003d16        0x4
- .text          0x0000000000003d16        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
-                0x0000000000003d16                __vector_1
-                0x0000000000003d16                __vector_24
-                0x0000000000003d16                __vector_12
-                0x0000000000003d16                __bad_interrupt
-                0x0000000000003d16                __vector_6
-                0x0000000000003d16                __vector_23
-                0x0000000000003d16                __vector_25
-                0x0000000000003d16                __vector_11
-                0x0000000000003d16                __vector_17
-                0x0000000000003d16                __vector_19
-                0x0000000000003d16                __vector_7
-                0x0000000000003d16                __vector_27
-                0x0000000000003d16                __vector_5
-                0x0000000000003d16                __vector_4
-                0x0000000000003d16                __vector_2
-                0x0000000000003d16                __vector_21
-                0x0000000000003d16                __vector_15
-                0x0000000000003d16                __vector_29
-                0x0000000000003d16                __vector_8
-                0x0000000000003d16                __vector_26
-                0x0000000000003d16                __vector_14
-                0x0000000000003d16                __vector_10
-                0x0000000000003d16                __vector_18
+.text.avrlibc   0x0000000000001f14        0x6
+ .text.avrlibc  0x0000000000001f14        0x6 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(cty_isfalse.o)
+                0x0000000000001f14                __ctype_isfalse
+                0x0000000000001f18                __ctype_istrue
 
-.text.TC0_HAL_stop
-                0x0000000000003d1a        0x4
- .text.TC0_HAL_stop
-                0x0000000000003d1a        0x4 HAL/TC0/TC0_HAL.o
-                0x0000000000003d1a                TC0_HAL_stop
-
-.data.cols      0x0000000000800d52       0x23 load address 0x0000000000003d1e
- .data.cols     0x0000000000800d52       0x23 PROGRAMS/MAINPG/MAINPG.o
-
-.rodata         0x0000000000800d85        0x5 load address 0x0000000000003d41
- .rodata        0x0000000000800d85        0x5 MODULES/RTC_module/RTC_module.o
-
-.data.PPM_factor
-                0x0000000000800d8a        0x4 load address 0x0000000000003d46
- .data.PPM_factor
-                0x0000000000800d8a        0x4 MODULES/ADC_module/ADC_module.o
-
-.data.RRL       0x0000000000800d8e        0x4 load address 0x0000000000003d4a
- .data.RRL      0x0000000000800d8e        0x4 MODULES/ADC_module/ADC_module.o
-
-.data.Vc        0x0000000000800d92        0x4 load address 0x0000000000003d4e
- .data.Vc       0x0000000000800d92        0x4 MODULES/ADC_module/ADC_module.o
-
-.data.bodyIndex
-                0x0000000000800dae        0x2 load address 0x0000000000003d52
- .data.bodyIndex
-                0x0000000000800dae        0x2 PROGRAMS/MAINPG/MAINPG.o
+.text           0x0000000000001f1a        0x4
+ .text          0x0000000000001f1a        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+                0x0000000000001f1a                __vector_1
+                0x0000000000001f1a                __vector_24
+                0x0000000000001f1a                __vector_12
+                0x0000000000001f1a                __bad_interrupt
+                0x0000000000001f1a                __vector_6
+                0x0000000000001f1a                __vector_23
+                0x0000000000001f1a                __vector_25
+                0x0000000000001f1a                __vector_11
+                0x0000000000001f1a                __vector_17
+                0x0000000000001f1a                __vector_19
+                0x0000000000001f1a                __vector_7
+                0x0000000000001f1a                __vector_27
+                0x0000000000001f1a                __vector_5
+                0x0000000000001f1a                __vector_4
+                0x0000000000001f1a                __vector_2
+                0x0000000000001f1a                __vector_21
+                0x0000000000001f1a                __vector_15
+                0x0000000000001f1a                __vector_29
+                0x0000000000001f1a                __vector_8
+                0x0000000000001f1a                __vector_26
+                0x0000000000001f1a                __vector_14
+                0x0000000000001f1a                __vector_10
+                0x0000000000001f1a                __vector_18

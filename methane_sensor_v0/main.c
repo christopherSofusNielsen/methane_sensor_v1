@@ -9,6 +9,7 @@
 #include <util/delay.h>
 #include "TEST/test_runner.h"
 #include "PROGRAMS/MAINPG/MAINPG.h"
+#include "PROGRAMS/CONFIG_MODE/CONFIG_MODE.h"
 
 int main(void)
 {
@@ -16,7 +17,8 @@ int main(void)
 	
 	while(1)
     {
-		MAINPG_start();
+		//MAINPG_start();
+		CONF_enter();
 		_delay_ms(3000);
         
     }

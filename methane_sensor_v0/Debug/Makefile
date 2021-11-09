@@ -60,6 +60,8 @@ SUBDIRS :=  \
 ../MODULES/SCD30_module \
 ../PROGRAMS \
 ../PROGRAMS/CONFIG_MODE \
+../PROGRAMS/CONFIG_MODE/UTIL \
+../PROGRAMS/CONFIG_MODE/RW \
 ../PROGRAMS/MAINPG \
 ../TEST \
 ../TEST/LORA_module \
@@ -77,7 +79,8 @@ SUBDIRS :=  \
 ../TEST/PM_HAL \
 ../TEST/SCD30_module \
 ../util \
-../util/CRC8
+../util/CRC8 \
+../util/str2float
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
@@ -108,6 +111,9 @@ C_SRCS +=  \
 ../MODULES/PUMP_module/PUMP_module.c \
 ../MODULES/RTC_module/RTC_module.c \
 ../MODULES/SCD30_module/SCD30_module.c \
+../PROGRAMS/CONFIG_MODE/CONFIG_MODE.c \
+../PROGRAMS/CONFIG_MODE/RW/RW.c \
+../PROGRAMS/CONFIG_MODE/UTIL/util.c \
 ../PROGRAMS/MAINPG/MAINPG.c \
 ../TEST/ADC_module/test_ADC_module.c \
 ../TEST/EEPROM_module/test_EEPROM_module.c \
@@ -124,7 +130,8 @@ C_SRCS +=  \
 ../TEST/TC2_HAL/test_TC2_HAL.c \
 ../TEST/test_runner.c \
 ../TEST/UART0_HAL/test_UART0_HAL.c \
-../util/CRC8/CRC8.c
+../util/CRC8/CRC8.c \
+../util/str2float/str2float.c
 
 
 PREPROCESSING_SRCS += 
@@ -160,6 +167,9 @@ MODULES/MRPP_module/util/mrpp_state.o \
 MODULES/PUMP_module/PUMP_module.o \
 MODULES/RTC_module/RTC_module.o \
 MODULES/SCD30_module/SCD30_module.o \
+PROGRAMS/CONFIG_MODE/CONFIG_MODE.o \
+PROGRAMS/CONFIG_MODE/RW/RW.o \
+PROGRAMS/CONFIG_MODE/UTIL/util.o \
 PROGRAMS/MAINPG/MAINPG.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
@@ -176,7 +186,8 @@ TEST/TC1_HAL/test_TC1_HAL.o \
 TEST/TC2_HAL/test_TC2_HAL.o \
 TEST/test_runner.o \
 TEST/UART0_HAL/test_UART0_HAL.o \
-util/CRC8/CRC8.o
+util/CRC8/CRC8.o \
+util/str2float/str2float.o
 
 OBJS_AS_ARGS +=  \
 HAL/PM/PM_HAL.o \
@@ -205,6 +216,9 @@ MODULES/MRPP_module/util/mrpp_state.o \
 MODULES/PUMP_module/PUMP_module.o \
 MODULES/RTC_module/RTC_module.o \
 MODULES/SCD30_module/SCD30_module.o \
+PROGRAMS/CONFIG_MODE/CONFIG_MODE.o \
+PROGRAMS/CONFIG_MODE/RW/RW.o \
+PROGRAMS/CONFIG_MODE/UTIL/util.o \
 PROGRAMS/MAINPG/MAINPG.o \
 TEST/ADC_module/test_ADC_module.o \
 TEST/EEPROM_module/test_EEPROM_module.o \
@@ -221,7 +235,8 @@ TEST/TC1_HAL/test_TC1_HAL.o \
 TEST/TC2_HAL/test_TC2_HAL.o \
 TEST/test_runner.o \
 TEST/UART0_HAL/test_UART0_HAL.o \
-util/CRC8/CRC8.o
+util/CRC8/CRC8.o \
+util/str2float/str2float.o
 
 C_DEPS +=  \
 HAL/PM/PM_HAL.d \
@@ -250,6 +265,9 @@ MODULES/MRPP_module/util/mrpp_state.d \
 MODULES/PUMP_module/PUMP_module.d \
 MODULES/RTC_module/RTC_module.d \
 MODULES/SCD30_module/SCD30_module.d \
+PROGRAMS/CONFIG_MODE/CONFIG_MODE.d \
+PROGRAMS/CONFIG_MODE/RW/RW.d \
+PROGRAMS/CONFIG_MODE/UTIL/util.d \
 PROGRAMS/MAINPG/MAINPG.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
@@ -266,7 +284,8 @@ TEST/TC1_HAL/test_TC1_HAL.d \
 TEST/TC2_HAL/test_TC2_HAL.d \
 TEST/test_runner.d \
 TEST/UART0_HAL/test_UART0_HAL.d \
-util/CRC8/CRC8.d
+util/CRC8/CRC8.d \
+util/str2float/str2float.d
 
 C_DEPS_AS_ARGS +=  \
 HAL/PM/PM_HAL.d \
@@ -295,6 +314,9 @@ MODULES/MRPP_module/util/mrpp_state.d \
 MODULES/PUMP_module/PUMP_module.d \
 MODULES/RTC_module/RTC_module.d \
 MODULES/SCD30_module/SCD30_module.d \
+PROGRAMS/CONFIG_MODE/CONFIG_MODE.d \
+PROGRAMS/CONFIG_MODE/RW/RW.d \
+PROGRAMS/CONFIG_MODE/UTIL/util.d \
 PROGRAMS/MAINPG/MAINPG.d \
 TEST/ADC_module/test_ADC_module.d \
 TEST/EEPROM_module/test_EEPROM_module.d \
@@ -311,7 +333,8 @@ TEST/TC1_HAL/test_TC1_HAL.d \
 TEST/TC2_HAL/test_TC2_HAL.d \
 TEST/test_runner.d \
 TEST/UART0_HAL/test_UART0_HAL.d \
-util/CRC8/CRC8.d
+util/CRC8/CRC8.d \
+util/str2float/str2float.d
 
 OUTPUT_FILE_PATH +=methane_sensor_v1.elf
 
@@ -509,6 +532,27 @@ MODULES/SCD30_module/SCD30_module.o: ../MODULES/SCD30_module/SCD30_module.c
 	@echo Finished building: $<
 	
 
+PROGRAMS/CONFIG_MODE/CONFIG_MODE.o: ../PROGRAMS/CONFIG_MODE/CONFIG_MODE.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+PROGRAMS/CONFIG_MODE/RW/RW.o: ../PROGRAMS/CONFIG_MODE/RW/RW.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+PROGRAMS/CONFIG_MODE/UTIL/util.o: ../PROGRAMS/CONFIG_MODE/UTIL/util.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 PROGRAMS/MAINPG/MAINPG.o: ../PROGRAMS/MAINPG/MAINPG.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
@@ -628,6 +672,13 @@ util/CRC8/CRC8.o: ../util/CRC8/CRC8.c
 	@echo Finished building: $<
 	
 
+util/str2float/str2float.o: ../util/str2float/str2float.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 
 
 
@@ -654,7 +705,7 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER_SCRIPT_DEP)
 	@echo Building target: $@
 	@echo Invoking:  XC8 C Linker : 2.31
-	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -Wl,-Map="methane_sensor_v1.map" -funsigned-char -funsigned-bitfields -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums --memorysummary,memoryfile.xml -D F_CPU=8000000UL -gc-sections  
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -Wl,-Map="methane_sensor_v1.map" -Wl,-u,vfprintf -funsigned-char -funsigned-bitfields -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums --memorysummary,memoryfile.xml -D F_CPU=8000000UL -gc-sections -lprintf_flt -lm  
 	@echo Finished building target: $@
 	"C:\Program Files\Microchip\xc8\v2.31\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "methane_sensor_v1.elf" "methane_sensor_v1.hex"
 	"C:\Program Files\Microchip\xc8\v2.31\bin\avr-objcopy.exe" -j .eeprom --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0 --no-change-warnings -O ihex "methane_sensor_v1.elf" "methane_sensor_v1.eep" || exit 0

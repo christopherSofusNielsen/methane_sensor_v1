@@ -90,32 +90,33 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <com.microchip.xc8>
-        <com.microchip.xc8.common.outputfiles.hex>True</com.microchip.xc8.common.outputfiles.hex>
-        <com.microchip.xc8.common.outputfiles.eep>True</com.microchip.xc8.common.outputfiles.eep>
-        <com.microchip.xc8.common.outputfiles.usersignatures>False</com.microchip.xc8.common.outputfiles.usersignatures>
-        <com.microchip.xc8.common.outputfiles.lss>True</com.microchip.xc8.common.outputfiles.lss>
-        <com.microchip.xc8.common.miscellaneous.CommonFlags>-D F_CPU=8000000UL</com.microchip.xc8.common.miscellaneous.CommonFlags>
-        <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
-        <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
-        <com.microchip.xc8.compiler.symbols.DefSymbols>
-          <ListValues>
-            <Value>(%24DeviceMacro)</Value>
-            <Value>DEBUG</Value>
-          </ListValues>
-        </com.microchip.xc8.compiler.symbols.DefSymbols>
-        <com.microchip.xc8.compiler.optimization.level>Optimize debugging experience (-Og)</com.microchip.xc8.compiler.optimization.level>
-        <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
-        <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
-        <com.microchip.xc8.compiler.optimization.DebugLevel>Default (-g2)</com.microchip.xc8.compiler.optimization.DebugLevel>
-        <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
-        <com.microchip.xc8.linker.libraries.Libraries>
-          <ListValues>
-            <Value>libm</Value>
-          </ListValues>
-        </com.microchip.xc8.linker.libraries.Libraries>
-        <com.microchip.xc8.linker.miscellaneous.LinkerFlags>-gc-sections</com.microchip.xc8.linker.miscellaneous.LinkerFlags>
-        <com.microchip.xc8.assembler.debugging.DebugLevel>Default (-Wa,-g)</com.microchip.xc8.assembler.debugging.DebugLevel>
-      </com.microchip.xc8>
+  <com.microchip.xc8.common.outputfiles.hex>True</com.microchip.xc8.common.outputfiles.hex>
+  <com.microchip.xc8.common.outputfiles.eep>True</com.microchip.xc8.common.outputfiles.eep>
+  <com.microchip.xc8.common.outputfiles.usersignatures>False</com.microchip.xc8.common.outputfiles.usersignatures>
+  <com.microchip.xc8.common.outputfiles.lss>True</com.microchip.xc8.common.outputfiles.lss>
+  <com.microchip.xc8.common.miscellaneous.CommonFlags>-D F_CPU=8000000UL</com.microchip.xc8.common.miscellaneous.CommonFlags>
+  <com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>True</com.microchip.xc8.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <com.microchip.xc8.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>(%24DeviceMacro)</Value>
+      <Value>DEBUG</Value>
+    </ListValues>
+  </com.microchip.xc8.compiler.symbols.DefSymbols>
+  <com.microchip.xc8.compiler.optimization.level>Optimize debugging experience (-Og)</com.microchip.xc8.compiler.optimization.level>
+  <com.microchip.xc8.compiler.optimization.PackStructureMembers>True</com.microchip.xc8.compiler.optimization.PackStructureMembers>
+  <com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>True</com.microchip.xc8.compiler.optimization.AllocateBytesNeededForEnum>
+  <com.microchip.xc8.compiler.optimization.DebugLevel>Default (-g2)</com.microchip.xc8.compiler.optimization.DebugLevel>
+  <com.microchip.xc8.compiler.warnings.AllWarnings>True</com.microchip.xc8.compiler.warnings.AllWarnings>
+  <com.microchip.xc8.linker.general.UseVprintfLibrary>True</com.microchip.xc8.linker.general.UseVprintfLibrary>
+  <com.microchip.xc8.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </com.microchip.xc8.linker.libraries.Libraries>
+  <com.microchip.xc8.linker.miscellaneous.LinkerFlags>-gc-sections -lprintf_flt -lm</com.microchip.xc8.linker.miscellaneous.LinkerFlags>
+  <com.microchip.xc8.assembler.debugging.DebugLevel>Default (-Wa,-g)</com.microchip.xc8.assembler.debugging.DebugLevel>
+</com.microchip.xc8>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
@@ -281,6 +282,24 @@
     <Compile Include="MODULES\SCD30_module\SCD30_module.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="PROGRAMS\CONFIG_MODE\CONFIG_MODE.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PROGRAMS\CONFIG_MODE\CONFIG_MODE.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PROGRAMS\CONFIG_MODE\RW\RW.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PROGRAMS\CONFIG_MODE\RW\RW.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PROGRAMS\CONFIG_MODE\UTIL\util.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="PROGRAMS\CONFIG_MODE\UTIL\util.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="PROGRAMS\MAINPG\MAINPG.c">
       <SubType>compile</SubType>
     </Compile>
@@ -386,6 +405,12 @@
     <Compile Include="util\CRC8\CRC8.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="util\str2float\str2float.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="util\str2float\str2float.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="util\to_float.h">
       <SubType>compile</SubType>
     </Compile>
@@ -418,6 +443,8 @@
     <Folder Include="MODULES\SCD30_module" />
     <Folder Include="PROGRAMS" />
     <Folder Include="PROGRAMS\CONFIG_MODE" />
+    <Folder Include="PROGRAMS\CONFIG_MODE\UTIL" />
+    <Folder Include="PROGRAMS\CONFIG_MODE\RW" />
     <Folder Include="PROGRAMS\MAINPG" />
     <Folder Include="TEST" />
     <Folder Include="TEST\LORA_module" />
@@ -436,6 +463,7 @@
     <Folder Include="TEST\SCD30_module" />
     <Folder Include="util" />
     <Folder Include="util\CRC8" />
+    <Folder Include="util\str2float" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

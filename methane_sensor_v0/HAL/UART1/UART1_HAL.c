@@ -36,12 +36,17 @@ void uart1_hal_init(){
 	sei();
 }
 void uart1_hal_send_string(const char msg[]){
-	for (uint8_t i=0; i<strlen(msg); i++)
+	while(tx_buffer_data_len!=0){};
+	uint16_t len=strlen(msg);
+	for (uint8_t i=0; i<len; i++)
 	{
 		tx_buffer[i]=(uint8_t)msg[i];
 	}
+	tx_buffer[len]=UART1_END_CHAR_2;
+	tx_buffer[len+1]=UART1_END_CHAR_1;
 	
-	tx_buffer_data_len=strlen(msg);
+	
+	tx_buffer_data_len=len+2;
 	tx_buffer_cursor=1;
 	UDR1=tx_buffer[0];
 }
@@ -61,14 +66,9 @@ bool uart1_hal_message_ready(){
 	return rx_buffer_has_message>0;
 }
 
-//uint8_t uart1_hal_read_message(uint8_t msg[]){
-	//for (uint8_t i=0; i<rx_buffer_data_len-2; i++)
-	//{
-		//msg[i]=rx_buffer[i];
-	//}
-	//uart1_hal_clear_rx_buffer();
-	//return rx_buffer_data_len-2;
-//}
+bool uart1_hal_rx_full(){
+	return rx_buffer_data_len>=UART1_RX_BUFF_LENGTH-1;
+}
 
 uint8_t uart1_hal_read_message(uint8_t msg[]){
 	copy_buffer(msg);
@@ -77,7 +77,7 @@ uint8_t uart1_hal_read_message(uint8_t msg[]){
 	return len;
 }
 
-uint8_t uart1_hal_read_message_as_str(uint8_t msg[]){
+uint8_t uart1_hal_read_message_as_str(char msg[]){
 	copy_buffer(msg);
 	uint8_t len= rx_buffer_data_len-2;
 	msg[len]='\0';
@@ -89,18 +89,6 @@ void uart1_hal_clear_rx_buffer(){
 	rx_buffer_has_message=0;
 	rx_buffer_data_len=0;
 }
-
-//void uart1_hal_send_break(uint8_t followUpByte){
-	//set_bit(DDRD, 1); //Set TX0 (PD1) as output
-	//clear_bit(UCSR0B, 3); //Disable Tx
-	//clear_bit(PORTD, 1); //pull PD1 low
-	//_delay_ms(2); //Wait one ms
-	//set_bit(UCSR0B, 3); //Enable Tx
-	//
-	//uint8_t data[1];
-	//data[0]=followUpByte;
-	//uart0_hal_send_message(data, 1);
-//}
 
 static void copy_buffer(uint8_t msg[]){
 	for (uint8_t i=0; i<rx_buffer_data_len-2; i++)
@@ -118,7 +106,7 @@ static void copy_buffer(uint8_t msg[]){
 ISR(USART1_TX_vect){
 	if(tx_buffer_cursor<tx_buffer_data_len){
 		UDR1=tx_buffer[tx_buffer_cursor++];
-		}else{
+	}else{
 		tx_buffer_cursor=0;
 		tx_buffer_data_len=0;
 	}
