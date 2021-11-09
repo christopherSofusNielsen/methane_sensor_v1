@@ -12,11 +12,11 @@
 
 int main(void)
 {
-	test_runner();
+	//test_runner();
 	
 	while(1)
     {
-		//MAINPG_start();
+		MAINPG_start();
 		_delay_ms(3000);
         
     }

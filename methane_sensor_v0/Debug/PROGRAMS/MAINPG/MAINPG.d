@@ -35,7 +35,8 @@ PROGRAMS/MAINPG/MAINPG.d PROGRAMS/MAINPG/MAINPG.o: \
  ../PROGRAMS/MAINPG/../../MODULES/ADC_module/ADC_module.h \
  ../PROGRAMS/MAINPG/../../MODULES/SCD30_module/SCD30_module.h \
  ../PROGRAMS/MAINPG/../../MODULES/LORA_module/lora_module.h \
- ../PROGRAMS/MAINPG/../../MODULES/PUMP_module/PUMP_module.h
+ ../PROGRAMS/MAINPG/../../MODULES/PUMP_module/PUMP_module.h \
+ ../PROGRAMS/MAINPG/../../MODULES/LED_module/LED_module.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
 
@@ -108,3 +109,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../PROGRAMS/MAINPG/../../MODULES/LORA_module/lora_module.h:
 
 ../PROGRAMS/MAINPG/../../MODULES/PUMP_module/PUMP_module.h:
+
+../PROGRAMS/MAINPG/../../MODULES/LED_module/LED_module.h:

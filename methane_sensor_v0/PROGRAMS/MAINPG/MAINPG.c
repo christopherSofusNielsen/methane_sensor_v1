@@ -29,6 +29,7 @@
 #include "../../MODULES/SCD30_module/SCD30_module.h"
 #include "../../MODULES/LORA_module/lora_module.h"
 #include "../../MODULES/PUMP_module/PUMP_module.h"
+#include "../../MODULES/LED_module/LED_module.h"
 
 //Functions
 static RTC_STATUS set_wakeup();
@@ -77,8 +78,8 @@ void MAINPG_start(){
 	RTC_STATUS rtcStatus;
 	LM_STATUS lmStatus;
 	STAGE_STATUS stageStatus;
-	//bool fromSleep=false;
-	bool fromSleep=true;
+	bool fromSleep=false;
+	//bool fromSleep=true;
 	
 	
 	while(1){
@@ -93,6 +94,7 @@ void MAINPG_start(){
 				PM_HAL_meth_power_init();
 				PM_HAL_BC_power_init();
 				PM_HAL_SCD30_power_init();
+				PM_HAL_LED_power_init();
 				
 				//Set pull up
 				set_bit(PORTB, 0);
@@ -105,8 +107,15 @@ void MAINPG_start(){
 			/************************************************************************/
 			case MAINPG_LORA_JOIN_NETWORK:
 				print_debug("Join\n\r");
+				LED_start_try_join();
 				lmStatus=join_lora();
+				LED_stop_try_join();
 				state=decode_join_response(lmStatus);
+			break;
+			
+			case MAINPG_LORA_JOIN_SUCCESS:
+				LED_join_success();
+				state=MAINPG_INIT_RTC;
 			break;
 			
 			case MAINPG_LORA_WAKEUP:
@@ -117,11 +126,13 @@ void MAINPG_start(){
 			
 			case MAINPG_LORA_JOIN_TRY_AGAIN:
 				print_debug("Try again\n\r");
+				LED_join_denied();
 				_delay_ms(5000);
 				state=MAINPG_LORA_JOIN_NETWORK;
 			break;
 			
 			case MAINPG_LORA_JOIN_CONF_ERR:
+				LED_join_conf_err();
 				print_debug("Conf err\n\r");
 				state=MAINPG_END;
 			break;
@@ -230,6 +241,7 @@ void MAINPG_start(){
 				PM_HAL_SCD30_power(false);
 				PM_HAL_BC_power(false);
 				PM_HAL_meth_power(false);
+				PM_HAL_LED_power(false);
 				
 				state=MAINPG_SLEEP;
 			break;
@@ -247,6 +259,7 @@ void MAINPG_start(){
 			/************************************************************************/
 			case MAINPG_FATAL_ERROR:
 				print_debug("Fatal error\n\r");
+				LED_fatal_err();
 				state=MAINPG_END;
 			break;
 			
@@ -501,7 +514,7 @@ static LM_STATUS join_lora(){
 static MAINPG_STATES decode_join_response(LM_STATUS status){
 	switch(status){
 		case LM_STATUS_SUCCESS:
-			return MAINPG_INIT_RTC;
+			return MAINPG_LORA_JOIN_SUCCESS;
 		case LM_STATUS_TRY_AGAIN:
 			return MAINPG_LORA_JOIN_TRY_AGAIN;
 		case LM_STATUS_CONF_ERR:
