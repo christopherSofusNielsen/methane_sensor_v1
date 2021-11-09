@@ -9,6 +9,7 @@
 #ifndef EEPROM_MODULE_H_
 #define EEPROM_MODULE_H_
 #include <stdbool.h>
+#include <xc.h>
 
 
 /************************************************************************/
@@ -23,6 +24,12 @@
 #define EEPROM_HAS_DEVEUI_ADDR 64
 #define EEPROM_HAS_APPEUI_ADDR 65
 #define EEPROM_HAS_APPKEY_ADDR 66
+#define EEPROM_PPM_FACTOR_ADDR 67 //size 4 bytes
+#define EEPROM_RRL_ADDR 71 //size 4 bytes
+#define EEPROM_VCC_ADDR 75 //size 4 bytes
+
+//Notice jump in addr
+#define EEPROM_COLLECTION_ADDR 100 //11 collections=11*5=55 bytes
 
 /************************************************************************/
 /* Address                                                              */
@@ -42,6 +49,18 @@ bool EM_get_appeui(char appeui[]);
 
 bool EM_set_appkey(const char appkey[]);
 bool EM_get_appkey(char appkey[]);
+
+void EM_set_ppmfactor(float val);
+void EM_get_ppmfactor(float *val);
+
+void EM_set_RRL(float val);
+void EM_get_RRL(float *val);
+
+void EM_set_Vcc(float val);
+void EM_get_Vcc(float *val);
+
+void EM_set_collections(const void *cols, uint8_t size);
+void EM_get_collections(void *cols, uint8_t size);
 
 
 

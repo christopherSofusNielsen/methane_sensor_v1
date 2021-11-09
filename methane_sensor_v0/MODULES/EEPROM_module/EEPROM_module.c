@@ -70,3 +70,34 @@ bool EM_get_appkey(char appkey[]){
 	appkey[EEPROM_APPKEY_LENGTH]='\0';
 	return true;
 }
+
+void EM_set_ppmfactor(float val){
+	eeprom_update_float((float *) EEPROM_PPM_FACTOR_ADDR, val);
+}
+
+void EM_get_ppmfactor(float *val){
+	*val=eeprom_read_float((const float *) EEPROM_PPM_FACTOR_ADDR);
+}
+
+void EM_set_RRL(float val){
+	eeprom_update_float((float *) EEPROM_RRL_ADDR, val);
+}
+
+void EM_get_RRL(float *val){
+	*val=eeprom_read_float((const float *) EEPROM_RRL_ADDR);
+}
+
+void EM_set_Vcc(float val){
+	eeprom_update_float((float *) EEPROM_VCC_ADDR, val);
+}
+
+void EM_get_Vcc(float *val){
+	*val=eeprom_read_float((const float *) EEPROM_VCC_ADDR);
+}
+
+void EM_set_collections(const void *cols, uint8_t size){
+	eeprom_update_block(cols, (void *) EEPROM_COLLECTION_ADDR, size );
+}
+void EM_get_collections(void *cols, uint8_t size){
+	eeprom_read_block(cols, ( const void *) EEPROM_COLLECTION_ADDR, size);
+}

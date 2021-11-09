@@ -24,7 +24,8 @@ TEST/EEPROM_module/test_EEPROM_module.d \
  ../TEST/EEPROM_module/test_EEPROM_module.h \
  ../TEST/EEPROM_module/../../HAL/UART1/UART1_HAL.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
- ../TEST/EEPROM_module/../../MODULES/EEPROM_module/EEPROM_module.h
+ ../TEST/EEPROM_module/../../MODULES/EEPROM_module/EEPROM_module.h \
+ ../TEST/EEPROM_module/../../MODULES/MRPP_module/types.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -73,3 +74,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
 ../TEST/EEPROM_module/../../MODULES/EEPROM_module/EEPROM_module.h:
+
+../TEST/EEPROM_module/../../MODULES/MRPP_module/types.h:

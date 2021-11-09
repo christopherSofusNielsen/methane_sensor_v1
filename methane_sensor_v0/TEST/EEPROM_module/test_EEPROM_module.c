@@ -14,10 +14,13 @@
 #include "test_EEPROM_module.h"
 #include "../../HAL/UART1/UART1_HAL.h"
 #include "../../MODULES/EEPROM_module/EEPROM_module.h"
+#include "../../MODULES/MRPP_module/types.h"
 
 void clear_lora_parameters();
 void set_deveui();
 void test_set_get_parameter();
+static void set_get_float();
+static void set_get_collections();
 
 void test_EEPROM_module_start(){
 	uart1_hal_init();
@@ -27,6 +30,8 @@ void test_EEPROM_module_start(){
 		//clear_lora_parameters();
 		//set_deveui();
 		//test_set_get_parameter();
+		//set_get_float();
+		//set_get_collections();
 		_delay_ms(5000);
 	}
 }
@@ -60,6 +65,50 @@ void test_set_get_parameter(){
 	uart1_hal_send_string(space);
 	_delay_ms(200);
 	
+}
+
+static void set_get_collections(){
+	char msg[20];
+	
+	COLLECTION cols[]={
+		{
+			.samplingInterval=1,
+			.samplings=2,
+			.type=T_INT16
+		},
+		{
+			.samplingInterval=3,
+			.samplings=4,
+			.type=T_INT8
+		}
+	};
+	
+	COLLECTION colsRead[2];
+	
+	EM_set_collections((const void *) cols, 10);
+	EM_get_collections((void *) colsRead, 10);
+	
+	sprintf(msg, "%u %u %u ", colsRead[0].samplingInterval, colsRead[0].samplings, colsRead[0].type);
+	uart1_hal_send_string(msg);
+	sprintf(msg, "%u %u %u ", colsRead[1].samplingInterval, colsRead[1].samplings, colsRead[1].type);
+	uart1_hal_send_string(msg);
+	
+}
+
+static void set_get_float(){
+	float ppm, rrl, vcc;
+	char msg[30];
+	
+	EM_set_ppmfactor(12.34);
+	EM_set_RRL(5.67);
+	EM_set_Vcc(8.9);
+	_delay_ms(30);
+	EM_get_ppmfactor(&ppm);
+	EM_get_RRL(&rrl);
+	EM_get_Vcc(&vcc);
+	
+	sprintf(msg, "%.2f %.2f %.2f ", ppm, rrl, vcc);
+	uart1_hal_send_string(msg);
 }
 
 void set_deveui(){
