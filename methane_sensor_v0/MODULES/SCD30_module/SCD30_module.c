@@ -77,7 +77,7 @@ bool SCD30_is_sampling_done(){
 }
 
 
-SCD30_STATUS SCD30_get_reading(uint16_t *value){
+SCD30_STATUS SCD30_power_up_get_reading(uint16_t *value){
 	PM_HAL_SCD30_power(true);
 	_delay_ms(2000);
 	
@@ -86,6 +86,21 @@ SCD30_STATUS SCD30_get_reading(uint16_t *value){
 	
 	while(!SCD30_HAL_data_ready()){};
 		
+	return read_value(value);
+}
+
+SCD30_STATUS SCD30_init_get_reading(){
+	PM_HAL_SCD30_power(true);
+	_delay_ms(2000);
+	
+	SCD30_STATUS status=init_measurement();
+	if(status!=SCD30_STATUS_SUCCESS) return status;
+	return SCD30_STATUS_SUCCESS;
+}
+
+SCD30_STATUS SCD30_get_reading(uint16_t *value){
+	while(!SCD30_HAL_data_ready()){};
+	
 	return read_value(value);
 }
 

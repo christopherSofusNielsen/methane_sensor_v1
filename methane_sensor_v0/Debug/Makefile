@@ -61,6 +61,7 @@ SUBDIRS :=  \
 ../PROGRAMS \
 ../PROGRAMS/CONFIG_MODE \
 ../PROGRAMS/CONFIG_MODE/CONNECT \
+../PROGRAMS/CONFIG_MODE/SAMPLE \
 ../PROGRAMS/CONFIG_MODE/UTIL \
 ../PROGRAMS/CONFIG_MODE/RW \
 ../PROGRAMS/MAINPG \
@@ -115,6 +116,7 @@ C_SRCS +=  \
 ../PROGRAMS/CONFIG_MODE/CONFIG_MODE.c \
 ../PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.c \
 ../PROGRAMS/CONFIG_MODE/RW/RW.c \
+../PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.c \
 ../PROGRAMS/CONFIG_MODE/UTIL/util.c \
 ../PROGRAMS/MAINPG/MAINPG.c \
 ../TEST/ADC_module/test_ADC_module.c \
@@ -172,6 +174,7 @@ MODULES/SCD30_module/SCD30_module.o \
 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o \
 PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.o \
 PROGRAMS/CONFIG_MODE/RW/RW.o \
+PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.o \
 PROGRAMS/CONFIG_MODE/UTIL/util.o \
 PROGRAMS/MAINPG/MAINPG.o \
 TEST/ADC_module/test_ADC_module.o \
@@ -222,6 +225,7 @@ MODULES/SCD30_module/SCD30_module.o \
 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o \
 PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.o \
 PROGRAMS/CONFIG_MODE/RW/RW.o \
+PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.o \
 PROGRAMS/CONFIG_MODE/UTIL/util.o \
 PROGRAMS/MAINPG/MAINPG.o \
 TEST/ADC_module/test_ADC_module.o \
@@ -272,6 +276,7 @@ MODULES/SCD30_module/SCD30_module.d \
 PROGRAMS/CONFIG_MODE/CONFIG_MODE.d \
 PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.d \
 PROGRAMS/CONFIG_MODE/RW/RW.d \
+PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.d \
 PROGRAMS/CONFIG_MODE/UTIL/util.d \
 PROGRAMS/MAINPG/MAINPG.d \
 TEST/ADC_module/test_ADC_module.d \
@@ -322,6 +327,7 @@ MODULES/SCD30_module/SCD30_module.d \
 PROGRAMS/CONFIG_MODE/CONFIG_MODE.d \
 PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.d \
 PROGRAMS/CONFIG_MODE/RW/RW.d \
+PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.d \
 PROGRAMS/CONFIG_MODE/UTIL/util.d \
 PROGRAMS/MAINPG/MAINPG.d \
 TEST/ADC_module/test_ADC_module.d \
@@ -553,6 +559,13 @@ PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.o: ../PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.
 	
 
 PROGRAMS/CONFIG_MODE/RW/RW.o: ../PROGRAMS/CONFIG_MODE/RW/RW.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.o: ../PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

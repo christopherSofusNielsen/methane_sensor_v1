@@ -91,7 +91,7 @@ static void test_sampling(){
 void test_get_reading(){
 	
 	uint16_t value;
-	SCD30_get_reading(&value);
+	SCD30_power_up_get_reading(&value);
 	
 	char msg[20];
 	sprintf(msg, " %u ", value);

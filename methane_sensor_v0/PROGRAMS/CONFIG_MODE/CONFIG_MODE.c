@@ -10,6 +10,7 @@
 #include "../../HAL/UART1/UART1_HAL.h"
 #include "RW/RW.h"
 #include "CONNECT/CONNECT.h"
+#include "SAMPLE/SAMPLE.h"
 
 char cnf_rx_cmd[200];
 char cnf_reply[200];
@@ -25,7 +26,13 @@ void CONF_enter(){
 		switch(state){
 			case CONF_INTRO:
 				uart1_hal_send_string("******** Methane Sensor v1.0 ********");
-				state=CONF_CLEAR_FOR_NEW_CMD;
+				uart1_hal_send_string("Setting modules up... Please wait");
+				if(!init_methane_SCD30()){
+					uart1_hal_send_string("Failed to initialize system...");
+					state=CONF_EXIT;
+				}else{
+					state=CONF_CLEAR_FOR_NEW_CMD;
+				}
 			break;
 			
 			case CONF_WAIT_FOR_CMD:
@@ -69,6 +76,14 @@ void CONF_enter(){
 				state=CONF_CLEAR_FOR_NEW_CMD;
 			break;
 			
+			case CONF_SAMPLE:
+				if(handle_sample(cnf_rx_cmd, cnf_reply)){
+					state=CONF_REPLY;
+				}else{
+					state=CONF_NOT_VALID;
+				}
+			break;
+			
 			case CONF_REPLY:
 				uart1_hal_send_string(cnf_reply);
 				state=CONF_CLEAR_FOR_NEW_CMD;
@@ -100,6 +115,8 @@ static CONF_STATES parse_cmd(char msg[]){
 	if(msg[0]=='r') return CONF_READ;
 	if(msg[0]=='w') return CONF_WRTIE;
 	if(msg[0]=='c') return CONF_CONNECT;
+	if(msg[0]=='s') return CONF_SAMPLE;
+	
 	return CONF_NOT_VALID;
 }
 

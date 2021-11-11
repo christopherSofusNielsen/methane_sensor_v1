@@ -83,7 +83,7 @@ ADC_STATUS ADC_get_value(uint16_t *value){
 	if(status != TWI_CODE_SUCCESS) return ADC_STATUS_ERROR;
 	bit_value = (data[0]<<8)|(data[1] & 0xFF);
 	*value=calc_ppm_methane(bit_value);
-	return status;
+	return ADC_STATUS_SUCCESS;
 }
 
 ADC_STATUS ADC_meth_sens_power_on(uint8_t powerUpTime){
