@@ -17,6 +17,8 @@
 #define RW_PPM_FACTOR "ppmx"
 #define RW_RRL "rrlx"
 #define RW_VCC "vccx"
+#define RW_COLS "cols"
+#define RW_RESET "reset"
 
 #define RW_S_SUCCESS "success"
 #define RW_S_FAILED "failed"

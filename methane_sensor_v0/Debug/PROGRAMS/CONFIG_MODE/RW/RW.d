@@ -18,10 +18,17 @@ PROGRAMS/CONFIG_MODE/RW/RW.d PROGRAMS/CONFIG_MODE/RW/RW.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h \
  ../PROGRAMS/CONFIG_MODE/RW/RW.h \
  ../PROGRAMS/CONFIG_MODE/RW/../UTIL/util.h \
  ../PROGRAMS/CONFIG_MODE/RW/../../../util/str2float/str2float.h \
- ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/EEPROM_module/EEPROM_module.h
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/EEPROM_module/EEPROM_module.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/mrpp.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/mrpp_state.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/../types.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/../params.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/mrpp_data.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/types.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
@@ -59,6 +66,8 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdio.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
 
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h:
+
 ../PROGRAMS/CONFIG_MODE/RW/RW.h:
 
 ../PROGRAMS/CONFIG_MODE/RW/../UTIL/util.h:
@@ -66,3 +75,15 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
 ../PROGRAMS/CONFIG_MODE/RW/../../../util/str2float/str2float.h:
 
 ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/EEPROM_module/EEPROM_module.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/mrpp.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/mrpp_state.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/../types.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/../params.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/mrpp_data.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/types.h:
