@@ -9,6 +9,8 @@
 #ifndef UTIL_H_
 #define UTIL_H_
 
+#include <stdbool.h>
+
 #include "../lora_module.h"
 
 #define __DEVEUI "0004A30B00F4547A"
@@ -34,7 +36,10 @@ void util_setMatchCase(LM_STATE_DATA *sd, LM_MATCH_CASES matchCase, const char *
 int util_matchMessage(LM_STATE_DATA *sd, char *msg);
 void util_transmit_msg(char msg[]);
 void util_read_msg(char msg[]);
+bool util_strbeginswith(char *s1, const char *s2);
 LM_STATUS util_parse_err(char *msg);
+LM_STATUS util_reset_module();
+void util_lora_forward_msg(const char msg[], char res[]);
 
 
 #endif /* UTIL_H_ */

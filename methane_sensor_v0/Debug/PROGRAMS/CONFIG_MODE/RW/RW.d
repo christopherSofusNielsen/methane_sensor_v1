@@ -20,7 +20,8 @@ PROGRAMS/CONFIG_MODE/RW/RW.d PROGRAMS/CONFIG_MODE/RW/RW.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
  ../PROGRAMS/CONFIG_MODE/RW/RW.h \
  ../PROGRAMS/CONFIG_MODE/RW/../UTIL/util.h \
- ../PROGRAMS/CONFIG_MODE/RW/../../../util/str2float/str2float.h
+ ../PROGRAMS/CONFIG_MODE/RW/../../../util/str2float/str2float.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/EEPROM_module/EEPROM_module.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
@@ -63,3 +64,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
 ../PROGRAMS/CONFIG_MODE/RW/../UTIL/util.h:
 
 ../PROGRAMS/CONFIG_MODE/RW/../../../util/str2float/str2float.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/EEPROM_module/EEPROM_module.h:

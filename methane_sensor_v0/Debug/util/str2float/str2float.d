@@ -13,6 +13,7 @@ util/str2float/str2float.d util/str2float/str2float.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h
@@ -44,6 +45,8 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h:
 

@@ -20,6 +20,8 @@
 #include "../../HAL/TWI/TWI_HAL.h"
 #include "../../HAL/TC2/TC2_HAL.h"
 #include "../../HAL/PM/PM_HAL.h"
+#include "../../HAL/RN2483/RN2483_HAL.h"
+#include "../../HAL/SCD30/SCD30_HAL.h"
 
 //Module
 #include "../../MODULES/RTC_module/RTC_module.h"
@@ -90,6 +92,8 @@ void MAINPG_start(){
 				uart1_hal_init();
 				TWI_HAL_init();
 				TC2_HAL_init();
+				rn2483_init();
+				SCD30_HAL_init();
 				PM_HAL_adc_power_init();
 				PM_HAL_meth_power_init();
 				PM_HAL_BC_power_init();

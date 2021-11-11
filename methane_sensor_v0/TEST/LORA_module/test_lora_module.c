@@ -18,6 +18,8 @@ void test_send_uplink();
 void test_send_uplink_block();
 void test_put_to_sleep();
 void test_wake_up();
+void test_reset();
+void test_forward_msg();
 
 
 void test_lora_module_start(){
@@ -32,7 +34,9 @@ void test_lora_module_start(){
 		//test_send_uplink();
 		//test_send_uplink_block();
 		//test_put_to_sleep();
-		test_wake_up();
+		//test_wake_up();
+		//test_reset();
+		test_forward_msg();
 		_delay_ms(3000);
 	}
 }
@@ -122,4 +126,20 @@ void test_join_network(){
 	}else{
 		uart0_hal_send_string("FAIL ");
 	}
+}
+
+void test_reset(){
+	LM_STATUS status=LM_reset_module();
+	if(status==LM_STATUS_SUCCESS){
+		uart0_hal_send_string("OK ");
+	}else{
+		uart0_hal_send_string("FAIL ");
+		
+	}
+}
+
+void test_forward_msg(){
+	char res[30];
+	LM_forward_msg("sys get hweui", res);
+	uart0_hal_send_string(res);
 }

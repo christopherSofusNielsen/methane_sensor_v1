@@ -21,6 +21,8 @@ MODULES/LORA_module/lora_module.d MODULES/LORA_module/lora_module.o: \
  ../MODULES/LORA_module/send_uplink/../lora_module.h \
  ../MODULES/LORA_module/sleep_controller/sleep_controller.h \
  ../MODULES/LORA_module/sleep_controller/../lora_module.h \
+ ../MODULES/LORA_module/util/util.h \
+ ../MODULES/LORA_module/util/../lora_module.h \
  ../MODULES/LORA_module/../../HAL/TC2/TC2_HAL.h \
  ../MODULES/LORA_module/../../HAL/TC2/../types.h
 
@@ -65,6 +67,10 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 ../MODULES/LORA_module/sleep_controller/sleep_controller.h:
 
 ../MODULES/LORA_module/sleep_controller/../lora_module.h:
+
+../MODULES/LORA_module/util/util.h:
+
+../MODULES/LORA_module/util/../lora_module.h:
 
 ../MODULES/LORA_module/../../HAL/TC2/TC2_HAL.h:
 

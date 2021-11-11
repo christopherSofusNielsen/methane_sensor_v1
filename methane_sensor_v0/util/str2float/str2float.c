@@ -43,3 +43,23 @@ static float get_decimal(char str[]){
 	
 	return ((float) val)/divisor;
 }
+
+bool is_float(char str[]){
+	bool got_dot=false;
+	for (uint8_t i=0; i<strlen(str); i++)
+	{
+		if(str[i]=='.'){
+			if (got_dot)
+			{
+				return false;
+			}else{
+				got_dot=true;
+				continue;
+			}
+		}
+		
+		//Check for digitis
+		if(str[i]<'0' || str[i]>'9') return false;
+	}
+	return true;
+}

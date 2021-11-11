@@ -19,7 +19,8 @@ TEST/UART0_HAL/test_UART0_HAL.d TEST/UART0_HAL/test_UART0_HAL.o: \
  ../TEST/UART0_HAL/test_UART0_HAL.h \
  ../TEST/UART0_HAL/../../util/bit_operators.h \
  ../TEST/UART0_HAL/../../HAL/UART0/UART0_HAL.h \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ ../TEST/UART0_HAL/../../HAL/UART1/UART1_HAL.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -60,3 +61,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 ../TEST/UART0_HAL/../../HAL/UART0/UART0_HAL.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
+../TEST/UART0_HAL/../../HAL/UART1/UART1_HAL.h:

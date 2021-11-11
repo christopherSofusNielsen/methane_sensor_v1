@@ -12,6 +12,7 @@
 #include "join_network/join_network.h"
 #include "send_uplink/send_uplink.h"
 #include "sleep_controller/sleep_controller.h"
+#include "util/util.h"
 #include "../../HAL/TC2/TC2_HAL.h"
 
 static uint8_t cnt=0;
@@ -42,6 +43,15 @@ LM_STATUS LM_wake_up(){
 bool LM_is_free(){
 	return busy==false;
 }
+
+LM_STATUS LM_reset_module(){
+	return util_reset_module();
+}
+
+void LM_forward_msg(const char msg[], char res[]){
+	util_lora_forward_msg(msg, res);
+}
+
 
 static void set_block_uplink(){
 	subPointer=TC2_HAL_subscribe(&block_uplink);

@@ -9,6 +9,7 @@
 #include "CONFIG_MODE.h"
 #include "../../HAL/UART1/UART1_HAL.h"
 #include "RW/RW.h"
+#include "CONNECT/CONNECT.h"
 
 char cnf_rx_cmd[200];
 char cnf_reply[200];
@@ -23,8 +24,8 @@ void CONF_enter(){
 	while(1){
 		switch(state){
 			case CONF_INTRO:
-				uart1_hal_send_string("Hello");
-				state=CONF_WAIT_FOR_CMD;
+				uart1_hal_send_string("******** Methane Sensor v1.0 ********");
+				state=CONF_CLEAR_FOR_NEW_CMD;
 			break;
 			
 			case CONF_WAIT_FOR_CMD:
@@ -62,20 +63,30 @@ void CONF_enter(){
 				}
 			break;
 			
+			case CONF_CONNECT:
+				CON_RN2483();
+				uart1_hal_clear_rx_buffer();
+				state=CONF_CLEAR_FOR_NEW_CMD;
+			break;
+			
 			case CONF_REPLY:
 				uart1_hal_send_string(cnf_reply);
-				state=CONF_WAIT_FOR_CMD;
+				state=CONF_CLEAR_FOR_NEW_CMD;
 			break;
 			
 			case CONF_NOT_VALID:
 				uart1_hal_send_string("Not valid");
-				uart1_hal_clear_rx_buffer();
-				state=CONF_WAIT_FOR_CMD;
+				state=CONF_CLEAR_FOR_NEW_CMD;
 			break;
 			
 			case CONF_FORMAT_ERR:
 				uart1_hal_send_string("Wrong format");
+				state=CONF_CLEAR_FOR_NEW_CMD;
+			break;
+			
+			case CONF_CLEAR_FOR_NEW_CMD:
 				uart1_hal_clear_rx_buffer();
+				uart1_hal_send_string("******* Ready for new command *******");
 				state=CONF_WAIT_FOR_CMD;
 			break;
 			
@@ -88,6 +99,7 @@ void CONF_enter(){
 static CONF_STATES parse_cmd(char msg[]){
 	if(msg[0]=='r') return CONF_READ;
 	if(msg[0]=='w') return CONF_WRTIE;
+	if(msg[0]=='c') return CONF_CONNECT;
 	return CONF_NOT_VALID;
 }
 

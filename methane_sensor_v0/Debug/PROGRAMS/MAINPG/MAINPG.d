@@ -25,6 +25,8 @@ PROGRAMS/MAINPG/MAINPG.d PROGRAMS/MAINPG/MAINPG.o: \
  ../PROGRAMS/MAINPG/../../HAL/TC2/TC2_HAL.h \
  ../PROGRAMS/MAINPG/../../HAL/TC2/../types.h \
  ../PROGRAMS/MAINPG/../../HAL/PM/PM_HAL.h \
+ ../PROGRAMS/MAINPG/../../HAL/RN2483/RN2483_HAL.h \
+ ../PROGRAMS/MAINPG/../../HAL/SCD30/SCD30_HAL.h \
  ../PROGRAMS/MAINPG/../../MODULES/RTC_module/RTC_module.h \
  ../PROGRAMS/MAINPG/../../MODULES/MRPP_module/mrpp.h \
  ../PROGRAMS/MAINPG/../../MODULES/MRPP_module/util/mrpp_state.h \
@@ -87,6 +89,10 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../PROGRAMS/MAINPG/../../HAL/TC2/../types.h:
 
 ../PROGRAMS/MAINPG/../../HAL/PM/PM_HAL.h:
+
+../PROGRAMS/MAINPG/../../HAL/RN2483/RN2483_HAL.h:
+
+../PROGRAMS/MAINPG/../../HAL/SCD30/SCD30_HAL.h:
 
 ../PROGRAMS/MAINPG/../../MODULES/RTC_module/RTC_module.h:
 

@@ -28,13 +28,13 @@ void test_runner(){
 	//test_lora_module_start();
 	//test_SCD30_module_start();
 	//test_PM_HAL_start();
-	test_EEPROM_module_start();
+	//test_EEPROM_module_start();
 	//test_ADC_module_start();
 	//test_RTC_module_start();
 	//test_TC0_HAL_start();
 	//test_TC1_HAL_start();
 	//test_RTC_module_start();
-	//test_UART0_HAL_start();
+	test_UART0_HAL_start();
 	//test_TC2_HAL_start();
 	//test_MRPP_module_start();
 	//test_PUMP_module_start();
