@@ -14,7 +14,7 @@ void LED_stop_try_join();
 
 void LED_join_success();
 void LED_join_denied();
-void LED_join_conf_err();
+void LED_conf_err();
 void LED_fatal_err();
 
 

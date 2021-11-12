@@ -5,6 +5,8 @@
  *  Author: Mainframe
  */ 
 #define print_debug(txt) send_msg(txt)
+#define N_COLLECTIONS 7
+#define COLS_BYTE_SIZE sizeof(COLLECTION)*N_COLLECTIONS
 
 #include <util/delay.h>
 #include <stdbool.h>
@@ -32,6 +34,7 @@
 #include "../../MODULES/LORA_module/lora_module.h"
 #include "../../MODULES/PUMP_module/PUMP_module.h"
 #include "../../MODULES/LED_module/LED_module.h"
+#include "../../MODULES/EEPROM_module/EEPROM_module.h"
 
 //Functions
 static RTC_STATUS set_wakeup();
@@ -47,6 +50,7 @@ static STAGE_STATUS stage_0();
 static STAGE_STATUS stage_1();
 static STAGE_STATUS stage_2();
 static STAGE_STATUS stage_3();
+static bool read_eeprom();
 
 
 //Global variabels
@@ -60,16 +64,18 @@ static uint16_t co2_data[MAX_CO2_SAMLPES];
 static uint16_t meth_data[MAX_METH_SAMLPES];
 static uint8_t ts[4];
 static Datetime dt;
-static COLLECTION cols[]={
-	{.samplingInterval=2, .samplings=2, .type=T_INT16},
-	{.samplingInterval=2, .samplings=2, .type=T_INT16},
-	{.samplingInterval=2, .samplings=2, .type=T_INT16},
-	{.samplingInterval=2, .samplings=2, .type=T_INT16},
-	{.samplingInterval=2, .samplings=2, .type=T_INT16},
-	{.samplingInterval=2, .samplings=2, .type=T_INT16},
-	{.samplingInterval=2, .samplings=2, .type=T_INT16},
-};
-static uint8_t colsNumber=7;
+
+
+//EEPROM variables
+static char deveui[17];
+static char appeui[17];
+static char appkey[33];
+static COLLECTION cols[N_COLLECTIONS];
+static float vccx, rrlx, ppmx;
+static uint16_t airPumpTime=10;
+static uint8_t methHeatUpTime=1;
+static uint8_t samplingProcessInterval;
+
 
 static void send_msg(const char msg[]);
 
@@ -81,9 +87,8 @@ void MAINPG_start(){
 	LM_STATUS lmStatus;
 	STAGE_STATUS stageStatus;
 	bool fromSleep=false;
-	//bool fromSleep=true;
 	
-	
+
 	while(1){
 		switch(state){
 			case MAINPG_INIT_HW:
@@ -104,8 +109,24 @@ void MAINPG_start(){
 				set_bit(PORTB, 0);
 				set_bit(PORTB, 1);
 				
-				state=fromSleep?MAINPG_LORA_WAKEUP:MAINPG_LORA_JOIN_NETWORK;
+				state=fromSleep?MAINPG_LORA_WAKEUP:MAINPG_READ_EEPROM;
 			break;
+			
+			/************************************************************************/
+			/* EEPROM                                                               */
+			/************************************************************************/
+			case MAINPG_READ_EEPROM:
+				if(EM_has_deveui() && EM_has_appeui() && EM_has_appkey()){
+					//state=MAINPG_LORA_JOIN_NETWORK;
+					state=MAINPG_LORA_WAKEUP;
+					if(!read_eeprom()){
+						state=MAINPG_CONF_ERR;
+					}
+				}else{
+					state=MAINPG_CONF_ERR;
+				}
+			break;
+			
 			/************************************************************************/
 			/* LORA                                                                 */
 			/************************************************************************/
@@ -135,13 +156,6 @@ void MAINPG_start(){
 				state=MAINPG_LORA_JOIN_NETWORK;
 			break;
 			
-			case MAINPG_LORA_JOIN_CONF_ERR:
-				LED_join_conf_err();
-				print_debug("Conf err\n\r");
-				state=MAINPG_END;
-			break;
-			
-			
 			/************************************************************************/
 			/* RTC                                                                  */
 			/************************************************************************/
@@ -169,7 +183,7 @@ void MAINPG_start(){
 			/************************************************************************/
 			case MAINPG_INIT_MRPP:
 				print_debug("Mrpp init\n\r");
-				MRPP_init_group(cols, colsNumber);
+				MRPP_init_group(cols, N_COLLECTIONS);
 				state=MAINPG_SEND_HEADER;
 			break;
 			
@@ -261,6 +275,13 @@ void MAINPG_start(){
 			/************************************************************************/
 			/* Error handling                                                       */
 			/************************************************************************/
+			
+			case MAINPG_CONF_ERR:
+				LED_conf_err();
+				print_debug("Conf err\n\r");
+				state=MAINPG_END;
+			break;
+			
 			case MAINPG_FATAL_ERROR:
 				print_debug("Fatal error\n\r");
 				LED_fatal_err();
@@ -285,7 +306,7 @@ static STAGE_STATUS stage_0(){
 	while(1){
 		switch(state_s0){
 			case STAGE_INIT:
-				scd30Status=SCD30_init_sampling(cols[0].samplingInterval, cols[0].samplings, co2_data);
+				scd30Status=SCD30_init_sampling(cols[S0_CO2].samplingInterval, cols[S0_CO2].samplings, co2_data);
 				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 			
 				state_s0=STAGE_GET_TIME;
@@ -297,7 +318,7 @@ static STAGE_STATUS stage_0(){
 			break;
 			
 			case STAGE_START:
-				adcStatus=ADC_meth_sens_power_on(1); //Should be changed
+				adcStatus=ADC_meth_sens_power_on(methHeatUpTime); //Should be changed
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 			
 				SCD30_start_sampling();
@@ -312,7 +333,7 @@ static STAGE_STATUS stage_0(){
 			
 			case STAGE_UPDATE_MRPP:
 				RTC_datetime_to_ts(dt, ts);
-				MRPP_add_collection_data_INT16(1, ts, co2_data);
+				MRPP_add_collection_data_INT16(S0_ID_CO2, ts, co2_data);
 				state_s0=STAGE_DEINIT;
 			break;
 			
@@ -333,10 +354,11 @@ static STAGE_STATUS stage_1(){
 	while(1){
 		switch(state_s1){
 			case STAGE_INIT:
-				scd30Status=SCD30_init_sampling(cols[1].samplingInterval, cols[1].samplings, co2_data);
+				scd30Status=SCD30_init_sampling(cols[S1_CO2].samplingInterval, cols[S1_CO2].samplings, co2_data);
 				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 				
-				adcStatus=ADC_init_sampling(cols[2].samplingInterval, cols[2].samplings, meth_data);
+				ADC_set_conf_parameters(vccx, rrlx, ppmx);
+				adcStatus=ADC_init_sampling(cols[S1_METH].samplingInterval, cols[S1_METH].samplings, meth_data);
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 				
 				state_s1=STAGE_GET_TIME;
@@ -362,8 +384,8 @@ static STAGE_STATUS stage_1(){
 			
 			case STAGE_UPDATE_MRPP:
 				RTC_datetime_to_ts(dt, ts);
-				MRPP_add_collection_data_INT16(2, ts, co2_data);
-				MRPP_add_collection_data_INT16(3, ts, meth_data);
+				MRPP_add_collection_data_INT16(S1_ID_CO2, ts, co2_data);
+				MRPP_add_collection_data_INT16(S1_ID_METH, ts, meth_data);
 				state_s1=STAGE_DEINIT;
 			break;
 			
@@ -383,14 +405,15 @@ static STAGE_STATUS stage_1(){
 static STAGE_STATUS stage_2(){
 	ADC_STATUS adcStatus;
 	SCD30_STATUS scd30Status;
-	uint16_t seconds=10;
+
 	while(1){
 		switch(state_s2){
 			case STAGE_INIT:
-				scd30Status=SCD30_init_sampling(cols[3].samplingInterval, cols[3].samplings, co2_data);
+				scd30Status=SCD30_init_sampling(cols[S2_CO2].samplingInterval, cols[S2_CO2].samplings, co2_data);
 				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
-			
-				adcStatus=ADC_init_sampling(cols[4].samplingInterval, cols[4].samplings, meth_data);
+				
+				ADC_set_conf_parameters(vccx, rrlx, ppmx);
+				adcStatus=ADC_init_sampling(cols[S2_METH].samplingInterval, cols[S2_METH].samplings, meth_data);
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 			
 				state_s2=STAGE_GET_TIME;
@@ -405,7 +428,7 @@ static STAGE_STATUS stage_2(){
 			case STAGE_START:
 				SCD30_start_sampling();
 				ADC_start_sampling();
-				PUMP_start(seconds);
+				PUMP_start(airPumpTime);
 			
 				state_s2=STAGE_WAIT;
 			break;
@@ -417,8 +440,8 @@ static STAGE_STATUS stage_2(){
 			
 			case STAGE_UPDATE_MRPP:
 				RTC_datetime_to_ts(dt, ts);
-				MRPP_add_collection_data_INT16(4, ts, co2_data);
-				MRPP_add_collection_data_INT16(5, ts, meth_data);
+				MRPP_add_collection_data_INT16(S2_ID_CO2, ts, co2_data);
+				MRPP_add_collection_data_INT16(S2_ID_METH, ts, meth_data);
 				state_s2=STAGE_DEINIT;
 			break;
 			
@@ -442,10 +465,11 @@ static STAGE_STATUS stage_3(){
 	while(1){
 		switch(state_s3){
 			case STAGE_INIT:
-				scd30Status=SCD30_init_sampling(cols[5].samplingInterval, cols[5].samplings, co2_data);
+				scd30Status=SCD30_init_sampling(cols[S3_CO2].samplingInterval, cols[S3_CO2].samplings, co2_data);
 				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 				
-				adcStatus=ADC_init_sampling(cols[6].samplingInterval, cols[6].samplings, meth_data);
+				ADC_set_conf_parameters(vccx, rrlx, ppmx);
+				adcStatus=ADC_init_sampling(cols[S3_METH].samplingInterval, cols[S3_METH].samplings, meth_data);
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 			
 				state_s3=STAGE_GET_TIME;
@@ -471,8 +495,8 @@ static STAGE_STATUS stage_3(){
 			
 			case STAGE_UPDATE_MRPP:
 				RTC_datetime_to_ts(dt, ts);
-				MRPP_add_collection_data_INT16(6, ts, co2_data);
-				MRPP_add_collection_data_INT16(7, ts, meth_data);
+				MRPP_add_collection_data_INT16(S3_ID_CO2, ts, co2_data);
+				MRPP_add_collection_data_INT16(S3_ID_METH, ts, meth_data);
 				state_s3=STAGE_DEINIT;
 			break;
 			
@@ -504,13 +528,11 @@ static MAINPG_STATES decode_stage_response(STAGE_STATUS status, MAINPG_STATES on
 static RTC_STATUS set_wakeup(){
 	//uint8_t samplingProcessInterval=1;
 	//return RTC_set_wake_up_interrupt(samplingProcessInterval);
-	return RTC_set_wake_up_interrupt_minutes(6);
+	return RTC_set_wake_up_interrupt_minutes(samplingProcessInterval);
 }
 
 static LM_STATUS join_lora(){
-	char deveui[]="0004A30B00F4547A";
-	char appeui[]="70B3D57ED003F844";
-	char appkey[]="B88AD6D25A3B27C69A01F74C53F9A179";
+	
 	
 	return LM_join_network(deveui, appeui, appkey);
 }
@@ -522,7 +544,7 @@ static MAINPG_STATES decode_join_response(LM_STATUS status){
 		case LM_STATUS_TRY_AGAIN:
 			return MAINPG_LORA_JOIN_TRY_AGAIN;
 		case LM_STATUS_CONF_ERR:
-			return MAINPG_LORA_JOIN_CONF_ERR;
+			return MAINPG_CONF_ERR;
 		default:
 			return MAINPG_FATAL_ERROR;		
 	}	
@@ -583,10 +605,30 @@ static MAINPG_STATES decode_header_tail_response(LM_STATUS status, MAINPG_STATES
 	}
 }
 
+static bool read_eeprom(){
+	EM_get_deveui(deveui);
+	EM_get_appeui(appeui);
+	EM_get_appkey(appkey);
+	EM_get_collections(cols, COLS_BYTE_SIZE);
+	EM_get_Vcc(&vccx);
+	EM_get_RRL(&rrlx);
+	EM_get_ppmfactor(&ppmx);
+	methHeatUpTime=EM_get_heat_up_time();
+	airPumpTime=EM_get_air_pump_time();
+	samplingProcessInterval=EM_get_sp_interval();
+	return true;
+}
+
+/************************************************************************/
+/* static uint16_t airPumpTime=10;
+static uint8_t methHeatUpTime=1;
+static uint8_t samplingProcessInterval;                                                                     */
+/************************************************************************/
+
 /************************************************************************/
 /* Test functions                                                       */
 /************************************************************************/
 static void send_msg(const char msg[]){
-	uart0_hal_send_string(msg);
+	uart1_hal_send_string(msg);
 	_delay_ms(100);
 }

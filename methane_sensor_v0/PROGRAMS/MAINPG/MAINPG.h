@@ -12,6 +12,22 @@
 #define MAX_METH_SAMLPES 300
 #define MAX_CO2_SAMLPES 300
 
+#define S0_CO2 0
+#define S1_METH 1
+#define S1_CO2 2
+#define S2_METH 3
+#define S2_CO2 4
+#define S3_METH 5
+#define S3_CO2 6
+
+#define S0_ID_CO2 1
+#define S1_ID_METH 2
+#define S1_ID_CO2 3
+#define S2_ID_METH 4
+#define S2_ID_CO2 5
+#define S3_ID_METH 6
+#define S3_ID_CO2 7
+
 
 void MAINPG_start();
 
@@ -19,10 +35,12 @@ void MAINPG_start();
 typedef enum{
 	MAINPG_INIT_HW,
 	
+	MAINPG_READ_EEPROM,
+	
 	MAINPG_LORA_JOIN_NETWORK,
 	MAINPG_LORA_JOIN_SUCCESS,
 	MAINPG_LORA_JOIN_TRY_AGAIN,
-	MAINPG_LORA_JOIN_CONF_ERR,
+	MAINPG_CONF_ERR,
 	MAINPG_LORA_WAKEUP,
 	
 	MAINPG_INIT_RTC,

@@ -41,7 +41,7 @@ static void test_sequences(){
 	_delay_ms(1000);
 	LED_join_denied();
 	_delay_ms(1000);
-	LED_join_conf_err();
+	LED_conf_err();
 	_delay_ms(1000);
 	LED_fatal_err();
 }

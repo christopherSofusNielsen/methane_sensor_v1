@@ -109,11 +109,10 @@ bool ADC_meth_sens_ready(){
 	return cntPowerUpTime>=_powerUpTime;
 }
 
-ADC_STATUS ADC_set_conf_parameters(float Vcc, float Rrl, float PPMfactor){
+void ADC_set_conf_parameters(float Vcc, float Rrl, float PPMfactor){
 	Vc=Vcc;
 	RRL=Rrl;
 	PPM_factor=PPMfactor;
-	return ADC_STATUS_SUCCESS;
 }
 
 /************************************************************************/

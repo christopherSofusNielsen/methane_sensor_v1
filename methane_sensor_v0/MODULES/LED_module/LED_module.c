@@ -41,7 +41,7 @@ void LED_join_denied(){
 	err_code(3);
 }
 
-void LED_join_conf_err(){
+void LED_conf_err(){
 	err_code(5);
 }
 

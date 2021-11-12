@@ -28,6 +28,9 @@ static bool write_PPM_factor(const char cmd[], char res[]);
 static bool write_RRL(const char cmd[], char res[]);
 static bool write_VCC(const char cmd[], char res[]);
 static bool write_cols(const char cmd[], char res[]);
+static bool write_heat_up(const char cmd[], char res[]);
+static bool write_air_pump(const char cmd[], char res[]);
+static bool write_sp_interval(const char cmd[], char res[]);
 static bool write_reset(const char cmd[], char res[]);
 
 bool handle_read(const char cmd[], char res[]){
@@ -67,6 +70,21 @@ bool handle_read(const char cmd[], char res[]){
 	{
 		read_cols(res);
 	}
+	else if(strcmp(par, RW_HEAT_UP_T)==0)
+	{
+		uint8_t val=EM_get_heat_up_time();
+		sprintf(res, "heat up time=%u m", val);
+	}
+	else if(strcmp(par, RW_AIR_PUMP_T)==0)
+	{
+		uint16_t val=EM_get_air_pump_time();
+		sprintf(res, "air pump time=%u s", val);
+	}
+	else if(strcmp(par, RW_SP_INTERVAL)==0)
+	{
+		uint8_t val=EM_get_sp_interval();
+		sprintf(res, "sampling process interval=%u h", val);
+	}
 	else{
 		strcpy(res, RW_S_NOT_EXIST);
 	}
@@ -105,10 +123,23 @@ bool handle_write(const char cmd[], char res[]){
 	{
 		return write_cols(cmd, res);
 	}
+	else if(strcmp(par, RW_HEAT_UP_T)==0)
+	{
+		return write_heat_up(cmd, res);
+	}
+	else if(strcmp(par, RW_AIR_PUMP_T)==0)
+	{
+		return write_air_pump(cmd, res);
+	}
+	else if(strcmp(par, RW_SP_INTERVAL)==0)
+	{
+		return write_sp_interval(cmd, res);
+	}
 	else if(strcmp(par, RW_RESET)==0)
 	{
 		return write_reset(cmd, res);
-	}else{
+	}
+	else{
 		strcpy(res, RW_S_NOT_EXIST);
 		return true;
 	}
@@ -241,6 +272,45 @@ static bool write_cols(const char cmd[], char res[]){
 	return true;	
 }
 
+static bool write_heat_up(const char cmd[], char res[]){
+	if(!get_parameter(cmd, arg, 2)) return false;
+	
+	uint8_t val=atoi(arg);
+	
+	if(val<1 || val>200) return false;
+	
+	EM_set_heat_up_time(val);
+	
+	strcpy(res, RW_S_SUCCESS);
+	return true;
+}
+
+static bool write_air_pump(const char cmd[], char res[]){
+	if(!get_parameter(cmd, arg, 2)) return false;
+	
+	uint16_t val=atoi(arg);
+	
+	if(val<10 || val>1000) return false;
+	
+	EM_set_air_pump_time(val);
+	
+	strcpy(res, RW_S_SUCCESS);
+	return true;
+}
+
+static bool write_sp_interval(const char cmd[], char res[]){
+	if(!get_parameter(cmd, arg, 2)) return false;
+	
+	uint8_t val=atoi(arg);
+	
+	if(val<6 || val>24) return false;
+	
+	EM_set_sp_interval(val);
+	
+	strcpy(res, RW_S_SUCCESS);
+	return true;
+}
+
 static bool write_reset(const char cmd[], char res[]){
 	
 	COLLECTION cols[7];
@@ -251,6 +321,9 @@ static bool write_reset(const char cmd[], char res[]){
 	EM_set_ppmfactor(1.00);
 	EM_set_RRL(2500.00);
 	EM_set_Vcc(5.00);
+	EM_set_heat_up_time(2);
+	EM_set_air_pump_time(10);
+	EM_set_sp_interval(6);
 	
 	for (uint8_t i=0; i<7; i++)
 	{

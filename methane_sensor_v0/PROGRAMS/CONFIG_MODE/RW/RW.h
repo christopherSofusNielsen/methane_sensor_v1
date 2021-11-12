@@ -18,6 +18,9 @@
 #define RW_RRL "rrlx"
 #define RW_VCC "vccx"
 #define RW_COLS "cols"
+#define RW_HEAT_UP_T "heat_up_t"
+#define RW_AIR_PUMP_T "air_pump_t"
+#define RW_SP_INTERVAL "sp_interval"
 #define RW_RESET "reset"
 
 #define RW_S_SUCCESS "success"

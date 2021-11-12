@@ -98,6 +98,30 @@ void EM_get_Vcc(float *val){
 void EM_set_collections(const void *cols, uint8_t size){
 	eeprom_update_block(cols, (void *) EEPROM_COLLECTION_ADDR, size );
 }
+
 void EM_get_collections(void *cols, uint8_t size){
 	eeprom_read_block(cols, ( const void *) EEPROM_COLLECTION_ADDR, size);
+}
+
+void EM_set_heat_up_time(uint8_t time){
+	eeprom_update_byte((uint8_t *) EEPROM_HEAT_UP_T_ADDR, time);
+}
+
+uint8_t EM_get_heat_up_time(){
+	return eeprom_read_byte((const uint8_t *) EEPROM_HEAT_UP_T_ADDR);
+}
+
+void EM_set_air_pump_time(uint16_t time){
+	eeprom_update_word((uint16_t *) EEPROM_AIR_PUMP_T_ADDR, time);
+}
+
+uint16_t EM_get_air_pump_time(){
+	return eeprom_read_word((const uint16_t *) EEPROM_AIR_PUMP_T_ADDR);
+}
+
+void EM_set_sp_interval(uint8_t time){
+	eeprom_update_byte((uint8_t *) EEPROM_SP_INTERVAL_ADDR, time);
+}
+uint8_t EM_get_sp_interval(){
+	return eeprom_read_byte((const uint8_t *) EEPROM_SP_INTERVAL_ADDR);
 }

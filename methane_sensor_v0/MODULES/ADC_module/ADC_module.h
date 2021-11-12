@@ -29,7 +29,7 @@ ADC_STATUS ADC_get_value(uint16_t *value);
 ADC_STATUS ADC_meth_sens_power_on(uint8_t powerUpTime);
 ADC_STATUS ADC_meth_sens_power_off();
 bool ADC_meth_sens_ready();
-ADC_STATUS ADC_set_conf_parameters(float Vcc, float Rrl, float PPMfactor);
+void ADC_set_conf_parameters(float Vcc, float Rrl, float PPMfactor);
 
 
 

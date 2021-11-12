@@ -27,6 +27,9 @@
 #define EEPROM_PPM_FACTOR_ADDR 67 //size 4 bytes
 #define EEPROM_RRL_ADDR 71 //size 4 bytes
 #define EEPROM_VCC_ADDR 75 //size 4 bytes
+#define EEPROM_HEAT_UP_T_ADDR 79 //size 1 byte
+#define EEPROM_AIR_PUMP_T_ADDR 80 //size 2 bytes
+#define EEPROM_SP_INTERVAL_ADDR 82 //size 1 byte
 
 //Notice jump in addr
 #define EEPROM_COLLECTION_ADDR 100 //11 collections=11*5=55 bytes
@@ -61,6 +64,15 @@ void EM_get_Vcc(float *val);
 
 void EM_set_collections(const void *cols, uint8_t size);
 void EM_get_collections(void *cols, uint8_t size);
+
+void EM_set_heat_up_time(uint8_t time);
+uint8_t EM_get_heat_up_time();
+
+void EM_set_air_pump_time(uint16_t time);
+uint16_t EM_get_air_pump_time();
+
+void EM_set_sp_interval(uint8_t time);
+uint8_t EM_get_sp_interval();
 
 
 
