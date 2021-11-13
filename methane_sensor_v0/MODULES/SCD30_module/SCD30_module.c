@@ -10,7 +10,6 @@
 #include <stddef.h>
 #include "SCD30_module.h"
 #include "../../HAL/TWI/TWI_API.h"
-#include "../../HAL/TWI/TWI_HAL.h"
 #include "../../HAL/SCD30/SCD30_HAL.h"
 #include "../../util/CRC8/CRC8.h"
 #include "../../util/to_float.h"
@@ -63,31 +62,17 @@ void SCD30_deinit_sampling(){
 	TC1_HAL_stop();
 	PM_HAL_SCD30_power(false);
 	_data=NULL;
-	
 }
 
-SCD30_STATUS SCD30_start_sampling(){
+void SCD30_start_sampling(){
 	vect_SCD_do_sample();
 	TC1_HAL_start();
-	return SCD30_STATUS_SUCCESS;
 }
 
 bool SCD30_is_sampling_done(){
 	return cntSamples>=_nSamples;
 }
 
-
-SCD30_STATUS SCD30_power_up_get_reading(uint16_t *value){
-	PM_HAL_SCD30_power(true);
-	_delay_ms(2000);
-	
-	SCD30_STATUS status=init_measurement();
-	if(status!=SCD30_STATUS_SUCCESS) return status;
-	
-	while(!SCD30_HAL_data_ready()){};
-		
-	return read_value(value);
-}
 
 SCD30_STATUS SCD30_init_get_reading(){
 	PM_HAL_SCD30_power(true);
@@ -103,11 +88,6 @@ SCD30_STATUS SCD30_get_reading(uint16_t *value){
 	
 	return read_value(value);
 }
-
-bool SCD30_data_ready(){
-	return SCD30_HAL_data_ready();
-}
-
 
 
 /************************************************************************/

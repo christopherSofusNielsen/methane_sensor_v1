@@ -24,13 +24,11 @@ TEST/SCD30_module/test_SCD30_module.d \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
  ../TEST/SCD30_module/test_SCD30_module.h \
  ../TEST/SCD30_module/../../HAL/TWI/TWI_HAL.h \
- ../TEST/SCD30_module/../../HAL/UART1/UART1_HAL.h \
- ../TEST/SCD30_module/../../HAL/UART0/UART0_HAL.h \
  ../TEST/SCD30_module/../../HAL/TWI/TWI_API.h \
+ ../TEST/SCD30_module/../../HAL/UART1/UART1_HAL.h \
  ../TEST/SCD30_module/../../MODULES/SCD30_module/SCD30_module.h \
  ../TEST/SCD30_module/../../HAL/PM/PM_HAL.h \
- ../TEST/SCD30_module/../../util/bit_operators.h \
- ../TEST/SCD30_module/../../MODULES/RTC_module/RTC_module.h
+ ../TEST/SCD30_module/../../util/bit_operators.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -78,16 +76,12 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
 
 ../TEST/SCD30_module/../../HAL/TWI/TWI_HAL.h:
 
-../TEST/SCD30_module/../../HAL/UART1/UART1_HAL.h:
-
-../TEST/SCD30_module/../../HAL/UART0/UART0_HAL.h:
-
 ../TEST/SCD30_module/../../HAL/TWI/TWI_API.h:
+
+../TEST/SCD30_module/../../HAL/UART1/UART1_HAL.h:
 
 ../TEST/SCD30_module/../../MODULES/SCD30_module/SCD30_module.h:
 
 ../TEST/SCD30_module/../../HAL/PM/PM_HAL.h:
 
 ../TEST/SCD30_module/../../util/bit_operators.h:
-
-../TEST/SCD30_module/../../MODULES/RTC_module/RTC_module.h:

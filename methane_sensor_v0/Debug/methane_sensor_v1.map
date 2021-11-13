@@ -124,12 +124,14 @@ Discarded input sections
  .text          0x0000000000000000        0x0 HAL/PM/PM_HAL.o
  .data          0x0000000000000000        0x0 HAL/PM/PM_HAL.o
  .bss           0x0000000000000000        0x0 HAL/PM/PM_HAL.o
+ .text.PM_HAL_adc_power_init
+                0x0000000000000000        0xe HAL/PM/PM_HAL.o
  .text.PM_HAL_adc_power
                 0x0000000000000000       0x14 HAL/PM/PM_HAL.o
+ .text.PM_HAL_meth_power_init
+                0x0000000000000000        0xe HAL/PM/PM_HAL.o
  .text.PM_HAL_meth_power
                 0x0000000000000000       0x14 HAL/PM/PM_HAL.o
- .text.PM_HAL_SCD30_power_init
-                0x0000000000000000        0xe HAL/PM/PM_HAL.o
  .text.PM_HAL_SCD30_power
                 0x0000000000000000       0x14 HAL/PM/PM_HAL.o
  .text.PM_HAL_BC_power_init
@@ -769,17 +771,13 @@ Discarded input sections
  .text.SCD30_deinit_sampling
                 0x0000000000000000       0x14 MODULES/SCD30_module/SCD30_module.o
  .text.SCD30_start_sampling
-                0x0000000000000000        0xc MODULES/SCD30_module/SCD30_module.o
+                0x0000000000000000        0xa MODULES/SCD30_module/SCD30_module.o
  .text.SCD30_is_sampling_done
                 0x0000000000000000       0x1c MODULES/SCD30_module/SCD30_module.o
- .text.SCD30_power_up_get_reading
-                0x0000000000000000       0x3a MODULES/SCD30_module/SCD30_module.o
  .text.SCD30_init_get_reading
                 0x0000000000000000       0x1e MODULES/SCD30_module/SCD30_module.o
  .text.SCD30_get_reading
                 0x0000000000000000       0x1a MODULES/SCD30_module/SCD30_module.o
- .text.SCD30_data_ready
-                0x0000000000000000        0x6 MODULES/SCD30_module/SCD30_module.o
  .bss.cntSamples
                 0x0000000000000000        0x2 MODULES/SCD30_module/SCD30_module.o
  .bss._data     0x0000000000000000        0x2 MODULES/SCD30_module/SCD30_module.o
@@ -793,16 +791,16 @@ Discarded input sections
                 0x0000000000000000        0x5 MODULES/SCD30_module/SCD30_module.o
  .progmemx.data.TRIGGER_CONT_MEASUREMENT
                 0x0000000000000000        0x5 MODULES/SCD30_module/SCD30_module.o
- .debug_info    0x0000000000000000      0xb86 MODULES/SCD30_module/SCD30_module.o
+ .debug_info    0x0000000000000000      0xa85 MODULES/SCD30_module/SCD30_module.o
  .debug_abbrev  0x0000000000000000      0x24d MODULES/SCD30_module/SCD30_module.o
- .debug_loc     0x0000000000000000      0x47b MODULES/SCD30_module/SCD30_module.o
+ .debug_loc     0x0000000000000000      0x3bb MODULES/SCD30_module/SCD30_module.o
  .debug_aranges
-                0x0000000000000000       0x80 MODULES/SCD30_module/SCD30_module.o
- .debug_ranges  0x0000000000000000       0x70 MODULES/SCD30_module/SCD30_module.o
- .debug_line    0x0000000000000000      0x4ae MODULES/SCD30_module/SCD30_module.o
+                0x0000000000000000       0x70 MODULES/SCD30_module/SCD30_module.o
+ .debug_ranges  0x0000000000000000       0x60 MODULES/SCD30_module/SCD30_module.o
+ .debug_line    0x0000000000000000      0x446 MODULES/SCD30_module/SCD30_module.o
  .debug_str     0x0000000000000000       0xac MODULES/SCD30_module/SCD30_module.o
  .comment       0x0000000000000000       0x30 MODULES/SCD30_module/SCD30_module.o
- .debug_frame   0x0000000000000000      0x130 MODULES/SCD30_module/SCD30_module.o
+ .debug_frame   0x0000000000000000      0x104 MODULES/SCD30_module/SCD30_module.o
  .text          0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
  .data          0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
  .bss           0x0000000000000000        0x0 PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
@@ -1005,6 +1003,17 @@ Discarded input sections
  .text          0x0000000000000000        0x0 TEST/ADC_module/test_ADC_module.o
  .data          0x0000000000000000        0x0 TEST/ADC_module/test_ADC_module.o
  .bss           0x0000000000000000        0x0 TEST/ADC_module/test_ADC_module.o
+ .text.test_ADC_module_start
+                0x0000000000000000       0x30 TEST/ADC_module/test_ADC_module.o
+ .debug_info    0x0000000000000000      0x3bf TEST/ADC_module/test_ADC_module.o
+ .debug_abbrev  0x0000000000000000       0xd7 TEST/ADC_module/test_ADC_module.o
+ .debug_aranges
+                0x0000000000000000       0x20 TEST/ADC_module/test_ADC_module.o
+ .debug_ranges  0x0000000000000000       0x10 TEST/ADC_module/test_ADC_module.o
+ .debug_line    0x0000000000000000      0x195 TEST/ADC_module/test_ADC_module.o
+ .debug_str     0x0000000000000000       0x49 TEST/ADC_module/test_ADC_module.o
+ .comment       0x0000000000000000       0x30 TEST/ADC_module/test_ADC_module.o
+ .debug_frame   0x0000000000000000       0x24 TEST/ADC_module/test_ADC_module.o
  .text          0x0000000000000000        0x0 TEST/EEPROM_module/test_EEPROM_module.o
  .data          0x0000000000000000        0x0 TEST/EEPROM_module/test_EEPROM_module.o
  .bss           0x0000000000000000        0x0 TEST/EEPROM_module/test_EEPROM_module.o
@@ -1147,28 +1156,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 TEST/SCD30_module/test_SCD30_module.o
  .data          0x0000000000000000        0x0 TEST/SCD30_module/test_SCD30_module.o
  .bss           0x0000000000000000        0x0 TEST/SCD30_module/test_SCD30_module.o
- .progmemx.data
-                0x0000000000000000       0x16 TEST/SCD30_module/test_SCD30_module.o
- .text.test_sampling
-                0x0000000000000000       0xd0 TEST/SCD30_module/test_SCD30_module.o
- .text.test_SCD30_module_start
-                0x0000000000000000       0x4a TEST/SCD30_module/test_SCD30_module.o
- .text.test_get_reading
-                0x0000000000000000       0x6a TEST/SCD30_module/test_SCD30_module.o
- .text.throw_error
-                0x0000000000000000       0x2a TEST/SCD30_module/test_SCD30_module.o
- .text.read_firmware_api
-                0x0000000000000000       0x74 TEST/SCD30_module/test_SCD30_module.o
- .debug_info    0x0000000000000000      0x922 TEST/SCD30_module/test_SCD30_module.o
- .debug_abbrev  0x0000000000000000      0x1e2 TEST/SCD30_module/test_SCD30_module.o
- .debug_loc     0x0000000000000000      0x2bf TEST/SCD30_module/test_SCD30_module.o
- .debug_aranges
-                0x0000000000000000       0x40 TEST/SCD30_module/test_SCD30_module.o
- .debug_ranges  0x0000000000000000       0x48 TEST/SCD30_module/test_SCD30_module.o
- .debug_line    0x0000000000000000      0x3b7 TEST/SCD30_module/test_SCD30_module.o
- .debug_str     0x0000000000000000      0x136 TEST/SCD30_module/test_SCD30_module.o
- .comment       0x0000000000000000       0x30 TEST/SCD30_module/test_SCD30_module.o
- .debug_frame   0x0000000000000000       0xc0 TEST/SCD30_module/test_SCD30_module.o
  .text          0x0000000000000000        0x0 TEST/PM_HAL/test_PM_HAL.o
  .data          0x0000000000000000        0x0 TEST/PM_HAL/test_PM_HAL.o
  .bss           0x0000000000000000        0x0 TEST/PM_HAL/test_PM_HAL.o
@@ -2072,7 +2059,7 @@ END GROUP
  .comment       0x000000000000002f       0x30 HAL/UART0/UART0_HAL.o
  .comment       0x000000000000002f       0x30 HAL/UART1/UART1_HAL.o
  .comment       0x000000000000002f       0x30 main.o
- .comment       0x000000000000002f       0x30 TEST/ADC_module/test_ADC_module.o
+ .comment       0x000000000000002f       0x30 TEST/SCD30_module/test_SCD30_module.o
  .comment       0x000000000000002f       0x30 TEST/test_runner.o
  .comment       0x000000000000002f       0x2c c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libprintf_flt.a(vfprintf_flt.o)
                                          0x2d (size before relaxing)
@@ -2113,14 +2100,14 @@ END GROUP
  .debug_aranges
                 0x0000000000000278       0x20 main.o
  .debug_aranges
-                0x0000000000000298       0x20 TEST/ADC_module/test_ADC_module.o
+                0x0000000000000298       0x20 TEST/SCD30_module/test_SCD30_module.o
  .debug_aranges
                 0x00000000000002b8       0x20 TEST/test_runner.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x316e
+.debug_info     0x0000000000000000     0x315e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x6cc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  .debug_info    0x00000000000006cc      0x4b2 HAL/PM/PM_HAL.o
@@ -2131,8 +2118,8 @@ END GROUP
  .debug_info    0x0000000000001afe      0x787 HAL/UART0/UART0_HAL.o
  .debug_info    0x0000000000002285      0x68b HAL/UART1/UART1_HAL.o
  .debug_info    0x0000000000002910      0x28b main.o
- .debug_info    0x0000000000002b9b      0x3bf TEST/ADC_module/test_ADC_module.o
- .debug_info    0x0000000000002f5a      0x214 TEST/test_runner.o
+ .debug_info    0x0000000000002b9b      0x3af TEST/SCD30_module/test_SCD30_module.o
+ .debug_info    0x0000000000002f4a      0x214 TEST/test_runner.o
 
 .debug_abbrev   0x0000000000000000      0xf81
  *(.debug_abbrev)
@@ -2145,10 +2132,10 @@ END GROUP
  .debug_abbrev  0x0000000000000a5a      0x208 HAL/UART0/UART0_HAL.o
  .debug_abbrev  0x0000000000000c62      0x1a3 HAL/UART1/UART1_HAL.o
  .debug_abbrev  0x0000000000000e05       0x5a main.o
- .debug_abbrev  0x0000000000000e5f       0xd7 TEST/ADC_module/test_ADC_module.o
+ .debug_abbrev  0x0000000000000e5f       0xd7 TEST/SCD30_module/test_SCD30_module.o
  .debug_abbrev  0x0000000000000f36       0x4b TEST/test_runner.o
 
-.debug_line     0x0000000000000000     0x125e
+.debug_line     0x0000000000000000     0x1266
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x154 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  .debug_line    0x0000000000000154      0x22a HAL/PM/PM_HAL.o
@@ -2159,8 +2146,8 @@ END GROUP
  .debug_line    0x00000000000009ee      0x333 HAL/UART0/UART0_HAL.o
  .debug_line    0x0000000000000d21      0x2d7 HAL/UART1/UART1_HAL.o
  .debug_line    0x0000000000000ff8       0x60 main.o
- .debug_line    0x0000000000001058      0x195 TEST/ADC_module/test_ADC_module.o
- .debug_line    0x00000000000011ed       0x71 TEST/test_runner.o
+ .debug_line    0x0000000000001058      0x199 TEST/SCD30_module/test_SCD30_module.o
+ .debug_line    0x00000000000011f1       0x75 TEST/test_runner.o
 
 .debug_frame    0x0000000000000000      0x688
  *(.debug_frame)
@@ -2172,10 +2159,10 @@ END GROUP
  .debug_frame   0x0000000000000394      0x14c HAL/UART0/UART0_HAL.o
  .debug_frame   0x00000000000004e0      0x13c HAL/UART1/UART1_HAL.o
  .debug_frame   0x000000000000061c       0x24 main.o
- .debug_frame   0x0000000000000640       0x24 TEST/ADC_module/test_ADC_module.o
+ .debug_frame   0x0000000000000640       0x24 TEST/SCD30_module/test_SCD30_module.o
  .debug_frame   0x0000000000000664       0x24 TEST/test_runner.o
 
-.debug_str      0x0000000000000000      0x2ce
+.debug_str      0x0000000000000000      0x2bb
  *(.debug_str)
  .debug_str     0x0000000000000000      0x252 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  .debug_str     0x0000000000000252        0x0 HAL/PM/PM_HAL.o
@@ -2186,8 +2173,8 @@ END GROUP
  .debug_str     0x0000000000000263        0x0 HAL/UART0/UART0_HAL.o
  .debug_str     0x0000000000000263        0x0 HAL/UART1/UART1_HAL.o
  .debug_str     0x0000000000000263        0xc main.o
- .debug_str     0x000000000000026f       0x49 TEST/ADC_module/test_ADC_module.o
- .debug_str     0x00000000000002b8       0x16 TEST/test_runner.o
+ .debug_str     0x000000000000026f       0x34 TEST/SCD30_module/test_SCD30_module.o
+ .debug_str     0x00000000000002a3       0x18 TEST/test_runner.o
 
 .debug_loc      0x0000000000000000      0xd53
  *(.debug_loc)
@@ -2227,7 +2214,7 @@ END GROUP
  .debug_ranges  0x0000000000000148       0x60 HAL/UART0/UART0_HAL.o
  .debug_ranges  0x00000000000001a8       0x60 HAL/UART1/UART1_HAL.o
  .debug_ranges  0x0000000000000208       0x10 main.o
- .debug_ranges  0x0000000000000218       0x10 TEST/ADC_module/test_ADC_module.o
+ .debug_ranges  0x0000000000000218       0x10 TEST/SCD30_module/test_SCD30_module.o
  .debug_ranges  0x0000000000000228       0x10 TEST/test_runner.o
 
 .debug_macro
@@ -2390,68 +2377,62 @@ LOAD data_init
  .text.avrlibc  0x0000000000000f56       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
                 0x0000000000000f56                strnlen
 
-.text.test_ADC_module_start
-                0x0000000000000f8c       0x30
- .text.test_ADC_module_start
-                0x0000000000000f8c       0x30 TEST/ADC_module/test_ADC_module.o
-                0x0000000000000f8c                test_ADC_module_start
+.text.test_SCD30_module_start
+                0x0000000000000f8c       0x2c
+ .text.test_SCD30_module_start
+                0x0000000000000f8c       0x2c TEST/SCD30_module/test_SCD30_module.o
+                0x0000000000000f8c                test_SCD30_module_start
 
 .text.__vector_3
-                0x0000000000000fbc       0x14
+                0x0000000000000fb8       0x14
  .text.__vector_3
-                0x0000000000000fbc       0x14 HAL/PM/PM_HAL.o
-                0x0000000000000fbc                __vector_3
+                0x0000000000000fb8       0x14 HAL/PM/PM_HAL.o
+                0x0000000000000fb8                __vector_3
 
 .text.TWI_HAL_init
-                0x0000000000000fd0       0x12
+                0x0000000000000fcc       0x12
  .text.TWI_HAL_init
-                0x0000000000000fd0       0x12 HAL/TWI/TWI_HAL.o
-                0x0000000000000fd0                TWI_HAL_init
+                0x0000000000000fcc       0x12 HAL/TWI/TWI_HAL.o
+                0x0000000000000fcc                TWI_HAL_init
 
-.text.PM_HAL_adc_power_init
-                0x0000000000000fe2        0xe
- .text.PM_HAL_adc_power_init
-                0x0000000000000fe2        0xe HAL/PM/PM_HAL.o
-                0x0000000000000fe2                PM_HAL_adc_power_init
+.text.PM_HAL_SCD30_power_init
+                0x0000000000000fde        0xe
+ .text.PM_HAL_SCD30_power_init
+                0x0000000000000fde        0xe HAL/PM/PM_HAL.o
+                0x0000000000000fde                PM_HAL_SCD30_power_init
 
-.text.PM_HAL_meth_power_init
-                0x0000000000000ff0        0xe
- .text.PM_HAL_meth_power_init
-                0x0000000000000ff0        0xe HAL/PM/PM_HAL.o
-                0x0000000000000ff0                PM_HAL_meth_power_init
-
-.text.main      0x0000000000000ffe        0xa
- .text.main     0x0000000000000ffe        0xa main.o
-                0x0000000000000ffe                main
+.text.main      0x0000000000000fec        0xa
+ .text.main     0x0000000000000fec        0xa main.o
+                0x0000000000000fec                main
 
 .text.test_runner
-                0x0000000000001008        0x6
+                0x0000000000000ff6        0x6
  .text.test_runner
-                0x0000000000001008        0x6 TEST/test_runner.o
-                0x0000000000001008                test_runner
+                0x0000000000000ff6        0x6 TEST/test_runner.o
+                0x0000000000000ff6                test_runner
 
-.text           0x000000000000100e        0x4
- .text          0x000000000000100e        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
-                0x000000000000100e                __vector_1
-                0x000000000000100e                __vector_24
-                0x000000000000100e                __vector_12
-                0x000000000000100e                __bad_interrupt
-                0x000000000000100e                __vector_6
-                0x000000000000100e                __vector_23
-                0x000000000000100e                __vector_25
-                0x000000000000100e                __vector_11
-                0x000000000000100e                __vector_17
-                0x000000000000100e                __vector_19
-                0x000000000000100e                __vector_7
-                0x000000000000100e                __vector_27
-                0x000000000000100e                __vector_5
-                0x000000000000100e                __vector_4
-                0x000000000000100e                __vector_2
-                0x000000000000100e                __vector_21
-                0x000000000000100e                __vector_15
-                0x000000000000100e                __vector_29
-                0x000000000000100e                __vector_8
-                0x000000000000100e                __vector_26
-                0x000000000000100e                __vector_14
-                0x000000000000100e                __vector_10
-                0x000000000000100e                __vector_18
+.text           0x0000000000000ffc        0x4
+ .text          0x0000000000000ffc        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
+                0x0000000000000ffc                __vector_1
+                0x0000000000000ffc                __vector_24
+                0x0000000000000ffc                __vector_12
+                0x0000000000000ffc                __bad_interrupt
+                0x0000000000000ffc                __vector_6
+                0x0000000000000ffc                __vector_23
+                0x0000000000000ffc                __vector_25
+                0x0000000000000ffc                __vector_11
+                0x0000000000000ffc                __vector_17
+                0x0000000000000ffc                __vector_19
+                0x0000000000000ffc                __vector_7
+                0x0000000000000ffc                __vector_27
+                0x0000000000000ffc                __vector_5
+                0x0000000000000ffc                __vector_4
+                0x0000000000000ffc                __vector_2
+                0x0000000000000ffc                __vector_21
+                0x0000000000000ffc                __vector_15
+                0x0000000000000ffc                __vector_29
+                0x0000000000000ffc                __vector_8
+                0x0000000000000ffc                __vector_26
+                0x0000000000000ffc                __vector_14
+                0x0000000000000ffc                __vector_10
+                0x0000000000000ffc                __vector_18
