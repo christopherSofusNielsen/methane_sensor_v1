@@ -24,7 +24,7 @@ LM_STATUS SC_put_to_sleep(){
 	util_read_msg(lm_msg);
 	
 	if(strcmp(lm_msg, OK)==0) return LM_STATUS_SUCCESS;
-	return LM_STATUS_ERROR;
+	return LM_STATUS_FATAL_ERROR;
 }
 
 LM_STATUS SC_wake_up(){
@@ -36,5 +36,5 @@ LM_STATUS SC_wake_up(){
 	util_read_msg(lm_msg);
 	
 	if(strcmp(lm_msg, OK)==0) return LM_STATUS_SUCCESS;
-	return LM_STATUS_ERROR;
+	return LM_STATUS_FATAL_ERROR;
 }

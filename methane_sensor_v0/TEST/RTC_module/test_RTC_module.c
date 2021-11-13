@@ -5,8 +5,6 @@
  *  Author: ccons
  */ 
 
-#define F_CPU 8000000UL
-
 #include <xc.h>
 #include <util/delay.h>
 #include <stdbool.h>
@@ -15,7 +13,6 @@
 #include "test_RTC_module.h"
 #include "../../HAL/TWI/TWI_HAL.h"
 #include "../../HAL/UART1/UART1_HAL.h"
-#include "../../HAL/UART0/UART0_HAL.h"
 #include "../../HAL/TWI/TWI_API.h"
 #include "../../util/bit_operators.h"
 #include "../../MODULES/RTC_module/RTC_module.h"
@@ -23,49 +20,44 @@
 
 #define SLAVE_ADDR 0x51
 
-static void test_read_clk();
-static void test_write_clk();
-static void test_read_time();
+//static void test_read_clk();
+//static void test_write_clk();
+//static void test_read_time();
 static void test_dec_to_bcd();
 static void test_bcd_to_dec();
+static void test_format_dt_to_ts();
 static void test_get_current_time();
-static void sendTime(uint8_t val);
-static void sendISO(Datetime dt, char msg[]);
 static void test_set_current_time();
 static void test_set_wake_up();
 static void test_clk_out();
-static void test_format_dt_to_ts();
+static void sendISO(Datetime dt, char msg[]);
 
 
 
 void test_RTC_module_start(){
 	uart1_hal_init();
 	TWI_HAL_init();
+	
+	//Set pull up
+	set_bit(PORTB, 0);
+	set_bit(PORTB, 1);
 
 	while(1){
 		
+		//test_clk_out();
+		//test_get_current_time();
+		//test_set_current_time();
+		//test_set_wake_up();
 		
-		//Old shit
-		//test_read_clk();
-		//test_write_clk();
-		//test_read_time();
 		//test_dec_to_bcd();
 		//test_bcd_to_dec();
-		//test_set_current_time();
-		test_get_current_time();
-		//test_set_wake_up();
-		//test_clk_out();
 		//test_format_dt_to_ts();
 		
-		_delay_ms(1500);
+		_delay_ms(5000);
 	}
 }
 
 static void test_clk_out(){
-	//Set pull up
-	set_bit(PORTB, 0);
-	set_bit(PORTB, 1);
-	
 	RTC_STATUS status=RTC_set_clock_out(1);
 	if(status==RTC_STATUS_SUCCESS){
 		uart1_hal_send_string("OK ");
@@ -73,6 +65,41 @@ static void test_clk_out(){
 		uart1_hal_send_string("FAIL ");
 	}
 }
+
+static void test_get_current_time(){
+	
+	Datetime dt;
+	
+	RTC_STATUS status= RTC_get_current_time(&dt);
+	if(status != RTC_STATUS_SUCCESS){
+		uart1_hal_send_string("Fail ");
+		return;
+	}
+	
+	char msg[50];
+	sendISO(dt, msg);
+	uart1_hal_send_string(msg);
+}
+
+static void test_set_current_time(){
+	Datetime dt={
+		.second=0,
+		.minute=0,
+		.hour=0,
+		.day=10,
+		.month=10,
+		.year=21
+	};
+	
+	RTC_STATUS status= RTC_set_current_time(dt);
+	if(status!=RTC_STATUS_SUCCESS) {
+		uart1_hal_send_string(" Fail ");
+		return;
+	}else{
+		uart1_hal_send_string(" OK ");
+	}
+}
+
 
 static void test_set_wake_up(){
 	RTC_STATUS status;
@@ -108,61 +135,7 @@ static void test_set_wake_up(){
 		uart1_hal_send_string("Failed to clear ");
 		return;
 	}
-}
-
-
-static void test_get_current_time(){
-	uart0_hal_init();
-	Datetime dt;
-	
-	RTC_STATUS status= RTC_get_current_time(&dt);
-	
-	if(status != RTC_STATUS_SUCCESS){
-		uart0_hal_send_string("Fail");
-		return;
-	}
-	
-	//sendTime(dt.hour);
-	//sendTime(dt.minute);
-	//sendTime(dt.second);
-	
-	char msg[50];
-	sendISO(dt, msg);
-	uart0_hal_send_string(msg);
-	
-	_delay_ms(2000);
-}
-
-static void test_set_current_time(){
-	uart0_hal_init();
-	Datetime dt={
-		.second=0,
-		.minute=0,
-		.hour=0,
-		.day=10,
-		.month=10,
-		.year=21	
-	};
-	
-	RTC_STATUS status= RTC_set_current_time(dt);
-	if(status!=RTC_STATUS_SUCCESS) {
-		uart0_hal_send_string(" Fail ");
-		return;
-	}else{
-		uart0_hal_send_string(" OK ");
-	}
-	_delay_ms(1000);
-}
-
-static void sendTime(uint8_t val){
-	char msg[10];
-	sprintf(msg, " %u ", val);
-	uart1_hal_send_string(msg);
-	_delay_ms(20);
-}
-
-static void sendISO(Datetime dt, char msg[]){
-	sprintf(msg, "%04u-%02u-%02uT%02u:%02u:%02u", dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second);
+	uart1_hal_send_string("Done ");
 }
 
 static void test_dec_to_bcd(){
@@ -178,7 +151,6 @@ static void test_dec_to_bcd(){
 	
 	datetime_to_BCD(dt, &bcd);
 	uart1_hal_send_message(&bcd.second, 6);
-	_delay_ms(1000);
 }
 
 static void test_bcd_to_dec(){
@@ -194,11 +166,9 @@ static void test_bcd_to_dec(){
 	
 	BCD_to_datetime(bcd, &dt);
 	uart1_hal_send_message(&dt.second, 6);
-	_delay_ms(1000);
 }
 
 static void test_format_dt_to_ts(){
-	uart0_hal_init();
 	uint8_t ts[4];
 	Datetime dt={
 		.second=11,
@@ -210,77 +180,81 @@ static void test_format_dt_to_ts(){
 	};
 	
 	RTC_datetime_to_ts(dt, ts);
-	
-	uart0_hal_send_message(ts, 4);
+	uart1_hal_send_message(ts, 4);
 }
 
+/************************************************************************/
+/* Helper functions                                                     */
+/************************************************************************/
+static void sendISO(Datetime dt, char msg[]){
+	sprintf(msg, "%04u-%02u-%02uT%02u:%02u:%02u", dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second);
+}
 
 /************************************************************************/
 /* Direct debug functions                                               */
 /************************************************************************/
-
-static void test_read_clk(){
-	uint8_t CMD_READ_CLK[]={0x0D};
-	uint8_t data[10];
-	uint8_t status1;
-	uint8_t status2;
-	
-	
-	//Set register pointer
-	status1=TWI_API_write_data_stop(SLAVE_ADDR, CMD_READ_CLK, 1);
-	
-	//Read value
-	status2=TWI_API_read_data_ack_end_nack_stop(SLAVE_ADDR, data, 1);
-	
-	data[1]=status1;
-	data[2]=status2;
-	
-	uart1_hal_send_message(data, 3);
-	
-}
-
-static void test_write_clk(){
-	//Set pull up
-	set_bit(PORTB, 0);
-	set_bit(PORTB, 1);
-	
-	
-	uint8_t CMD_SET_CLK[]={0x0D, 0x83};
-	uint8_t CMD_READ_CLK[]={0x0D};
-	uint8_t data[10];
-	
-	
-	//Set register pointer
-	TWI_API_write_data_stop(SLAVE_ADDR, CMD_SET_CLK, 2);
-	
-	//Set register pointer
-	TWI_API_write_data_stop(SLAVE_ADDR, CMD_READ_CLK, 1);
-	
-	
-	//Read value
-	TWI_API_read_data_ack_end_nack_stop(SLAVE_ADDR, data, 1);
-	
-	uart1_hal_send_message(data, 1);
-	
-}
-
-static void test_read_time(){
-	uint8_t CMD_SET_POINTER[]={0x02};
-	uint8_t data[9];
-	uint8_t status1;
-	uint8_t status2;
-	
-	status1=TWI_API_write_data(SLAVE_ADDR, CMD_SET_POINTER, 1);
-	status2=TWI_API_repeat_read_data_stop(SLAVE_ADDR, data, 7);
-	
-	
-	data[7]=status1;
-	data[8]=status2;
-	
-	
-	uart1_hal_send_message(data, 9);
-	_delay_ms(3000);
-}
+//static void test_read_clk(){
+	//uint8_t CMD_READ_CLK[]={0x0D};
+	//uint8_t data[10];
+	//uint8_t status1;
+	//uint8_t status2;
+	//
+	//
+	////Set register pointer
+	//status1=TWI_API_write_data_stop(SLAVE_ADDR, CMD_READ_CLK, 1);
+	//
+	////Read value
+	//status2=TWI_API_read_data_ack_end_nack_stop(SLAVE_ADDR, data, 1);
+	//
+	//data[1]=status1;
+	//data[2]=status2;
+	//
+	//uart1_hal_send_message(data, 3);
+	//
+//}
+//
+//static void test_write_clk(){
+	////Set pull up
+	//set_bit(PORTB, 0);
+	//set_bit(PORTB, 1);
+	//
+	//
+	//uint8_t CMD_SET_CLK[]={0x0D, 0x83};
+	//uint8_t CMD_READ_CLK[]={0x0D};
+	//uint8_t data[10];
+	//
+	//
+	////Set register pointer
+	//TWI_API_write_data_stop(SLAVE_ADDR, CMD_SET_CLK, 2);
+	//
+	////Set register pointer
+	//TWI_API_write_data_stop(SLAVE_ADDR, CMD_READ_CLK, 1);
+	//
+	//
+	////Read value
+	//TWI_API_read_data_ack_end_nack_stop(SLAVE_ADDR, data, 1);
+	//
+	//uart1_hal_send_message(data, 1);
+	//
+//}
+//
+//static void test_read_time(){
+	//uint8_t CMD_SET_POINTER[]={0x02};
+	//uint8_t data[9];
+	//uint8_t status1;
+	//uint8_t status2;
+	//
+	//status1=TWI_API_write_data(SLAVE_ADDR, CMD_SET_POINTER, 1);
+	//status2=TWI_API_repeat_read_data_stop(SLAVE_ADDR, data, 7);
+	//
+	//
+	//data[7]=status1;
+	//data[8]=status2;
+	//
+	//
+	//uart1_hal_send_message(data, 9);
+	//_delay_ms(3000);
+//}
 
 
 

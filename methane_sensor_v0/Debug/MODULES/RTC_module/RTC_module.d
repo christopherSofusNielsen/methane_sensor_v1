@@ -14,8 +14,7 @@ MODULES/RTC_module/RTC_module.d MODULES/RTC_module/RTC_module.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
  ../MODULES/RTC_module/RTC_module.h \
- ../MODULES/RTC_module/../../HAL/TWI/TWI_API.h \
- ../MODULES/RTC_module/../../HAL/TWI/TWI_HAL.h
+ ../MODULES/RTC_module/../../HAL/TWI/TWI_API.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -46,5 +45,3 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../MODULES/RTC_module/RTC_module.h:
 
 ../MODULES/RTC_module/../../HAL/TWI/TWI_API.h:
-
-../MODULES/RTC_module/../../HAL/TWI/TWI_HAL.h:

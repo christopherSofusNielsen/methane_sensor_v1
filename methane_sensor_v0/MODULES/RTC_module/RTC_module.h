@@ -44,7 +44,6 @@ RTC_STATUS RTC_set_wake_up_interrupt(uint8_t hours);
 RTC_STATUS RTC_clear_wake_up_interrupt();
 RTC_STATUS RTC_set_wake_up_interrupt_minutes(uint8_t minutes);
 void RTC_datetime_to_ts(Datetime dt, uint8_t ts[]);
-void datetime_to_BCD(Datetime dt, DatetimeBCD *bcd);
-void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt);
+
 
 #endif /* RTC_MODULE_H_ */

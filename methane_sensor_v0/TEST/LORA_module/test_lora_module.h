@@ -10,7 +10,7 @@
 #define TEST_LORA_MODULE_H_
 
 
-void test_lora_module_start();
+void test_LORA_module_start();
 
 
 #endif /* TEST_LORA_MODULE_H_ */

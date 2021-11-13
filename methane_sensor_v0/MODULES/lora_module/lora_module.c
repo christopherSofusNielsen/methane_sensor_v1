@@ -19,7 +19,7 @@ static uint8_t cnt=0;
 static bool busy=false;
 static int8_t subPointer;
 
-static void block_uplink();
+static void cb_block_uplink();
 static void set_block_uplink();
 
 LM_STATUS LM_join_network(char deveui[], char appeui[], char appkey[]){
@@ -54,12 +54,12 @@ void LM_forward_msg(const char msg[], char res[]){
 
 
 static void set_block_uplink(){
-	subPointer=TC2_HAL_subscribe(&block_uplink);
+	subPointer=TC2_HAL_subscribe(&cb_block_uplink);
 	busy=true;
 	cnt=0;
 }
 
-static void block_uplink(){
+static void cb_block_uplink(){
 	cnt++;
 	if(cnt>LORA_UPLINK_BLOCK_TIME){
 		busy=false;

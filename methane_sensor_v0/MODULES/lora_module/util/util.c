@@ -83,7 +83,7 @@ LM_STATUS util_reset_module(){
 	if(util_strbeginswith(lm_msg, RN2483)){
 		return LM_STATUS_SUCCESS;
 	}else{
-		return LM_STATUS_ERROR;
+		return LM_STATUS_FATAL_ERROR;
 	}
 }
 

@@ -11,7 +11,7 @@
 #include <xc.h>
 #include "RTC_module.h"
 #include "../../HAL/TWI/TWI_API.h"
-#include "../../HAL/TWI/TWI_HAL.h"
+
 
 #define RTC_ADDR 0x51
 
@@ -19,6 +19,11 @@ typedef union {
 	uint8_t ts[4];
 	uint32_t tsbit;
 } tsbit;
+
+static void datetime_to_BCD(Datetime dt, DatetimeBCD *bcd);
+static void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt);
+
+
 
 const uint8_t CMD_READ_TIME_POINTER[]={0x02};
 	
@@ -156,10 +161,7 @@ void RTC_datetime_to_ts(Datetime dt, uint8_t ts[]){
 	ts[3]=_tsbit.ts[0];
 }
 
-
-
-
-void datetime_to_BCD(Datetime dt, DatetimeBCD *bcd){
+static void datetime_to_BCD(Datetime dt, DatetimeBCD *bcd){
 	bcd->second=decToBCD(dt.second);
 	bcd->minute=decToBCD(dt.minute);
 	bcd->hour=decToBCD(dt.hour);
@@ -168,7 +170,7 @@ void datetime_to_BCD(Datetime dt, DatetimeBCD *bcd){
 	bcd->year=decToBCD(dt.year);
 }
 
-void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt){
+static void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt){
 	dt->second=BCDTodec(bcd.second);
 	dt->minute=BCDTodec(bcd.minute);
 	dt->hour=BCDTodec(bcd.hour);
