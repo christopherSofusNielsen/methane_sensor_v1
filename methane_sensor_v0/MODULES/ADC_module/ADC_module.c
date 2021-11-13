@@ -29,6 +29,7 @@ static uint8_t cntPowerUpTime;
 
 static void vect_ADC_do_sample();
 static void vect_ADC_heat_timeout();
+static uint16_t calc_ppm_methane(uint16_t bit_value);
 
 ADC_STATUS ADC_init_sampling(uint8_t samplingInterval, uint16_t nSamples, uint16_t data[]){
 	_data=data;
@@ -60,17 +61,14 @@ void ADC_deinit_sampling(){
 	_data=NULL;
 }
 
-ADC_STATUS ADC_start_sampling(){
+void ADC_start_sampling(){
 	TC0_HAL_start();
 	vect_ADC_do_sample();
-	return ADC_STATUS_SUCCESS;
 }
 
 bool ADC_is_sampling_done(){
 	return cntSamples>=_nSamples;
 }
-
-
 
 ADC_STATUS ADC_get_value(uint16_t *value){
 	uint8_t status;
@@ -86,7 +84,7 @@ ADC_STATUS ADC_get_value(uint16_t *value){
 	return ADC_STATUS_SUCCESS;
 }
 
-ADC_STATUS ADC_meth_sens_power_on(uint8_t powerUpTime){
+void ADC_meth_sens_power_on(uint8_t powerUpTime){
 	_powerUpTime=powerUpTime;
 	cntPowerUpTime=0;
 	
@@ -97,12 +95,10 @@ ADC_STATUS ADC_meth_sens_power_on(uint8_t powerUpTime){
 	//TC0_HAL_init(60, &vect_ADC_heat_timeout);
 	TC0_HAL_init(1, &vect_ADC_heat_timeout);
 	TC0_HAL_start();
-	return ADC_STATUS_SUCCESS;
 }
 
-ADC_STATUS ADC_meth_sens_power_off(){
+void ADC_meth_sens_power_off(){
 	PM_HAL_meth_power(false);
-	return ADC_STATUS_SUCCESS;
 }
 
 bool ADC_meth_sens_ready(){
@@ -118,7 +114,7 @@ void ADC_set_conf_parameters(float Vcc, float Rrl, float PPMfactor){
 /************************************************************************/
 /* Local functions                                                      */
 /************************************************************************/
-uint16_t calc_ppm_methane(uint16_t bit_value){
+static uint16_t calc_ppm_methane(uint16_t bit_value){
 	float VRL=((float)bit_value/(uint16_t)ADC_BIT_RESOLUTION)*(float)Vc;
 	float Rs=(((float)Vc-(float)VRL)/(float)VRL)*(float)RRL;
 	uint16_t PPM=(float)Rs*(float)PPM_factor;

@@ -11,6 +11,9 @@
 
 #include <xc.h>
 
+#define TWI_CODE_SUCCESS 0x00
+
+
 uint8_t TWI_API_write_data(uint8_t slaveAddr, const uint8_t data[], uint8_t length);
 uint8_t TWI_API_write_data_stop(uint8_t slaveAddr, const uint8_t data[], uint8_t length);
 uint8_t TWI_API_read_data_ack_end_nack_stop(uint8_t slaveAddr, uint8_t data[], uint8_t length);

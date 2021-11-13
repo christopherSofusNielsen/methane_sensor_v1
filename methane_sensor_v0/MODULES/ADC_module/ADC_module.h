@@ -23,11 +23,11 @@ typedef enum {
 
 ADC_STATUS ADC_init_sampling(uint8_t samplingInterval, uint16_t nSamples, uint16_t data[]);
 void ADC_deinit_sampling();
-ADC_STATUS ADC_start_sampling();
+void ADC_start_sampling();
 bool ADC_is_sampling_done();
 ADC_STATUS ADC_get_value(uint16_t *value);
-ADC_STATUS ADC_meth_sens_power_on(uint8_t powerUpTime);
-ADC_STATUS ADC_meth_sens_power_off();
+void ADC_meth_sens_power_on(uint8_t powerUpTime);
+void ADC_meth_sens_power_off();
 bool ADC_meth_sens_ready();
 void ADC_set_conf_parameters(float Vcc, float Rrl, float PPMfactor);
 
@@ -35,8 +35,8 @@ void ADC_set_conf_parameters(float Vcc, float Rrl, float PPMfactor);
 
 
 
-//Old
-uint16_t calc_ppm_methane(uint16_t bit_value);
+
+
 
 
 

@@ -301,7 +301,6 @@ void MAINPG_start(){
 /* Stage 0                                                              */
 /************************************************************************/
 static STAGE_STATUS stage_0(){
-	ADC_STATUS adcStatus;
 	SCD30_STATUS scd30Status;
 	while(1){
 		switch(state_s0){
@@ -318,9 +317,7 @@ static STAGE_STATUS stage_0(){
 			break;
 			
 			case STAGE_START:
-				adcStatus=ADC_meth_sens_power_on(methHeatUpTime); //Should be changed
-				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
-			
+				ADC_meth_sens_power_on(methHeatUpTime);
 				SCD30_start_sampling();
 			
 				state_s0=STAGE_WAIT;
@@ -503,6 +500,7 @@ static STAGE_STATUS stage_3(){
 			case STAGE_DEINIT:
 				SCD30_deinit_sampling();
 				ADC_deinit_sampling();
+				ADC_meth_sens_power_off();
 				return STAGE_DONE;
 			break;
 		}

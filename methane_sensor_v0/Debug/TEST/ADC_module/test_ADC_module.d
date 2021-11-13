@@ -24,10 +24,11 @@ TEST/ADC_module/test_ADC_module.d TEST/ADC_module/test_ADC_module.o: \
  ../TEST/ADC_module/../../HAL/UART1/UART1_HAL.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  ../TEST/ADC_module/../../MODULES/ADC_module/ADC_module.h \
- ../TEST/ADC_module/../../HAL/TWI/TWI_API.h \
  ../TEST/ADC_module/../../HAL/TWI/TWI_HAL.h \
  ../TEST/ADC_module/../../util/bit_operators.h \
- ../TEST/ADC_module/../../HAL/PM/PM_HAL.h
+ ../TEST/ADC_module/../../HAL/PM/PM_HAL.h \
+ ../TEST/ADC_module/../../HAL/TC0/TC0_HAL.h \
+ ../TEST/ADC_module/../../HAL/TC0/../types.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -77,10 +78,12 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
 ../TEST/ADC_module/../../MODULES/ADC_module/ADC_module.h:
 
-../TEST/ADC_module/../../HAL/TWI/TWI_API.h:
-
 ../TEST/ADC_module/../../HAL/TWI/TWI_HAL.h:
 
 ../TEST/ADC_module/../../util/bit_operators.h:
 
 ../TEST/ADC_module/../../HAL/PM/PM_HAL.h:
+
+../TEST/ADC_module/../../HAL/TC0/TC0_HAL.h:
+
+../TEST/ADC_module/../../HAL/TC0/../types.h:
