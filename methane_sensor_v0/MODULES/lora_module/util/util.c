@@ -70,5 +70,5 @@ void util_lora_forward_msg(const char msg[], char res[]){
 	uart0_hal_send_string(lm_msg);
 	
 	while(!uart0_hal_message_ready());
-	uart0_hal_read_message_as_str(lm_msg);
+	uart0_hal_read_message_as_str(res);
 }

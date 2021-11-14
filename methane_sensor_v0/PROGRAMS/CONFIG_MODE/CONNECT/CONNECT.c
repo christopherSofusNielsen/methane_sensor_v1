@@ -15,13 +15,27 @@
 #include "../../../HAL/UART0/UART0_HAL.h"
 #include "../../../HAL/RN2483/RN2483_HAL.h"
 #include "../../../MODULES/LORA_module/lora_module.h"
+#include "../UTIL/util.h"
 
 extern char cnf_rx_cmd[];
 extern char cnf_reply[];
 
+static bool CON_RN2483();
 static STATES_CON_LORA CON_RN2483_parse(char msg[]);
 
-bool CON_RN2483(){
+bool CONNECT(const char cmd[]){
+	char par[20];
+	
+	if(!get_parameter(cmd, par, 1)) return false;
+	
+	if(strcmp(par, C_LORA)==0){
+		return CON_RN2483();
+	}else{
+		return false;
+	}
+}
+
+static bool CON_RN2483(){
 	STATES_CON_LORA state=CL_INIT;
 	
 	while (1)
@@ -30,7 +44,7 @@ bool CON_RN2483(){
 			case CL_INIT:
 				uart0_hal_init();
 				rn2483_init();
-				//LM_reset_module();
+				LM_reset_module();
 				uart1_hal_send_string("******* You are directly connected to RN2483 ********");
 				state=CL_READ_MSG;
 			break;
@@ -56,6 +70,7 @@ bool CON_RN2483(){
 			break;
 			
 			case CL_EXIT:
+				uart0_hal_clear_rx_buffer();
 				uart1_hal_send_string("Closing connection to RN2483...");
 				return true;
 		}

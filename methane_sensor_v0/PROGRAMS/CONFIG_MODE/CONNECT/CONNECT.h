@@ -11,6 +11,8 @@
 
 #include <stdbool.h>
 
+#define C_LORA "lora"
+
 typedef enum{
 	CL_INIT,
 	CL_READ_MSG,
@@ -19,7 +21,8 @@ typedef enum{
 	CL_EXIT
 }STATES_CON_LORA;
 
-bool CON_RN2483();
+
+bool CONNECT(const char cmd[]);
 
 
 

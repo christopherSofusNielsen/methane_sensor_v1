@@ -71,9 +71,11 @@ void CONF_enter(){
 			break;
 			
 			case CONF_CONNECT:
-				CON_RN2483();
-				uart1_hal_clear_rx_buffer();
-				state=CONF_CLEAR_FOR_NEW_CMD;
+				if(CONNECT(cnf_rx_cmd)){
+					state=CONF_CLEAR_FOR_NEW_CMD;
+				}else{
+					state=CONF_NOT_VALID;
+				}
 			break;
 			
 			case CONF_SAMPLE:

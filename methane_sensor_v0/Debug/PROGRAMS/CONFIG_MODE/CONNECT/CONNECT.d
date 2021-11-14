@@ -23,7 +23,8 @@ PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.d \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
  ../PROGRAMS/CONFIG_MODE/CONNECT/../../../HAL/UART0/UART0_HAL.h \
  ../PROGRAMS/CONFIG_MODE/CONNECT/../../../HAL/RN2483/RN2483_HAL.h \
- ../PROGRAMS/CONFIG_MODE/CONNECT/../../../MODULES/LORA_module/lora_module.h
+ ../PROGRAMS/CONFIG_MODE/CONNECT/../../../MODULES/LORA_module/lora_module.h \
+ ../PROGRAMS/CONFIG_MODE/CONNECT/../UTIL/util.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
@@ -70,3 +71,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../PROGRAMS/CONFIG_MODE/CONNECT/../../../HAL/RN2483/RN2483_HAL.h:
 
 ../PROGRAMS/CONFIG_MODE/CONNECT/../../../MODULES/LORA_module/lora_module.h:
+
+../PROGRAMS/CONFIG_MODE/CONNECT/../UTIL/util.h:
