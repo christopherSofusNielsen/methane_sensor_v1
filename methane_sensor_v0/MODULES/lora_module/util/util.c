@@ -43,31 +43,8 @@ int util_matchMessage(LM_STATE_DATA *sd, char *msg){
 	}
 }
 
-void util_transmit_msg(char msg[]){
-	uart0_hal_send_message((uint8_t*) msg, strlen(msg));
-}
 
-void util_read_msg(char msg[]){
-	uart0_hal_read_message_as_str(msg);
-}
-
-LM_STATUS util_parse_err(char *msg){
-	if(strcmp(msg, NO_FREE_CH)==0){
-		return LM_STATUS_TRY_AGAIN;
-	}
-	
-	if(strcmp(msg, DENIED)==0){
-		return LM_STATUS_TRY_AGAIN;
-	}
-	
-	if(strcmp(msg, KEYS_NOT_INIT)==0){
-		return LM_STATUS_CONF_ERR;
-	}
-	
-	return LM_STATUS_FATAL_ERROR;
-}
-
-bool util_strbeginswith(char *s1, const char *s2){
+bool util_strbeginswith(const char *s1, const char *s2){
 	return strncmp(s1, s2, strlen(s2))==0?true:false;
 }
 
@@ -78,7 +55,7 @@ LM_STATUS util_reset_module(){
 	
 	while(!uart0_hal_message_ready()){};
 	
-	util_read_msg(lm_msg);
+	uart0_hal_read_message_as_str(lm_msg);
 	
 	if(util_strbeginswith(lm_msg, RN2483)){
 		return LM_STATUS_SUCCESS;
@@ -90,8 +67,8 @@ LM_STATUS util_reset_module(){
 void util_lora_forward_msg(const char msg[], char res[]){
 	strcpy(lm_msg, msg);
 	attach_ending(lm_msg);
-	util_transmit_msg(lm_msg);
+	uart0_hal_send_string(lm_msg);
 	
 	while(!uart0_hal_message_ready());
-	util_read_msg(res);
+	uart0_hal_read_message_as_str(lm_msg);
 }

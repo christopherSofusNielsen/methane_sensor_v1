@@ -13,16 +13,16 @@
 
 int main(void)
 {
-	//test_runner();
+	test_runner();
 	
-	while(1)
-    {
-		if(0){
-			CONF_enter();
-		}else{
-			MAINPG_start();
-		}
-		_delay_ms(5000);
-        
-    }
+	//while(1)
+    //{
+		//if(0){
+			//CONF_enter();
+		//}else{
+			//MAINPG_start();
+		//}
+		//_delay_ms(5000);
+        //
+    //}
 }

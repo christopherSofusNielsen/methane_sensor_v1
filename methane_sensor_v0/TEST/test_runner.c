@@ -25,8 +25,8 @@
 #include "LED_module/test_LED_module.h"
 
 void test_runner(){
-	//test_LORA_module_start();
-	test_SCD30_module_start();
+	test_LORA_module_start();
+	//test_SCD30_module_start();
 	//test_PM_HAL_start();
 	//test_EEPROM_module_start();
 	//test_ADC_module_start();

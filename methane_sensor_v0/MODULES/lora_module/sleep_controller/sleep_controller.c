@@ -16,12 +16,12 @@ LM_STATUS SC_put_to_sleep(){
 	
 	sys_sleep_cmd(lm_msg, (uint32_t) 86400000);
 	attach_ending(lm_msg);
-	util_transmit_msg(lm_msg);
+	uart0_hal_send_string(lm_msg);
 	
 	//Wait for response
 	while(uart0_hal_message_ready()==false){}
 	
-	util_read_msg(lm_msg);
+	uart0_hal_read_message_as_str(lm_msg);
 	
 	if(strcmp(lm_msg, OK)==0) return LM_STATUS_SUCCESS;
 	return LM_STATUS_FATAL_ERROR;
@@ -33,7 +33,7 @@ LM_STATUS SC_wake_up(){
 	//Wait for response
 	while(uart0_hal_message_ready()==false){}
 	
-	util_read_msg(lm_msg);
+	uart0_hal_read_message_as_str(lm_msg);
 	
 	if(strcmp(lm_msg, OK)==0) return LM_STATUS_SUCCESS;
 	return LM_STATUS_FATAL_ERROR;
