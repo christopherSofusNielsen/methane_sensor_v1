@@ -19,11 +19,12 @@ typedef enum {
 	SCD30_STATUS_TRY_AGAIN
 }SCD30_STATUS;
 
-SCD30_STATUS SCD30_init_sampling(uint16_t samplingInterval, uint16_t nSamples, uint16_t data[]);
+SCD30_STATUS SCD30_sensor_on();
+void SCD30_sensor_off();
+void SCD30_init_sampling(uint16_t samplingInterval, uint16_t nSamples, uint16_t data[]);
 void SCD30_deinit_sampling();
 void SCD30_start_sampling();
 bool SCD30_is_sampling_done();
-SCD30_STATUS SCD30_init_get_reading();
 SCD30_STATUS SCD30_get_reading(uint16_t *value);
 
 

@@ -41,7 +41,7 @@ bool init_methane_SCD30(){
 	PM_HAL_adc_power(true);
 	PM_HAL_SCD30_power_init();
 	PM_HAL_SCD30_power(true);
-	SCD30_STATUS status=SCD30_init_get_reading();
+	SCD30_STATUS status=SCD30_sensor_on();
 	if(status!= SCD30_STATUS_SUCCESS) return false;
 	return true;
 	_delay_ms(500);

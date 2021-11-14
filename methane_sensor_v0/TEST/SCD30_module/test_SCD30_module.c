@@ -38,7 +38,7 @@ void test_SCD30_module_start(){
 			
 		while(1){
 			//test_sampling();
-			//test_get_reading();
+			test_get_reading();
 			
 			_delay_ms(1500);
 		}
@@ -50,7 +50,8 @@ void test_SCD30_module_start(){
 static void test_sampling(){
 	uint16_t data[5];
 	uart1_hal_send_string("RUN ");
-	SCD30_STATUS status=SCD30_init_sampling(3, 5, data);
+	SCD30_STATUS status=SCD30_sensor_on();
+	SCD30_init_sampling(3, 5, data);
 	if(status!=SCD30_STATUS_SUCCESS){
 		uart1_hal_send_string("FAIL ");
 		return;
@@ -58,6 +59,8 @@ static void test_sampling(){
 	
 	SCD30_start_sampling();
 	while(!SCD30_is_sampling_done()){};
+	
+	SCD30_deinit_sampling();
 	
 	for (uint8_t i=0; i<5; i++)
 	{
@@ -71,7 +74,7 @@ static void test_get_reading(){
 	SCD30_STATUS status;
 	uint16_t value;
 	
-	status=SCD30_init_get_reading();
+	status=SCD30_sensor_on();
 	if(status!=SCD30_STATUS_SUCCESS){
 		uart1_hal_send_string("Failed ");
 		return;

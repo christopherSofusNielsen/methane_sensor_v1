@@ -42,25 +42,28 @@ static void vect_SCD_do_sample();
 static SCD30_STATUS read_value(uint16_t *value);
 static SCD30_STATUS init_measurement();
 
+SCD30_STATUS SCD30_sensor_on(){
+	SCD30_HAL_init();
+	PM_HAL_SCD30_power(true);
+	_delay_ms(2000);
+	return init_measurement();
+}
 
+void SCD30_sensor_off(){
+	PM_HAL_SCD30_power(false);
+}
 
-SCD30_STATUS SCD30_init_sampling(uint16_t samplingInterval, uint16_t nSamples, uint16_t data[]){
+void SCD30_init_sampling(uint16_t samplingInterval, uint16_t nSamples, uint16_t data[]){
 	_nSamples=nSamples;
 	cntSamples=0;
 	_data=data;
-	
+
 	//Init
-	SCD30_HAL_init();
 	TC1_HAL_init(samplingInterval, &vect_SCD_do_sample);
-	PM_HAL_SCD30_power(true);
-	_delay_ms(2000);
-	
-	return init_measurement();
 }
 
 void SCD30_deinit_sampling(){
 	TC1_HAL_stop();
-	PM_HAL_SCD30_power(false);
 	_data=NULL;
 }
 
@@ -71,16 +74,6 @@ void SCD30_start_sampling(){
 
 bool SCD30_is_sampling_done(){
 	return cntSamples>=_nSamples;
-}
-
-
-SCD30_STATUS SCD30_init_get_reading(){
-	PM_HAL_SCD30_power(true);
-	_delay_ms(2000);
-	
-	SCD30_STATUS status=init_measurement();
-	if(status!=SCD30_STATUS_SUCCESS) return status;
-	return SCD30_STATUS_SUCCESS;
 }
 
 SCD30_STATUS SCD30_get_reading(uint16_t *value){

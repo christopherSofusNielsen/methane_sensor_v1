@@ -85,6 +85,7 @@ void MAINPG_start(){
 	MAINPG_STATES comeBackToState;
 	RTC_STATUS rtcStatus;
 	LM_STATUS lmStatus;
+	SCD30_STATUS scd30Status;
 	STAGE_STATUS stageStatus;
 	bool fromSleep=false;
 	
@@ -184,7 +185,13 @@ void MAINPG_start(){
 			case MAINPG_INIT_MRPP:
 				print_debug("Mrpp init\n\r");
 				MRPP_init_group(cols, N_COLLECTIONS);
-				state=MAINPG_SEND_HEADER;
+				state=MAINPG_INIT_MODULES;
+			break;
+			
+			case MAINPG_INIT_MODULES:
+				ADC_set_conf_parameters(vccx, rrlx, ppmx);
+				scd30Status=SCD30_sensor_on();
+				state=scd30Status==SCD30_STATUS_SUCCESS?MAINPG_SEND_HEADER:MAINPG_FATAL_ERROR;
 			break;
 			
 			case MAINPG_SEND_HEADER:
@@ -301,12 +308,12 @@ void MAINPG_start(){
 /* Stage 0                                                              */
 /************************************************************************/
 static STAGE_STATUS stage_0(){
-	SCD30_STATUS scd30Status;
+	
 	while(1){
 		switch(state_s0){
 			case STAGE_INIT:
-				scd30Status=SCD30_init_sampling(cols[S0_CO2].samplingInterval, cols[S0_CO2].samplings, co2_data);
-				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
+				SCD30_init_sampling(cols[S0_CO2].samplingInterval, cols[S0_CO2].samplings, co2_data);
+				
 			
 				state_s0=STAGE_GET_TIME;
 			break;
@@ -347,14 +354,12 @@ static STAGE_STATUS stage_0(){
 /************************************************************************/
 static STAGE_STATUS stage_1(){
 	ADC_STATUS adcStatus;
-	SCD30_STATUS scd30Status;
+	
 	while(1){
 		switch(state_s1){
 			case STAGE_INIT:
-				scd30Status=SCD30_init_sampling(cols[S1_CO2].samplingInterval, cols[S1_CO2].samplings, co2_data);
-				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
+				SCD30_init_sampling(cols[S1_CO2].samplingInterval, cols[S1_CO2].samplings, co2_data);
 				
-				ADC_set_conf_parameters(vccx, rrlx, ppmx);
 				adcStatus=ADC_init_sampling(cols[S1_METH].samplingInterval, cols[S1_METH].samplings, meth_data);
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 				
@@ -401,15 +406,13 @@ static STAGE_STATUS stage_1(){
 /************************************************************************/
 static STAGE_STATUS stage_2(){
 	ADC_STATUS adcStatus;
-	SCD30_STATUS scd30Status;
+	
 
 	while(1){
 		switch(state_s2){
 			case STAGE_INIT:
-				scd30Status=SCD30_init_sampling(cols[S2_CO2].samplingInterval, cols[S2_CO2].samplings, co2_data);
-				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
+				SCD30_init_sampling(cols[S2_CO2].samplingInterval, cols[S2_CO2].samplings, co2_data);
 				
-				ADC_set_conf_parameters(vccx, rrlx, ppmx);
 				adcStatus=ADC_init_sampling(cols[S2_METH].samplingInterval, cols[S2_METH].samplings, meth_data);
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 			
@@ -458,14 +461,12 @@ static STAGE_STATUS stage_2(){
 /************************************************************************/
 static STAGE_STATUS stage_3(){
 	ADC_STATUS adcStatus;
-	SCD30_STATUS scd30Status;
+	
 	while(1){
 		switch(state_s3){
 			case STAGE_INIT:
-				scd30Status=SCD30_init_sampling(cols[S3_CO2].samplingInterval, cols[S3_CO2].samplings, co2_data);
-				if(scd30Status!=SCD30_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
+				SCD30_init_sampling(cols[S3_CO2].samplingInterval, cols[S3_CO2].samplings, co2_data);
 				
-				ADC_set_conf_parameters(vccx, rrlx, ppmx);
 				adcStatus=ADC_init_sampling(cols[S3_METH].samplingInterval, cols[S3_METH].samplings, meth_data);
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 			
@@ -499,6 +500,7 @@ static STAGE_STATUS stage_3(){
 			
 			case STAGE_DEINIT:
 				SCD30_deinit_sampling();
+				SCD30_sensor_off();
 				ADC_deinit_sampling();
 				ADC_meth_sens_power_off();
 				return STAGE_DONE;

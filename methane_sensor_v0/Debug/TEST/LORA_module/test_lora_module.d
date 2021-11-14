@@ -19,10 +19,11 @@ TEST/LORA_module/test_lora_module.d TEST/LORA_module/test_lora_module.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ ../TEST/LORA_module/../../HAL/UART1/UART1_HAL.h \
  ../TEST/LORA_module/../../HAL/RN2483/RN2483_HAL.h \
- ../TEST/LORA_module/../../MODULES/LORA_module/lora_module.h \
  ../TEST/LORA_module/../../HAL/TC2/TC2_HAL.h \
- ../TEST/LORA_module/../../HAL/TC2/../types.h
+ ../TEST/LORA_module/../../HAL/TC2/../types.h \
+ ../TEST/LORA_module/../../MODULES/LORA_module/lora_module.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
 
@@ -62,10 +63,12 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
-../TEST/LORA_module/../../HAL/RN2483/RN2483_HAL.h:
+../TEST/LORA_module/../../HAL/UART1/UART1_HAL.h:
 
-../TEST/LORA_module/../../MODULES/LORA_module/lora_module.h:
+../TEST/LORA_module/../../HAL/RN2483/RN2483_HAL.h:
 
 ../TEST/LORA_module/../../HAL/TC2/TC2_HAL.h:
 
 ../TEST/LORA_module/../../HAL/TC2/../types.h:
+
+../TEST/LORA_module/../../MODULES/LORA_module/lora_module.h:
