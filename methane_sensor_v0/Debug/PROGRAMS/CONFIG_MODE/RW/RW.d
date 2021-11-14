@@ -28,7 +28,9 @@ PROGRAMS/CONFIG_MODE/RW/RW.d PROGRAMS/CONFIG_MODE/RW/RW.o: \
  ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/../types.h \
  ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/../params.h \
  ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/mrpp_data.h \
- ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/types.h
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/types.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/RTC_module/RTC_module.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../HAL/TWI/TWI_HAL.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
@@ -87,3 +89,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h:
 ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/mrpp_data.h:
 
 ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/types.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/RTC_module/RTC_module.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../HAL/TWI/TWI_HAL.h:

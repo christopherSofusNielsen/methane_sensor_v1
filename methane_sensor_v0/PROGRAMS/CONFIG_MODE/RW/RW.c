@@ -17,10 +17,13 @@
 #include "../../../MODULES/EEPROM_module/EEPROM_module.h"
 #include "../../../MODULES/MRPP_module/mrpp.h"
 #include "../../../MODULES/MRPP_module/types.h"
+#include "../../../MODULES/RTC_module/RTC_module.h"
+#include "../../../HAL/TWI/TWI_HAL.h"
 
 static char arg[80];
 
 static void read_cols(char res[] );
+static void read_time(char res[]);
 static bool write_deveui(const char cmd[], char res[]);
 static bool write_appeui(const char cmd[], char res[]);
 static bool write_appkey(const char cmd[], char res[]);
@@ -32,6 +35,8 @@ static bool write_heat_up(const char cmd[], char res[]);
 static bool write_air_pump(const char cmd[], char res[]);
 static bool write_sp_interval(const char cmd[], char res[]);
 static bool write_reset(const char cmd[], char res[]);
+static bool write_time(const char cmd[], char res[]);
+static uint8_t get_time_par(char ts[], uint8_t index);
 
 bool handle_read(const char cmd[], char res[]){
 	char par[20];
@@ -84,6 +89,10 @@ bool handle_read(const char cmd[], char res[]){
 	{
 		uint8_t val=EM_get_sp_interval();
 		sprintf(res, "sampling process interval=%u h", val);
+	}
+	else if(strcmp(par, RW_TIME)==0)
+	{
+		read_time(res);
 	}
 	else{
 		strcpy(res, RW_S_NOT_EXIST);
@@ -139,6 +148,10 @@ bool handle_write(const char cmd[], char res[]){
 	{
 		return write_reset(cmd, res);
 	}
+	else if(strcmp(par, RW_TIME)==0)
+	{
+		return write_time(cmd, res);
+	}
 	else{
 		strcpy(res, RW_S_NOT_EXIST);
 		return true;
@@ -157,6 +170,18 @@ static void read_cols(char res[]){
 	{
 		sprintf(arg, "ID=%u, n=%u, si=%u \r\n", i+1, cols[i].samplings, cols[i].samplingInterval);
 		strcat(res, arg);
+	}
+}
+
+static void read_time(char res[]){
+	TWI_HAL_init();
+	Datetime dt;
+	
+	RTC_STATUS status=RTC_get_current_time(&dt);
+	if(status!=RTC_STATUS_SUCCESS){
+		strcpy(res, "Failed to read time");
+	}else{
+		sprintf(res, "%02u-%02u-%02uT%02u:%02u:%02u", dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second);	
 	}
 }
 
@@ -338,10 +363,38 @@ static bool write_reset(const char cmd[], char res[]){
 	return true;
 }
 
-/************************************************************************/
-/* 
+static bool write_time(const char cmd[], char res[]){
+	TWI_HAL_init();
+	if(!get_parameter(cmd, arg, 2)) return false;
+	if(strlen(arg)!=17){
+		strcpy(res, "Must be in format: yy-mm-ddThh:mm:ss");
+		return true;
+	}
+	
+	Datetime dt;
+	
+	dt.year=get_time_par(arg, 0);
+	dt.month=get_time_par(arg, 3);
+	dt.day=get_time_par(arg, 6);
+	dt.hour=get_time_par(arg, 9);
+	dt.minute=get_time_par(arg, 12);
+	dt.second=get_time_par(arg, 15);
+	
+	RTC_STATUS status=RTC_set_current_time(dt);
+	if(status!=RTC_STATUS_SUCCESS){
+		strcpy(res, "Failed to set time");
+		return true;
+	}
+	strcpy(res, RW_S_SUCCESS);
+	return true;
+}
 
-00000000000000000000000000000000
-EA11A4D6D368D5CDE102B0491B40A494
-                                                                     */
-/************************************************************************/
+static uint8_t get_time_par(char ts[], uint8_t index){
+	char par[3];
+	par[0]=ts[index];
+	par[1]=ts[index+1];
+	par[2]='\0';
+	
+	return atoi(par);
+}
+
