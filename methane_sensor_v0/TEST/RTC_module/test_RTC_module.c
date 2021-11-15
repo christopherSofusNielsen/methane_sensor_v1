@@ -49,8 +49,8 @@ void test_RTC_module_start(){
 
 	while(1){
 		
-		//test_clk_out();
-		test_get_current_time();
+		test_clk_out();
+		//test_get_current_time();
 		//test_set_current_time();
 		//test_set_wake_up();
 		

@@ -32,13 +32,10 @@ void test_SCD30_module_start(){
 		PM_HAL_SCD30_power_init();
 		TWI_HAL_init();
 		
-		//Set pull up
-		set_bit(PORTB, 0);
-		set_bit(PORTB, 1);
 			
 		while(1){
-			//test_sampling();
-			test_get_reading();
+			test_sampling();
+			//test_get_reading();
 			
 			_delay_ms(1500);
 		}

@@ -8,11 +8,6 @@
 #include "TWI_API.h"
 #include "TWI_HAL.h"
 
-//uint8_t __locked;
-//#define _lock __locked=0x01
-//#define _free __locked=0x00
-//#define _is_free __locked==0x00
-
 
 static uint8_t start_and_write_data(uint8_t slaveAddr, const uint8_t data[], uint8_t length);
 static uint8_t read_and_stop(uint8_t data[], uint8_t length);
@@ -58,11 +53,8 @@ uint8_t TWI_API_repeat_read_data_stop(uint8_t slaveAddr, uint8_t data[], uint8_t
 	
 }
 
-
-
-
 /************************************************************************/
-/* Local function                                                                     */
+/* Local function                                                       */
 /************************************************************************/
 
 static uint8_t start_and_write_data(uint8_t slaveAddr, const uint8_t data[], uint8_t length){

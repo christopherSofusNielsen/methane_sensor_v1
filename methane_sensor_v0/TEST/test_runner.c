@@ -35,7 +35,7 @@ void test_runner(){
 	//test_TC1_HAL_start();
 	//test_RTC_module_start();
 	//test_UART0_HAL_start();
-	test_TC2_HAL_start();
+	//test_TC2_HAL_start();
 	//test_MRPP_module_start();
 	//test_PUMP_module_start();
 	//test_LED_module_start();

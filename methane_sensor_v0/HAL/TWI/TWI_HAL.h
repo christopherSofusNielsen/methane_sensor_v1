@@ -18,9 +18,8 @@ typedef enum {
 }TWI_HAL_START_TYPE;
 
 #define F_SCL 100000
-#define TWI_PRESCALE 1
 
-#define  TWI_TWBR ((F_CPU/F_SCL)-16)*(float)(1.0/(2*TWI_PRESCALE))
+#define  TWI_TWBR 32
 
 #define TWI_CODE_SUCCESS 0x00
 

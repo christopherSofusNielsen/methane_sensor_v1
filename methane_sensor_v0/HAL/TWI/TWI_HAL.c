@@ -26,8 +26,7 @@
 
 void TWI_HAL_init(){
 	TWBR=TWI_TWBR; //Set bit generator
-	if(TWI_PRESCALE==1)
-		clear_byte(TWSR, 0b00000011); //set prescale to 1
+	clear_byte(TWSR, 0b00000011); //set prescale to 1
 	
 }
 
