@@ -11,6 +11,7 @@
 #include <stdlib.h>
 
 
+
 #include "RW.h"
 #include "../UTIL/util.h"
 #include "../../../util/str2float/str2float.h"
@@ -175,6 +176,7 @@ static void read_cols(char res[]){
 
 static void read_time(char res[]){
 	TWI_HAL_init();
+	
 	Datetime dt;
 	
 	RTC_STATUS status=RTC_get_current_time(&dt);

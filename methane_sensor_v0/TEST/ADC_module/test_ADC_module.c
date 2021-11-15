@@ -24,6 +24,7 @@
 static void get_value();
 static void test_sampling();
 static void test_heater();
+static void get_value_bit();
 //static void test_calc_ppm_methane();
 
 
@@ -34,14 +35,12 @@ void test_ADC_module_start(){
 	PM_HAL_meth_power_init();
 	PM_HAL_adc_power_init();
 	
-	//Set pull up
-	set_bit(PORTB, 0);
-	set_bit(PORTB, 1);
-	
+
 	while(1){
 		//test_heater();
 		//test_sampling();
 		//get_value();
+		get_value_bit();
 
 		_delay_ms(1000);
 	}
@@ -108,6 +107,22 @@ static void get_value(){
 	}
 }
 
+
+static void get_value_bit(){
+	uart1_hal_send_string("Get value");
+	PM_HAL_adc_power(true);
+	PM_HAL_meth_power(true);
+	_delay_ms(100);
+	uint16_t bit;
+	ADC_STATUS status=ADC_get_value(&bit);
+	if(status!= ADC_STATUS_SUCCESS){
+		uart1_hal_send_string("FAIL");
+	}else{
+		char msg[20];
+		sprintf(msg, " %u ", bit);
+		uart1_hal_send_string(msg);
+	}
+}
 
 /************************************************************************/
 /* Calculate PPM                                                        */

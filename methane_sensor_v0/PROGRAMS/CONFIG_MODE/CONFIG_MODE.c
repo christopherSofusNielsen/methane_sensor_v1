@@ -33,6 +33,8 @@ void CONF_enter(){
 				}else{
 					state=CONF_CLEAR_FOR_NEW_CMD;
 				}
+					//state=CONF_CLEAR_FOR_NEW_CMD;
+					
 			break;
 			
 			case CONF_WAIT_FOR_CMD:

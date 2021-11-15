@@ -46,9 +46,9 @@ void test_LORA_module_start(){
 }
 
 static void test_join_network(){
-	char deveui[]="0004A30B00F4547A";
-	char appeui[]="70B3D57ED003F844";
-	char appkey[]="B88AD6D25A3B27C69A01F74C53F9A179";
+	char deveui[]="70B3D57ED0047B7D";
+	char appeui[]="0000000000000000";
+	char appkey[]="EA11A4D6D368D5CDE102B0491B40A494";
 	
 	
 	LM_STATUS status=LM_join_network(deveui, appeui, appkey);

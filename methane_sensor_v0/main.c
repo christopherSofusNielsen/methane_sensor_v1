@@ -14,15 +14,15 @@
 int main(void)
 {
 	//test_runner();
-	
+	//return 0;
 	while(1)
-    {
+	{
 		if(1){
 			CONF_enter();
 		}else{
 			MAINPG_start();
 		}
 		_delay_ms(5000);
-        
-    }
+		
+	}
 }
