@@ -135,7 +135,7 @@ Discarded input sections
  .text.PM_HAL_LED_toggle
                 0x0000000000000000        0x8 HAL/PM/PM_HAL.o
  .text.PM_HAL_enter_power_down
-                0x0000000000000000       0x42 HAL/PM/PM_HAL.o
+                0x0000000000000000       0x3c HAL/PM/PM_HAL.o
  .text          0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
  .data          0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
  .bss           0x0000000000000000        0x0 HAL/RN2483/RN2483_HAL.o
@@ -578,7 +578,7 @@ Discarded input sections
  .progmemx.data
                 0x0000000000000000       0x8f PROGRAMS/MAINPG/MAINPG.o
  .text.MAINPG_start
-                0x0000000000000000      0x308 PROGRAMS/MAINPG/MAINPG.o
+                0x0000000000000000      0x2fa PROGRAMS/MAINPG/MAINPG.o
  .progmem.gcc_sw_table.MAINPG_start
                 0x0000000000000000       0x30 PROGRAMS/MAINPG/MAINPG.o
  .bss.samplingProcessInterval
@@ -611,7 +611,7 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x98 PROGRAMS/MAINPG/MAINPG.o
  .debug_ranges  0x0000000000000000       0x88 PROGRAMS/MAINPG/MAINPG.o
- .debug_line    0x0000000000000000      0xc2c PROGRAMS/MAINPG/MAINPG.o
+ .debug_line    0x0000000000000000      0xc20 PROGRAMS/MAINPG/MAINPG.o
  .debug_str     0x0000000000000000      0x567 PROGRAMS/MAINPG/MAINPG.o
  .comment       0x0000000000000000       0x30 PROGRAMS/MAINPG/MAINPG.o
  .debug_frame   0x0000000000000000      0x194 PROGRAMS/MAINPG/MAINPG.o
@@ -750,15 +750,15 @@ Discarded input sections
  .text.test_get_current_time
                 0x0000000000000000       0x66 TEST/RTC_module/test_RTC_module.o
  .text.test_RTC_module_start
-                0x0000000000000000       0x20 TEST/RTC_module/test_RTC_module.o
- .debug_info    0x0000000000000000      0x5d8 TEST/RTC_module/test_RTC_module.o
+                0x0000000000000000       0x34 TEST/RTC_module/test_RTC_module.o
+ .debug_info    0x0000000000000000      0x644 TEST/RTC_module/test_RTC_module.o
  .debug_abbrev  0x0000000000000000      0x1bd TEST/RTC_module/test_RTC_module.o
  .debug_loc     0x0000000000000000       0xed TEST/RTC_module/test_RTC_module.o
  .debug_aranges
                 0x0000000000000000       0x30 TEST/RTC_module/test_RTC_module.o
  .debug_ranges  0x0000000000000000       0x20 TEST/RTC_module/test_RTC_module.o
- .debug_line    0x0000000000000000      0x1f4 TEST/RTC_module/test_RTC_module.o
- .debug_str     0x0000000000000000       0x47 TEST/RTC_module/test_RTC_module.o
+ .debug_line    0x0000000000000000      0x238 TEST/RTC_module/test_RTC_module.o
+ .debug_str     0x0000000000000000       0x99 TEST/RTC_module/test_RTC_module.o
  .comment       0x0000000000000000       0x30 TEST/RTC_module/test_RTC_module.o
  .debug_frame   0x0000000000000000       0x70 TEST/RTC_module/test_RTC_module.o
  .text          0x0000000000000000        0x0 TEST/SCD30_module/test_SCD30_module.o
@@ -876,8 +876,8 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x20 TEST/test_runner.o
  .debug_ranges  0x0000000000000000       0x10 TEST/test_runner.o
- .debug_line    0x0000000000000000       0x71 TEST/test_runner.o
- .debug_str     0x0000000000000000       0x16 TEST/test_runner.o
+ .debug_line    0x0000000000000000       0x69 TEST/test_runner.o
+ .debug_str     0x0000000000000000       0x12 TEST/test_runner.o
  .comment       0x0000000000000000       0x30 TEST/test_runner.o
  .debug_frame   0x0000000000000000       0x24 TEST/test_runner.o
  .text          0x0000000000000000        0x0 TEST/UART0_HAL/test_UART0_HAL.o
@@ -1760,42 +1760,42 @@ END GROUP
  .debug_abbrev  0x0000000000002580       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_dword.o)
  .debug_abbrev  0x0000000000002594       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_word.o)
 
-.debug_line     0x0000000000000000     0x4458
+.debug_line     0x0000000000000000     0x4452
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x154 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
- .debug_line    0x0000000000000154      0x22a HAL/PM/PM_HAL.o
- .debug_line    0x000000000000037e       0xbb HAL/RN2483/RN2483_HAL.o
- .debug_line    0x0000000000000439       0xaf HAL/SCD30/SCD30_HAL.o
- .debug_line    0x00000000000004e8      0x10e HAL/TC0/TC0_HAL.o
- .debug_line    0x00000000000005f6      0x114 HAL/TC1/TC1_HAL.o
- .debug_line    0x000000000000070a      0x232 HAL/TC2/TC2_HAL.o
- .debug_line    0x000000000000093c      0x1d8 HAL/TWI/TWI_API.o
- .debug_line    0x0000000000000b14      0x21c HAL/TWI/TWI_HAL.o
- .debug_line    0x0000000000000d30      0x333 HAL/UART0/UART0_HAL.o
- .debug_line    0x0000000000001063      0x2d7 HAL/UART1/UART1_HAL.o
- .debug_line    0x000000000000133a       0xf9 main.o
- .debug_line    0x0000000000001433      0x375 MODULES/ADC_module/ADC_module.o
- .debug_line    0x00000000000017a8      0x3c9 MODULES/EEPROM_module/EEPROM_module.o
- .debug_line    0x0000000000001b71      0x2ae MODULES/LORA_module/lora_module.o
- .debug_line    0x0000000000001e1f      0x26b MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
- .debug_line    0x000000000000208a      0x30b MODULES/LORA_module/util/util.o
- .debug_line    0x0000000000002395      0x358 MODULES/RTC_module/RTC_module.o
- .debug_line    0x00000000000026ed      0x438 MODULES/SCD30_module/SCD30_module.o
- .debug_line    0x0000000000002b25      0x30f PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
- .debug_line    0x0000000000002e34      0x1b8 PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.o
- .debug_line    0x0000000000002fec      0x840 PROGRAMS/CONFIG_MODE/RW/RW.o
- .debug_line    0x000000000000382c      0x327 PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.o
- .debug_line    0x0000000000003b53      0x1ae PROGRAMS/CONFIG_MODE/UTIL/util.o
- .debug_line    0x0000000000003d01       0xe4 util/CRC8/CRC8.o
- .debug_line    0x0000000000003de5      0x1aa util/str2float/str2float.o
- .debug_line    0x0000000000003f8f       0xba C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
- .debug_line    0x0000000000004049       0x82 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
- .debug_line    0x00000000000040cb       0x71 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_dword.o)
- .debug_line    0x000000000000413c       0x70 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_word.o)
- .debug_line    0x00000000000041ac      0x110 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
- .debug_line    0x00000000000042bc       0xb9 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
- .debug_line    0x0000000000004375       0x7e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_dword.o)
- .debug_line    0x00000000000043f3       0x65 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_word.o)
+ .debug_line    0x0000000000000154      0x224 HAL/PM/PM_HAL.o
+ .debug_line    0x0000000000000378       0xbb HAL/RN2483/RN2483_HAL.o
+ .debug_line    0x0000000000000433       0xaf HAL/SCD30/SCD30_HAL.o
+ .debug_line    0x00000000000004e2      0x10e HAL/TC0/TC0_HAL.o
+ .debug_line    0x00000000000005f0      0x114 HAL/TC1/TC1_HAL.o
+ .debug_line    0x0000000000000704      0x232 HAL/TC2/TC2_HAL.o
+ .debug_line    0x0000000000000936      0x1d8 HAL/TWI/TWI_API.o
+ .debug_line    0x0000000000000b0e      0x21c HAL/TWI/TWI_HAL.o
+ .debug_line    0x0000000000000d2a      0x333 HAL/UART0/UART0_HAL.o
+ .debug_line    0x000000000000105d      0x2d7 HAL/UART1/UART1_HAL.o
+ .debug_line    0x0000000000001334       0xf9 main.o
+ .debug_line    0x000000000000142d      0x375 MODULES/ADC_module/ADC_module.o
+ .debug_line    0x00000000000017a2      0x3c9 MODULES/EEPROM_module/EEPROM_module.o
+ .debug_line    0x0000000000001b6b      0x2ae MODULES/LORA_module/lora_module.o
+ .debug_line    0x0000000000001e19      0x26b MODULES/LORA_module/RN2483_protocol/RN2483_protocol.o
+ .debug_line    0x0000000000002084      0x30b MODULES/LORA_module/util/util.o
+ .debug_line    0x000000000000238f      0x358 MODULES/RTC_module/RTC_module.o
+ .debug_line    0x00000000000026e7      0x438 MODULES/SCD30_module/SCD30_module.o
+ .debug_line    0x0000000000002b1f      0x30f PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .debug_line    0x0000000000002e2e      0x1b8 PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.o
+ .debug_line    0x0000000000002fe6      0x840 PROGRAMS/CONFIG_MODE/RW/RW.o
+ .debug_line    0x0000000000003826      0x327 PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.o
+ .debug_line    0x0000000000003b4d      0x1ae PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .debug_line    0x0000000000003cfb       0xe4 util/CRC8/CRC8.o
+ .debug_line    0x0000000000003ddf      0x1aa util/str2float/str2float.o
+ .debug_line    0x0000000000003f89       0xba C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .debug_line    0x0000000000004043       0x82 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .debug_line    0x00000000000040c5       0x71 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_dword.o)
+ .debug_line    0x0000000000004136       0x70 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_word.o)
+ .debug_line    0x00000000000041a6      0x110 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .debug_line    0x00000000000042b6       0xb9 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .debug_line    0x000000000000436f       0x7e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_dword.o)
+ .debug_line    0x00000000000043ed       0x65 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_word.o)
 
 .debug_frame    0x0000000000000000     0x17b0
  *(.debug_frame)

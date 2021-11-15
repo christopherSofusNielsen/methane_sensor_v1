@@ -317,7 +317,7 @@ static bool write_air_pump(const char cmd[], char res[]){
 	
 	uint16_t val=atoi(arg);
 	
-	if(val<10 || val>1000) return false;
+	if(val<5 || val>1000) return false;
 	
 	EM_set_air_pump_time(val);
 	
@@ -349,14 +349,14 @@ static bool write_reset(const char cmd[], char res[]){
 	EM_set_RRL(2500.00);
 	EM_set_Vcc(5.00);
 	EM_set_heat_up_time(2);
-	EM_set_air_pump_time(10);
+	EM_set_air_pump_time(5);
 	EM_set_sp_interval(6);
 	
 	for (uint8_t i=0; i<7; i++)
 	{
 		cols[i].type=T_INT16;
 		cols[i].samplings=2;
-		cols[i].samplingInterval=10;
+		cols[i].samplingInterval=3;
 	}
 	
 	EM_set_collections(cols, sizeof(COLLECTION)*7);

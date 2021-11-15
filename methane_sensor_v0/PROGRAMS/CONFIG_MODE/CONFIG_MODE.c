@@ -27,6 +27,7 @@ void CONF_enter(){
 			case CONF_INTRO:
 				uart1_hal_send_string("******** Methane Sensor v1.0 ********");
 				uart1_hal_send_string("Setting modules up... Please wait");
+				
 				if(!init_methane_SCD30()){
 					uart1_hal_send_string("Failed to initialize system...");
 					state=CONF_EXIT;

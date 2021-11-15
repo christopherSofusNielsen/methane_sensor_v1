@@ -83,7 +83,6 @@ void PM_HAL_LED_toggle(){
 
 void PM_HAL_enter_power_down(){
 	clear_bit(DDRB, 2); //set PB2 as input
-	set_bit(PORTB, 2); //Enbale pull up
 	
 	//Set faling edge interrupt
 	clear_bit(EICRA, 4);

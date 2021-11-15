@@ -19,19 +19,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_abbrev 000025a8  00000000  00000000  00010934  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00004458  00000000  00000000  00012edc  2**0
+  8 .debug_line   00004452  00000000  00000000  00012edc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000017b0  00000000  00000000  00017334  2**2
+  9 .debug_frame  000017b0  00000000  00000000  00017330  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000009c8  00000000  00000000  00018ae4  2**0
+ 10 .debug_str    000009c8  00000000  00000000  00018ae0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00005050  00000000  00000000  000194ac  2**0
+ 11 .debug_loc    00005050  00000000  00000000  000194a8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000718  00000000  00000000  0001e4fc  2**0
+ 12 .debug_ranges 00000718  00000000  00000000  0001e4f8  2**0
                   CONTENTS, READONLY, DEBUGGING
  13 .text         00000004  00003fbe  00003fbe  00004072  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 14 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0001ec14  2**2
+ 14 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0001ec10  2**2
                   CONTENTS, READONLY, DEBUGGING
  15 .text.PM_HAL_adc_power_init 0000000e  00003de6  00003de6  00003e9a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
@@ -2111,8 +2111,8 @@ Disassembly of section .text.__vector_28:
 Disassembly of section .text.main:
 
 00003c7c <main>:
-	//test_runner();
 	//return 0;
+	
 	while(1)
 	{
 		if(1){
@@ -2240,6 +2240,7 @@ ADC_STATUS ADC_get_value(uint16_t *value){
     2e14:	98 2f       	mov	r25, r24
     2e16:	88 27       	eor	r24, r24
     2e18:	2a 81       	ldd	r18, Y+2	; 0x02
+	//*value=bit_value;
 	*value=calc_ppm_methane(bit_value);
     2e1a:	82 2b       	or	r24, r18
     2e1c:	0e 94 d1 12 	call	0x25a2	; 0x25a2 <calc_ppm_methane>
@@ -2257,6 +2258,7 @@ ADC_STATUS ADC_get_value(uint16_t *value){
 	if(status != TWI_CODE_SUCCESS) return ADC_STATUS_ERROR;
     2e2a:	81 e0       	ldi	r24, 0x01	; 1
 	bit_value = (data[0]<<8)|(data[1] & 0xFF);
+	//*value=bit_value;
 	*value=calc_ppm_methane(bit_value);
 	return ADC_STATUS_SUCCESS;
 }
@@ -3634,7 +3636,7 @@ void CONF_enter(){
 	CONF_STATES state=CONF_INTRO;
     1748:	c0 e0       	ldi	r28, 0x00	; 0
     174a:	0d c0       	rjmp	.+26     	; 0x1766 <CONF_enter+0x24>
-				uart1_hal_send_string("Setting modules up... Please wait");
+				
 				if(!init_methane_SCD30()){
 					uart1_hal_send_string("Failed to initialize system...");
 					state=CONF_EXIT;
@@ -3714,6 +3716,7 @@ void CONF_enter(){
     1784:	73 e0       	ldi	r23, 0x03	; 3
     1786:	80 e0       	ldi	r24, 0x00	; 0
     1788:	0e 94 b0 13 	call	0x2760	; 0x2760 <uart1_hal_send_string>
+				
 				if(!init_methane_SCD30()){
     178c:	0e 94 31 1d 	call	0x3a62	; 0x3a62 <init_methane_SCD30>
     1790:	81 11       	cpse	r24, r1
@@ -3926,10 +3929,10 @@ static STATES_CON_LORA CON_RN2483_parse(char msg[]){
 Disassembly of section .text.CON_RN2483:
 
 00001cb6 <CON_RN2483>:
-	}else{
-		return false;
 	}
 }
+
+
 
 static bool CON_RN2483(){
     1cb6:	6f 92       	push	r6
@@ -5077,11 +5080,11 @@ static bool write_air_pump(const char cmd[], char res[]){
     2f52:	80 e8       	ldi	r24, 0x80	; 128
     2f54:	0e 94 cf 1f 	call	0x3f9e	; 0x3f9e <atoi>
 	
-	if(val<10 || val>1000) return false;
+	if(val<5 || val>1000) return false;
     2f58:	9c 01       	movw	r18, r24
-    2f5a:	2a 50       	subi	r18, 0x0A	; 10
+    2f5a:	25 50       	subi	r18, 0x05	; 5
     2f5c:	31 09       	sbc	r19, r1
-    2f5e:	2f 3d       	cpi	r18, 0xDF	; 223
+    2f5e:	24 3e       	cpi	r18, 0xE4	; 228
     2f60:	33 40       	sbci	r19, 0x03	; 3
     2f62:	58 f4       	brcc	.+22     	; 0x2f7a <write_air_pump+0x44>
 	
@@ -5103,7 +5106,7 @@ static bool write_air_pump(const char cmd[], char res[]){
 	
 	uint16_t val=atoi(arg);
 	
-	if(val<10 || val>1000) return false;
+	if(val<5 || val>1000) return false;
     2f7a:	c0 e0       	ldi	r28, 0x00	; 0
 	
 	EM_set_air_pump_time(val);
@@ -5236,8 +5239,8 @@ static bool write_reset(const char cmd[], char res[]){
 	EM_set_heat_up_time(2);
     1dfa:	82 e0       	ldi	r24, 0x02	; 2
     1dfc:	0e 94 71 1f 	call	0x3ee2	; 0x3ee2 <EM_set_heat_up_time>
-	EM_set_air_pump_time(10);
-    1e00:	8a e0       	ldi	r24, 0x0A	; 10
+	EM_set_air_pump_time(5);
+    1e00:	85 e0       	ldi	r24, 0x05	; 5
     1e02:	90 e0       	ldi	r25, 0x00	; 0
     1e04:	0e 94 7d 1f 	call	0x3efa	; 0x3efa <EM_set_air_pump_time>
 	EM_set_sp_interval(6);
@@ -5271,14 +5274,14 @@ static bool write_reset(const char cmd[], char res[]){
     1e36:	30 e0       	ldi	r19, 0x00	; 0
     1e38:	31 83       	std	Z+1, r19	; 0x01
     1e3a:	20 83       	st	Z, r18
-		cols[i].samplingInterval=10;
-    1e3c:	2a e0       	ldi	r18, 0x0A	; 10
+		cols[i].samplingInterval=3;
+    1e3c:	23 e0       	ldi	r18, 0x03	; 3
     1e3e:	30 e0       	ldi	r19, 0x00	; 0
     1e40:	33 83       	std	Z+3, r19	; 0x03
     1e42:	22 83       	std	Z+2, r18	; 0x02
 	EM_set_Vcc(5.00);
 	EM_set_heat_up_time(2);
-	EM_set_air_pump_time(10);
+	EM_set_air_pump_time(5);
 	EM_set_sp_interval(6);
 	
 	for (uint8_t i=0; i<7; i++)
@@ -5287,7 +5290,7 @@ static bool write_reset(const char cmd[], char res[]){
     1e48:	20 f3       	brcs	.-56     	; 0x1e12 <write_reset+0x74>
 		cols[i].type=T_INT16;
 		cols[i].samplings=2;
-		cols[i].samplingInterval=10;
+		cols[i].samplingInterval=3;
 	}
 	
 	EM_set_collections(cols, sizeof(COLLECTION)*7);

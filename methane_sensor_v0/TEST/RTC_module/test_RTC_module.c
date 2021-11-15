@@ -35,6 +35,11 @@ static void sendISO(Datetime dt, char msg[]);
 
 
 void test_RTC_module_start(){
+	PM_HAL_SCD30_power_init();
+	PM_HAL_SCD30_power(true);
+	PM_HAL_adc_power_init();
+	PM_HAL_adc_power(false);
+	
 	uart1_hal_init();
 	TWI_HAL_init();
 	

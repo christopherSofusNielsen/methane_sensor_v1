@@ -106,9 +106,7 @@ void MAINPG_start(){
 				PM_HAL_SCD30_power_init();
 				PM_HAL_LED_power_init();
 				
-				//Set pull up
-				set_bit(PORTB, 0);
-				set_bit(PORTB, 1);
+			
 				
 				state=fromSleep?MAINPG_LORA_WAKEUP:MAINPG_READ_EEPROM;
 			break;
@@ -141,13 +139,13 @@ void MAINPG_start(){
 			
 			case MAINPG_LORA_JOIN_SUCCESS:
 				LED_join_success();
-				state=MAINPG_INIT_RTC;
+				state=MAINPG_INIT_MODULES;
 			break;
 			
 			case MAINPG_LORA_WAKEUP:
 				print_debug("LoRa WAKE UP\n\r");
 				lmStatus=LM_wake_up();
-				state=lmStatus==LM_STATUS_SUCCESS?MAINPG_INIT_RTC:MAINPG_FATAL_ERROR;
+				state=lmStatus==LM_STATUS_SUCCESS?MAINPG_INIT_MODULES:MAINPG_FATAL_ERROR;
 			break;
 			
 			case MAINPG_LORA_JOIN_TRY_AGAIN:
@@ -155,6 +153,15 @@ void MAINPG_start(){
 				LED_join_denied();
 				_delay_ms(5000);
 				state=MAINPG_LORA_JOIN_NETWORK;
+			break;
+			
+			/************************************************************************/
+			/*                                                                      */
+			/************************************************************************/
+			case MAINPG_INIT_MODULES:
+				ADC_set_conf_parameters(vccx, rrlx, ppmx);
+				scd30Status=SCD30_sensor_on();
+				state=scd30Status==SCD30_STATUS_SUCCESS?MAINPG_INIT_RTC:MAINPG_FATAL_ERROR;
 			break;
 			
 			/************************************************************************/
@@ -179,20 +186,21 @@ void MAINPG_start(){
 				state=rtcStatus==RTC_STATUS_SUCCESS?MAINPG_INIT_MRPP:MAINPG_FATAL_ERROR;
 			break;
 			
+			
 			/************************************************************************/
 			/* MRPP and data sampling                                               */
 			/************************************************************************/
 			case MAINPG_INIT_MRPP:
 				print_debug("Mrpp init\n\r");
 				MRPP_init_group(cols, N_COLLECTIONS);
-				state=MAINPG_INIT_MODULES;
+				state=MAINPG_SEND_HEADER;
 			break;
 			
-			case MAINPG_INIT_MODULES:
-				ADC_set_conf_parameters(vccx, rrlx, ppmx);
-				scd30Status=SCD30_sensor_on();
-				state=scd30Status==SCD30_STATUS_SUCCESS?MAINPG_SEND_HEADER:MAINPG_FATAL_ERROR;
-			break;
+			//case MAINPG_INIT_MODULES:
+				//ADC_set_conf_parameters(vccx, rrlx, ppmx);
+				//scd30Status=SCD30_sensor_on();
+				//state=scd30Status==SCD30_STATUS_SUCCESS?MAINPG_SEND_HEADER:MAINPG_FATAL_ERROR;
+			//break;
 			
 			case MAINPG_SEND_HEADER:
 				if(!LM_is_free()){

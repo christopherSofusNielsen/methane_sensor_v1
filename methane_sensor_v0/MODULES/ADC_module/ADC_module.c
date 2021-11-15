@@ -80,6 +80,7 @@ ADC_STATUS ADC_get_value(uint16_t *value){
 	status=TWI_API_read_data_ack_end_nack_stop(ADC_SLAVE_ADDR, data, 2);
 	if(status != TWI_CODE_SUCCESS) return ADC_STATUS_ERROR;
 	bit_value = (data[0]<<8)|(data[1] & 0xFF);
+	//*value=bit_value;
 	*value=calc_ppm_methane(bit_value);
 	return ADC_STATUS_SUCCESS;
 }

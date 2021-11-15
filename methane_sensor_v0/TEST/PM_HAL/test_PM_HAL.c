@@ -28,7 +28,7 @@ void test_PM_HAL_start(){
 void test_sleep_cmd(){
 	
 	uart1_hal_send_string("Before sleep");
-	_delay_ms(200);
+	_delay_ms(5000);
 	PM_HAL_enter_power_down();
 	uart1_hal_send_string("After sleep");
 	_delay_ms(200);

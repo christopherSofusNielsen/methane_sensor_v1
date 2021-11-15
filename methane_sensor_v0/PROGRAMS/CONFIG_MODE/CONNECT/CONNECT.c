@@ -35,6 +35,8 @@ bool CONNECT(const char cmd[]){
 	}
 }
 
+
+
 static bool CON_RN2483(){
 	STATES_CON_LORA state=CL_INIT;
 	
