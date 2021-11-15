@@ -13,8 +13,7 @@
 
 int main(void)
 {
-	//test_runner();
-	//return 0;
+	test_runner();
 	
 	while(1)
 	{

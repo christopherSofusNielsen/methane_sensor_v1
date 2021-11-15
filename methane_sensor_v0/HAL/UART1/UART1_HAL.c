@@ -78,7 +78,7 @@ uint8_t uart1_hal_read_message(uint8_t msg[]){
 }
 
 uint8_t uart1_hal_read_message_as_str(char msg[]){
-	copy_buffer(msg);
+	copy_buffer((uint8_t *)msg);
 	uint8_t len= rx_buffer_data_len-2;
 	msg[len]='\0';
 	uart1_hal_clear_rx_buffer();

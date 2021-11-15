@@ -13,6 +13,8 @@
 #include "../types.h"
 #include "../../util/bit_operators.h"
 
+#define TC2_CNT_MATCH 32
+
 static void start_timer();
 static void stop_timer();
 static void clear_callbacks();
@@ -29,7 +31,7 @@ void TC2_HAL_init(){
 	ASSR=0x00;
 	
 	TCNT2=0; //Set counter to 0
-	OCR2A=251; //15 Hz, 31 event pr s
+	OCR2A=243; //16 Hz, 32 event pr s
 	
 	//Enable interrupt
 	TIMSK2=0x02;
@@ -87,7 +89,7 @@ void TC2_HAL_cancel(int8_t pointer){
 ISR(TIMER2_COMPA_vect){
 	cnt++;
 	
-	if(cnt % 31==0){
+	if(cnt==TC2_CNT_MATCH){
 		cnt=0;
 		for (uint8_t i=0; i<MAX_CALLBACKS; i++)
 		{

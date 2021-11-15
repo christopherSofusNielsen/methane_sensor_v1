@@ -23,8 +23,8 @@
 //static void test_read_clk();
 //static void test_write_clk();
 //static void test_read_time();
-static void test_dec_to_bcd();
-static void test_bcd_to_dec();
+//static void test_dec_to_bcd();
+//static void test_bcd_to_dec();
 static void test_format_dt_to_ts();
 static void test_get_current_time();
 static void test_set_current_time();
@@ -143,35 +143,35 @@ static void test_set_wake_up(){
 	uart1_hal_send_string("Done ");
 }
 
-static void test_dec_to_bcd(){
-	DatetimeBCD bcd;
-	Datetime dt={
-		.second=11,
-		.minute=22,
-		.hour=33,
-		.day=44,
-		.month=55,
-		.year=66
-	};
-	
-	datetime_to_BCD(dt, &bcd);
-	uart1_hal_send_message(&bcd.second, 6);
-}
+//static void test_dec_to_bcd(){
+	//DatetimeBCD bcd;
+	//Datetime dt={
+		//.second=11,
+		//.minute=22,
+		//.hour=33,
+		//.day=44,
+		//.month=55,
+		//.year=66
+	//};
+	//
+	//datetime_to_BCD(dt, &bcd);
+	//uart1_hal_send_message(&bcd.second, 6);
+//}
 
-static void test_bcd_to_dec(){
-	DatetimeBCD bcd={
-		.second=0x11,
-		.minute=0x22,
-		.hour=0x33,
-		.day=0x44,
-		.month=0x55,
-		.year=0x66
-	};
-	Datetime dt;
-	
-	BCD_to_datetime(bcd, &dt);
-	uart1_hal_send_message(&dt.second, 6);
-}
+//static void test_bcd_to_dec(){
+	//DatetimeBCD bcd={
+		//.second=0x11,
+		//.minute=0x22,
+		//.hour=0x33,
+		//.day=0x44,
+		//.month=0x55,
+		//.year=0x66
+	//};
+	//Datetime dt;
+	//
+	//BCD_to_datetime(bcd, &dt);
+	//uart1_hal_send_message(&dt.second, 6);
+//}
 
 static void test_format_dt_to_ts(){
 	uint8_t ts[4];

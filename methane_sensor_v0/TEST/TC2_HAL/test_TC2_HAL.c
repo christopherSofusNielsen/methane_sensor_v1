@@ -12,7 +12,7 @@
 #include "../../HAL/UART1/UART1_HAL.h"
 #include "../../HAL/TC2/TC2_HAL.h"
 
-static void test_sub();
+static void test_sub_cancel();
 static void test_timing();
 
 static void f1();
@@ -24,9 +24,9 @@ static uint8_t f2Cnt=0;
 
 void test_TC2_HAL_start(){
 	uart1_hal_init();
-	
+	uart1_hal_send_string("TC2 test");
 	while(1){
-		//test_sub();
+		//test_sub_cancel();
 		test_timing();
 		
 		_delay_ms(1000);
