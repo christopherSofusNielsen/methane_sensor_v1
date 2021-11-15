@@ -5,15 +5,17 @@
  *  Author: Mainframe
  */ 
 
+#define UART1_BAUDRATE (8000000/(8*57600))-1
 
-
-#include "UART1_HAL.h"
 #include <util/delay.h>
 #include <xc.h>
-#include "../../util/bit_operators.h"
 #include <avr/interrupt.h>
 #include <stdbool.h>
 #include <string.h>
+
+
+#include "UART1_HAL.h"
+#include "../../util/bit_operators.h"
 
 static void copy_buffer(uint8_t msg[]);
 
@@ -32,11 +34,11 @@ void uart1_hal_init(){
 	set_bit(UCSR1B, 6); //interrupt Tx complete
 	set_bit(UCSR1A, 1); //Set double speed
 	UCSR1C = 0b00000110; //Async, none parity, 1 stop bit, 8 databit
-	UBRR1=(8000000/(8*57600))-1; //set baudrate
+	UBRR1=UART1_BAUDRATE; //set baudrate
 	sei();
 }
 void uart1_hal_send_string(const char msg[]){
-	while(tx_buffer_data_len!=0){};
+	while(tx_buffer_data_len!=0){};//wait to write if buffer not empty
 	uint16_t len=strlen(msg);
 	for (uint8_t i=0; i<len; i++)
 	{
@@ -45,13 +47,13 @@ void uart1_hal_send_string(const char msg[]){
 	tx_buffer[len]=UART1_END_CHAR_2;
 	tx_buffer[len+1]=UART1_END_CHAR_1;
 	
-	
 	tx_buffer_data_len=len+2;
 	tx_buffer_cursor=1;
 	UDR1=tx_buffer[0];
 }
 
 void uart1_hal_send_message(uint8_t msg[], uint8_t length){
+	while(tx_buffer_data_len!=0){};//wait to write if buffer not empty
 	for (uint8_t i=0; i<length; i++)
 	{
 		tx_buffer[i]=msg[i];
@@ -119,7 +121,7 @@ ISR(USART1_RX_vect){
 	if(rx_buffer_has_message==0 && rx_buffer_data_len<UART1_RX_BUFF_LENGTH){
 		rx_buffer[rx_buffer_data_len++]=UDR1;
 	}
-	if(rx_buffer[rx_buffer_data_len-1]==UART1_END_CHAR_1 && rx_buffer[rx_buffer_data_len-2]==UART1_END_CHAR_2){
+	if(rx_buffer_data_len>2 && rx_buffer[rx_buffer_data_len-1]==UART1_END_CHAR_1 && rx_buffer[rx_buffer_data_len-2]==UART1_END_CHAR_2){
 		rx_buffer_has_message=1;
 	}
 }
