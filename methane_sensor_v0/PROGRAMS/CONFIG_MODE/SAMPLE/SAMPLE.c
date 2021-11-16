@@ -21,6 +21,7 @@ static char par[20];
 
 static bool handle_methane(const char cmd[], char res[]);
 static bool handle_co2(const char cmd[], char res[]);
+static bool handle_pump(const char cmd[], char res[]);
 
 bool handle_sample(const char cmd[], char res[]){
 	if(!get_parameter(cmd, par, 1)) return false;
@@ -29,6 +30,8 @@ bool handle_sample(const char cmd[], char res[]){
 		return handle_methane(cmd, res);
 	}else if(strcmp(par, S_CO2)==0){
 		return handle_co2(cmd, res);
+	}else if(strcmp(par, S_PUMP)==0){
+		return handle_pump(cmd, res);
 	}else{
 		strcpy(res, CONF_STAT_NOT_EXIST);
 		return true;
@@ -98,5 +101,27 @@ static bool handle_co2(const char cmd[], char res[]){
 		return true;
 	}
 }
+
+static bool handle_pump(const char cmd[], char res[]){
+	if(!get_parameter(cmd, par, 2)) return false;
+	
+	if(strcmp(par, PUMP_ON)==0){
+		PM_HAL_BC_power_init();
+		PM_HAL_BC_power(true);
+		
+		strcpy(res, "Power to air pump on");
+		return true;
+	}else if(strcmp(par, PUMP_OFF)==0){
+		PM_HAL_BC_power_init();
+		PM_HAL_BC_power(false);
+		
+		strcpy(res, "Power to air pump off");
+		return true;
+	}else{
+		strcpy(res, CONF_STAT_NOT_EXIST);
+		return true;
+	}
+}
+
 
 

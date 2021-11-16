@@ -13,12 +13,17 @@
 
 #define S_METH "meth"
 #define S_CO2 "co2"
+#define S_PUMP	"pump"
 
 #define METH_POWER_ON "on"
 #define METH_POWER_OFF "off"
 #define METH_READ "read"
 
 #define CO2_READ "read"
+
+#define PUMP_ON "on"
+#define PUMP_OFF "off"
+
 
 #include <xc.h>
 #include <stdbool.h>
