@@ -31,6 +31,7 @@ int util_matchMessage(LM_STATE_DATA *sd, char *msg);
 bool util_strbeginswith(const char *s1, const char *s2);
 LM_STATUS util_reset_module();
 void util_lora_forward_msg(const char msg[], char res[]);
+void util_send_break(char res[]);
 
 
 #endif /* UTIL_H_ */

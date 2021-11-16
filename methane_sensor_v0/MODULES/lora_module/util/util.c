@@ -72,3 +72,12 @@ void util_lora_forward_msg(const char msg[], char res[]){
 	while(!uart0_hal_message_ready());
 	uart0_hal_read_message_as_str(res);
 }
+
+void util_send_break(char res[]){
+	uart0_hal_send_break(0x55);
+	
+	//Wait for response
+	while(uart0_hal_message_ready()==false){}
+	
+	uart0_hal_read_message_as_str(res);
+}

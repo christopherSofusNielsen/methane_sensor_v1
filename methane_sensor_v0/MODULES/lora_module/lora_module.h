@@ -31,6 +31,7 @@ LM_STATUS LM_wake_up();
 bool LM_is_free();
 LM_STATUS LM_reset_module();
 void LM_forward_msg(const char msg[], char res[]);
+void LM_send_break(char res[]);
 
 
 

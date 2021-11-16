@@ -52,6 +52,10 @@ void LM_forward_msg(const char msg[], char res[]){
 	util_lora_forward_msg(msg, res);
 }
 
+void LM_send_break(char res[]){
+	util_send_break(res);
+}
+
 
 static void set_block_uplink(){
 	subPointer=TC2_HAL_subscribe(&cb_block_uplink);

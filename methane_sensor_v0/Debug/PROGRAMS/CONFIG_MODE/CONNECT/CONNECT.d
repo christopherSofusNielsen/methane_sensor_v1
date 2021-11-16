@@ -9,6 +9,9 @@ PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.d \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdint.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdint.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
  ../PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.h \
  ../PROGRAMS/CONFIG_MODE/CONNECT/../../../HAL/UART1/UART1_HAL.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h \
@@ -41,6 +44,12 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdint.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdint.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 
 ../PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.h:
 

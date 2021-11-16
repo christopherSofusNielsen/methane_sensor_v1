@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdio.h>
+#include <util/delay.h>
 
 
 #include "CONNECT.h"
@@ -71,6 +72,15 @@ static bool CON_RN2483(){
 				state=CL_READ_MSG;
 			break;
 			
+			case CL_SEND_BREAK:
+				sprintf(cnf_reply, "-->%s", "break 0x55" );
+				uart1_hal_send_string(cnf_reply);
+				_delay_ms(50);
+				LM_send_break(cnf_reply);
+				uart1_hal_send_string(cnf_reply);
+				state=CL_READ_MSG;
+			break;
+			
 			case CL_EXIT:
 				uart0_hal_clear_rx_buffer();
 				uart1_hal_send_string("Closing connection to RN2483...");
@@ -84,6 +94,9 @@ static bool CON_RN2483(){
 static STATES_CON_LORA CON_RN2483_parse(char msg[]){
 	if(strncmp(msg, "exit", strlen("exit"))==0){
 		return CL_EXIT;
+	}else if (strncmp(msg, "break", strlen("break"))==0)
+	{
+		return CL_SEND_BREAK;
 	}
 	return CL_FORWARD;
 }

@@ -17,7 +17,7 @@ int main(void)
 	
 	while(1)
 	{
-		if(0){
+		if(1){
 			CONF_enter();
 		}else{
 			MAINPG_start();
