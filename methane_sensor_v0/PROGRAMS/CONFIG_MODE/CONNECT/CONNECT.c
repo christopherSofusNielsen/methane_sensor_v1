@@ -81,6 +81,16 @@ static bool CON_RN2483(){
 				state=CL_READ_MSG;
 			break;
 			
+			case CL_READ:
+				if(uart0_hal_message_ready()){
+					uart0_hal_read_message_as_str(cnf_reply);
+				}else{
+					strcpy(cnf_reply, "null");
+				}
+				uart1_hal_send_string(cnf_reply);
+				state=CL_READ_MSG;
+			break;
+			
 			case CL_EXIT:
 				uart0_hal_clear_rx_buffer();
 				uart1_hal_send_string("Closing connection to RN2483...");
@@ -92,11 +102,17 @@ static bool CON_RN2483(){
 }
 
 static STATES_CON_LORA CON_RN2483_parse(char msg[]){
-	if(strncmp(msg, "exit", strlen("exit"))==0){
+	if(strncmp(msg, "exit", strlen("exit"))==0)
+	{
 		return CL_EXIT;
-	}else if (strncmp(msg, "break", strlen("break"))==0)
+	}
+	else if (strncmp(msg, "break", strlen("break"))==0)
 	{
 		return CL_SEND_BREAK;
+	}
+	else if (strncmp(msg, "read", strlen("read"))==0)
+	{
+		return CL_READ;
 	}
 	return CL_FORWARD;
 }
