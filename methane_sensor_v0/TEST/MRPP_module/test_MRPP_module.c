@@ -35,7 +35,7 @@ static void test_report_example(){
 	uint8_t fake_ts[]={0xAA, 0xBB, 0xCC, 0xDD};
 	uint16_t data[30];
 	
-	 MRPP_init_group(collections, 2);
+	 MRPP_init_group(collections, 2, 0);
 	
 	 //Add data for collection 1
 	 util_fill_data(data, 0xAAAA, 30 );

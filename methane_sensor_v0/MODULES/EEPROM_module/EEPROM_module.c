@@ -125,3 +125,11 @@ void EM_set_sp_interval(uint8_t time){
 uint8_t EM_get_sp_interval(){
 	return eeprom_read_byte((const uint8_t *) EEPROM_SP_INTERVAL_ADDR);
 }
+
+void EM_set_group_id(uint8_t groupId){
+	eeprom_update_byte((uint8_t *) EEPROM_GROUP_ID_ADDR, groupId);
+}
+
+uint8_t EM_get_group_id(){
+	return eeprom_read_byte((const uint8_t *) EEPROM_GROUP_ID_ADDR);
+}

@@ -71,6 +71,7 @@ static char deveui[17];
 static char appeui[17];
 static char appkey[33];
 static COLLECTION cols[N_COLLECTIONS];
+static uint8_t groupId=0;
 static float vccx, rrlx, ppmx;
 static uint16_t airPumpTime=10;
 static uint8_t methHeatUpTime=1;
@@ -94,6 +95,13 @@ void MAINPG_start(){
 		switch(state){
 			case MAINPG_INIT_HW:
 				print_debug("State: INIT HW");
+				//Reset variables
+				state_s0=STAGE_INIT;
+				state_s1=STAGE_INIT;
+				state_s2=STAGE_INIT;
+				state_s3=STAGE_INIT;
+				bodyIndex=-1;
+				
 				uart0_hal_init();
 				uart1_hal_init();
 				TWI_HAL_init();
@@ -118,7 +126,6 @@ void MAINPG_start(){
 				print_debug("State: EEPROM");
 				if(EM_has_deveui() && EM_has_appeui() && EM_has_appkey()){
 					state=MAINPG_LORA_JOIN_NETWORK;
-					//state=MAINPG_LORA_WAKEUP;
 					if(!read_eeprom()){
 						state=MAINPG_CONF_ERR;
 					}
@@ -194,7 +201,9 @@ void MAINPG_start(){
 			/************************************************************************/
 			case MAINPG_INIT_MRPP:
 				print_debug("State: MRPP INIT");
-				MRPP_init_group(cols, N_COLLECTIONS);
+				groupId=EM_get_group_id();
+				groupId=MRPP_init_group(cols, N_COLLECTIONS, groupId);
+				EM_set_group_id(groupId);
 				state=MAINPG_SEND_HEADER;
 			break;
 			

@@ -32,6 +32,7 @@
 #define EEPROM_SP_INTERVAL_ADDR 82 //size 1 byte
 
 //Notice jump in addr
+#define EEPROM_GROUP_ID_ADDR 99 //Size 1 byte
 #define EEPROM_COLLECTION_ADDR 100 //11 collections=11*5=55 bytes
 
 /************************************************************************/
@@ -73,6 +74,9 @@ uint16_t EM_get_air_pump_time();
 
 void EM_set_sp_interval(uint8_t time);
 uint8_t EM_get_sp_interval();
+
+void EM_set_group_id(uint8_t groupId);
+uint8_t EM_get_group_id();
 
 
 
