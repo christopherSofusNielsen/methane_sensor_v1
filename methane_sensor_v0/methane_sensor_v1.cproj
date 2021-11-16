@@ -183,6 +183,12 @@
     <Compile Include="HAL\UART1\UART1_HAL.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\UI\UI_HAL.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\UI\UI_HAL.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
@@ -429,6 +435,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HAL" />
+    <Folder Include="HAL\UI" />
     <Folder Include="HAL\TC2" />
     <Folder Include="HAL\TC0" />
     <Folder Include="HAL\PM" />

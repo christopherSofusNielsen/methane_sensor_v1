@@ -22,6 +22,8 @@ HAL\UART0\UART0_HAL.c
 
 HAL\UART1\UART1_HAL.c
 
+HAL\UI\UI_HAL.c
+
 main.c
 
 MODULES\ADC_module\ADC_module.c

@@ -34,6 +34,7 @@ LINKER_SCRIPT_DEP:=
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
 ../HAL \
+../HAL/UI \
 ../HAL/TC2 \
 ../HAL/TC0 \
 ../HAL/PM \
@@ -97,6 +98,7 @@ C_SRCS +=  \
 ../HAL/TWI/TWI_HAL.c \
 ../HAL/UART0/UART0_HAL.c \
 ../HAL/UART1/UART1_HAL.c \
+../HAL/UI/UI_HAL.c \
 ../main.c \
 ../MODULES/ADC_module/ADC_module.c \
 ../MODULES/EEPROM_module/EEPROM_module.c \
@@ -155,6 +157,7 @@ HAL/TWI/TWI_API.o \
 HAL/TWI/TWI_HAL.o \
 HAL/UART0/UART0_HAL.o \
 HAL/UART1/UART1_HAL.o \
+HAL/UI/UI_HAL.o \
 main.o \
 MODULES/ADC_module/ADC_module.o \
 MODULES/EEPROM_module/EEPROM_module.o \
@@ -206,6 +209,7 @@ HAL/TWI/TWI_API.o \
 HAL/TWI/TWI_HAL.o \
 HAL/UART0/UART0_HAL.o \
 HAL/UART1/UART1_HAL.o \
+HAL/UI/UI_HAL.o \
 main.o \
 MODULES/ADC_module/ADC_module.o \
 MODULES/EEPROM_module/EEPROM_module.o \
@@ -257,6 +261,7 @@ HAL/TWI/TWI_API.d \
 HAL/TWI/TWI_HAL.d \
 HAL/UART0/UART0_HAL.d \
 HAL/UART1/UART1_HAL.d \
+HAL/UI/UI_HAL.d \
 main.d \
 MODULES/ADC_module/ADC_module.d \
 MODULES/EEPROM_module/EEPROM_module.d \
@@ -308,6 +313,7 @@ HAL/TWI/TWI_API.d \
 HAL/TWI/TWI_HAL.d \
 HAL/UART0/UART0_HAL.d \
 HAL/UART1/UART1_HAL.d \
+HAL/UI/UI_HAL.d \
 main.d \
 MODULES/ADC_module/ADC_module.d \
 MODULES/EEPROM_module/EEPROM_module.d \
@@ -426,6 +432,13 @@ HAL/UART0/UART0_HAL.o: ../HAL/UART0/UART0_HAL.c
 	
 
 HAL/UART1/UART1_HAL.o: ../HAL/UART1/UART1_HAL.c
+	@echo Building file: $<
+	@echo Invoking: XC8 C Compiler : 2.31
+	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+HAL/UI/UI_HAL.o: ../HAL/UI/UI_HAL.c
 	@echo Building file: $<
 	@echo Invoking: XC8 C Compiler : 2.31
 	$(QUOTE)C:\Program Files\Microchip\xc8\v2.31\bin\xc8-cc.exe$(QUOTE)  -mcpu=ATmega644PA  -mdfp="C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\xc8"  -c -x c -funsigned-char -funsigned-bitfields -mext=cci -D__ATmega644PA__ -DDEBUG  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -D F_CPU=8000000UL -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

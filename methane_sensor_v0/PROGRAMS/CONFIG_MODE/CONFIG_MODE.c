@@ -111,6 +111,7 @@ void CONF_enter(){
 			break;
 			
 			case CONF_EXIT:
+				uart1_hal_send_string("Exit...");
 				return;
 		}
 	}
@@ -121,6 +122,7 @@ static CONF_STATES parse_cmd(char msg[]){
 	if(msg[0]=='w') return CONF_WRTIE;
 	if(msg[0]=='c') return CONF_CONNECT;
 	if(msg[0]=='s') return CONF_SAMPLE;
+	if(msg[0]=='q') return CONF_EXIT;
 	
 	return CONF_NOT_VALID;
 }
