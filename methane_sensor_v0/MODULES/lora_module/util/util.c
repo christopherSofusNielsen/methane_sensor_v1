@@ -14,9 +14,13 @@
 #include "../../../HAL/UART0/UART0_HAL.h"
 #include "../../../HAL/RN2483/RN2483_HAL.h"
 #include "../RN2483_protocol/RN2483_protocol.h"
+#include "../../../HAL/TC2/TC2_HAL.h"
 
-
+static uint8_t wd_cnt=0;
+static int8_t wd_cb_pointer;
 char lm_msg[200];
+
+static void cb_watchdog_counter();
 
 void util_setPendingStates(LM_STATE_DATA *sd, int success, int failed){
 	sd->success_state=success;
@@ -69,15 +73,23 @@ void util_lora_forward_msg(const char msg[], char res[]){
 	attach_ending(lm_msg);
 	uart0_hal_send_string(lm_msg);
 	
-	while(!uart0_hal_message_ready());
-	uart0_hal_read_message_as_str(res);
+	wd_cnt=0;
+	wd_cb_pointer=TC2_HAL_subscribe(&cb_watchdog_counter);
+	
+	while(!uart0_hal_message_ready() && wd_cnt<15);
+	TC2_HAL_cancel(wd_cb_pointer);
+	if(wd_cnt>=15){
+		strcpy(res, "no reply...");
+		uart0_hal_read_message_as_str(res);
+	}else{
+		uart0_hal_read_message_as_str(res);
+	}
 }
 
-void util_send_break(char res[]){
+void util_send_break(){
 	uart0_hal_send_break(0x55);
-	
-	//Wait for response
-	while(uart0_hal_message_ready()==false){}
-	
-	uart0_hal_read_message_as_str(res);
+}
+
+static void cb_watchdog_counter(){
+	wd_cnt++;
 }

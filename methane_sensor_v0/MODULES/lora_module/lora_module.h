@@ -13,7 +13,7 @@
 #include <stdbool.h>
 
 #define LORA_PORT 100
-#define LORA_UPLINK_BLOCK_TIME 5
+#define LORA_UPLINK_BLOCK_TIME 30
 
 typedef enum {
 	LM_STATUS_SUCCESS,
@@ -31,7 +31,7 @@ LM_STATUS LM_wake_up();
 bool LM_is_free();
 LM_STATUS LM_reset_module();
 void LM_forward_msg(const char msg[], char res[]);
-void LM_send_break(char res[]);
+void LM_send_break();
 
 
 

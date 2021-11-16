@@ -79,6 +79,7 @@ static uint8_t samplingProcessInterval;
 
 static void send_msg(const char msg[]);
 
+static bool fromSleep=false;
 
 void MAINPG_start(){
 	MAINPG_STATES state=MAINPG_INIT_HW;
@@ -87,13 +88,12 @@ void MAINPG_start(){
 	LM_STATUS lmStatus;
 	SCD30_STATUS scd30Status;
 	STAGE_STATUS stageStatus;
-	bool fromSleep=false;
 	
 
 	while(1){
 		switch(state){
 			case MAINPG_INIT_HW:
-				
+				print_debug("State: INIT HW");
 				uart0_hal_init();
 				uart1_hal_init();
 				TWI_HAL_init();
@@ -115,9 +115,10 @@ void MAINPG_start(){
 			/* EEPROM                                                               */
 			/************************************************************************/
 			case MAINPG_READ_EEPROM:
+				print_debug("State: EEPROM");
 				if(EM_has_deveui() && EM_has_appeui() && EM_has_appkey()){
-					//state=MAINPG_LORA_JOIN_NETWORK;
-					state=MAINPG_LORA_WAKEUP;
+					state=MAINPG_LORA_JOIN_NETWORK;
+					//state=MAINPG_LORA_WAKEUP;
 					if(!read_eeprom()){
 						state=MAINPG_CONF_ERR;
 					}
@@ -130,7 +131,7 @@ void MAINPG_start(){
 			/* LORA                                                                 */
 			/************************************************************************/
 			case MAINPG_LORA_JOIN_NETWORK:
-				print_debug("Join\n\r");
+				print_debug("State: JOIN LORA");
 				LED_start_try_join();
 				lmStatus=join_lora();
 				LED_stop_try_join();
@@ -138,20 +139,21 @@ void MAINPG_start(){
 			break;
 			
 			case MAINPG_LORA_JOIN_SUCCESS:
+				print_debug("State: JOIN SUCCESS");
 				LED_join_success();
 				state=MAINPG_INIT_MODULES;
 			break;
 			
 			case MAINPG_LORA_WAKEUP:
-				print_debug("LoRa WAKE UP\n\r");
+				print_debug("State: WAKE UP LORA");
 				lmStatus=LM_wake_up();
 				state=lmStatus==LM_STATUS_SUCCESS?MAINPG_INIT_MODULES:MAINPG_FATAL_ERROR;
 			break;
 			
 			case MAINPG_LORA_JOIN_TRY_AGAIN:
-				print_debug("Try again\n\r");
+				print_debug("State: LORA TRY AGAIN");
 				LED_join_denied();
-				_delay_ms(5000);
+				_delay_ms(20000);
 				state=MAINPG_LORA_JOIN_NETWORK;
 			break;
 			
@@ -159,6 +161,7 @@ void MAINPG_start(){
 			/*                                                                      */
 			/************************************************************************/
 			case MAINPG_INIT_MODULES:
+				print_debug("State: INIT MODULES");
 				ADC_set_conf_parameters(vccx, rrlx, ppmx);
 				scd30Status=SCD30_sensor_on();
 				state=scd30Status==SCD30_STATUS_SUCCESS?MAINPG_INIT_RTC:MAINPG_FATAL_ERROR;
@@ -168,20 +171,19 @@ void MAINPG_start(){
 			/* RTC                                                                  */
 			/************************************************************************/
 			case MAINPG_INIT_RTC:
-				print_debug("INIT RTC\n\r");
+				print_debug("State: INIT RTC");
 				rtcStatus=RTC_set_clock_out(1);
 				state=rtcStatus==RTC_STATUS_SUCCESS?MAINPG_CLEAR_WAKEUP:MAINPG_FATAL_ERROR;
-				//state=rtcStatus==RTC_STATUS_SUCCESS?MAINPG_INIT_MRPP:MAINPG_FATAL_ERROR;
 			break;
 			
 			case MAINPG_CLEAR_WAKEUP:
-				print_debug("Clear interrupt\n\r");
+				print_debug("State: RTC CLEAR");
 				rtcStatus=RTC_clear_wake_up_interrupt();
 				state=rtcStatus==RTC_STATUS_SUCCESS?MAINPG_SET_WAKEUP:MAINPG_FATAL_ERROR;
 			break;
 			
 			case MAINPG_SET_WAKEUP:
-				print_debug("Set wake interrupt\n\r");
+				print_debug("State: RTC SET WAKEUP");
 				rtcStatus=set_wakeup();
 				state=rtcStatus==RTC_STATUS_SUCCESS?MAINPG_INIT_MRPP:MAINPG_FATAL_ERROR;
 			break;
@@ -191,22 +193,17 @@ void MAINPG_start(){
 			/* MRPP and data sampling                                               */
 			/************************************************************************/
 			case MAINPG_INIT_MRPP:
-				print_debug("Mrpp init\n\r");
+				print_debug("State: MRPP INIT");
 				MRPP_init_group(cols, N_COLLECTIONS);
 				state=MAINPG_SEND_HEADER;
 			break;
-			
-			//case MAINPG_INIT_MODULES:
-				//ADC_set_conf_parameters(vccx, rrlx, ppmx);
-				//scd30Status=SCD30_sensor_on();
-				//state=scd30Status==SCD30_STATUS_SUCCESS?MAINPG_SEND_HEADER:MAINPG_FATAL_ERROR;
-			//break;
 			
 			case MAINPG_SEND_HEADER:
 				if(!LM_is_free()){
 					state=MAINPG_SEND_HEADER;
 					break;
 				}
+				print_debug("State: SEND HEADER");
 				lmStatus=send_header();
 				state=decode_header_tail_response(lmStatus, MAINPG_STAGE_0, MAINPG_SEND_HEADER);
 			break;
@@ -257,6 +254,7 @@ void MAINPG_start(){
 					state=MAINPG_SEND_TAIL;
 					break;
 				}
+				print_debug("State: SEND TAIL");
 				lmStatus=send_tail();
 				state=decode_header_tail_response(lmStatus, MAINPG_SETUP_SLEEP, MAINPG_SEND_TAIL);
 				
@@ -266,6 +264,7 @@ void MAINPG_start(){
 			/* Go to sleep                                                          */
 			/************************************************************************/
 			case MAINPG_SETUP_SLEEP:
+				print_debug("State: SETUP SLEEP");
 				lmStatus=LM_put_to_sleep();
 				// Set to false, so when it starts up it will do a restart of LORA module
 				fromSleep=lmStatus==LM_STATUS_SUCCESS;
@@ -275,14 +274,15 @@ void MAINPG_start(){
 				PM_HAL_BC_power(false);
 				PM_HAL_meth_power(false);
 				PM_HAL_LED_power(false);
+				TC2_HAL_kill();
 				
 				state=MAINPG_SLEEP;
 			break;
 			
 			case MAINPG_SLEEP:
-				print_debug("Sleep\n\r");
+				print_debug("State: SLEEP");
 				PM_HAL_enter_power_down();
-				print_debug("Awake\n\r");
+				print_debug("State: SLEEP -> AWAKE");
 				state=MAINPG_INIT_HW;
 			break;
 			
@@ -292,19 +292,21 @@ void MAINPG_start(){
 			/************************************************************************/
 			
 			case MAINPG_CONF_ERR:
+				print_debug("State: CONF ERR");
 				LED_conf_err();
 				print_debug("Conf err\n\r");
 				state=MAINPG_END;
 			break;
 			
 			case MAINPG_FATAL_ERROR:
-				print_debug("Fatal error\n\r");
+				print_debug("State: FATAL ERR");
 				LED_fatal_err();
+				fromSleep=false;
 				state=MAINPG_END;
 			break;
 			
 			case MAINPG_END:
-				print_debug("END\n\r");
+				print_debug("State: END");
 				return;
 			break;	
 		}
@@ -320,9 +322,8 @@ static STAGE_STATUS stage_0(){
 	while(1){
 		switch(state_s0){
 			case STAGE_INIT:
+				print_debug("State: S0 INIT");
 				SCD30_init_sampling(cols[S0_CO2].samplingInterval, cols[S0_CO2].samplings, co2_data);
-				
-			
 				state_s0=STAGE_GET_TIME;
 			break;
 			
@@ -350,6 +351,7 @@ static STAGE_STATUS stage_0(){
 			break;
 			
 			case STAGE_DEINIT:
+				print_debug("State: S0 DE-INIT");
 				SCD30_deinit_sampling();
 				return STAGE_DONE;
 			break;
@@ -366,6 +368,7 @@ static STAGE_STATUS stage_1(){
 	while(1){
 		switch(state_s1){
 			case STAGE_INIT:
+				print_debug("State: S1 INIT");
 				SCD30_init_sampling(cols[S1_CO2].samplingInterval, cols[S1_CO2].samplings, co2_data);
 				
 				adcStatus=ADC_init_sampling(cols[S1_METH].samplingInterval, cols[S1_METH].samplings, meth_data);
@@ -400,6 +403,7 @@ static STAGE_STATUS stage_1(){
 			break;
 			
 			case STAGE_DEINIT:
+				print_debug("State: S1 DE-INIT");
 				SCD30_deinit_sampling();
 				ADC_deinit_sampling();
 				return STAGE_DONE;
@@ -419,6 +423,7 @@ static STAGE_STATUS stage_2(){
 	while(1){
 		switch(state_s2){
 			case STAGE_INIT:
+				print_debug("State: S2 INIT");
 				SCD30_init_sampling(cols[S2_CO2].samplingInterval, cols[S2_CO2].samplings, co2_data);
 				
 				adcStatus=ADC_init_sampling(cols[S2_METH].samplingInterval, cols[S2_METH].samplings, meth_data);
@@ -454,6 +459,7 @@ static STAGE_STATUS stage_2(){
 			break;
 			
 			case STAGE_DEINIT:
+				print_debug("State: S2 DE-INIT");
 				SCD30_deinit_sampling();
 				ADC_deinit_sampling();
 				return STAGE_DONE;
@@ -473,6 +479,7 @@ static STAGE_STATUS stage_3(){
 	while(1){
 		switch(state_s3){
 			case STAGE_INIT:
+				print_debug("State: S3 INIT");
 				SCD30_init_sampling(cols[S3_CO2].samplingInterval, cols[S3_CO2].samplings, co2_data);
 				
 				adcStatus=ADC_init_sampling(cols[S3_METH].samplingInterval, cols[S3_METH].samplings, meth_data);
@@ -507,6 +514,7 @@ static STAGE_STATUS stage_3(){
 			break;
 			
 			case STAGE_DEINIT:
+				print_debug("State: S3 DE-INIT");
 				SCD30_deinit_sampling();
 				SCD30_sensor_off();
 				ADC_deinit_sampling();

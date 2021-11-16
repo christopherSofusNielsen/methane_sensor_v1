@@ -76,8 +76,7 @@ static bool CON_RN2483(){
 				sprintf(cnf_reply, "-->%s", "break 0x55" );
 				uart1_hal_send_string(cnf_reply);
 				_delay_ms(50);
-				LM_send_break(cnf_reply);
-				uart1_hal_send_string(cnf_reply);
+				LM_send_break();
 				state=CL_READ_MSG;
 			break;
 			

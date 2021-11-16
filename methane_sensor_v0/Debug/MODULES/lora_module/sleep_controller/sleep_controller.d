@@ -1,11 +1,6 @@
 MODULES/LORA_module/sleep_controller/sleep_controller.d \
  MODULES/LORA_module/sleep_controller/sleep_controller.o: \
  ../MODULES/LORA_module/sleep_controller/sleep_controller.c \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
- c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
- ../MODULES/LORA_module/sleep_controller/sleep_controller.h \
- ../MODULES/LORA_module/sleep_controller/../lora_module.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\cci.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h \
@@ -19,20 +14,20 @@ MODULES/LORA_module/sleep_controller/sleep_controller.d \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
+ ../MODULES/LORA_module/sleep_controller/sleep_controller.h \
+ ../MODULES/LORA_module/sleep_controller/../lora_module.h \
  ../MODULES/LORA_module/sleep_controller/../RN2483_protocol/RN2483_protocol.h \
  ../MODULES/LORA_module/sleep_controller/../util/util.h \
  ../MODULES/LORA_module/sleep_controller/../util/../lora_module.h \
- ../MODULES/LORA_module/sleep_controller/../../../HAL/UART0/UART0_HAL.h
-
-c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
-
-c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
-
-c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
-
-../MODULES/LORA_module/sleep_controller/sleep_controller.h:
-
-../MODULES/LORA_module/sleep_controller/../lora_module.h:
+ ../MODULES/LORA_module/sleep_controller/../../../HAL/UART0/UART0_HAL.h \
+ ../MODULES/LORA_module/sleep_controller/../../../HAL/TC2/TC2_HAL.h \
+ ../MODULES/LORA_module/sleep_controller/../../../HAL/TC2/../types.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -60,6 +55,22 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
+
+../MODULES/LORA_module/sleep_controller/sleep_controller.h:
+
+../MODULES/LORA_module/sleep_controller/../lora_module.h:
+
 ../MODULES/LORA_module/sleep_controller/../RN2483_protocol/RN2483_protocol.h:
 
 ../MODULES/LORA_module/sleep_controller/../util/util.h:
@@ -67,3 +78,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../MODULES/LORA_module/sleep_controller/../util/../lora_module.h:
 
 ../MODULES/LORA_module/sleep_controller/../../../HAL/UART0/UART0_HAL.h:
+
+../MODULES/LORA_module/sleep_controller/../../../HAL/TC2/TC2_HAL.h:
+
+../MODULES/LORA_module/sleep_controller/../../../HAL/TC2/../types.h:

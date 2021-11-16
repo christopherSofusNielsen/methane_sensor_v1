@@ -20,7 +20,9 @@ PROGRAMS/CONFIG_MODE/CONFIG_MODE.d PROGRAMS/CONFIG_MODE/CONFIG_MODE.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  ../PROGRAMS/CONFIG_MODE/RW/RW.h \
  ../PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.h \
- ../PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.h
+ ../PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.h \
+ ../PROGRAMS/CONFIG_MODE/../../HAL/TC2/TC2_HAL.h \
+ ../PROGRAMS/CONFIG_MODE/../../HAL/TC2/../types.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
 
@@ -63,3 +65,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 ../PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.h:
 
 ../PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.h:
+
+../PROGRAMS/CONFIG_MODE/../../HAL/TC2/TC2_HAL.h:
+
+../PROGRAMS/CONFIG_MODE/../../HAL/TC2/../types.h:

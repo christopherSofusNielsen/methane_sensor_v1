@@ -19,8 +19,10 @@ static uint8_t cnt=0;
 static bool busy=false;
 static int8_t subPointer;
 
+
 static void cb_block_uplink();
 static void set_block_uplink();
+
 
 LM_STATUS LM_join_network(char deveui[], char appeui[], char appkey[]){
 	return JN_join_network(deveui, appeui, appkey);
@@ -33,6 +35,8 @@ LM_STATUS LM_send_uplink(uint8_t data[], uint8_t length){
 }
 
 LM_STATUS LM_put_to_sleep(){
+	busy=false;
+	TC2_HAL_cancel(subPointer);
 	return SC_put_to_sleep();
 }
 
@@ -52,8 +56,8 @@ void LM_forward_msg(const char msg[], char res[]){
 	util_lora_forward_msg(msg, res);
 }
 
-void LM_send_break(char res[]){
-	util_send_break(res);
+void LM_send_break(){
+	util_send_break();
 }
 
 
@@ -70,3 +74,4 @@ static void cb_block_uplink(){
 		TC2_HAL_cancel(subPointer);
 	}
 }
+

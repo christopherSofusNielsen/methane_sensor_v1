@@ -11,6 +11,7 @@
 #include "RW/RW.h"
 #include "CONNECT/CONNECT.h"
 #include "SAMPLE/SAMPLE.h"
+#include "../../HAL/TC2/TC2_HAL.h"
 
 char cnf_rx_cmd[200];
 char cnf_reply[200];
@@ -27,7 +28,7 @@ void CONF_enter(){
 			case CONF_INTRO:
 				uart1_hal_send_string("******** Methane Sensor v1.0 ********");
 				uart1_hal_send_string("Setting modules up... Please wait");
-				
+				TC2_HAL_init();
 				if(!init_methane_SCD30()){
 					uart1_hal_send_string("Failed to initialize system...");
 					state=CONF_EXIT;

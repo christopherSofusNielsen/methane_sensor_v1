@@ -23,7 +23,9 @@ MODULES/LORA_module/util/util.d MODULES/LORA_module/util/util.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
  ../MODULES/LORA_module/util/../../../HAL/UART0/UART0_HAL.h \
  ../MODULES/LORA_module/util/../../../HAL/RN2483/RN2483_HAL.h \
- ../MODULES/LORA_module/util/../RN2483_protocol/RN2483_protocol.h
+ ../MODULES/LORA_module/util/../RN2483_protocol/RN2483_protocol.h \
+ ../MODULES/LORA_module/util/../../../HAL/TC2/TC2_HAL.h \
+ ../MODULES/LORA_module/util/../../../HAL/TC2/../types.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
 
@@ -72,3 +74,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../MODULES/LORA_module/util/../../../HAL/RN2483/RN2483_HAL.h:
 
 ../MODULES/LORA_module/util/../RN2483_protocol/RN2483_protocol.h:
+
+../MODULES/LORA_module/util/../../../HAL/TC2/TC2_HAL.h:
+
+../MODULES/LORA_module/util/../../../HAL/TC2/../types.h:
