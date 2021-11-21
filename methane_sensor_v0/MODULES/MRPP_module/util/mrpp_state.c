@@ -23,10 +23,13 @@ void mrpp_state_init(MRPP_STATE *state, uint8_t groupId, COLLECTION collections[
 
         //calculate starting and ending body
         state->collections[i].beginsInBody=startingIndex/DR_BODY_PAYLOAD_SIZE;
-        uint8_t endsInBody=(startingIndex+len)/DR_BODY_PAYLOAD_SIZE;
+        state->collections[i].endsInBody=(startingIndex+len-1)/DR_BODY_PAYLOAD_SIZE;
+		
+		//Legacy
+		//uint8_t endsInBody=(startingIndex+len)/DR_BODY_PAYLOAD_SIZE;
         //handling edge cases where data matches exact size of bodies fx 48, 96 and so on
-        endsInBody=(startingIndex+len)%DR_BODY_PAYLOAD_SIZE==0?endsInBody-1:endsInBody;
-        state->collections[i].endsInBody=endsInBody;
+        //endsInBody=(startingIndex+len)%DR_BODY_PAYLOAD_SIZE==0?endsInBody-1:endsInBody;
+        //state->collections[i].endsInBody=endsInBody;
         
 
         //set status
@@ -37,16 +40,22 @@ void mrpp_state_init(MRPP_STATE *state, uint8_t groupId, COLLECTION collections[
     }
 
     //Calculate lastSubId
-    uint8_t lastSubId=startingIndex/DR_BODY_PAYLOAD_SIZE+DR_SUBID_OVERHEAD;
+	
+	state->lastSubId=(startingIndex-1)/DR_BODY_PAYLOAD_SIZE+DR_SUBID_OVERHEAD;
+	//Legacy
+    //uint8_t lastSubId=startingIndex/DR_BODY_PAYLOAD_SIZE+DR_SUBID_OVERHEAD;
     //handling edge cases where data matches exact size of bodies fx 48, 96 and so on
-    lastSubId=startingIndex%DR_BODY_PAYLOAD_SIZE==0?lastSubId-1:lastSubId;
-    state->lastSubId=lastSubId;
+    //lastSubId=startingIndex%DR_BODY_PAYLOAD_SIZE==0?lastSubId-1:lastSubId;
+    //state->lastSubId=lastSubId;
     
     //calculate bodies
-    uint8_t nBodies=startingIndex/DR_BODY_PAYLOAD_SIZE;
+	uint8_t nBodies=(startingIndex-1)/DR_BODY_PAYLOAD_SIZE+1;
+	state->nBodies=nBodies;
+	//Legacy
+    //uint8_t nBodies=startingIndex/DR_BODY_PAYLOAD_SIZE;
     //handling edge cases where data matches exact size of bodies fx 48, 96 and so on
-    nBodies=startingIndex%DR_BODY_PAYLOAD_SIZE==0?nBodies:nBodies+1;
-    state->nBodies=nBodies;
+    //nBodies=startingIndex%DR_BODY_PAYLOAD_SIZE==0?nBodies:nBodies+1;
+    //state->nBodies=nBodies;
 
     for (uint8_t i = 0; i < nBodies; i++)
     {
@@ -199,7 +208,7 @@ static void update_bodies(MRPP_STATE *state, uint8_t collectionId){
     {
         state->bodies[i]=READY;
     }
-    
+  
 }
 
 int16_t mrpp_state_is_body_ready(MRPP_STATE *state){
@@ -247,7 +256,9 @@ bool mrpp_state_get_ready_body(MRPP_STATE *state, int16_t bodyIndex, uint8_t *su
     if(readyIndex<state->nBodies-1){
         *length=DR_BODY_PAYLOAD_SIZE;
     }else{
-        *length=(state->collections[state->nCollections-1].startIndex+state->collections[state->nCollections-1].length)%DR_BODY_PAYLOAD_SIZE; 
+		*length=(state->collections[state->nCollections-1].startIndex+state->collections[state->nCollections-1].length)-(state->nBodies-1)*DR_BODY_PAYLOAD_SIZE;
+        //Legacy
+		//*length=(state->collections[state->nCollections-1].startIndex+state->collections[state->nCollections-1].length)%DR_BODY_PAYLOAD_SIZE; 
     } 
     return true; 
 }
