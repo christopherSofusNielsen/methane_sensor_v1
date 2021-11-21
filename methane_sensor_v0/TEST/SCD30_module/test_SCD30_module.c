@@ -22,6 +22,7 @@
 
 static void test_sampling();
 static void test_get_reading();
+static void power_test();
 
 //void read_firmware_api();
 //void throw_error(uint8_t status, uint8_t index);
@@ -34,8 +35,9 @@ void test_SCD30_module_start(){
 		
 			
 		while(1){
-			test_sampling();
+			//test_sampling();
 			//test_get_reading();
+			power_test();
 			
 			_delay_ms(1500);
 		}
@@ -86,6 +88,32 @@ static void test_get_reading(){
 	char msg[20];
 	sprintf(msg, " %u ", value);
 	uart1_hal_send_string(msg);
+}
+
+static void power_test(){
+	uint16_t data[5];
+	uart1_hal_send_string("Start SCD30 power test");
+	
+	//Turn on
+	PM_HAL_SCD30_power(true);
+	
+	//Sample
+	SCD30_STATUS status=SCD30_sensor_on();
+	if(status!=SCD30_STATUS_SUCCESS){
+		uart1_hal_send_string("FAIL ");
+		return;
+	}
+	
+	SCD30_init_sampling(2, 5, data);
+	SCD30_start_sampling();
+	
+	while(!SCD30_is_sampling_done()){};
+	
+	uart1_hal_send_string("Done, power off");
+	SCD30_deinit_sampling();
+	PM_HAL_SCD30_power(false);
+	_delay_ms(2000);
+	uart1_hal_send_string("End SCD30 power test");
 }
 
 
