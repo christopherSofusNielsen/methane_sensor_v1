@@ -71,7 +71,6 @@ static char deveui[17];
 static char appeui[17];
 static char appkey[33];
 static COLLECTION cols[N_COLLECTIONS];
-static uint8_t groupId=0;
 static float vccx, rrlx, ppmx;
 static uint16_t airPumpTime=10;
 static uint8_t methHeatUpTime=1;
@@ -89,6 +88,7 @@ void MAINPG_start(){
 	LM_STATUS lmStatus;
 	SCD30_STATUS scd30Status;
 	STAGE_STATUS stageStatus;
+	uint8_t groupId=0;
 	
 
 	while(1){

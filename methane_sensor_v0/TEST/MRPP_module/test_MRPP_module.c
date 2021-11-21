@@ -14,6 +14,7 @@
 
 
 static void test_report_example();
+static void test_groupid();
 
 void test_MRPP_module_start(){
 	uart1_hal_init();
@@ -21,6 +22,7 @@ void test_MRPP_module_start(){
 	while(1){
 		//uart1_hal_send_string("Working ");
 		//test_report_example();
+		test_groupid();
 		
 		
 		_delay_ms(10000);
@@ -86,6 +88,20 @@ static void test_report_example(){
 	util_2_hex_str(str, package, package_length);
 	uart1_hal_send_string(str);
 	_delay_ms(1000);
+}
+
+static void test_groupid(){
+	COLLECTION collections[]={
+		{.samplingInterval=30, .samplings=30, .type=T_INT16},
+		{.samplingInterval=120, .samplings=10, .type=T_INT16},
+	};
+	
+	uint8_t newGroupId=MRPP_init_group(collections, 2, 255);
+	if(newGroupId!=0){
+		uart1_hal_send_string("Fail");
+	}else{
+		uart1_hal_send_string("Success");
+	}
 }
 
 
