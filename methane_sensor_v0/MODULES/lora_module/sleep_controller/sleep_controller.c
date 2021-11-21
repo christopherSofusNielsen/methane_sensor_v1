@@ -5,7 +5,7 @@
  *  Author: Mainframe
  */ 
 
-#define LM_SLEEP_WATCHDOG_CNT 10
+#define LM_SLEEP_WATCHDOG_CNT 60
 
 #include <xc.h>
 #include <stdbool.h>
@@ -29,15 +29,6 @@ LM_STATUS SC_put_to_sleep(){
 	uart0_hal_send_string(lm_msg);
 	_delay_ms(200);
 	return LM_STATUS_SUCCESS;
-	
-	//Does not return anything before power up
-	////Wait for response
-	//while(uart0_hal_message_ready()==false){}
-	//
-	//uart0_hal_read_message_as_str(lm_msg);
-	//
-	//if(strcmp(lm_msg, OK)==0) return LM_STATUS_SUCCESS;
-	//return LM_STATUS_FATAL_ERROR;
 }
 
 LM_STATUS SC_wake_up(){

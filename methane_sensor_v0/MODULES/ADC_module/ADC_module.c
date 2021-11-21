@@ -93,8 +93,7 @@ void ADC_meth_sens_power_on(uint8_t powerUpTime){
 	PM_HAL_meth_power(true);
 	
 	//Setup timer
-	//TC0_HAL_init(60, &vect_ADC_heat_timeout);
-	TC0_HAL_init(1, &vect_ADC_heat_timeout);
+	TC0_HAL_init(ADC_HEAT_TIME_INTERVAL, &vect_ADC_heat_timeout);
 	TC0_HAL_start();
 }
 

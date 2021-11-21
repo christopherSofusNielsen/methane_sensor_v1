@@ -10,6 +10,8 @@
 #define ADC_MODULE_H_
 
 #define ADC_SLAVE_ADDR 0x4D
+//Should be 60
+#define ADC_HEAT_TIME_INTERVAL 1 
 
 #include <stdbool.h>
 

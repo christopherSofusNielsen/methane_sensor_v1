@@ -25,6 +25,7 @@ static void get_value();
 static void test_sampling();
 static void test_heater();
 static void get_value_bit();
+static void power_test();
 //static void test_calc_ppm_methane();
 
 
@@ -40,7 +41,8 @@ void test_ADC_module_start(){
 		//test_heater();
 		//test_sampling();
 		//get_value();
-		get_value_bit();
+		//get_value_bit();
+		power_test();
 
 		_delay_ms(1000);
 	}
@@ -122,6 +124,32 @@ static void get_value_bit(){
 		sprintf(msg, " %u ", bit);
 		uart1_hal_send_string(msg);
 	}
+}
+
+/************************************************************************/
+/* Power test, SCD30 must not be connected                              */
+/************************************************************************/
+static void power_test(){
+	uint16_t data[5];
+	uart1_hal_send_string("Start ADC power test");
+	//Turn on 
+	PM_HAL_adc_power(true);
+	PM_HAL_meth_power(true);
+	
+	ADC_STATUS status=ADC_init_sampling(2, 5, data);
+	if(status!=ADC_STATUS_SUCCESS){
+		uart1_hal_send_string("FAIL");
+		return;
+	}
+	
+	ADC_start_sampling();
+	while(!ADC_is_sampling_done()){}
+		
+	uart1_hal_send_string("Done, power off");
+	PM_HAL_adc_power(false);
+	PM_HAL_meth_power(false);
+	_delay_ms(2000);
+	uart1_hal_send_string("End ADC power test");
 }
 
 /************************************************************************/
