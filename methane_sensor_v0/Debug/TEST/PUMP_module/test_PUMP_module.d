@@ -17,11 +17,12 @@ TEST/PUMP_module/test_PUMP_module.d TEST/PUMP_module/test_PUMP_module.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
  ../TEST/PUMP_module/test_PUMP_module.h \
- ../TEST/PUMP_module/../../HAL/UART0/UART0_HAL.h \
+ ../TEST/PUMP_module/../../HAL/UART1/UART1_HAL.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  ../TEST/PUMP_module/../../HAL/TC2/TC2_HAL.h \
  ../TEST/PUMP_module/../../HAL/TC2/../types.h \
- ../TEST/PUMP_module/../../MODULES/PUMP_module/PUMP_module.h
+ ../TEST/PUMP_module/../../MODULES/PUMP_module/PUMP_module.h \
+ ../TEST/PUMP_module/../../HAL/PM/PM_HAL.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\xc.h:
 
@@ -57,7 +58,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 
 ../TEST/PUMP_module/test_PUMP_module.h:
 
-../TEST/PUMP_module/../../HAL/UART0/UART0_HAL.h:
+../TEST/PUMP_module/../../HAL/UART1/UART1_HAL.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
@@ -66,3 +67,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 ../TEST/PUMP_module/../../HAL/TC2/../types.h:
 
 ../TEST/PUMP_module/../../MODULES/PUMP_module/PUMP_module.h:
+
+../TEST/PUMP_module/../../HAL/PM/PM_HAL.h:

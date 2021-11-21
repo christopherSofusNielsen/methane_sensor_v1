@@ -15,21 +15,21 @@
 
 int main(void)
 {
-	test_runner();
+	//test_runner();
 	
-	//PM_HAL_LED_power_init();
-	//UI_HAL_jumper_init();
-	//
-	//while(1)
-	//{
-		//
-		//if(UI_HAL_is_config_mode()){
-			//PM_HAL_LED_power(true);
-			//CONF_enter();
-			//PM_HAL_LED_power(false);
-		//}else{
-			//MAINPG_start();
-		//}
-		//_delay_ms(5000);
-	//}
+	PM_HAL_LED_power_init();
+	UI_HAL_jumper_init();
+	
+	while(1)
+	{
+		
+		if(UI_HAL_is_config_mode()){
+			PM_HAL_LED_power(true);
+			CONF_enter();
+			PM_HAL_LED_power(false);
+		}else{
+			MAINPG_start();
+		}
+		_delay_ms(5000);
+	}
 }
