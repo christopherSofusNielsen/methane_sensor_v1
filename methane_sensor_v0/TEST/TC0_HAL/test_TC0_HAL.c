@@ -52,6 +52,7 @@ static void test_timing(){
 	//set_bit(PORTB, 0);
 	//set_bit(PORTB, 1);
 	value=0;
+	
 	TWI_HAL_init();
 	//RTC_STATUS status=RTC_set_clock_out(1);
 	//if(status != RTC_STATUS_SUCCESS){
