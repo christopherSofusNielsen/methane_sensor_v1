@@ -327,6 +327,7 @@ void MAINPG_start(){
 /* Stage 0                                                              */
 /************************************************************************/
 static STAGE_STATUS stage_0(){
+	RTC_STATUS rtcStatus;
 	
 	while(1){
 		switch(state_s0){
@@ -337,7 +338,8 @@ static STAGE_STATUS stage_0(){
 			break;
 			
 			case STAGE_GET_TIME:
-				RTC_get_current_time(&dt);
+				rtcStatus=RTC_get_current_time(&dt);
+				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
 				state_s0=STAGE_START;
 			break;
 			
@@ -373,6 +375,7 @@ static STAGE_STATUS stage_0(){
 /************************************************************************/
 static STAGE_STATUS stage_1(){
 	ADC_STATUS adcStatus;
+	RTC_STATUS rtcStatus;
 	
 	while(1){
 		switch(state_s1){
@@ -387,8 +390,8 @@ static STAGE_STATUS stage_1(){
 			break;
 			
 			case STAGE_GET_TIME:
-				RTC_get_current_time(&dt);
-				
+				rtcStatus=RTC_get_current_time(&dt);
+				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
 				state_s1=STAGE_START;
 			break;
 			
@@ -427,7 +430,7 @@ static STAGE_STATUS stage_1(){
 /************************************************************************/
 static STAGE_STATUS stage_2(){
 	ADC_STATUS adcStatus;
-	
+	RTC_STATUS rtcStatus;
 
 	while(1){
 		switch(state_s2){
@@ -442,8 +445,8 @@ static STAGE_STATUS stage_2(){
 			break;
 			
 			case STAGE_GET_TIME:
-				RTC_get_current_time(&dt);
-			
+				rtcStatus=RTC_get_current_time(&dt);
+				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
 				state_s2=STAGE_START;
 			break;
 			
@@ -484,6 +487,7 @@ static STAGE_STATUS stage_2(){
 /************************************************************************/
 static STAGE_STATUS stage_3(){
 	ADC_STATUS adcStatus;
+	RTC_STATUS rtcStatus;
 	
 	while(1){
 		switch(state_s3){
@@ -498,8 +502,8 @@ static STAGE_STATUS stage_3(){
 			break;
 			
 			case STAGE_GET_TIME:
-				RTC_get_current_time(&dt);
-				
+				rtcStatus=RTC_get_current_time(&dt);
+				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
 				state_s3=STAGE_START;
 			break;
 			
