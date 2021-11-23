@@ -5,7 +5,7 @@
  *  Author: Mainframe
  */ 
 
-#define LM_SLEEP_WATCHDOG_CNT 60
+#define LM_SLEEP_WATCHDOG_CNT 10
 
 #include <xc.h>
 #include <stdbool.h>

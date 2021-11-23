@@ -5794,7 +5794,7 @@ LM_STATUS SC_wake_up(){
     4734:	06 c0       	rjmp	.+12     	; 0x4742 <SC_wake_up+0x2e>
     4736:	80 91 85 0f 	lds	r24, 0x0F85	; 0x800f85 <cnt>
     473a:	90 91 86 0f 	lds	r25, 0x0F86	; 0x800f86 <cnt+0x1>
-    473e:	cc 97       	sbiw	r24, 0x3c	; 60
+    473e:	0a 97       	sbiw	r24, 0x0a	; 10
     4740:	b0 f3       	brcs	.-20     	; 0x472e <SC_wake_up+0x1a>
 		
 	TC2_HAL_cancel(eventPointer);
@@ -5804,7 +5804,7 @@ LM_STATUS SC_wake_up(){
 	if(cnt>=LM_SLEEP_WATCHDOG_CNT){
     474a:	80 91 85 0f 	lds	r24, 0x0F85	; 0x800f85 <cnt>
     474e:	90 91 86 0f 	lds	r25, 0x0F86	; 0x800f86 <cnt+0x1>
-    4752:	cc 97       	sbiw	r24, 0x3c	; 60
+    4752:	0a 97       	sbiw	r24, 0x0a	; 10
     4754:	20 f0       	brcs	.+8      	; 0x475e <SC_wake_up+0x4a>
 		uart0_hal_clear_rx_buffer();
     4756:	0e 94 2c 34 	call	0x6858	; 0x6858 <uart0_hal_clear_rx_buffer>
