@@ -13,7 +13,7 @@
 #include <stdbool.h>
 
 #define LORA_PORT 100
-#define LORA_UPLINK_BLOCK_TIME 30
+#define LORA_UPLINK_BLOCK_TIME 60
 
 typedef enum {
 	LM_STATUS_SUCCESS,

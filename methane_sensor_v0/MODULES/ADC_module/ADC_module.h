@@ -11,7 +11,7 @@
 
 #define ADC_SLAVE_ADDR 0x4D
 //Should be 60
-#define ADC_HEAT_TIME_INTERVAL 1 
+#define ADC_HEAT_TIME_INTERVAL 60
 
 #include <stdbool.h>
 

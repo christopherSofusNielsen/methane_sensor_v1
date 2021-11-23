@@ -18,7 +18,7 @@ void TC1_HAL_init(uint16_t match, callback_ptr cb){
 	TCCR1B=0b00001000; //Set CTC A mode
 	TCCR1C=0x00;
 	
-	OCR1A=match; //Set compare value
+	OCR1A=match-1; //Set compare value
 	TCNT1=0x0000; //Set counter to zero
 	
 	set_bit(TIMSK1, 1); //Enable interrupt on compare

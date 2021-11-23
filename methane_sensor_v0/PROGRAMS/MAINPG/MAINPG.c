@@ -160,7 +160,7 @@ void MAINPG_start(){
 			case MAINPG_LORA_JOIN_TRY_AGAIN:
 				print_debug("State: LORA TRY AGAIN");
 				LED_join_denied();
-				_delay_ms(20000);
+				_delay_ms(60000);
 				state=MAINPG_LORA_JOIN_NETWORK;
 			break;
 			
@@ -551,7 +551,6 @@ static MAINPG_STATES decode_stage_response(STAGE_STATUS status, MAINPG_STATES on
 }
 
 static RTC_STATUS set_wakeup(){
-	//uint8_t samplingProcessInterval=1;
 	//return RTC_set_wake_up_interrupt(samplingProcessInterval);
 	return RTC_set_wake_up_interrupt_minutes(samplingProcessInterval);
 }

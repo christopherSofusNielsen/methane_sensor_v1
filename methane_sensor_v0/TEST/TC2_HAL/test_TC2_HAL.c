@@ -34,13 +34,14 @@ void test_TC2_HAL_start(){
 }
 
 static void test_timing(){
+	TC2_HAL_init();
 	uart1_hal_send_string("Start ");
 	f1Cnt=0;
 	
-	TC2_HAL_init();
+	
 	int8_t p1=TC2_HAL_subscribe(&f1);
 	
-	while(f1Cnt<5){};
+	while(f1Cnt<10){};
 	
 	uart1_hal_send_string("Stop ");
 	TC2_HAL_cancel(p1);
