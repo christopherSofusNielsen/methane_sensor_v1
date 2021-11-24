@@ -17,7 +17,7 @@
 #include "../../HAL/TC1/TC1_HAL.h"
 
 /************************************************************************/
-/* Constants                                                            */
+/* Constants I2C commands                                               */
 /************************************************************************/
 const uint8_t TRIGGER_CONT_MEASUREMENT[]={0x00, 0x10, 0x00, 0x00, 0x81};
 const uint8_t SET_MEASUREMENT_INTERVAL[]={0x46, 0x00, 0x00, 0x02, 0xE3};
@@ -32,7 +32,7 @@ static uint16_t *_data;
 static uint16_t cntSamples;
 	
 /************************************************************************/
-/* Functions                                                            */
+/* Local functions                                                      */
 /************************************************************************/
 static bool validate_data(uint8_t data[]);
 static uint16_t bytes_2_uint(uint8_t data[]);
