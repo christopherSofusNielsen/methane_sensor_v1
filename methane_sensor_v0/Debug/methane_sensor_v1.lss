@@ -463,15 +463,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 229 .text.RTC_set_clock_out 00000050  00004db0  00004db0  00004f04  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-230 .text.RTC_clear_wake_up_interrupt 00000034  00005b86  00005b86  00005cda  2**1
+230 .text.RTC_get_current_time 00000140  00002376  00002376  000024ca  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-231 .text.RTC_get_current_time 00000140  00002376  00002376  000024ca  2**1
+231 .text.RTC_set_current_time 00000068  000048c0  000048c0  00004a14  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 232 .rodata       00000005  00800f5a  00006966  00006aba  2**0
                   CONTENTS, ALLOC, LOAD, DATA
 233 .text.RTC_set_wake_up_interrupt_minutes 000000c4  00003592  00003592  000036e6  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-234 .text.RTC_set_current_time 00000068  000048c0  000048c0  00004a14  2**1
+234 .text.RTC_clear_wake_up_interrupt 00000034  00005b86  00005b86  00005cda  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 235 .text.RTC_datetime_to_ts 00000122  00002720  00002720  00002874  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
@@ -8188,10 +8188,10 @@ Disassembly of section .text.datetime_to_BCD:
 Disassembly of section .text.RTC_set_clock_out:
 
 00004db0 <RTC_set_clock_out>:
-
-
-
-const uint8_t CMD_READ_TIME_POINTER[]={0x02};
+/************************************************************************/	
+static void datetime_to_BCD(Datetime dt, DatetimeBCD *bcd);
+//Currently not used
+//static void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt);
 	
 RTC_STATUS RTC_set_clock_out(uint8_t freq){
     4db0:	cf 93       	push	r28
@@ -8264,46 +8264,6 @@ RTC_STATUS RTC_set_clock_out(uint8_t freq){
     4dfa:	df 91       	pop	r29
     4dfc:	cf 91       	pop	r28
     4dfe:	08 95       	ret
-
-Disassembly of section .text.RTC_clear_wake_up_interrupt:
-
-00005b86 <RTC_clear_wake_up_interrupt>:
-	if(status != TWI_CODE_SUCCESS) return RTC_STATUS_FATAL_ERROR;
-	
-	return RTC_STATUS_SUCCESS;
-}
-
-RTC_STATUS RTC_clear_wake_up_interrupt(){
-    5b86:	cf 93       	push	r28
-    5b88:	df 93       	push	r29
-    5b8a:	00 d0       	rcall	.+0      	; 0x5b8c <RTC_clear_wake_up_interrupt+0x6>
-    5b8c:	cd b7       	in	r28, 0x3d	; 61
-    5b8e:	de b7       	in	r29, 0x3e	; 62
-	uint8_t CMD_ENABLE_RTC_CLEAR_INT[]={0x01, 0b00000000};
-    5b90:	81 e0       	ldi	r24, 0x01	; 1
-    5b92:	89 83       	std	Y+1, r24	; 0x01
-    5b94:	1a 82       	std	Y+2, r1	; 0x02
-	uint8_t status = TWI_API_write_data_stop(RTC_ADDR, CMD_ENABLE_RTC_CLEAR_INT, 2);
-    5b96:	ae 01       	movw	r20, r28
-    5b98:	4f 5f       	subi	r20, 0xFF	; 255
-    5b9a:	5f 4f       	sbci	r21, 0xFF	; 255
-    5b9c:	60 e8       	ldi	r22, 0x80	; 128
-    5b9e:	22 e0       	ldi	r18, 0x02	; 2
-    5ba0:	81 e5       	ldi	r24, 0x51	; 81
-    5ba2:	0e 94 c4 31 	call	0x6388	; 0x6388 <TWI_API_write_data_stop>
-	if(status != TWI_CODE_SUCCESS) return RTC_STATUS_FATAL_ERROR;
-    5ba6:	88 23       	and	r24, r24
-    5ba8:	11 f0       	breq	.+4      	; 0x5bae <RTC_clear_wake_up_interrupt+0x28>
-    5baa:	82 e0       	ldi	r24, 0x02	; 2
-    5bac:	01 c0       	rjmp	.+2      	; 0x5bb0 <RTC_clear_wake_up_interrupt+0x2a>
-	return RTC_STATUS_SUCCESS;
-    5bae:	80 e0       	ldi	r24, 0x00	; 0
-}
-    5bb0:	0f 90       	pop	r0
-    5bb2:	0f 90       	pop	r0
-    5bb4:	df 91       	pop	r29
-    5bb6:	cf 91       	pop	r28
-    5bb8:	08 95       	ret
 
 Disassembly of section .text.RTC_get_current_time:
 
@@ -8473,9 +8433,91 @@ Disassembly of section .text.RTC_get_current_time:
     24b2:	0f 91       	pop	r16
     24b4:	08 95       	ret
 
+Disassembly of section .text.RTC_set_current_time:
+
+000048c0 <RTC_set_current_time>:
+	dt->year=BCDTodec((data[6] & 0xFF));
+	
+	return RTC_STATUS_SUCCESS;
+}
+
+RTC_STATUS RTC_set_current_time(Datetime dt){
+    48c0:	cf 93       	push	r28
+    48c2:	df 93       	push	r29
+    48c4:	cd b7       	in	r28, 0x3d	; 61
+    48c6:	de b7       	in	r29, 0x3e	; 62
+    48c8:	64 97       	sbiw	r28, 0x14	; 20
+    48ca:	0f b6       	in	r0, 0x3f	; 63
+    48cc:	f8 94       	cli
+    48ce:	de bf       	out	0x3e, r29	; 62
+    48d0:	0f be       	out	0x3f, r0	; 63
+    48d2:	cd bf       	out	0x3d, r28	; 61
+	uint8_t data [8];
+	DatetimeBCD bcd;
+	datetime_to_BCD(dt, &bcd);
+    48d4:	9e 01       	movw	r18, r28
+    48d6:	27 5f       	subi	r18, 0xF7	; 247
+    48d8:	3f 4f       	sbci	r19, 0xFF	; 255
+    48da:	0e 94 4b 16 	call	0x2c96	; 0x2c96 <datetime_to_BCD>
+	
+	data[0]=0x02;
+    48de:	82 e0       	ldi	r24, 0x02	; 2
+    48e0:	89 83       	std	Y+1, r24	; 0x01
+	data[1]=bcd.second;
+    48e2:	89 85       	ldd	r24, Y+9	; 0x09
+    48e4:	8a 83       	std	Y+2, r24	; 0x02
+	data[2]=bcd.minute;
+    48e6:	8a 85       	ldd	r24, Y+10	; 0x0a
+    48e8:	8b 83       	std	Y+3, r24	; 0x03
+	data[3]=bcd.hour;
+    48ea:	8b 85       	ldd	r24, Y+11	; 0x0b
+    48ec:	8c 83       	std	Y+4, r24	; 0x04
+	data[4]=bcd.day;
+    48ee:	8c 85       	ldd	r24, Y+12	; 0x0c
+    48f0:	8d 83       	std	Y+5, r24	; 0x05
+	data[5]=0x00;
+    48f2:	1e 82       	std	Y+6, r1	; 0x06
+	data[6]=bcd.month;
+    48f4:	8d 85       	ldd	r24, Y+13	; 0x0d
+    48f6:	8f 83       	std	Y+7, r24	; 0x07
+	data[7]=bcd.year;
+    48f8:	8e 85       	ldd	r24, Y+14	; 0x0e
+    48fa:	88 87       	std	Y+8, r24	; 0x08
+	
+	uint8_t status=TWI_API_write_data_stop(RTC_ADDR, data, 8);
+    48fc:	ae 01       	movw	r20, r28
+    48fe:	4f 5f       	subi	r20, 0xFF	; 255
+    4900:	5f 4f       	sbci	r21, 0xFF	; 255
+    4902:	60 e8       	ldi	r22, 0x80	; 128
+    4904:	28 e0       	ldi	r18, 0x08	; 8
+    4906:	81 e5       	ldi	r24, 0x51	; 81
+    4908:	0e 94 c4 31 	call	0x6388	; 0x6388 <TWI_API_write_data_stop>
+	if(status!=TWI_CODE_SUCCESS) return RTC_STATUS_FATAL_ERROR;
+    490c:	88 23       	and	r24, r24
+    490e:	11 f0       	breq	.+4      	; 0x4914 <RTC_set_current_time+0x54>
+    4910:	82 e0       	ldi	r24, 0x02	; 2
+    4912:	01 c0       	rjmp	.+2      	; 0x4916 <RTC_set_current_time+0x56>
+	
+	return RTC_STATUS_SUCCESS;
+    4914:	80 e0       	ldi	r24, 0x00	; 0
+}
+    4916:	64 96       	adiw	r28, 0x14	; 20
+    4918:	0f b6       	in	r0, 0x3f	; 63
+    491a:	f8 94       	cli
+    491c:	de bf       	out	0x3e, r29	; 62
+    491e:	0f be       	out	0x3f, r0	; 63
+    4920:	cd bf       	out	0x3d, r28	; 61
+    4922:	df 91       	pop	r29
+    4924:	cf 91       	pop	r28
+    4926:	08 95       	ret
+
 Disassembly of section .text.RTC_set_wake_up_interrupt_minutes:
 
 00003592 <RTC_set_wake_up_interrupt_minutes>:
+	if(status != TWI_CODE_SUCCESS) return RTC_STATUS_FATAL_ERROR;
+	
+	return RTC_STATUS_SUCCESS;
+}
 
 RTC_STATUS RTC_set_wake_up_interrupt_minutes(uint8_t minutes){
     3592:	1f 93       	push	r17
@@ -8606,83 +8648,41 @@ RTC_STATUS RTC_set_wake_up_interrupt_minutes(uint8_t minutes){
     3652:	1f 91       	pop	r17
     3654:	08 95       	ret
 
-Disassembly of section .text.RTC_set_current_time:
+Disassembly of section .text.RTC_clear_wake_up_interrupt:
 
-000048c0 <RTC_set_current_time>:
-	dt->year=BCDTodec((data[6] & 0xFF));
-	
-	return RTC_STATUS_SUCCESS;
-}
+00005b86 <RTC_clear_wake_up_interrupt>:
 
-RTC_STATUS RTC_set_current_time(Datetime dt){
-    48c0:	cf 93       	push	r28
-    48c2:	df 93       	push	r29
-    48c4:	cd b7       	in	r28, 0x3d	; 61
-    48c6:	de b7       	in	r29, 0x3e	; 62
-    48c8:	64 97       	sbiw	r28, 0x14	; 20
-    48ca:	0f b6       	in	r0, 0x3f	; 63
-    48cc:	f8 94       	cli
-    48ce:	de bf       	out	0x3e, r29	; 62
-    48d0:	0f be       	out	0x3f, r0	; 63
-    48d2:	cd bf       	out	0x3d, r28	; 61
-	uint8_t data [8];
-	DatetimeBCD bcd;
-	datetime_to_BCD(dt, &bcd);
-    48d4:	9e 01       	movw	r18, r28
-    48d6:	27 5f       	subi	r18, 0xF7	; 247
-    48d8:	3f 4f       	sbci	r19, 0xFF	; 255
-    48da:	0e 94 4b 16 	call	0x2c96	; 0x2c96 <datetime_to_BCD>
-	
-	data[0]=0x02;
-    48de:	82 e0       	ldi	r24, 0x02	; 2
-    48e0:	89 83       	std	Y+1, r24	; 0x01
-	data[1]=bcd.second;
-    48e2:	89 85       	ldd	r24, Y+9	; 0x09
-    48e4:	8a 83       	std	Y+2, r24	; 0x02
-	data[2]=bcd.minute;
-    48e6:	8a 85       	ldd	r24, Y+10	; 0x0a
-    48e8:	8b 83       	std	Y+3, r24	; 0x03
-	data[3]=bcd.hour;
-    48ea:	8b 85       	ldd	r24, Y+11	; 0x0b
-    48ec:	8c 83       	std	Y+4, r24	; 0x04
-	data[4]=bcd.day;
-    48ee:	8c 85       	ldd	r24, Y+12	; 0x0c
-    48f0:	8d 83       	std	Y+5, r24	; 0x05
-	data[5]=0x00;
-    48f2:	1e 82       	std	Y+6, r1	; 0x06
-	data[6]=bcd.month;
-    48f4:	8d 85       	ldd	r24, Y+13	; 0x0d
-    48f6:	8f 83       	std	Y+7, r24	; 0x07
-	data[7]=bcd.year;
-    48f8:	8e 85       	ldd	r24, Y+14	; 0x0e
-    48fa:	88 87       	std	Y+8, r24	; 0x08
-	
-	uint8_t status=TWI_API_write_data_stop(RTC_ADDR, data, 8);
-    48fc:	ae 01       	movw	r20, r28
-    48fe:	4f 5f       	subi	r20, 0xFF	; 255
-    4900:	5f 4f       	sbci	r21, 0xFF	; 255
-    4902:	60 e8       	ldi	r22, 0x80	; 128
-    4904:	28 e0       	ldi	r18, 0x08	; 8
-    4906:	81 e5       	ldi	r24, 0x51	; 81
-    4908:	0e 94 c4 31 	call	0x6388	; 0x6388 <TWI_API_write_data_stop>
-	if(status!=TWI_CODE_SUCCESS) return RTC_STATUS_FATAL_ERROR;
-    490c:	88 23       	and	r24, r24
-    490e:	11 f0       	breq	.+4      	; 0x4914 <RTC_set_current_time+0x54>
-    4910:	82 e0       	ldi	r24, 0x02	; 2
-    4912:	01 c0       	rjmp	.+2      	; 0x4916 <RTC_set_current_time+0x56>
-	
+RTC_STATUS RTC_clear_wake_up_interrupt(){
+    5b86:	cf 93       	push	r28
+    5b88:	df 93       	push	r29
+    5b8a:	00 d0       	rcall	.+0      	; 0x5b8c <RTC_clear_wake_up_interrupt+0x6>
+    5b8c:	cd b7       	in	r28, 0x3d	; 61
+    5b8e:	de b7       	in	r29, 0x3e	; 62
+	uint8_t CMD_ENABLE_RTC_CLEAR_INT[]={0x01, 0b00000000};
+    5b90:	81 e0       	ldi	r24, 0x01	; 1
+    5b92:	89 83       	std	Y+1, r24	; 0x01
+    5b94:	1a 82       	std	Y+2, r1	; 0x02
+	uint8_t status = TWI_API_write_data_stop(RTC_ADDR, CMD_ENABLE_RTC_CLEAR_INT, 2);
+    5b96:	ae 01       	movw	r20, r28
+    5b98:	4f 5f       	subi	r20, 0xFF	; 255
+    5b9a:	5f 4f       	sbci	r21, 0xFF	; 255
+    5b9c:	60 e8       	ldi	r22, 0x80	; 128
+    5b9e:	22 e0       	ldi	r18, 0x02	; 2
+    5ba0:	81 e5       	ldi	r24, 0x51	; 81
+    5ba2:	0e 94 c4 31 	call	0x6388	; 0x6388 <TWI_API_write_data_stop>
+	if(status != TWI_CODE_SUCCESS) return RTC_STATUS_FATAL_ERROR;
+    5ba6:	88 23       	and	r24, r24
+    5ba8:	11 f0       	breq	.+4      	; 0x5bae <RTC_clear_wake_up_interrupt+0x28>
+    5baa:	82 e0       	ldi	r24, 0x02	; 2
+    5bac:	01 c0       	rjmp	.+2      	; 0x5bb0 <RTC_clear_wake_up_interrupt+0x2a>
 	return RTC_STATUS_SUCCESS;
-    4914:	80 e0       	ldi	r24, 0x00	; 0
+    5bae:	80 e0       	ldi	r24, 0x00	; 0
 }
-    4916:	64 96       	adiw	r28, 0x14	; 20
-    4918:	0f b6       	in	r0, 0x3f	; 63
-    491a:	f8 94       	cli
-    491c:	de bf       	out	0x3e, r29	; 62
-    491e:	0f be       	out	0x3f, r0	; 63
-    4920:	cd bf       	out	0x3d, r28	; 61
-    4922:	df 91       	pop	r29
-    4924:	cf 91       	pop	r28
-    4926:	08 95       	ret
+    5bb0:	0f 90       	pop	r0
+    5bb2:	0f 90       	pop	r0
+    5bb4:	df 91       	pop	r29
+    5bb6:	cf 91       	pop	r28
+    5bb8:	08 95       	ret
 
 Disassembly of section .text.RTC_datetime_to_ts:
 

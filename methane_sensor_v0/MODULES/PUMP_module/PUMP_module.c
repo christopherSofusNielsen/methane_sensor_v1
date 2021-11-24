@@ -2,7 +2,7 @@
  * PUMP_module.c
  *
  * Created: 08-11-2021 16:35:54
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 #include "PUMP_module.h"
 #include "../../HAL/TC2/TC2_HAL.h"

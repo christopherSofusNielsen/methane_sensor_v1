@@ -29,7 +29,8 @@ const uint8_t CMD_READ_TIME_POINTER[]={0x02};
 /* Local functions                                                      */
 /************************************************************************/	
 static void datetime_to_BCD(Datetime dt, DatetimeBCD *bcd);
-static void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt);
+//Currently not used
+//static void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt);
 	
 RTC_STATUS RTC_set_clock_out(uint8_t freq){
 	uint8_t CMD_SET_CLOCK_OUT[2];
@@ -176,11 +177,12 @@ static void datetime_to_BCD(Datetime dt, DatetimeBCD *bcd){
 	bcd->year=decToBCD(dt.year);
 }
 
-static void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt){
-	dt->second=BCDTodec(bcd.second);
-	dt->minute=BCDTodec(bcd.minute);
-	dt->hour=BCDTodec(bcd.hour);
-	dt->day=BCDTodec(bcd.day);
-	dt->month=BCDTodec(bcd.month);
-	dt->year=BCDTodec(bcd.year);
-}
+//Not used
+//static void BCD_to_datetime(DatetimeBCD bcd, Datetime *dt){
+	//dt->second=BCDTodec(bcd.second);
+	//dt->minute=BCDTodec(bcd.minute);
+	//dt->hour=BCDTodec(bcd.hour);
+	//dt->day=BCDTodec(bcd.day);
+	//dt->month=BCDTodec(bcd.month);
+	//dt->year=BCDTodec(bcd.year);
+//}
