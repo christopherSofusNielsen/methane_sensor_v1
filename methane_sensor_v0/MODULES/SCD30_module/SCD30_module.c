@@ -2,7 +2,7 @@
  * SCD30_module.c
  *
  * Created: 17-10-2021 14:53:00
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <util/delay.h>
@@ -19,8 +19,6 @@
 /************************************************************************/
 /* Constants                                                            */
 /************************************************************************/
-#define SCD30_ADDR 0x61
-
 const uint8_t TRIGGER_CONT_MEASUREMENT[]={0x00, 0x10, 0x00, 0x00, 0x81};
 const uint8_t SET_MEASUREMENT_INTERVAL[]={0x46, 0x00, 0x00, 0x02, 0xE3};
 const uint8_t READ_DATA_CMD[]={0x03, 0x00};
