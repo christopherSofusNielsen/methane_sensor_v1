@@ -41,7 +41,7 @@ typedef enum {
 * -> uint16_t nSamples: Number of samples, must be grather than 2
 * -> uint16_t data[]: Pointer to array where samples must be stored.
 * -> Returns ADC_STATUS_SUCCESS when succesfull, otherwise ADC_STATUS_FATAL_ERROR
-/************************************************************************/
+************************************************************************/
 ADC_STATUS ADC_init_sampling(uint8_t samplingInterval, uint16_t nSamples, uint16_t data[]);
 
 /************************************************************************/
@@ -52,7 +52,7 @@ void ADC_deinit_sampling();
 /************************************************************************
 * Start the timer, hence the sampling. 
 * Takes the first measurement to time 0
-/************************************************************************/
+************************************************************************/
 void ADC_start_sampling();
 
 /************************************************************************/
@@ -64,14 +64,14 @@ bool ADC_is_sampling_done();
 * Takes one sample from the ADC.
 * -> uint16_t *value: Pointer to where the sample must be stored.
 * -> Returns ADC_STATUS_SUCCESS when succesfull, otherwise ADC_STATUS_ERROR 
-/************************************************************************/
+************************************************************************/
 ADC_STATUS ADC_get_value(uint16_t *value);
 
 /************************************************************************
 * Turns on the methane sensor.
 * -> uint8_t powerUpTime: The time in minutes the sensor should heat up, 
 *						  before it's ready.
-/************************************************************************/
+************************************************************************/
 void ADC_meth_sens_power_on(uint8_t powerUpTime);
 
 /************************************************************************/
@@ -90,7 +90,7 @@ bool ADC_meth_sens_ready();
 * -> float Vcc: The supplied voltage for the ADC.
 * -> float Rrl: The value of the Rsense resistor.
 * -> float PPMfactor: The factor multiplied to the voltage to get the PPM of methane.
-/************************************************************************/
+************************************************************************/
 void ADC_set_conf_parameters(float Vcc, float Rrl, float PPMfactor);
 
 

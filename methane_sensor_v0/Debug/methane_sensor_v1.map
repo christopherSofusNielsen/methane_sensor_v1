@@ -1446,7 +1446,7 @@ END GROUP
  .debug_abbrev  0x0000000000003466       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_dword.o)
  .debug_abbrev  0x000000000000347a       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_word.o)
 
-.debug_line     0x0000000000000000     0x6ba5
+.debug_line     0x0000000000000000     0x6ba4
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x154 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega644pa.o
  .debug_line    0x0000000000000154      0x224 HAL/PM/PM_HAL.o
@@ -1475,23 +1475,23 @@ END GROUP
  .debug_line    0x00000000000035b5      0x589 MODULES/MRPP_module/util/mrpp_state.o
  .debug_line    0x0000000000003b3e      0x151 MODULES/PUMP_module/PUMP_module.o
  .debug_line    0x0000000000003c8f      0x358 MODULES/RTC_module/RTC_module.o
- .debug_line    0x0000000000003fe7      0x438 MODULES/SCD30_module/SCD30_module.o
- .debug_line    0x000000000000441f      0x35a PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
- .debug_line    0x0000000000004779      0x275 PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.o
- .debug_line    0x00000000000049ee      0x840 PROGRAMS/CONFIG_MODE/RW/RW.o
- .debug_line    0x000000000000522e      0x392 PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.o
- .debug_line    0x00000000000055c0      0x1ae PROGRAMS/CONFIG_MODE/UTIL/util.o
- .debug_line    0x000000000000576e      0xce0 PROGRAMS/MAINPG/MAINPG.o
- .debug_line    0x000000000000644e       0xe4 util/CRC8/CRC8.o
- .debug_line    0x0000000000006532      0x1aa util/str2float/str2float.o
- .debug_line    0x00000000000066dc       0xba C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
- .debug_line    0x0000000000006796       0x82 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
- .debug_line    0x0000000000006818       0x71 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_dword.o)
- .debug_line    0x0000000000006889       0x70 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_word.o)
- .debug_line    0x00000000000068f9      0x110 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
- .debug_line    0x0000000000006a09       0xb9 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
- .debug_line    0x0000000000006ac2       0x7e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_dword.o)
- .debug_line    0x0000000000006b40       0x65 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_word.o)
+ .debug_line    0x0000000000003fe7      0x437 MODULES/SCD30_module/SCD30_module.o
+ .debug_line    0x000000000000441e      0x35a PROGRAMS/CONFIG_MODE/CONFIG_MODE.o
+ .debug_line    0x0000000000004778      0x275 PROGRAMS/CONFIG_MODE/CONNECT/CONNECT.o
+ .debug_line    0x00000000000049ed      0x840 PROGRAMS/CONFIG_MODE/RW/RW.o
+ .debug_line    0x000000000000522d      0x392 PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.o
+ .debug_line    0x00000000000055bf      0x1ae PROGRAMS/CONFIG_MODE/UTIL/util.o
+ .debug_line    0x000000000000576d      0xce0 PROGRAMS/MAINPG/MAINPG.o
+ .debug_line    0x000000000000644d       0xe4 util/CRC8/CRC8.o
+ .debug_line    0x0000000000006531      0x1aa util/str2float/str2float.o
+ .debug_line    0x00000000000066db       0xba C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_block.o)
+ .debug_line    0x0000000000006795       0x82 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_byte.o)
+ .debug_line    0x0000000000006817       0x71 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_dword.o)
+ .debug_line    0x0000000000006888       0x70 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eerd_word.o)
+ .debug_line    0x00000000000068f8      0x110 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_block_M.o)
+ .debug_line    0x0000000000006a08       0xb9 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_byte.o)
+ .debug_line    0x0000000000006ac1       0x7e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_dword.o)
+ .debug_line    0x0000000000006b3f       0x65 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const\libatmega644pa.a(eeupd_word.o)
 
 .debug_frame    0x0000000000000000     0x1f88
  *(.debug_frame)

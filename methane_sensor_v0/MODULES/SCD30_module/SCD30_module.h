@@ -31,7 +31,7 @@ typedef enum {
 * waits for the internal buffer to be filled with the first sampling.
 * Takes up to 2s, and should be called after each device power up.
 * -> Returns SCD30_STATUS_SUCCESS when succesfull, otherwise SCD30_STATUS_FATAL_ERROR
-/************************************************************************/
+************************************************************************/
 SCD30_STATUS SCD30_sensor_on();
 
 /************************************************************************/
@@ -68,7 +68,7 @@ bool SCD30_is_sampling_done();
 * -> Returns SCD30_STATUS_SUCCESS when succesfull, 
 	 otherwise SCD30_STATUS_TRY_AGAIN if no sample was ready in the internal buffer
 	 or SCD30_STATUS_ERROR on error.
-/************************************************************************/
+************************************************************************/
 SCD30_STATUS SCD30_get_reading(uint16_t *value);
 
 
