@@ -10,52 +10,32 @@ void mrpp_state_init(MRPP_STATE *state, uint8_t groupId, COLLECTION collections[
     uint16_t startingIndex=0;
     for (uint8_t i = 0; i < nCollections; i++)
     {
+		//Set sampling interval and type
         state->collections[i].samplingInterval=collections[i].samplingInterval;
-
-        //type
         state->collections[i].type=collections[i].type;
 
-        //Calculate length and set starting index
+        //Set starting index and calculate length
         state->collections[i].startIndex=startingIndex;
         uint16_t len=collections[i].samplings*collections[i].type+COLLECTION_DATA_META_SIZE;
         state->collections[i].length=len;
         
-
         //calculate starting and ending body
         state->collections[i].beginsInBody=startingIndex/DR_BODY_PAYLOAD_SIZE;
         state->collections[i].endsInBody=(startingIndex+len-1)/DR_BODY_PAYLOAD_SIZE;
-		
-		//Legacy
-		//uint8_t endsInBody=(startingIndex+len)/DR_BODY_PAYLOAD_SIZE;
-        //handling edge cases where data matches exact size of bodies fx 48, 96 and so on
-        //endsInBody=(startingIndex+len)%DR_BODY_PAYLOAD_SIZE==0?endsInBody-1:endsInBody;
-        //state->collections[i].endsInBody=endsInBody;
-        
 
-        //set status
+        //set collection status
         state->collections[i].status=WAITING;
-
-
+		
+		//Set start index for next collection
         startingIndex+=len;      
     }
 
     //Calculate lastSubId
-	
 	state->lastSubId=(startingIndex-1)/DR_BODY_PAYLOAD_SIZE+DR_SUBID_OVERHEAD;
-	//Legacy
-    //uint8_t lastSubId=startingIndex/DR_BODY_PAYLOAD_SIZE+DR_SUBID_OVERHEAD;
-    //handling edge cases where data matches exact size of bodies fx 48, 96 and so on
-    //lastSubId=startingIndex%DR_BODY_PAYLOAD_SIZE==0?lastSubId-1:lastSubId;
-    //state->lastSubId=lastSubId;
     
-    //calculate bodies
+    //calculate number of bodies and initialize
 	uint8_t nBodies=(startingIndex-1)/DR_BODY_PAYLOAD_SIZE+1;
 	state->nBodies=nBodies;
-	//Legacy
-    //uint8_t nBodies=startingIndex/DR_BODY_PAYLOAD_SIZE;
-    //handling edge cases where data matches exact size of bodies fx 48, 96 and so on
-    //nBodies=startingIndex%DR_BODY_PAYLOAD_SIZE==0?nBodies:nBodies+1;
-    //state->nBodies=nBodies;
 
     for (uint8_t i = 0; i < nBodies; i++)
     {
