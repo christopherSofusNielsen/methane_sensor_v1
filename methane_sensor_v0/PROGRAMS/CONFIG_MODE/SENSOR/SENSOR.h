@@ -28,7 +28,7 @@
 #include <xc.h>
 #include <stdbool.h>
 
-bool handle_sample(const char cmd[], char res[]);
+bool handle_sensor(const char cmd[], char res[]);
 bool init_methane_SCD30();
 
 

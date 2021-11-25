@@ -575,7 +575,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 285 .text.handle_pump 000000a4  00003b2e  00003b2e  00003c82  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-286 .text.handle_sample 000000b8  000037ce  000037ce  00003922  2**1
+286 .text.handle_sensor 000000b8  000037ce  000037ce  00003922  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 287 .text.init_methane_SCD30 00000028  00005fc4  00005fc4  00006118  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
@@ -9470,7 +9470,7 @@ void CONF_enter(){
     24d6:	01 c0       	rjmp	.+2      	; 0x24da <CONF_enter+0x24>
 			
 			case CONF_SAMPLE:
-				if(handle_sample(cnf_rx_cmd, cnf_reply)){
+				if(handle_sensor(cnf_rx_cmd, cnf_reply)){
 					state=CONF_REPLY;
 				}else{
 					state=CONF_NOT_VALID;
@@ -9608,13 +9608,13 @@ void CONF_enter(){
 			break;
 			
 			case CONF_SAMPLE:
-				if(handle_sample(cnf_rx_cmd, cnf_reply)){
+				if(handle_sensor(cnf_rx_cmd, cnf_reply)){
     2590:	68 ea       	ldi	r22, 0xA8	; 168
     2592:	77 e0       	ldi	r23, 0x07	; 7
     2594:	80 e8       	ldi	r24, 0x80	; 128
     2596:	40 ee       	ldi	r20, 0xE0	; 224
     2598:	56 e0       	ldi	r21, 0x06	; 6
-    259a:	0e 94 e7 1b 	call	0x37ce	; 0x37ce <handle_sample>
+    259a:	0e 94 e7 1b 	call	0x37ce	; 0x37ce <handle_sensor>
     259e:	88 23       	and	r24, r24
     25a0:	09 f4       	brne	.+2      	; 0x25a4 <CONF_enter+0xee>
     25a2:	9a cf       	rjmp	.-204    	; 0x24d8 <CONF_enter+0x22>
@@ -12435,15 +12435,15 @@ static bool handle_pump(const char cmd[], char res[]){
     3bce:	cf 90       	pop	r12
     3bd0:	08 95       	ret
 
-Disassembly of section .text.handle_sample:
+Disassembly of section .text.handle_sensor:
 
-000037ce <handle_sample>:
+000037ce <handle_sensor>:
 
 static bool handle_methane(const char cmd[], char res[]);
 static bool handle_co2(const char cmd[], char res[]);
 static bool handle_pump(const char cmd[], char res[]);
 
-bool handle_sample(const char cmd[], char res[]){
+bool handle_sensor(const char cmd[], char res[]){
     37ce:	6f 92       	push	r6
     37d0:	7f 92       	push	r7
     37d2:	8f 92       	push	r8
@@ -12463,7 +12463,7 @@ bool handle_sample(const char cmd[], char res[]){
     37ec:	0e 94 21 1f 	call	0x3e42	; 0x3e42 <get_parameter>
     37f0:	c8 2f       	mov	r28, r24
     37f2:	88 23       	and	r24, r24
-    37f4:	e9 f1       	breq	.+122    	; 0x3870 <handle_sample+0xa2>
+    37f4:	e9 f1       	breq	.+122    	; 0x3870 <handle_sensor+0xa2>
 	
 	if(strcmp(par, S_METH)==0){
     37f6:	84 e1       	ldi	r24, 0x14	; 20
@@ -12478,14 +12478,14 @@ bool handle_sample(const char cmd[], char res[]){
     3808:	b6 01       	movw	r22, r12
     380a:	0e 94 24 2b 	call	0x5648	; 0x5648 <strcmp>
     380e:	89 2b       	or	r24, r25
-    3810:	39 f4       	brne	.+14     	; 0x3820 <handle_sample+0x52>
+    3810:	39 f4       	brne	.+14     	; 0x3820 <handle_sensor+0x52>
 		return handle_methane(cmd, res);
     3812:	a8 01       	movw	r20, r16
     3814:	88 2d       	mov	r24, r8
     3816:	b3 01       	movw	r22, r6
     3818:	0e 94 b2 14 	call	0x2964	; 0x2964 <handle_methane>
     381c:	c8 2f       	mov	r28, r24
-    381e:	28 c0       	rjmp	.+80     	; 0x3870 <handle_sample+0xa2>
+    381e:	28 c0       	rjmp	.+80     	; 0x3870 <handle_sensor+0xa2>
 	}else if(strcmp(par, S_CO2)==0){
     3820:	27 e1       	ldi	r18, 0x17	; 23
     3822:	37 e0       	ldi	r19, 0x07	; 7
@@ -12494,14 +12494,14 @@ bool handle_sample(const char cmd[], char res[]){
     3828:	b6 01       	movw	r22, r12
     382a:	0e 94 24 2b 	call	0x5648	; 0x5648 <strcmp>
     382e:	89 2b       	or	r24, r25
-    3830:	39 f4       	brne	.+14     	; 0x3840 <handle_sample+0x72>
+    3830:	39 f4       	brne	.+14     	; 0x3840 <handle_sensor+0x72>
 		return handle_co2(cmd, res);
     3832:	a8 01       	movw	r20, r16
     3834:	88 2d       	mov	r24, r8
     3836:	b3 01       	movw	r22, r6
     3838:	0e 94 45 1d 	call	0x3a8a	; 0x3a8a <handle_co2>
     383c:	c8 2f       	mov	r28, r24
-    383e:	18 c0       	rjmp	.+48     	; 0x3870 <handle_sample+0xa2>
+    383e:	18 c0       	rjmp	.+48     	; 0x3870 <handle_sensor+0xa2>
 	}else if(strcmp(par, S_PUMP)==0){
     3840:	2b e1       	ldi	r18, 0x1B	; 27
     3842:	37 e0       	ldi	r19, 0x07	; 7
@@ -12510,14 +12510,14 @@ bool handle_sample(const char cmd[], char res[]){
     3848:	b6 01       	movw	r22, r12
     384a:	0e 94 24 2b 	call	0x5648	; 0x5648 <strcmp>
     384e:	89 2b       	or	r24, r25
-    3850:	39 f4       	brne	.+14     	; 0x3860 <handle_sample+0x92>
+    3850:	39 f4       	brne	.+14     	; 0x3860 <handle_sensor+0x92>
 		return handle_pump(cmd, res);
     3852:	a8 01       	movw	r20, r16
     3854:	88 2d       	mov	r24, r8
     3856:	b3 01       	movw	r22, r6
     3858:	0e 94 97 1d 	call	0x3b2e	; 0x3b2e <handle_pump>
     385c:	c8 2f       	mov	r28, r24
-    385e:	08 c0       	rjmp	.+16     	; 0x3870 <handle_sample+0xa2>
+    385e:	08 c0       	rjmp	.+16     	; 0x3870 <handle_sensor+0xa2>
 	}else{
 		strcpy(res, CONF_STAT_NOT_EXIST);
     3860:	26 e1       	ldi	r18, 0x16	; 22

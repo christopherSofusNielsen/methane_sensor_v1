@@ -10,7 +10,7 @@
 #include "../../HAL/UART1/UART1_HAL.h"
 #include "RW/RW.h"
 #include "CONNECT/CONNECT.h"
-#include "SAMPLE/SAMPLE.h"
+#include "SENSOR/SENSOR.h"
 #include "../../HAL/TC2/TC2_HAL.h"
 
 char cnf_rx_cmd[200];
@@ -83,7 +83,7 @@ void CONF_enter(){
 			break;
 			
 			case CONF_SAMPLE:
-				if(handle_sample(cnf_rx_cmd, cnf_reply)){
+				if(handle_sensor(cnf_rx_cmd, cnf_reply)){
 					state=CONF_REPLY;
 				}else{
 					state=CONF_NOT_VALID;
