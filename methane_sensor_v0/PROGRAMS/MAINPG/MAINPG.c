@@ -165,7 +165,7 @@ void MAINPG_start(){
 			break;
 			
 			/************************************************************************/
-			/*                                                                      */
+			/* Initialize modules                                                   */
 			/************************************************************************/
 			case MAINPG_INIT_MODULES:
 				print_debug("State: INIT MODULES");
