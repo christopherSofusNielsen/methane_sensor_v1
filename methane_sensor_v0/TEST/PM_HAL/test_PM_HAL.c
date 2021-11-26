@@ -2,7 +2,7 @@
  * test_sleep_hall.c
  *
  * Created: 18-10-2021 09:55:26
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 #define F_CPU 8000000UL	
 #include <xc.h>

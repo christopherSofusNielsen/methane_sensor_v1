@@ -2,7 +2,7 @@
  * SAMPLE.c
  *
  * Created: 11-11-2021 14:55:35
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 #include <string.h>
 #include <stdbool.h>

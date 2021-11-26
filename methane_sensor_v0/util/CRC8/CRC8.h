@@ -2,7 +2,7 @@
  * CRC8.h
  *
  * Created: 15-10-2021 15:19:39
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

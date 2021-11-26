@@ -2,7 +2,7 @@
  * TC0_HAL.c
  *
  * Created: 01-11-2021 10:51:12
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>

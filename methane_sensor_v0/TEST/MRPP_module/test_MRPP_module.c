@@ -2,7 +2,7 @@
  * test_MRPP_module.c
  *
  * Created: 05-11-2021 13:50:58
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <util/delay.h>

@@ -2,7 +2,7 @@
  * test_runner.h
  *
  * Created: 05-11-2021 17:32:31
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

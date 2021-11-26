@@ -2,7 +2,7 @@
  * SCD30_HAL.c
  *
  * Created: 17-10-2021 15:11:56
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include "SCD30_HAL.h"

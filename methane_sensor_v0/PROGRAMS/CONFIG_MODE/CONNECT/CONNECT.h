@@ -2,7 +2,7 @@
  * CONNECT.h
  *
  * Created: 11-11-2021 10:38:58
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

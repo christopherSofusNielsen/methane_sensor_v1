@@ -2,7 +2,7 @@
  * test_RTC_module.c
  *
  * Created: 26/10/2021 16.13.18
- *  Author: ccons
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>

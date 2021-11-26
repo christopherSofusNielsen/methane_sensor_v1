@@ -2,7 +2,7 @@
  * TC2_HAL.c
  *
  * Created: 04-11-2021 19:00:03
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>

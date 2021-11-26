@@ -2,7 +2,7 @@
  * EEPROM_module.c
  *
  * Created: 18-10-2021 13:08:12
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include "EEPROM_module.h"

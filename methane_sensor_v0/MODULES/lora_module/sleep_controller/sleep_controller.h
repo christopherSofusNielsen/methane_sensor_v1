@@ -2,7 +2,7 @@
  * sleep_controller.h
  *
  * Created: 12-10-2021 11:25:05
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

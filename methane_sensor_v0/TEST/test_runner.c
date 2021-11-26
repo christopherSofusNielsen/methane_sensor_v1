@@ -2,7 +2,7 @@
  * test_runner.c
  *
  * Created: 05-11-2021 17:32:46
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include "test_runner.h"

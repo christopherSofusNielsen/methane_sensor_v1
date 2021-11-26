@@ -2,7 +2,7 @@
  * str2float.c
  *
  * Created: 09-11-2021 19:41:16
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include "str2float.h"

@@ -2,7 +2,7 @@
  * test_lora_module.c
  *
  * Created: 04-10-2021 16:51:38
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <util/delay.h>

@@ -2,7 +2,7 @@
  * UART1_HAL.c
  *
  * Created: 04-10-2021 18:15:25
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #define UART1_BAUDRATE (8000000/(8*57600))-1

@@ -2,7 +2,7 @@
  * to_float.h
  *
  * Created: 18-10-2021 08:04:50
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

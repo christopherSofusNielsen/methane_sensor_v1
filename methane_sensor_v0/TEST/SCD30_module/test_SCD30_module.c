@@ -2,7 +2,7 @@
  * test_SCD30_module.c
  *
  * Created: 14-10-2021 08:42:54
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>

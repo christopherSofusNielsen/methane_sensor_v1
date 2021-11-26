@@ -2,7 +2,7 @@
  * UART1_HAL.h
  *
  * Created: 04-10-2021 18:14:37
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

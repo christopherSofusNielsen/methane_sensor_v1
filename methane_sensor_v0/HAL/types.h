@@ -2,7 +2,7 @@
  * types.h
  *
  * Created: 01-11-2021 15:54:29
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

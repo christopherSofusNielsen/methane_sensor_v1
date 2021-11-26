@@ -2,7 +2,7 @@
  * CONFIG_MODE.c
  *
  * Created: 09-11-2021 13:35:14
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 #include <string.h>
 

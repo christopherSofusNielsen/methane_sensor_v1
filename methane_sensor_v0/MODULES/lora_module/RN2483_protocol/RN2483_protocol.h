@@ -2,7 +2,7 @@
  * RN2483_protocol.h
  *
  * Created: 04-10-2021 17:12:30
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

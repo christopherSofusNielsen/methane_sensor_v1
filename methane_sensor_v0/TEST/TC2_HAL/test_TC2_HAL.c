@@ -2,7 +2,7 @@
  * test_TC2_HAL.c
  *
  * Created: 04-11-2021 20:27:13
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>

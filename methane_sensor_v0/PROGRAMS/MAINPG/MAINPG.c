@@ -2,7 +2,7 @@
  * MAINPG.c
  *
  * Created: 05-11-2021 19:51:28
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 #define print_debug(txt) send_msg(txt)
 #define N_COLLECTIONS 7

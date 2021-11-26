@@ -2,7 +2,7 @@
  * EEPROM_module.h
  *
  * Created: 18-10-2021 13:08:01
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 
@@ -13,7 +13,7 @@
 
 
 /************************************************************************/
-/* Address                                                              */
+/* Addresses                                                            */
 /************************************************************************/
 #define EEPROM_DEVEUI_ADDR 0
 #define EEPROM_DEVEUI_LENGTH 16
@@ -36,15 +36,24 @@
 #define EEPROM_COLLECTION_ADDR 100 //11 collections=11*5=55 bytes
 
 /************************************************************************/
-/* Address                                                              */
+/* Addresses END                                                        */
 /************************************************************************/
 
-
+/************************************************************************/
+/* Clear deveui, appeui, appkey                                         */
+/************************************************************************/
 void EM_clear_lora_prameters();
+
+/************************************************************************/
+/* Check if parameter is added                                          */
+/************************************************************************/
 bool EM_has_deveui();
 bool EM_has_appeui();
 bool EM_has_appkey();
 
+/************************************************************************/
+/* Set and get deveui, must be terminated with \0                       */
+/************************************************************************/
 bool EM_set_deveui(const char deveui[]);
 bool EM_get_deveui(char deveui[]);
 
@@ -63,6 +72,11 @@ void EM_get_RRL(float *val);
 void EM_set_Vcc(float val);
 void EM_get_Vcc(float *val);
 
+/************************************************************************
+* Set and get all collections
+* -> const void *cols: array of COLLECTION
+* -> uint8_t size: size of entire array
+************************************************************************/
 void EM_set_collections(const void *cols, uint8_t size);
 void EM_get_collections(void *cols, uint8_t size);
 

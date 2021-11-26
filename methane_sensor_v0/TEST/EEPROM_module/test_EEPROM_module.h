@@ -2,7 +2,7 @@
  * test_EEPROM_module.h
  *
  * Created: 18-10-2021 13:27:59
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

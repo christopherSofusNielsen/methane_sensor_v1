@@ -2,7 +2,7 @@
  * test_TC2_HAL.h
  *
  * Created: 04-11-2021 20:27:31
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

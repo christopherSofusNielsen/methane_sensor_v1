@@ -2,7 +2,7 @@
  * RW.h
  *
  * Created: 09-11-2021 14:55:40
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

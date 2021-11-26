@@ -2,7 +2,7 @@
  * SAMPLE.h
  *
  * Created: 11-11-2021 14:55:05
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

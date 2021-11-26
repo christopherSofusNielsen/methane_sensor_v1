@@ -2,7 +2,7 @@
  * PM_HAL.c
  *
  * Created: 18-10-2021 09:59:05
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>

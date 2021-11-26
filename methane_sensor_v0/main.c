@@ -2,7 +2,7 @@
  * main.c
  *
  * Created: 10/4/2021 4:27:30 PM
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>
@@ -13,7 +13,6 @@
 #include "HAL/PM/PM_HAL.h"
 #include "HAL/UI/UI_HAL.h"
 
-//#define _RUN_TEST
 
 int main(void)
 {

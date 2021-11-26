@@ -2,7 +2,7 @@
  * util.h
  *
  * Created: 05-10-2021 16:03:27
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 
@@ -25,10 +25,10 @@ typedef struct __STATE_DATA{
 extern char lm_msg[200];
 
 
-void util_setPendingStates(LM_STATE_DATA *sd, int success, int failed);
-void util_setMatchCase(LM_STATE_DATA *sd, LM_MATCH_CASES matchCase, const char *matchString);
-int util_matchMessage(LM_STATE_DATA *sd, char *msg);
-bool util_strbeginswith(const char *s1, const char *s2);
+void util_set_pending_states(LM_STATE_DATA *sd, int success, int failed);
+void util_set_match_case(LM_STATE_DATA *sd, LM_MATCH_CASES matchCase, const char *matchString);
+int util_match_message(LM_STATE_DATA *sd, char *msg);
+bool util_str_begins_with(const char *s1, const char *s2);
 LM_STATUS util_reset_module();
 void util_lora_forward_msg(const char msg[], char res[]);
 void util_send_break();

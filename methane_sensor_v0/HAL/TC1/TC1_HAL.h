@@ -2,7 +2,7 @@
  * TC1_HAL.h
  *
  * Created: 01-11-2021 15:49:28
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

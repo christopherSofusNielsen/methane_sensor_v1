@@ -2,7 +2,7 @@
  * test_ADC_module.h
  *
  * Created: 18-10-2021 21:12:13
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 
