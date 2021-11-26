@@ -1063,7 +1063,7 @@ Disassembly of section .text:
 Disassembly of section .text:
 
 0000695e <__bad_interrupt>:
-    695e:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+    695e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 Disassembly of section .text.PM_HAL_adc_power_init:
 

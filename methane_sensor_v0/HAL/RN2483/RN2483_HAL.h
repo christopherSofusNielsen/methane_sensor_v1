@@ -11,6 +11,7 @@
 
 #include <xc.h>
 
+//Ports
 #define RN2483_DDR DDRB
 #define RN2483_PORT PORTB
 #define RN2483_PIN 4
