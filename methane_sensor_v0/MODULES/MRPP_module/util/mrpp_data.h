@@ -1,4 +1,8 @@
-
+/*
+ * mrpp.h
+ *
+ *  Author: Christopher S. Nielsen
+ */ 
 
 #ifndef MRPP_DATA_H
 #define MRPP_DATA_H

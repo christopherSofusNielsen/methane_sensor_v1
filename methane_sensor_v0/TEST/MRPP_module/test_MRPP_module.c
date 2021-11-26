@@ -21,8 +21,8 @@ void test_MRPP_module_start(){
 	
 	while(1){
 		//uart1_hal_send_string("Working ");
-		//test_report_example();
-		test_groupid();
+		test_report_example();
+		//test_groupid();
 		
 		
 		_delay_ms(10000);
@@ -54,7 +54,7 @@ static void test_report_example(){
 	char str[300]={'\0'};
 	
 	//Header
-	uart1_hal_send_string("\n\rHeader \n\r");
+	uart1_hal_send_string("Header");
 	MRPP_get_header_package(package, &package_length);
 	util_2_hex_str(str, package, package_length);
 	uart1_hal_send_string(str);
@@ -65,7 +65,7 @@ static void test_report_example(){
 	 {
 
 		 //Write body
-		 uart1_hal_send_string("\n\rBody \n\r");
+		 uart1_hal_send_string("Body");
 		 MRPP_get_ready_body_package(bodyIndex, package, &package_length);
 		 util_2_hex_str(str, package, package_length);
 		 uart1_hal_send_string(str);
@@ -82,7 +82,7 @@ static void test_report_example(){
 	 }
 	
 	//Write tail
-	uart1_hal_send_string("\n\rTail \n\r");
+	uart1_hal_send_string("Tail");
 	MRPP_get_tail_package(package, &package_length);
 	util_2_hex_str(str, package, package_length);
 	util_2_hex_str(str, package, package_length);

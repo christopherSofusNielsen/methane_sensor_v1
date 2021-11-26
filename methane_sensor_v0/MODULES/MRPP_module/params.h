@@ -1,3 +1,8 @@
+/*
+ * mrpp.c
+ *
+ *  Author: Christopher S. Nielsen
+ */ 
 
 #ifndef MRPP_PARAMS_H
 #define MRPP_PARAMS_H

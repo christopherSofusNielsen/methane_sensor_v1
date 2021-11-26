@@ -1,3 +1,9 @@
+/*
+ * mrpp.h
+ *
+ *  Author: Christopher S. Nielsen
+ */ 
+
 #include "mrpp_state.h"
 
 static void update_bodies(MRPP_STATE *state, uint8_t collectionId);
