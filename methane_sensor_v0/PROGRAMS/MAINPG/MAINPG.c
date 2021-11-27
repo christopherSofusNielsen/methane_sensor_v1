@@ -555,8 +555,8 @@ static MAINPG_STATES decode_stage_response(STAGE_STATUS status, MAINPG_STATES on
 }
 
 static RTC_STATUS set_wakeup(){
-	//return RTC_set_wake_up_interrupt(samplingProcessInterval);
-	return RTC_set_wake_up_interrupt_minutes(samplingProcessInterval);
+	return RTC_set_wake_up_interrupt(samplingProcessInterval);
+	//return RTC_set_wake_up_interrupt_minutes(samplingProcessInterval);
 }
 
 static LM_STATUS join_lora(){
