@@ -10,9 +10,9 @@
 #define MAINPG_H_
 
 //Size of methane samples buffer
-#define MAX_METH_SAMLPES 300
+#define MAX_METH_SAMLPES 200
 //Size of co2 samples buffer
-#define MAX_CO2_SAMLPES 300
+#define MAX_CO2_SAMLPES 200
 
 /************************************************************************/
 /* Mapping of sample routine to collection                              */

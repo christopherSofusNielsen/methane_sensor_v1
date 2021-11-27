@@ -244,6 +244,7 @@ void MAINPG_start(){
 			case MAINPG_SEND_DATA:
 				state=comeBackToState;
 				if(MRPP_is_body_package_ready(&bodyIndex) && LM_is_free()){
+					print_debug("State: SEND DATA");
 					lmStatus=send_body(bodyIndex);
 					state=decode_body_response(bodyIndex, lmStatus, comeBackToState);
 				}
@@ -589,12 +590,19 @@ static LM_STATUS send_body(int16_t bodyIndex){
 static MAINPG_STATES decode_body_response(int16_t bodyIndex, LM_STATUS status, MAINPG_STATES success){
 	switch(status){
 		case LM_STATUS_SUCCESS:
+			MRPP_set_body_sent(bodyIndex);
+			print_debug("res: success");
+			return success;
+		
+		
 		case LM_STATUS_MAC_ERR:
 		case LM_STATUS_INV_DATA_LEN:
+			print_debug("res: mac err");
 			MRPP_set_body_sent(bodyIndex);
 			return success;
 		
 		case LM_STATUS_TRY_AGAIN:
+			print_debug("res: try again");
 			return success;
 		
 		default:
