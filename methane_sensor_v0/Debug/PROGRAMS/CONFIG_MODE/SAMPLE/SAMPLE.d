@@ -26,7 +26,8 @@ PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.d PROGRAMS/CONFIG_MODE/SAMPLE/SAMPLE.o: \
  ../PROGRAMS/CONFIG_MODE/SAMPLE/../../../HAL/PM/PM_HAL.h \
  ../PROGRAMS/CONFIG_MODE/SAMPLE/../../../HAL/TWI/TWI_HAL.h \
  ../PROGRAMS/CONFIG_MODE/SAMPLE/../../../MODULES/ADC_module/ADC_module.h \
- ../PROGRAMS/CONFIG_MODE/SAMPLE/../../../MODULES/SCD30_module/SCD30_module.h
+ ../PROGRAMS/CONFIG_MODE/SAMPLE/../../../MODULES/SCD30_module/SCD30_module.h \
+ ../PROGRAMS/CONFIG_MODE/SAMPLE/../../../MODULES/EEPROM_module/EEPROM_module.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
 
@@ -81,3 +82,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../PROGRAMS/CONFIG_MODE/SAMPLE/../../../MODULES/ADC_module/ADC_module.h:
 
 ../PROGRAMS/CONFIG_MODE/SAMPLE/../../../MODULES/SCD30_module/SCD30_module.h:
+
+../PROGRAMS/CONFIG_MODE/SAMPLE/../../../MODULES/EEPROM_module/EEPROM_module.h:

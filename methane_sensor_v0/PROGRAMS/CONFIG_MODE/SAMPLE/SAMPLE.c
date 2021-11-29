@@ -15,6 +15,7 @@
 #include "../../../HAL/TWI/TWI_HAL.h"
 #include "../../../MODULES/ADC_module/ADC_module.h"
 #include "../../../MODULES/SCD30_module/SCD30_module.h"
+#include "../../../MODULES/EEPROM_module/EEPROM_module.h"
 
 static char par[20];
 
@@ -69,6 +70,18 @@ static bool handle_methane(const char cmd[], char res[]){
 	}
 	else if(strcmp(par, METH_READ)==0)
 	{
+		//Set parameters
+		float vccx=0.0;
+		float rrlx=0.0;
+		float ppmx=0.0;
+		
+		EM_get_Vcc(&vccx);
+		EM_get_RRL(&rrlx);
+		EM_get_ppmfactor(&ppmx);
+		
+		ADC_set_conf_parameters(vccx, rrlx, ppmx);
+		
+		
 		uint16_t val;
 		
 		if (ADC_get_value(&val)!=ADC_STATUS_SUCCESS)
