@@ -26,7 +26,8 @@ PROGRAMS/CONFIG_MODE/SENSOR/SENSOR.d PROGRAMS/CONFIG_MODE/SENSOR/SENSOR.o: \
  ../PROGRAMS/CONFIG_MODE/SENSOR/../../../HAL/PM/PM_HAL.h \
  ../PROGRAMS/CONFIG_MODE/SENSOR/../../../HAL/TWI/TWI_HAL.h \
  ../PROGRAMS/CONFIG_MODE/SENSOR/../../../MODULES/ADC_module/ADC_module.h \
- ../PROGRAMS/CONFIG_MODE/SENSOR/../../../MODULES/SCD30_module/SCD30_module.h
+ ../PROGRAMS/CONFIG_MODE/SENSOR/../../../MODULES/SCD30_module/SCD30_module.h \
+ ../PROGRAMS/CONFIG_MODE/SENSOR/../../../MODULES/EEPROM_module/EEPROM_module.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\string.h:
 
@@ -81,3 +82,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../PROGRAMS/CONFIG_MODE/SENSOR/../../../MODULES/ADC_module/ADC_module.h:
 
 ../PROGRAMS/CONFIG_MODE/SENSOR/../../../MODULES/SCD30_module/SCD30_module.h:
+
+../PROGRAMS/CONFIG_MODE/SENSOR/../../../MODULES/EEPROM_module/EEPROM_module.h:
