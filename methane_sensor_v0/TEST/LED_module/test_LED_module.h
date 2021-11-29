@@ -2,7 +2,7 @@
  * test_LED_module.h
  *
  * Created: 08-11-2021 21:55:04
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

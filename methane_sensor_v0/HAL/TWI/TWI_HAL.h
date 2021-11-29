@@ -2,7 +2,7 @@
  * TWI_HAL.h
  *
  * Created: 14-10-2021 08:44:07
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 
@@ -10,7 +10,6 @@
 #define TWI_HAL_H_
 
 #include <xc.h>
-//#define F_CPU 8000000	
 
 typedef enum {
 	WRITE=0,

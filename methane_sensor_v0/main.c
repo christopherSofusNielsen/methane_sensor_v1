@@ -2,7 +2,7 @@
  * main.c
  *
  * Created: 10/4/2021 4:27:30 PM
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>
@@ -13,9 +13,13 @@
 #include "HAL/PM/PM_HAL.h"
 #include "HAL/UI/UI_HAL.h"
 
+
 int main(void)
 {
-	//test_runner();
+	#ifdef _RUN_TEST
+		test_runner();
+	#endif // _RUN_TEST
+	
 	
 	PM_HAL_LED_power_init();
 	UI_HAL_jumper_init();

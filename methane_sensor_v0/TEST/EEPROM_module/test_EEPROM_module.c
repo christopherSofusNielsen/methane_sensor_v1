@@ -2,7 +2,7 @@
  * test_EEPROM_module.c
  *
  * Created: 18-10-2021 13:27:43
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #define F_CPU 8000000UL

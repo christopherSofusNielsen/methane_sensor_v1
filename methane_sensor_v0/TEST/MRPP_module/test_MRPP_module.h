@@ -2,7 +2,7 @@
  * test_MRPP_module.h
  *
  * Created: 05-11-2021 13:51:48
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

@@ -2,7 +2,7 @@
  * ADC_module.c
  *
  * Created: 18-10-2021 17:20:16
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>

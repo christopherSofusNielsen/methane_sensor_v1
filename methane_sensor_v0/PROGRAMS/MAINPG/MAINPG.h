@@ -2,16 +2,21 @@
  * MAINPG.h
  *
  * Created: 05-11-2021 19:51:35
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 
 #ifndef MAINPG_H_
 #define MAINPG_H_
 
-#define MAX_METH_SAMLPES 300
-#define MAX_CO2_SAMLPES 300
+//Size of methane samples buffer
+#define MAX_METH_SAMLPES 200
+//Size of co2 samples buffer
+#define MAX_CO2_SAMLPES 200
 
+/************************************************************************/
+/* Mapping of sample routine to collection                              */
+/************************************************************************/
 #define S0_CO2 0
 #define S1_METH 1
 #define S1_CO2 2
@@ -20,6 +25,9 @@
 #define S3_METH 5
 #define S3_CO2 6
 
+/************************************************************************/
+/* Mapping of sample routine to collection ID                           */
+/************************************************************************/
 #define S0_ID_CO2 1
 #define S1_ID_METH 2
 #define S1_ID_CO2 3
@@ -31,10 +39,11 @@
 
 void MAINPG_start();
 
-
+/************************************************************************/
+/* States main-program state machine                                    */
+/************************************************************************/
 typedef enum{
 	MAINPG_INIT_HW,
-	
 	MAINPG_READ_EEPROM,
 	
 	MAINPG_LORA_JOIN_NETWORK,
@@ -68,6 +77,9 @@ typedef enum{
 	MAINPG_END
 } MAINPG_STATES;
 
+/************************************************************************/
+/* Status codes from stage-state machine                                */
+/************************************************************************/
 typedef enum{
 	STAGE_RUNNING,
 	STAGE_DONE,
@@ -75,6 +87,9 @@ typedef enum{
 	STAGE_FATAL_ERROR
 } STAGE_STATUS;
 
+/************************************************************************/
+/* States in stage-state machine                                        */
+/************************************************************************/
 typedef enum{
 	STAGE_INIT,
 	STAGE_GET_TIME,
@@ -83,8 +98,6 @@ typedef enum{
 	STAGE_DEINIT,
 	STAGE_UPDATE_MRPP
 } STAGE_STATES;
-
-
 
 
 #endif /* MAINPG_H_ */

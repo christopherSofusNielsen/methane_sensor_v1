@@ -2,7 +2,7 @@
  * LED_module.c
  *
  * Created: 08-11-2021 21:53:53
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 #include <util/delay.h>
 #include <xc.h>

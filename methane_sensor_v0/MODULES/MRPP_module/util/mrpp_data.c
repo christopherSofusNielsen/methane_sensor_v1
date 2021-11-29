@@ -1,3 +1,9 @@
+/*
+ * mrpp.h
+ *
+ *  Author: Christopher S. Nielsen
+ */ 
+
 #include "mrpp_data.h"
 
 uint8_t storage[BODY_BUFFER_DATA_SIZE];
@@ -5,7 +11,7 @@ uint8_t storage[BODY_BUFFER_DATA_SIZE];
 void mrpp_data_add_int16(uint8_t metadata[6], uint16_t values[], uint16_t begin, uint16_t length){
     
     //add meta
-    for (uint8_t i = begin; i < begin+COLLECTION_DATA_META_SIZE; i++)
+    for (uint16_t i = begin; i < begin+COLLECTION_DATA_META_SIZE; i++)
     {
         storage[i]=metadata[i-begin];
     }

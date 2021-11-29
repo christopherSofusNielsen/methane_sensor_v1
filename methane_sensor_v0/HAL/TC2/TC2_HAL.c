@@ -2,7 +2,7 @@
  * TC2_HAL.c
  *
  * Created: 04-11-2021 19:00:03
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>
@@ -62,8 +62,10 @@ void TC2_HAL_kill(){
 int8_t TC2_HAL_subscribe(callback_ptr cb){
 	int8_t pointer=-1;
 	
+	//Return -1 if no space
 	if(cbCounter>= MAX_CALLBACKS) return pointer;
 	
+	//Find a free spot in the array to store the cb
 	for (uint8_t i=0; i<MAX_CALLBACKS; i++)
 	{
 		if(callbacks[i]==NULL){
@@ -72,13 +74,18 @@ int8_t TC2_HAL_subscribe(callback_ptr cb){
 			break;
 		}
 	}
+	
+	//Increment the number of cbs and (re)start the timer
 	cbCounter++;
 	start_timer();
 	return pointer;
 }
 
 void TC2_HAL_cancel(int8_t pointer){
+	//Just return if cb not exist
 	if(callbacks[pointer]==NULL) return;
+	
+	//Otherwise remove cb, stop timer if no cb is back
 	callbacks[pointer]=NULL;
 	cbCounter--;
 	if(cbCounter==0){

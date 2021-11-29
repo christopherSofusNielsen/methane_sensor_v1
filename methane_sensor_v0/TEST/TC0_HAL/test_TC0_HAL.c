@@ -2,7 +2,7 @@
  * test_TC0_HAL.c
  *
  * Created: 01-11-2021 11:03:12
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>
@@ -49,21 +49,22 @@ void callback(){
 static void test_timing(){
 	
 	//Set pull up
-	set_bit(PORTB, 0);
-	set_bit(PORTB, 1);
+	//set_bit(PORTB, 0);
+	//set_bit(PORTB, 1);
+	value=0;
 	
 	TWI_HAL_init();
-	RTC_STATUS status=RTC_set_clock_out(1);
-	if(status != RTC_STATUS_SUCCESS){
-		uart1_hal_send_string("Fail ");
-		return;
-	}
+	//RTC_STATUS status=RTC_set_clock_out(1);
+	//if(status != RTC_STATUS_SUCCESS){
+		//uart1_hal_send_string("Fail ");
+		//return;
+	//}
 	
-	TC0_HAL_init(5, &callback);
+	TC0_HAL_init(10, &callback);
 	uart1_hal_send_string("Start ");
 	
 	TC0_HAL_start();
-	while(value==0){}
+	while(value<2){}
 	uart1_hal_send_string("Stop ");
 	TC0_HAL_stop();
 }

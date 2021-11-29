@@ -2,7 +2,7 @@
  * util.c
  *
  * Created: 05-10-2021 16:03:19
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <string.h>
@@ -22,23 +22,23 @@ char lm_msg[200];
 
 static void cb_watchdog_counter();
 
-void util_setPendingStates(LM_STATE_DATA *sd, int success, int failed){
+void util_set_pending_states(LM_STATE_DATA *sd, int success, int failed){
 	sd->success_state=success;
 	sd->failure_state=failed;
 }
 
-void util_setMatchCase(LM_STATE_DATA *sd, LM_MATCH_CASES matchCase, const char *matchString){
+void util_set_match_case(LM_STATE_DATA *sd, LM_MATCH_CASES matchCase, const char *matchString){
 	sd->matchCase=matchCase;
 	sd->matchString=matchString;
 }
 
-int util_matchMessage(LM_STATE_DATA *sd, char *msg){
+int util_match_message(LM_STATE_DATA *sd, char *msg){
 	switch(sd->matchCase){
 		case LM_EXACT:
 		return strcmp(msg, sd->matchString)==0?sd->success_state:sd->failure_state;
 
 		case LM_BEGINS_WITH:
-		return util_strbeginswith(msg, sd->matchString)?sd->success_state:sd->failure_state;
+		return util_str_begins_with(msg, sd->matchString)?sd->success_state:sd->failure_state;
 
 		case LM_NO_TEST:
 		return sd->success_state;
@@ -48,7 +48,7 @@ int util_matchMessage(LM_STATE_DATA *sd, char *msg){
 }
 
 
-bool util_strbeginswith(const char *s1, const char *s2){
+bool util_str_begins_with(const char *s1, const char *s2){
 	return strncmp(s1, s2, strlen(s2))==0?true:false;
 }
 
@@ -61,7 +61,7 @@ LM_STATUS util_reset_module(){
 	
 	uart0_hal_read_message_as_str(lm_msg);
 	
-	if(util_strbeginswith(lm_msg, RN2483)){
+	if(util_str_begins_with(lm_msg, RN2483)){
 		return LM_STATUS_SUCCESS;
 	}else{
 		return LM_STATUS_FATAL_ERROR;

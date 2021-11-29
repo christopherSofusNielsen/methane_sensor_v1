@@ -2,7 +2,7 @@
  * TWI_HAL.c
  *
  * Created: 14-10-2021 08:43:55
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include "TWI_HAL.h"

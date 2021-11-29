@@ -2,13 +2,16 @@
  * CONFIG_MODE.h
  *
  * Created: 09-11-2021 13:35:25
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 
 #ifndef CONFIG_MODE_H_
 #define CONFIG_MODE_H_
 
+/************************************************************************/
+/* States in config state machine                                       */
+/************************************************************************/
 typedef enum{
 	CONF_INTRO,
 	CONF_WAIT_FOR_CMD,

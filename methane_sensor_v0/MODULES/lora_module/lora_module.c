@@ -2,7 +2,7 @@
  * lora_module.c
  *
  * Created: 05-10-2021 15:57:06
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>
@@ -67,6 +67,9 @@ static void set_block_uplink(){
 	cnt=0;
 }
 
+/************************************************************************/
+/* Interrupts                                                           */
+/************************************************************************/
 static void cb_block_uplink(){
 	cnt++;
 	if(cnt>LORA_UPLINK_BLOCK_TIME){

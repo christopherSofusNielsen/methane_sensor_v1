@@ -306,10 +306,10 @@
     <Compile Include="PROGRAMS\CONFIG_MODE\RW\RW.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="PROGRAMS\CONFIG_MODE\SAMPLE\SAMPLE.c">
+    <Compile Include="PROGRAMS\CONFIG_MODE\SENSOR\SENSOR.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="PROGRAMS\CONFIG_MODE\SAMPLE\SAMPLE.h">
+    <Compile Include="PROGRAMS\CONFIG_MODE\SENSOR\SENSOR.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="PROGRAMS\CONFIG_MODE\UTIL\util.c">
@@ -463,7 +463,7 @@
     <Folder Include="PROGRAMS" />
     <Folder Include="PROGRAMS\CONFIG_MODE" />
     <Folder Include="PROGRAMS\CONFIG_MODE\CONNECT" />
-    <Folder Include="PROGRAMS\CONFIG_MODE\SAMPLE" />
+    <Folder Include="PROGRAMS\CONFIG_MODE\SENSOR" />
     <Folder Include="PROGRAMS\CONFIG_MODE\UTIL" />
     <Folder Include="PROGRAMS\CONFIG_MODE\RW" />
     <Folder Include="PROGRAMS\MAINPG" />

@@ -2,7 +2,7 @@
  * RN2483_HAL.h
  *
  * Created: 05-10-2021 15:48:27
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 
@@ -11,6 +11,7 @@
 
 #include <xc.h>
 
+//Ports
 #define RN2483_DDR DDRB
 #define RN2483_PORT PORTB
 #define RN2483_PIN 4

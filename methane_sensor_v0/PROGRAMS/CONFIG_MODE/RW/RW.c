@@ -2,7 +2,7 @@
  * RW.c
  *
  * Created: 09-11-2021 14:55:49
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 #include <stdbool.h>
 #include <xc.h>

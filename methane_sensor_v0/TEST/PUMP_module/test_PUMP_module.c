@@ -2,7 +2,7 @@
  * test_PUMP_module.c
  *
  * Created: 08-11-2021 16:38:21
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 #include <xc.h>
 #include <util/delay.h>

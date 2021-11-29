@@ -2,7 +2,7 @@
  * RN2483_HAL.c
  *
  * Created: 05-10-2021 15:49:01
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include "RN2483_HAL.h"

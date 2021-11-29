@@ -2,7 +2,7 @@
  * bit_operators.h
  *
  * Created: 04-10-2021 12:27:19
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

@@ -2,7 +2,7 @@
  * UI_HAL.c
  *
  * Created: 16-11-2021 12:18:27
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <xc.h>

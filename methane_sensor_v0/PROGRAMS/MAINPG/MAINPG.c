@@ -2,7 +2,7 @@
  * MAINPG.c
  *
  * Created: 05-11-2021 19:51:28
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 #define print_debug(txt) send_msg(txt)
 #define N_COLLECTIONS 7
@@ -160,12 +160,12 @@ void MAINPG_start(){
 			case MAINPG_LORA_JOIN_TRY_AGAIN:
 				print_debug("State: LORA TRY AGAIN");
 				LED_join_denied();
-				_delay_ms(20000);
+				_delay_ms(60000);
 				state=MAINPG_LORA_JOIN_NETWORK;
 			break;
 			
 			/************************************************************************/
-			/*                                                                      */
+			/* Initialize modules                                                   */
 			/************************************************************************/
 			case MAINPG_INIT_MODULES:
 				print_debug("State: INIT MODULES");
@@ -244,6 +244,7 @@ void MAINPG_start(){
 			case MAINPG_SEND_DATA:
 				state=comeBackToState;
 				if(MRPP_is_body_package_ready(&bodyIndex) && LM_is_free()){
+					print_debug("State: SEND DATA");
 					lmStatus=send_body(bodyIndex);
 					state=decode_body_response(bodyIndex, lmStatus, comeBackToState);
 				}
@@ -327,6 +328,7 @@ void MAINPG_start(){
 /* Stage 0                                                              */
 /************************************************************************/
 static STAGE_STATUS stage_0(){
+	RTC_STATUS rtcStatus;
 	
 	while(1){
 		switch(state_s0){
@@ -337,7 +339,8 @@ static STAGE_STATUS stage_0(){
 			break;
 			
 			case STAGE_GET_TIME:
-				RTC_get_current_time(&dt);
+				rtcStatus=RTC_get_current_time(&dt);
+				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
 				state_s0=STAGE_START;
 			break;
 			
@@ -373,6 +376,7 @@ static STAGE_STATUS stage_0(){
 /************************************************************************/
 static STAGE_STATUS stage_1(){
 	ADC_STATUS adcStatus;
+	RTC_STATUS rtcStatus;
 	
 	while(1){
 		switch(state_s1){
@@ -387,8 +391,8 @@ static STAGE_STATUS stage_1(){
 			break;
 			
 			case STAGE_GET_TIME:
-				RTC_get_current_time(&dt);
-				
+				rtcStatus=RTC_get_current_time(&dt);
+				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
 				state_s1=STAGE_START;
 			break;
 			
@@ -427,7 +431,7 @@ static STAGE_STATUS stage_1(){
 /************************************************************************/
 static STAGE_STATUS stage_2(){
 	ADC_STATUS adcStatus;
-	
+	RTC_STATUS rtcStatus;
 
 	while(1){
 		switch(state_s2){
@@ -442,8 +446,8 @@ static STAGE_STATUS stage_2(){
 			break;
 			
 			case STAGE_GET_TIME:
-				RTC_get_current_time(&dt);
-			
+				rtcStatus=RTC_get_current_time(&dt);
+				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
 				state_s2=STAGE_START;
 			break;
 			
@@ -484,6 +488,7 @@ static STAGE_STATUS stage_2(){
 /************************************************************************/
 static STAGE_STATUS stage_3(){
 	ADC_STATUS adcStatus;
+	RTC_STATUS rtcStatus;
 	
 	while(1){
 		switch(state_s3){
@@ -498,8 +503,8 @@ static STAGE_STATUS stage_3(){
 			break;
 			
 			case STAGE_GET_TIME:
-				RTC_get_current_time(&dt);
-				
+				rtcStatus=RTC_get_current_time(&dt);
+				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
 				state_s3=STAGE_START;
 			break;
 			
@@ -551,9 +556,8 @@ static MAINPG_STATES decode_stage_response(STAGE_STATUS status, MAINPG_STATES on
 }
 
 static RTC_STATUS set_wakeup(){
-	//uint8_t samplingProcessInterval=1;
-	//return RTC_set_wake_up_interrupt(samplingProcessInterval);
-	return RTC_set_wake_up_interrupt_minutes(samplingProcessInterval);
+	return RTC_set_wake_up_interrupt(samplingProcessInterval);
+	//return RTC_set_wake_up_interrupt_minutes(samplingProcessInterval);
 }
 
 static LM_STATUS join_lora(){
@@ -586,12 +590,19 @@ static LM_STATUS send_body(int16_t bodyIndex){
 static MAINPG_STATES decode_body_response(int16_t bodyIndex, LM_STATUS status, MAINPG_STATES success){
 	switch(status){
 		case LM_STATUS_SUCCESS:
+			MRPP_set_body_sent(bodyIndex);
+			print_debug("res: success");
+			return success;
+		
+		
 		case LM_STATUS_MAC_ERR:
 		case LM_STATUS_INV_DATA_LEN:
+			print_debug("res: mac err");
 			MRPP_set_body_sent(bodyIndex);
 			return success;
 		
 		case LM_STATUS_TRY_AGAIN:
+			print_debug("res: try again");
 			return success;
 		
 		default:

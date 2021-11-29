@@ -2,7 +2,7 @@
  * join_network.h
  *
  * Created: 05-10-2021 14:57:21
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 
@@ -10,8 +10,6 @@
 #define JOIN_NETWORK_H_
 
 #include "../lora_module.h"
-
- 
 
 typedef enum {
 	JN_HW_RESET_RN2483,

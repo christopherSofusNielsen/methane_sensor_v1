@@ -2,14 +2,14 @@
  * SAMPLE.c
  *
  * Created: 11-11-2021 14:55:35
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 #include <string.h>
 #include <stdbool.h>
 #include <util/delay.h>
 #include <stdio.h>
 
-#include "SAMPLE.h"
+#include "SENSOR.h"
 #include "../UTIL/util.h"
 #include "../../../HAL/PM/PM_HAL.h"
 #include "../../../HAL/TWI/TWI_HAL.h"
@@ -24,7 +24,7 @@ static bool handle_methane(const char cmd[], char res[]);
 static bool handle_co2(const char cmd[], char res[]);
 static bool handle_pump(const char cmd[], char res[]);
 
-bool handle_sample(const char cmd[], char res[]){
+bool handle_sensor(const char cmd[], char res[]){
 	if(!get_parameter(cmd, par, 1)) return false;
 	
 	if(strcmp(par, S_METH)==0){

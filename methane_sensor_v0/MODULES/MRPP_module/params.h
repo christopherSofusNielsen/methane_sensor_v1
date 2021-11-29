@@ -1,9 +1,14 @@
+/*
+ * mrpp.c
+ *
+ *  Author: Christopher S. Nielsen
+ */ 
 
 #ifndef MRPP_PARAMS_H
 #define MRPP_PARAMS_H
 
 
-#define BODY_BUFFER_DATA_SIZE 800
+#define BODY_BUFFER_DATA_SIZE 1000
 #define COLLECTION_DATA_META_SIZE 6
 #define DR_BODY_PAYLOAD_SIZE 48
 #define DR_SUBID_OVERHEAD 2

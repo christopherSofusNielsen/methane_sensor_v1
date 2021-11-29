@@ -2,7 +2,7 @@
  * TWI_API.h
  *
  * Created: 15-10-2021 15:31:21
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

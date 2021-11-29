@@ -2,7 +2,7 @@
  * CONNECT.c
  *
  * Created: 11-11-2021 10:38:50
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include <stdbool.h>

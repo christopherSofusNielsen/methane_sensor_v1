@@ -2,7 +2,7 @@
  * test_UART0_HAL.h
  *
  * Created: 04-11-2021 10:59:59
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

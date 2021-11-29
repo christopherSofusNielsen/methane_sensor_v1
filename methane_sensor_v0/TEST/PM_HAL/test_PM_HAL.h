@@ -2,7 +2,7 @@
  * test_sleep_hal.h
  *
  * Created: 18-10-2021 09:55:15
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

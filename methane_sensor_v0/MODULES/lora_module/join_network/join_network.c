@@ -2,7 +2,7 @@
  * join_network.c
  *
  * Created: 05-10-2021 14:57:07
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 	
 
@@ -30,8 +30,8 @@ LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]){
 				_delay_ms(1000);
 				rn2483_reset_deactive();
 				
-				util_setPendingStates(&stateData, JN_SOFT_RESET_LORA, JN_JOIN_FATAL_ERROR);
-				util_setMatchCase(&stateData, LM_BEGINS_WITH, RN2483);
+				util_set_pending_states(&stateData, JN_SOFT_RESET_LORA, JN_JOIN_FATAL_ERROR);
+				util_set_match_case(&stateData, LM_BEGINS_WITH, RN2483);
 				
 				state=JN_WAIT_FOR_INCOMMING;
 			break;
@@ -40,8 +40,8 @@ LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]){
 				cmd_with_ending(lm_msg, MAC_RESET_TO_868_BAND);
 				uart0_hal_send_string(lm_msg);
 				
-				util_setPendingStates(&stateData, JN_LOAD_DEVEUI, JN_JOIN_FATAL_ERROR);
-				util_setMatchCase(&stateData, LM_EXACT, OK);
+				util_set_pending_states(&stateData, JN_LOAD_DEVEUI, JN_JOIN_FATAL_ERROR);
+				util_set_match_case(&stateData, LM_EXACT, OK);
 				state=JN_WAIT_FOR_INCOMMING;
 			break;
 			
@@ -50,8 +50,8 @@ LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]){
 				attach_ending(lm_msg);
 				uart0_hal_send_string(lm_msg);
 				
-				util_setPendingStates(&stateData, JN_LOAD_APPKEY, JN_JOIN_FATAL_ERROR);
-				util_setMatchCase(&stateData, LM_EXACT, OK);
+				util_set_pending_states(&stateData, JN_LOAD_APPKEY, JN_JOIN_FATAL_ERROR);
+				util_set_match_case(&stateData, LM_EXACT, OK);
 				state=JN_WAIT_FOR_INCOMMING;
 			break;
 			
@@ -60,8 +60,8 @@ LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]){
 				attach_ending(lm_msg);
 				uart0_hal_send_string(lm_msg);
 				
-				util_setPendingStates(&stateData, JN_LOAD_APPEUI, JN_JOIN_FATAL_ERROR);
-				util_setMatchCase(&stateData, LM_EXACT, OK);
+				util_set_pending_states(&stateData, JN_LOAD_APPEUI, JN_JOIN_FATAL_ERROR);
+				util_set_match_case(&stateData, LM_EXACT, OK);
 				state=JN_WAIT_FOR_INCOMMING;
 			break;
 			
@@ -70,8 +70,8 @@ LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]){
 				attach_ending(lm_msg);
 				uart0_hal_send_string(lm_msg);
 				
-				util_setPendingStates(&stateData, JN_LOAD_ADR, JN_JOIN_FATAL_ERROR);
-				util_setMatchCase(&stateData, LM_EXACT, OK);
+				util_set_pending_states(&stateData, JN_LOAD_ADR, JN_JOIN_FATAL_ERROR);
+				util_set_match_case(&stateData, LM_EXACT, OK);
 				state=JN_WAIT_FOR_INCOMMING;
 			break;
 			
@@ -80,8 +80,8 @@ LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]){
 				attach_ending(lm_msg);
 				uart0_hal_send_string(lm_msg);
 				
-				util_setPendingStates(&stateData, JN_LOAD_SAVE, JN_JOIN_FATAL_ERROR);
-				util_setMatchCase(&stateData, LM_EXACT, OK);
+				util_set_pending_states(&stateData, JN_LOAD_SAVE, JN_JOIN_FATAL_ERROR);
+				util_set_match_case(&stateData, LM_EXACT, OK);
 				state=JN_WAIT_FOR_INCOMMING;
 			break;
 			
@@ -89,8 +89,8 @@ LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]){
 				cmd_with_ending(lm_msg, MAC_SAVE);
 				uart0_hal_send_string(lm_msg);
 				
-				util_setPendingStates(&stateData, JN_JOIN_NETWORK, JN_JOIN_FATAL_ERROR);
-				util_setMatchCase(&stateData, LM_EXACT, OK);
+				util_set_pending_states(&stateData, JN_JOIN_NETWORK, JN_JOIN_FATAL_ERROR);
+				util_set_match_case(&stateData, LM_EXACT, OK);
 				state=JN_WAIT_FOR_INCOMMING;
 			break;
 			
@@ -98,14 +98,14 @@ LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]){
 				cmd_with_ending(lm_msg, MAC_JOIN_OTAA);
 				uart0_hal_send_string(lm_msg);
 				
-				util_setPendingStates(&stateData, JN_JOIN_NETWORK_RES_2, JN_JOIN_NETWORK_FAILED);
-				util_setMatchCase(&stateData, LM_EXACT, OK);
+				util_set_pending_states(&stateData, JN_JOIN_NETWORK_RES_2, JN_JOIN_NETWORK_FAILED);
+				util_set_match_case(&stateData, LM_EXACT, OK);
 				state=JN_WAIT_FOR_INCOMMING;
 			break;
 			
 			case JN_JOIN_NETWORK_RES_2:
-				util_setPendingStates(&stateData, JN_JOIN_SUCCESS, JN_JOIN_NETWORK_FAILED);
-				util_setMatchCase(&stateData, LM_EXACT, ACCEPTED);
+				util_set_pending_states(&stateData, JN_JOIN_SUCCESS, JN_JOIN_NETWORK_FAILED);
+				util_set_match_case(&stateData, LM_EXACT, ACCEPTED);
 				state=JN_WAIT_FOR_INCOMMING;
 			break;
 				
@@ -122,7 +122,7 @@ LM_STATUS JN_join_network(char deveui[], char appeui[], char appkey[]){
 			case JN_WAIT_FOR_INCOMMING:
 				if(uart0_hal_message_ready()){
 					uart0_hal_read_message_as_str(lm_msg);
-					state=util_matchMessage(&stateData, lm_msg);
+					state=util_match_message(&stateData, lm_msg);
 				}
 			break;
 		}

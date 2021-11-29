@@ -2,7 +2,7 @@
  * util.h
  *
  * Created: 05-11-2021 14:27:31
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 

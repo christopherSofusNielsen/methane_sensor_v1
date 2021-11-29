@@ -2,10 +2,10 @@
  * sleep_controller.c
  *
  * Created: 12-10-2021 11:24:49
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
-#define LM_SLEEP_WATCHDOG_CNT 60
+#define LM_SLEEP_WATCHDOG_CNT 10
 
 #include <xc.h>
 #include <stdbool.h>

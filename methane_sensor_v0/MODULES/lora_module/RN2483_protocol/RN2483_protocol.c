@@ -2,7 +2,7 @@
  * RN2483_protocol.c
  *
  * Created: 04-10-2021 17:12:47
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 #include "RN2483_protocol.h"
@@ -12,8 +12,6 @@
 #include <xc.h>
 
 static void tohex(char str[], const uint8_t data[], int bytes);
-
-
 
 /*************************************************************
  * Auxiliary - local

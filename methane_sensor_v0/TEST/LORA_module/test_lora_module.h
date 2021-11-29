@@ -2,7 +2,7 @@
  * test_lora_module.h
  *
  * Created: 04-10-2021 16:51:52
- *  Author: Mainframe
+ *  Author: Christopher S. Nielsen
  */ 
 
 
