@@ -13,7 +13,7 @@
 #include "SENSOR/SENSOR.h"
 #include "../../HAL/TC2/TC2_HAL.h"
 
-char cnf_rx_cmd[200];
+char cnf_rx_cmd[100];
 char cnf_reply[200];
 
 static CONF_STATES parse_cmd(char msg[]);

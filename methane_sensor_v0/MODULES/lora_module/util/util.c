@@ -18,7 +18,7 @@
 
 static uint8_t wd_cnt=0;
 static int8_t wd_cb_pointer;
-char lm_msg[200];
+char lm_msg[250];
 
 static void cb_watchdog_counter();
 

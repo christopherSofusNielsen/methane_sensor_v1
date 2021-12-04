@@ -7,12 +7,13 @@
 
 #include <xc.h>
 #include <util/delay.h>
-#include "TEST/test_runner.h"
+//#include "TEST/test_runner.h"
 #include "PROGRAMS/MAINPG/MAINPG.h"
 #include "PROGRAMS/CONFIG_MODE/CONFIG_MODE.h"
 #include "HAL/PM/PM_HAL.h"
 #include "HAL/UI/UI_HAL.h"
 
+//#define _RUN_TEST
 
 int main(void)
 {

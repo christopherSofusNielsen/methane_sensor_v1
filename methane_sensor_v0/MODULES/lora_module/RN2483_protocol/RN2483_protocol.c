@@ -11,15 +11,15 @@
 
 #include <xc.h>
 
-static void tohex(char str[], const uint8_t data[], int bytes);
+static void tohex(char str[], const uint8_t data[], uint8_t bytes);
 
 /*************************************************************
  * Auxiliary - local
 **************************************************************/
 
-static void tohex(char str[], const uint8_t data[], int bytes)
+static void tohex(char str[], const uint8_t data[], uint8_t bytes)
 {
-    for (int i = 0; i < bytes; i++){
+    for (uint8_t i = 0; i < bytes; i++){
         sprintf(str + i * 2, "%02x", data[i]);
 	}
 }

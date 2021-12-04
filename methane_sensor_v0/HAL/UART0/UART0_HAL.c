@@ -18,8 +18,8 @@
 #include "../../util/bit_operators.h"
 
 uint8_t tx_buffer[UART0_TX_BUFF_LENGTH];
-uint8_t tx_buffer_data_len=0;
-uint8_t tx_buffer_cursor=0;
+uint16_t tx_buffer_data_len=0;
+uint16_t tx_buffer_cursor=0;
 
 uint8_t rx_buffer[UART0_RX_BUFF_LENGTH];
 uint8_t rx_buffer_data_len=0;
@@ -53,8 +53,8 @@ void uart0_hal_send_message(uint8_t msg[], uint8_t length){
 
 void uart0_hal_send_string(const char msg[]){
 	while(tx_buffer_data_len!=0){};//wait to write if buffer not empty
-	uint8_t len=strlen(msg);
-	for (uint8_t i=0; i<len; i++)
+	uint16_t len=strlen(msg);
+	for (uint16_t i=0; i<len; i++)
 	{
 		tx_buffer[i]=(uint8_t)msg[i];
 	}

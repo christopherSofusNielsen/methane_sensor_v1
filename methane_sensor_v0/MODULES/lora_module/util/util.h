@@ -22,7 +22,7 @@ typedef struct __STATE_DATA{
 	const char *matchString;
 }LM_STATE_DATA;
 
-extern char lm_msg[200];
+extern char lm_msg[250];
 
 
 void util_set_pending_states(LM_STATE_DATA *sd, int success, int failed);

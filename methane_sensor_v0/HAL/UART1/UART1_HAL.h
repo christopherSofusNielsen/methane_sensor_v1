@@ -12,8 +12,8 @@
 #include <xc.h>
 #include <stdbool.h>
 
-#define UART1_TX_BUFF_LENGTH 200
-#define UART1_RX_BUFF_LENGTH 150
+#define UART1_TX_BUFF_LENGTH 300
+#define UART1_RX_BUFF_LENGTH 75
 #define UART1_END_CHAR_1 '\n'
 #define UART1_END_CHAR_2 '\r'
 

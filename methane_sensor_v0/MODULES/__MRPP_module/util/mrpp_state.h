@@ -1,4 +1,8 @@
-
+/*
+ * mrpp.h
+ *
+ *  Author: Christopher S. Nielsen
+ */ 
 #ifndef MRPP_STATE_H
 #define MRPP_STATE_H
 
@@ -33,7 +37,7 @@ typedef struct MRPP_STATE
     uint8_t groupId;
     uint8_t lastSubId;
     uint8_t nCollections;
-    __COLLECTION_STATE collections[MAX_COLLECTIONS];
+    __COLLECTION_STATE collections[12];
     uint8_t nBodies;
     DR_STATUS bodies[MAX_BODIES];
 

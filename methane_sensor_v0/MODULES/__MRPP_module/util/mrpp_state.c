@@ -1,5 +1,10 @@
-#include "mrpp_state.h"
+/*
+ * mrpp.h
+ *
+ *  Author: Christopher S. Nielsen
+ */ 
 
+#include "mrpp_state.h"
 
 static void update_bodies(MRPP_STATE *state, uint8_t collectionId);
 static void add_data_types(MRPP_STATE *state, uint8_t package[]);
@@ -11,40 +16,32 @@ void mrpp_state_init(MRPP_STATE *state, uint8_t groupId, COLLECTION collections[
     uint16_t startingIndex=0;
     for (uint8_t i = 0; i < nCollections; i++)
     {
+		//Set sampling interval and type
         state->collections[i].samplingInterval=collections[i].samplingInterval;
-
-        //type
         state->collections[i].type=collections[i].type;
 
-        //Calculate length and set starting index
+        //Set starting index and calculate length
         state->collections[i].startIndex=startingIndex;
         uint16_t len=collections[i].samplings*collections[i].type+COLLECTION_DATA_META_SIZE;
         state->collections[i].length=len;
         
-
         //calculate starting and ending body
         state->collections[i].beginsInBody=startingIndex/DR_BODY_PAYLOAD_SIZE;
-        uint8_t endsInBody=(startingIndex+len-1)/DR_BODY_PAYLOAD_SIZE;
+        state->collections[i].endsInBody=(startingIndex+len-1)/DR_BODY_PAYLOAD_SIZE;
 
-        //Simpler solution above
-        state->collections[i].endsInBody=endsInBody;
-        
-
-        //set status
+        //set collection status
         state->collections[i].status=WAITING;
-
-
+		
+		//Set start index for next collection
         startingIndex+=len;      
     }
 
     //Calculate lastSubId
+	state->lastSubId=(startingIndex-1)/DR_BODY_PAYLOAD_SIZE+DR_SUBID_OVERHEAD;
     
-    uint8_t lastSubId=(startingIndex-1)/DR_BODY_PAYLOAD_SIZE+DR_SUBID_OVERHEAD;
-    state->lastSubId=lastSubId;
-    
-    //calculate bodies
-    uint8_t nBodies=(startingIndex-1)/DR_BODY_PAYLOAD_SIZE+1;
-    state->nBodies=nBodies;
+    //calculate number of bodies and initialize
+	uint8_t nBodies=(startingIndex-1)/DR_BODY_PAYLOAD_SIZE+1;
+	state->nBodies=nBodies;
 
     for (uint8_t i = 0; i < nBodies; i++)
     {
@@ -60,21 +57,18 @@ uint8_t mrpp_state_get_header(MRPP_STATE *state, uint8_t package[]){
     //status bit
     package[2]=0;
 
-    //N collections
-    package[3]=state->nCollections;
-
     //add data type
-    add_data_types(state, &package[4]);
+    add_data_types(state, package);
 
     for (uint8_t i = 0; i < state->nCollections; i++)
     {
-        package[i*4+10]=state->collections[i].startIndex >> 8;
-        package[i*4+11]=state->collections[i].startIndex;
-        package[i*4+12]=state->collections[i].length>>8;
-        package[i*4+13]=state->collections[i].length;
+        package[i*4+6]=state->collections[i].startIndex >> 8;
+        package[i*4+7]=state->collections[i].startIndex;
+        package[i*4+8]=state->collections[i].length>>8;
+        package[i*4+9]=state->collections[i].length;
     }
     
-    return 10+state->nCollections*DR_HEADER_COLLECTION_META_SIZE;
+    return 6+state->nCollections*DR_HEADER_COLLECTION_META_SIZE;
 }
 
 uint8_t mrpp_state_get_tail(MRPP_STATE *state, uint8_t package[]){
@@ -84,58 +78,50 @@ uint8_t mrpp_state_get_tail(MRPP_STATE *state, uint8_t package[]){
     //status bit
     package[2]=0;
 
-    //N collections
-    package[3]=state->nCollections;
-
     //add data type
-    add_data_types(state, &package[4]);
+    add_data_types(state, package);
 
     for (uint8_t i = 0; i < state->nCollections; i++)
     {
-        package[i*4+10]=state->collections[i].startIndex >> 8;
-        package[i*4+11]=state->collections[i].startIndex;
-        package[i*4+12]=state->collections[i].length>>8;
-        package[i*4+13]=state->collections[i].length;
+        package[i*4+6]=state->collections[i].startIndex >> 8;
+        package[i*4+7]=state->collections[i].startIndex;
+        package[i*4+8]=state->collections[i].length>>8;
+        package[i*4+9]=state->collections[i].length;
     }
-    return 10+state->nCollections*DR_HEADER_COLLECTION_META_SIZE;
+    return 6+state->nCollections*DR_HEADER_COLLECTION_META_SIZE;
 }
 
-static void add_data_types(MRPP_STATE *state, uint8_t dt[]){
-    for (uint8_t bIndex = 0; bIndex < 6; bIndex++)
+static void add_data_types(MRPP_STATE *state, uint8_t package[]){
+    uint32_t dt=0x00000000;
+    uint8_t cnt=0;
+
+    for (uint8_t i = 0; i < state->nCollections; i++)
     {
-        uint8_t bitArray=0x00;
-        for (uint8_t index = 0; index < 4; index++)
+        switch (state->collections[i].type)
         {
-            //If there is no more collection just skip and use default 0x00
-            uint8_t nCol=bIndex*4+index;
-            if(nCol+1>state->nCollections) break;
+            case T_INT8:
+                dt |= 1 << cnt;
+                break;
+            
+            case T_INT16:
+                dt |= 2 << cnt;
+                break;
 
-            uint8_t shifts=index*2;
-            switch (state->collections[nCol].type)
-            {
-                case T_INT8:
-                    bitArray |=1 << shifts;
-                    break;
-                
-                case T_INT16:
-                    bitArray |= 2 << shifts;
-                    break;
-
-                case T_FLOAT:
-                    bitArray |= 3 << shifts;
-                    break;
-                
-                default:
-                    break;
-            }
-
+            case T_FLOAT:
+                dt |= 3 << cnt;
+                break;
+            
+            default:
+                break;
         }
-        //set from the end
-        dt[5-bIndex]=bitArray;
-        
+        cnt+=2;
     }
-    
+
+    package[3]=(dt>>16) & 0xff;
+    package[4]=(dt>>8) & 0xff;
+    package[5]=dt & 0xff;
 } 
+
 
 
 void mrpp_state_set_collection(MRPP_STATE *state, uint8_t collectionId, uint8_t timestamp[4], uint8_t metadata[6]){
@@ -184,7 +170,7 @@ static void update_bodies(MRPP_STATE *state, uint8_t collectionId){
     uint8_t endsInBody=state->collections[collectionId-1].endsInBody;
     for (uint8_t i = collectionId; i < state->nCollections; i++)
     {
-        if(i==collectionId-1) continue;
+         if(i==collectionId-1) continue;
 
         if(state->collections[i].beginsInBody==endsInBody){
             if(state->collections[i].status!=DONE){
@@ -208,7 +194,7 @@ static void update_bodies(MRPP_STATE *state, uint8_t collectionId){
     {
         state->bodies[i]=READY;
     }
-    
+  
 }
 
 int16_t mrpp_state_is_body_ready(MRPP_STATE *state){
@@ -256,7 +242,9 @@ bool mrpp_state_get_ready_body(MRPP_STATE *state, int16_t bodyIndex, uint8_t *su
     if(readyIndex<state->nBodies-1){
         *length=DR_BODY_PAYLOAD_SIZE;
     }else{
-        *length=(state->collections[state->nCollections-1].startIndex+state->collections[state->nCollections-1].length)-(state->nBodies-1)*DR_BODY_PAYLOAD_SIZE; 
+		*length=(state->collections[state->nCollections-1].startIndex+state->collections[state->nCollections-1].length)-(state->nBodies-1)*DR_BODY_PAYLOAD_SIZE;
+        //Legacy
+		//*length=(state->collections[state->nCollections-1].startIndex+state->collections[state->nCollections-1].length)%DR_BODY_PAYLOAD_SIZE; 
     } 
     return true; 
 }

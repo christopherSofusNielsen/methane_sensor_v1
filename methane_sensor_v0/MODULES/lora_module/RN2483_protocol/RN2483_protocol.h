@@ -12,7 +12,7 @@
 #include <xc.h>
 
 //Constants
-#define MAX_PAYLOAD_SIZE_EU868 51
+#define MAX_PAYLOAD_SIZE_EU868 100
 #define PORT_MIN 1
 #define PORT_MAX 223
 

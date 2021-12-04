@@ -15,8 +15,8 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
- .././TEST/test_runner.h .././PROGRAMS/MAINPG/MAINPG.h \
- .././PROGRAMS/CONFIG_MODE/CONFIG_MODE.h .././HAL/PM/PM_HAL.h \
+ .././PROGRAMS/MAINPG/MAINPG.h .././PROGRAMS/CONFIG_MODE/CONFIG_MODE.h \
+ .././HAL/PM/PM_HAL.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h \
  .././HAL/UI/UI_HAL.h
 
@@ -51,8 +51,6 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
-
-.././TEST/test_runner.h:
 
 .././PROGRAMS/MAINPG/MAINPG.h:
 

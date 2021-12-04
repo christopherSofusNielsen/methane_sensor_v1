@@ -64,6 +64,8 @@ static uint16_t co2_data[MAX_CO2_SAMLPES];
 static uint16_t meth_data[MAX_METH_SAMLPES];
 static uint8_t ts[4];
 static Datetime dt;
+static uint8_t package[100];
+static uint8_t package_length;
 
 
 //EEPROM variables
@@ -580,9 +582,6 @@ static MAINPG_STATES decode_join_response(LM_STATUS status){
 }
 
 static LM_STATUS send_body(int16_t bodyIndex){
-	uint8_t package[51];
-	uint8_t package_length;
-	
 	MRPP_get_ready_body_package(bodyIndex, package, &package_length);
 	return LM_send_uplink(package, package_length);
 }
@@ -611,17 +610,11 @@ static MAINPG_STATES decode_body_response(int16_t bodyIndex, LM_STATUS status, M
 }
 
 static LM_STATUS send_header(){
-	uint8_t package[51];
-	uint8_t package_length;
-	
 	MRPP_get_header_package(package, &package_length);
 	return LM_send_uplink(package, package_length);
 }
 
 static LM_STATUS send_tail(){
-	uint8_t package[51];
-	uint8_t package_length;
-	
 	MRPP_get_tail_package(package, &package_length);
 	return LM_send_uplink(package, package_length);
 }
