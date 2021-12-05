@@ -309,9 +309,11 @@ void MAINPG_start(){
 			/************************************************************************/
 			
 			case MAINPG_PAYLOAD_INV_LEN:
-				print_debug("State: PAYLOAD INV LEN");
-				lmStatus=LM_send_uplink(package, 3);
-				state=decode_payload_inv_len_response(lmStatus, comeBackToState, MAINPG_PAYLOAD_INV_LEN);
+				if(LM_is_free()){
+					print_debug("State: PAYLOAD INV LEN");
+					lmStatus=LM_send_uplink(package, 3);
+					state=decode_payload_inv_len_response(lmStatus, comeBackToState, MAINPG_PAYLOAD_INV_LEN);	
+				}
 			break;
 			
 			case MAINPG_CONF_ERR:
@@ -668,9 +670,11 @@ static MAINPG_STATES decode_payload_inv_len_response(LM_STATUS status, MAINPG_ST
 		case LM_STATUS_SUCCESS:
 		case LM_STATUS_MAC_ERR:
 		case LM_STATUS_INV_DATA_LEN:
+			print_debug("res: success, macc_err, inv_len");
 			return success;
 		
 		case LM_STATUS_TRY_AGAIN:
+			print_debug("res: try again");
 			return tryAgain;
 		
 		default:
