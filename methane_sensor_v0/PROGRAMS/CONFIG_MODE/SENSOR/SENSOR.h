@@ -12,14 +12,14 @@
 #define S_N_SAMPLES 20
 
 #define S_METH "meth"
-#define S_CO2 "co2"
+#define S_SCD30 "scd30"
 #define S_PUMP	"pump"
 
 #define METH_POWER_ON "on"
 #define METH_POWER_OFF "off"
 #define METH_READ "read"
 
-#define CO2_READ "read"
+#define SCD30_READ "read"
 
 #define PUMP_ON "on"
 #define PUMP_OFF "off"

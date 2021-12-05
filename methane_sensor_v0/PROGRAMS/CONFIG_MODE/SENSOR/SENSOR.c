@@ -21,7 +21,7 @@ static char par[20];
 
 
 static bool handle_methane(const char cmd[], char res[]);
-static bool handle_co2(const char cmd[], char res[]);
+static bool handle_SCD30(const char cmd[], char res[]);
 static bool handle_pump(const char cmd[], char res[]);
 
 bool handle_sensor(const char cmd[], char res[]){
@@ -29,8 +29,8 @@ bool handle_sensor(const char cmd[], char res[]){
 	
 	if(strcmp(par, S_METH)==0){
 		return handle_methane(cmd, res);
-	}else if(strcmp(par, S_CO2)==0){
-		return handle_co2(cmd, res);
+	}else if(strcmp(par, S_SCD30)==0){
+		return handle_SCD30(cmd, res);
 	}else if(strcmp(par, S_PUMP)==0){
 		return handle_pump(cmd, res);
 	}else{
@@ -98,18 +98,19 @@ static bool handle_methane(const char cmd[], char res[]){
 	return false;
 }
 
-static bool handle_co2(const char cmd[], char res[]){
+static bool handle_SCD30(const char cmd[], char res[]){
 	if(!get_parameter(cmd, par, 2)) return false;
 	
-	if(strcmp(par, CO2_READ)==0){
-		uint16_t val;
-		//if(SCD30_get_reading(&val)!=SCD30_STATUS_SUCCESS){
-			//strcpy(res, "Error when reading data");
-			//}else{
-			//sprintf(res, "PPM=%u", val);
-			//}
-		//return true;
-		return false;
+	if(strcmp(par, SCD30_READ)==0){
+		uint16_t co2, temp, humidity;
+		if(SCD30_get_reading(&co2, &temp, &humidity)!=SCD30_STATUS_SUCCESS){
+			strcpy(res, "Error when reading data");
+		}else{
+			float temp_f=(float)temp/10.00;
+			float hum_f=(float)humidity/10.00;
+			sprintf(res, "CO2=%u ppm, temp=%.1f C, humidity=%.1f%% RH", co2, temp_f, hum_f);
+		}
+		return true;
 	}else{
 		strcpy(res, CONF_STAT_NOT_EXIST);
 		return true;
