@@ -9,33 +9,59 @@
 #ifndef MAINPG_H_
 #define MAINPG_H_
 
-//Size of methane samples buffer
-#define MAX_METH_SAMLPES 100
-//Size of co2 samples buffer
-#define MAX_CO2_SAMLPES 100
+
 
 /************************************************************************/
 /* Mapping of sample routine to collection                              */
 /************************************************************************/
+//#define S0_CO2 0
+//#define S1_METH 1
+//#define S1_CO2 2
+//#define S2_METH 3
+//#define S2_CO2 4
+//#define S3_METH 5
+//#define S3_CO2 6
 #define S0_CO2 0
-#define S1_METH 1
-#define S1_CO2 2
-#define S2_METH 3
-#define S2_CO2 4
-#define S3_METH 5
-#define S3_CO2 6
+#define S0_TEMP 1
+#define S0_HUM 2
+#define S1_METH 3
+#define S1_CO2 4
+#define S1_TEMP 5
+#define S1_HUM 6
+#define S2_METH 7
+#define S2_CO2 8
+#define S2_TEMP 9
+#define S2_HUM 10
+#define S3_METH 11
+#define S3_CO2 12
+#define S3_TEMP 13
+#define S3_HUM 14
 
 /************************************************************************/
 /* Mapping of sample routine to collection ID                           */
 /************************************************************************/
+//#define S0_ID_CO2 1
+//#define S1_ID_METH 2
+//#define S1_ID_CO2 3
+//#define S2_ID_METH 4
+//#define S2_ID_CO2 5
+//#define S3_ID_METH 6
+//#define S3_ID_CO2 7
 #define S0_ID_CO2 1
-#define S1_ID_METH 2
-#define S1_ID_CO2 3
-#define S2_ID_METH 4
-#define S2_ID_CO2 5
-#define S3_ID_METH 6
-#define S3_ID_CO2 7
-
+#define S0_ID_TEMP 2
+#define S0_ID_HUM 3
+#define S1_ID_METH 4
+#define S1_ID_CO2 5
+#define S1_ID_TEMP 6
+#define S1_ID_HUM 7
+#define S2_ID_METH 8
+#define S2_ID_CO2 9
+#define S2_ID_TEMP 10
+#define S2_ID_HUM 11
+#define S3_ID_METH 12
+#define S3_ID_CO2 13
+#define S3_ID_TEMP 14
+#define S3_ID_HUM 15
 
 void MAINPG_start();
 

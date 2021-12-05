@@ -5,7 +5,6 @@
  *  Author: Christopher S. Nielsen
  */ 
 #define print_debug(txt) send_msg(txt)
-#define N_COLLECTIONS 7
 #define COLS_BYTE_SIZE sizeof(COLLECTION)*N_COLLECTIONS
 
 #include <util/delay.h>
@@ -15,6 +14,7 @@
 #include "../../util/bit_operators.h"
 
 #include "MAINPG.h"
+#include "../GLOBAL_PARAMTERS.h"
 
 //HAL
 #include "../../HAL/UART1/UART1_HAL.h"
@@ -60,8 +60,10 @@ static STAGE_STATES state_s2=STAGE_INIT;
 static STAGE_STATES state_s3=STAGE_INIT;
 
 static int16_t bodyIndex=-1;
-static uint16_t co2_data[MAX_CO2_SAMLPES];
-static uint16_t meth_data[MAX_METH_SAMLPES];
+static uint16_t co2_data[MAX_SAMPLES_ALL];
+static uint16_t temp_data[MAX_SAMPLES_ALL];
+static uint16_t hum_data[MAX_SAMPLES_ALL];
+static uint16_t meth_data[MAX_SAMPLES_ALL];
 static uint8_t ts[4];
 static Datetime dt;
 static uint8_t package[100];
@@ -331,25 +333,29 @@ void MAINPG_start(){
 /************************************************************************/
 static STAGE_STATUS stage_0(){
 	RTC_STATUS rtcStatus;
+	bool res;
 	
 	while(1){
 		switch(state_s0){
 			case STAGE_INIT:
 				print_debug("State: S0 INIT");
-				SCD30_init_sampling(cols[S0_CO2].samplingInterval, cols[S0_CO2].samplings, co2_data);
+				SCD30_init_c02_sampling(cols[S0_CO2].samplingInterval, cols[S0_CO2].samplings, co2_data);
+				SCD30_init_temp_sampling(cols[S0_TEMP].samplingInterval, cols[S0_TEMP].samplings, temp_data);
+				SCD30_init_humidity_sampling(cols[S0_HUM].samplingInterval, cols[S0_HUM].samplings, hum_data);
+				state_s0=STAGE_START;
+			break;
+			
+			case STAGE_START:
+				ADC_meth_sens_power_on(methHeatUpTime);
+				res=SCD30_start_sampling();
+				if(!res) return STAGE_ERROR;
+				
 				state_s0=STAGE_GET_TIME;
 			break;
 			
 			case STAGE_GET_TIME:
 				rtcStatus=RTC_get_current_time(&dt);
 				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
-				state_s0=STAGE_START;
-			break;
-			
-			case STAGE_START:
-				ADC_meth_sens_power_on(methHeatUpTime);
-				SCD30_start_sampling();
-			
 				state_s0=STAGE_WAIT;
 			break;
 			
@@ -361,6 +367,8 @@ static STAGE_STATUS stage_0(){
 			case STAGE_UPDATE_MRPP:
 				RTC_datetime_to_ts(dt, ts);
 				MRPP_add_collection_data_INT16(S0_ID_CO2, ts, co2_data);
+				MRPP_add_collection_data_INT16(S0_ID_TEMP, ts, temp_data);
+				MRPP_add_collection_data_INT16(S0_ID_HUM, ts, hum_data);
 				state_s0=STAGE_DEINIT;
 			break;
 			
@@ -379,15 +387,26 @@ static STAGE_STATUS stage_0(){
 static STAGE_STATUS stage_1(){
 	ADC_STATUS adcStatus;
 	RTC_STATUS rtcStatus;
+	bool res;
 	
 	while(1){
 		switch(state_s1){
 			case STAGE_INIT:
 				print_debug("State: S1 INIT");
-				SCD30_init_sampling(cols[S1_CO2].samplingInterval, cols[S1_CO2].samplings, co2_data);
+				SCD30_init_c02_sampling(cols[S1_CO2].samplingInterval, cols[S1_CO2].samplings, co2_data);
+				SCD30_init_temp_sampling(cols[S1_TEMP].samplingInterval, cols[S1_TEMP].samplings, temp_data);
+				SCD30_init_humidity_sampling(cols[S1_HUM].samplingInterval, cols[S1_HUM].samplings, hum_data);
 				
 				adcStatus=ADC_init_sampling(cols[S1_METH].samplingInterval, cols[S1_METH].samplings, meth_data);
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
+				
+				state_s1=STAGE_START;
+			break;
+			
+			case STAGE_START:
+				ADC_start_sampling();
+				res=SCD30_start_sampling();
+				if(!res) return STAGE_ERROR;
 				
 				state_s1=STAGE_GET_TIME;
 			break;
@@ -395,13 +414,6 @@ static STAGE_STATUS stage_1(){
 			case STAGE_GET_TIME:
 				rtcStatus=RTC_get_current_time(&dt);
 				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
-				state_s1=STAGE_START;
-			break;
-			
-			case STAGE_START:
-				SCD30_start_sampling();
-				ADC_start_sampling();
-				
 				state_s1=STAGE_WAIT;
 			break;
 			
@@ -412,8 +424,11 @@ static STAGE_STATUS stage_1(){
 			
 			case STAGE_UPDATE_MRPP:
 				RTC_datetime_to_ts(dt, ts);
-				MRPP_add_collection_data_INT16(S1_ID_CO2, ts, co2_data);
 				MRPP_add_collection_data_INT16(S1_ID_METH, ts, meth_data);
+				MRPP_add_collection_data_INT16(S1_ID_CO2, ts, co2_data);
+				MRPP_add_collection_data_INT16(S1_ID_TEMP, ts, temp_data);
+				MRPP_add_collection_data_INT16(S1_ID_HUM, ts, hum_data);
+				
 				state_s1=STAGE_DEINIT;
 			break;
 			
@@ -434,30 +449,35 @@ static STAGE_STATUS stage_1(){
 static STAGE_STATUS stage_2(){
 	ADC_STATUS adcStatus;
 	RTC_STATUS rtcStatus;
+	bool res;
 
 	while(1){
 		switch(state_s2){
 			case STAGE_INIT:
 				print_debug("State: S2 INIT");
-				SCD30_init_sampling(cols[S2_CO2].samplingInterval, cols[S2_CO2].samplings, co2_data);
+				SCD30_init_c02_sampling(cols[S2_CO2].samplingInterval, cols[S2_CO2].samplings, co2_data);
+				SCD30_init_temp_sampling(cols[S2_TEMP].samplingInterval, cols[S2_TEMP].samplings, temp_data);
+				SCD30_init_humidity_sampling(cols[S2_HUM].samplingInterval, cols[S2_HUM].samplings, hum_data);
 				
 				adcStatus=ADC_init_sampling(cols[S2_METH].samplingInterval, cols[S2_METH].samplings, meth_data);
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 			
+				state_s2=STAGE_START;
+			break;
+			
+			case STAGE_START:
+				res=SCD30_start_sampling();
+				if(!res) return STAGE_ERROR;
+				
+				ADC_start_sampling();
+				PUMP_start(airPumpTime);
+				
 				state_s2=STAGE_GET_TIME;
 			break;
 			
 			case STAGE_GET_TIME:
 				rtcStatus=RTC_get_current_time(&dt);
 				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
-				state_s2=STAGE_START;
-			break;
-			
-			case STAGE_START:
-				SCD30_start_sampling();
-				ADC_start_sampling();
-				PUMP_start(airPumpTime);
-			
 				state_s2=STAGE_WAIT;
 			break;
 			
@@ -469,6 +489,8 @@ static STAGE_STATUS stage_2(){
 			case STAGE_UPDATE_MRPP:
 				RTC_datetime_to_ts(dt, ts);
 				MRPP_add_collection_data_INT16(S2_ID_CO2, ts, co2_data);
+				MRPP_add_collection_data_INT16(S2_ID_TEMP, ts, temp_data);
+				MRPP_add_collection_data_INT16(S2_ID_HUM, ts, hum_data);
 				MRPP_add_collection_data_INT16(S2_ID_METH, ts, meth_data);
 				state_s2=STAGE_DEINIT;
 			break;
@@ -491,29 +513,33 @@ static STAGE_STATUS stage_2(){
 static STAGE_STATUS stage_3(){
 	ADC_STATUS adcStatus;
 	RTC_STATUS rtcStatus;
+	bool res;
 	
 	while(1){
 		switch(state_s3){
 			case STAGE_INIT:
 				print_debug("State: S3 INIT");
-				SCD30_init_sampling(cols[S3_CO2].samplingInterval, cols[S3_CO2].samplings, co2_data);
+				SCD30_init_c02_sampling(cols[S3_CO2].samplingInterval, cols[S3_CO2].samplings, co2_data);
+				SCD30_init_temp_sampling(cols[S3_TEMP].samplingInterval, cols[S3_TEMP].samplings, temp_data);
+				SCD30_init_humidity_sampling(cols[S3_HUM].samplingInterval, cols[S3_HUM].samplings, hum_data);
 				
 				adcStatus=ADC_init_sampling(cols[S3_METH].samplingInterval, cols[S3_METH].samplings, meth_data);
 				if(adcStatus!=ADC_STATUS_SUCCESS) return STAGE_FATAL_ERROR;
 			
+				state_s3=STAGE_START;
+			break;
+			
+			case STAGE_START:
+				ADC_start_sampling();
+				res=SCD30_start_sampling();
+				if(!res) return STAGE_ERROR;
+				
 				state_s3=STAGE_GET_TIME;
 			break;
 			
 			case STAGE_GET_TIME:
 				rtcStatus=RTC_get_current_time(&dt);
 				if(rtcStatus!=RTC_STATUS_SUCCESS) return STAGE_ERROR;
-				state_s3=STAGE_START;
-			break;
-			
-			case STAGE_START:
-				SCD30_start_sampling();
-				ADC_start_sampling();
-				
 				state_s3=STAGE_WAIT;
 			break;
 			
@@ -525,6 +551,8 @@ static STAGE_STATUS stage_3(){
 			case STAGE_UPDATE_MRPP:
 				RTC_datetime_to_ts(dt, ts);
 				MRPP_add_collection_data_INT16(S3_ID_CO2, ts, co2_data);
+				MRPP_add_collection_data_INT16(S3_ID_TEMP, ts, temp_data);
+				MRPP_add_collection_data_INT16(S3_ID_HUM, ts, hum_data);
 				MRPP_add_collection_data_INT16(S3_ID_METH, ts, meth_data);
 				state_s3=STAGE_DEINIT;
 			break;
@@ -649,15 +677,8 @@ static bool read_eeprom(){
 }
 
 /************************************************************************/
-/* static uint16_t airPumpTime=10;
-static uint8_t methHeatUpTime=1;
-static uint8_t samplingProcessInterval;                                                                     */
-/************************************************************************/
-
-/************************************************************************/
 /* Test functions                                                       */
 /************************************************************************/
 static void send_msg(const char msg[]){
 	uart1_hal_send_string(msg);
-	_delay_ms(100);
 }

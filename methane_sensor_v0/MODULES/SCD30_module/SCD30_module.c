@@ -40,7 +40,6 @@ static uint16_t si_counter;
 static bool validate_data(uint8_t data[]);
 static uint16_t bytes_2_uint(uint8_t data[], uint8_t scale);
 static void vect_SCD_do_sample();
-static SCD30_STATUS read_value(uint16_t *value);
 static SCD30_STATUS init_measurement();
 static void clear_sampling_data();
 

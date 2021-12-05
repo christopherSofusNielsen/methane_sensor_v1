@@ -18,7 +18,7 @@ PROGRAMS/MAINPG/MAINPG.d PROGRAMS/MAINPG/MAINPG.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
  ../PROGRAMS/MAINPG/../../util/bit_operators.h \
- ../PROGRAMS/MAINPG/MAINPG.h \
+ ../PROGRAMS/MAINPG/MAINPG.h ../PROGRAMS/MAINPG/../GLOBAL_PARAMTERS.h \
  ../PROGRAMS/MAINPG/../../HAL/UART1/UART1_HAL.h \
  ../PROGRAMS/MAINPG/../../HAL/UART0/UART0_HAL.h \
  ../PROGRAMS/MAINPG/../../HAL/TWI/TWI_HAL.h \
@@ -78,6 +78,8 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
 ../PROGRAMS/MAINPG/../../util/bit_operators.h:
 
 ../PROGRAMS/MAINPG/MAINPG.h:
+
+../PROGRAMS/MAINPG/../GLOBAL_PARAMTERS.h:
 
 ../PROGRAMS/MAINPG/../../HAL/UART1/UART1_HAL.h:
 
