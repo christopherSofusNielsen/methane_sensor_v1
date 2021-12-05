@@ -318,6 +318,9 @@
     <Compile Include="PROGRAMS\CONFIG_MODE\UTIL\util.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="PROGRAMS\GLOBAL_PARAMTERS.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="PROGRAMS\MAINPG\MAINPG.c">
       <SubType>compile</SubType>
     </Compile>

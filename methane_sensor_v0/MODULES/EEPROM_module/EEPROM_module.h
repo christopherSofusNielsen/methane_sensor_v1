@@ -33,7 +33,7 @@
 
 //Notice jump in addr
 #define EEPROM_GROUP_ID_ADDR 99 //Size 1 byte
-#define EEPROM_COLLECTION_ADDR 100 //11 collections=11*5=55 bytes
+#define EEPROM_COLLECTION_ADDR 100 //15 collections=15*5=75 bytes
 
 /************************************************************************/
 /* Addresses END                                                        */

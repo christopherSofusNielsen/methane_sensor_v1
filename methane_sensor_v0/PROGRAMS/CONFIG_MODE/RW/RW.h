@@ -11,6 +11,8 @@
 
 #include <stdbool.h>
 
+
+
 #define RW_DEVEUI "deveui"
 #define RW_APPEUI "appeui"
 #define RW_APPKEY "appkey"
@@ -23,6 +25,7 @@
 #define RW_SP_INTERVAL "sp_interval"
 #define RW_TIME "time"
 #define RW_RESET "reset"
+#define RW_VALIDATE_SI "validate"
 
 #define RW_S_SUCCESS "success"
 #define RW_S_FAILED "failed"

@@ -20,6 +20,7 @@ PROGRAMS/CONFIG_MODE/RW/RW.d PROGRAMS/CONFIG_MODE/RW/RW.o: \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h \
  ../PROGRAMS/CONFIG_MODE/RW/RW.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../GLOBAL_PARAMTERS.h \
  ../PROGRAMS/CONFIG_MODE/RW/../UTIL/util.h \
  ../PROGRAMS/CONFIG_MODE/RW/../../../util/str2float/str2float.h \
  ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/EEPROM_module/EEPROM_module.h \
@@ -30,7 +31,9 @@ PROGRAMS/CONFIG_MODE/RW/RW.d PROGRAMS/CONFIG_MODE/RW/RW.o: \
  ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/util/mrpp_data.h \
  ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/MRPP_module/types.h \
  ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/RTC_module/RTC_module.h \
- ../PROGRAMS/CONFIG_MODE/RW/../../../HAL/TWI/TWI_HAL.h
+ ../PROGRAMS/CONFIG_MODE/RW/../../../HAL/TWI/TWI_HAL.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../HAL/UART1/UART1_HAL.h \
+ ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/SCD30_module/SCD30_module.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stdbool.h:
 
@@ -72,6 +75,8 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h:
 
 ../PROGRAMS/CONFIG_MODE/RW/RW.h:
 
+../PROGRAMS/CONFIG_MODE/RW/../../GLOBAL_PARAMTERS.h:
+
 ../PROGRAMS/CONFIG_MODE/RW/../UTIL/util.h:
 
 ../PROGRAMS/CONFIG_MODE/RW/../../../util/str2float/str2float.h:
@@ -93,3 +98,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h:
 ../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/RTC_module/RTC_module.h:
 
 ../PROGRAMS/CONFIG_MODE/RW/../../../HAL/TWI/TWI_HAL.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../HAL/UART1/UART1_HAL.h:
+
+../PROGRAMS/CONFIG_MODE/RW/../../../MODULES/SCD30_module/SCD30_module.h:
