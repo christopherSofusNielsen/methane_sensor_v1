@@ -103,12 +103,13 @@ static bool handle_co2(const char cmd[], char res[]){
 	
 	if(strcmp(par, CO2_READ)==0){
 		uint16_t val;
-		if(SCD30_get_reading(&val)!=SCD30_STATUS_SUCCESS){
-			strcpy(res, "Error when reading data");
-		}else{
-			sprintf(res, "PPM=%u", val);
-		}
-		return true;
+		//if(SCD30_get_reading(&val)!=SCD30_STATUS_SUCCESS){
+			//strcpy(res, "Error when reading data");
+			//}else{
+			//sprintf(res, "PPM=%u", val);
+			//}
+		//return true;
+		return false;
 	}else{
 		strcpy(res, CONF_STAT_NOT_EXIST);
 		return true;

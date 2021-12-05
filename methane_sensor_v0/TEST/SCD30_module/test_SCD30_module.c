@@ -20,13 +20,11 @@
 #include "../../util/bit_operators.h"
 
 
-static void test_sampling();
+static void test_sampling_all_values();
+static void test_sampling_only_co2();
+static void test_read_all_values();
+static void test_calc_validate_SI();
 static void test_get_reading();
-static void power_test();
-
-//void read_firmware_api();
-//void throw_error(uint8_t status, uint8_t index);
-//void read_measure_interval();
 
 void test_SCD30_module_start(){
 		uart1_hal_init();
@@ -35,43 +33,66 @@ void test_SCD30_module_start(){
 		
 			
 		while(1){
-			//test_sampling();
-			//test_get_reading();
-			power_test();
+			//test_calc_validate_SI();
+			//test_read_all_values();
+			//test_sampling_all_values();
+			//test_sampling_only_co2();
+			test_get_reading();
 			
-			_delay_ms(1500);
+			_delay_ms(3000);
 		}
 }
 
 /************************************************************************/
-/* Test init of SCD30 and timer                                         */
+/* Test calc and validation of SIs                                      */
 /************************************************************************/
-static void test_sampling(){
-	uint16_t data[5];
-	uart1_hal_send_string("RUN ");
-	SCD30_STATUS status=SCD30_sensor_on();
-	SCD30_init_sampling(3, 5, data);
-	if(status!=SCD30_STATUS_SUCCESS){
-		uart1_hal_send_string("FAIL ");
-		return;
+static void test_calc_validate_SI(){
+	uart1_hal_send_string("Calc and validation test");
+	uint16_t lowest_si;
+	uint16_t highest_si;
+	bool res;
+	
+	res=SCD30_calc_validate_SI(4, 20, 20, &lowest_si, &highest_si);
+	if (res && lowest_si==4 && highest_si==20)
+	{
+		uart1_hal_send_string("OK 1");
+	}else{
+		uart1_hal_send_string("FAIL 1");
 	}
 	
-	SCD30_start_sampling();
-	while(!SCD30_is_sampling_done()){};
-	
-	SCD30_deinit_sampling();
-	
-	for (uint8_t i=0; i<5; i++)
+	res=SCD30_calc_validate_SI(4, 22, 20, &lowest_si, &highest_si);
+	if (res==false)
 	{
-		char msg[20];
-		sprintf(msg, " %u ", data[i]);
-		uart1_hal_send_string(msg);
+		uart1_hal_send_string("OK 2");
+	}else{
+		uart1_hal_send_string("FAIL 2");
+	}
+	
+	res=SCD30_calc_validate_SI(4, 4, 8, &lowest_si, &highest_si);
+	if (res && lowest_si==4 && highest_si==8)
+	{
+		uart1_hal_send_string("OK 3");
+	}else{
+		uart1_hal_send_string("FAIL 3");
+	}
+	
+	res=SCD30_calc_validate_SI(4, 8, 0, &lowest_si, &highest_si);
+	if (res && lowest_si==4 && highest_si==8)
+	{
+		uart1_hal_send_string("OK 4");
+	}else{
+		uart1_hal_send_string("FAIL 4");
 	}
 }
 
-static void test_get_reading(){
+/************************************************************************/
+/* Test the read function                                               */
+/************************************************************************/
+static void test_read_all_values(){
 	SCD30_STATUS status;
-	uint16_t value;
+	uint16_t co2, temp, humidity;
+	
+	uart1_hal_send_string("Test read of values");
 	
 	status=SCD30_sensor_on();
 	if(status!=SCD30_STATUS_SUCCESS){
@@ -79,71 +100,122 @@ static void test_get_reading(){
 		return;
 	}
 	
-	status=SCD30_get_reading(&value);
+	status=read_all_values(&co2, &temp, &humidity);
 	if(status!=SCD30_STATUS_SUCCESS){
 		uart1_hal_send_string("Failed ");
 		return;
 	}
 	
-	char msg[20];
-	sprintf(msg, " %u ", value);
+	char msg[30];
+	sprintf(msg, "%u, %u, %u", co2, temp, humidity);
 	uart1_hal_send_string(msg);
 }
 
-static void power_test(){
-	uint16_t data[5];
-	uart1_hal_send_string("Start SCD30 power test");
+
+
+/************************************************************************/
+/* Test sampling of all values                                          */
+/************************************************************************/
+static void test_sampling_all_values(){
+	uint16_t co2[6], temp[3], humidity[3];
 	
-	//Turn on
-	PM_HAL_SCD30_power(true);
-	
-	//Sample
+	uart1_hal_send_string("Test sampling of c02, temp and humidity");
 	SCD30_STATUS status=SCD30_sensor_on();
 	if(status!=SCD30_STATUS_SUCCESS){
-		uart1_hal_send_string("FAIL ");
+		uart1_hal_send_string("FAIL 1");
 		return;
 	}
 	
-	SCD30_init_sampling(2, 5, data);
-	SCD30_start_sampling();
+	//Initialize samplings
+	SCD30_init_c02_sampling(3, 6, co2);
+	SCD30_init_temp_sampling(6, 3, temp);
+	SCD30_init_humidity_sampling(6, 3, humidity);
 	
+	bool res=SCD30_start_sampling();
+	if(!res){
+		uart1_hal_send_string("FAIL 2");
+		return;
+	}
+	
+	//Wait to finish
 	while(!SCD30_is_sampling_done()){};
 	
-	uart1_hal_send_string("Done, power off");
 	SCD30_deinit_sampling();
-	PM_HAL_SCD30_power(false);
-	_delay_ms(2000);
-	uart1_hal_send_string("End SCD30 power test");
+	
+	//Send readings
+	char msg[40];
+	sprintf(msg, "%u, %u, %u, %u, %u, %u", co2[0], co2[1], co2[2], co2[3], co2[4], co2[5], co2[6]);
+	uart1_hal_send_string(msg);
+	
+	sprintf(msg, "%u, %u, %u", temp[0], temp[1], temp[2]);
+	uart1_hal_send_string(msg);
+	
+	sprintf(msg, "%u, %u, %u", humidity[0], humidity[1], humidity[2]);
+	uart1_hal_send_string(msg);
+}
+
+/************************************************************************/
+/* Test sampling of co2 only                                            */
+/************************************************************************/
+static void test_sampling_only_co2(){
+	uint16_t co2[6];
+	
+	uart1_hal_send_string("Test sampling of c02 only");
+	SCD30_STATUS status=SCD30_sensor_on();
+	if(status!=SCD30_STATUS_SUCCESS){
+		uart1_hal_send_string("FAIL 1");
+		return;
+	}
+	
+	//Initialize samplings
+	SCD30_init_c02_sampling(3, 6, co2);
+	
+	bool res=SCD30_start_sampling();
+	if(!res){
+		uart1_hal_send_string("FAIL 2");
+		return;
+	}
+	
+	//Wait to finish
+	while(!SCD30_is_sampling_done()){};
+	
+	SCD30_deinit_sampling();
+	
+	//Send readings
+	char msg[40];
+	sprintf(msg, "%u, %u, %u, %u, %u, %u", co2[0], co2[1], co2[2], co2[3], co2[4], co2[5], co2[6]);
+	uart1_hal_send_string(msg);
+}
+
+/************************************************************************/
+/* Test get reading                                                     */
+/************************************************************************/
+static void test_get_reading(){
+	SCD30_STATUS status;
+	uint16_t co2, temp, humidity;
+	
+	uart1_hal_send_string("Test get reading");
+	
+	status=SCD30_sensor_on();
+	if(status!=SCD30_STATUS_SUCCESS){
+		uart1_hal_send_string("Failed ");
+		return;
+	}
+	
+	status=SCD30_get_reading(&co2, &temp, &humidity);
+	if(status!=SCD30_STATUS_SUCCESS){
+		uart1_hal_send_string("Failed ");
+		return;
+	}
+	
+	char msg[30];
+	sprintf(msg, "%u, %u, %u", co2, temp, humidity);
+	uart1_hal_send_string(msg);
 }
 
 
 
-/************************************************************************/
-/* Other test functions                                                 */
-/************************************************************************/
 
-//void read_firmware_api(){
-	//uint8_t status;
-	//uint8_t write[]={0xD1, 0x00};
-	//uint8_t read[3];
-	//TWI_HAL_init();
-	//status=TWI_API_write_data_stop(0x61, write, 2);
-	//if(status!=TWI_CODE_SUCCESS)
-		//return throw_error(status, 0);
-	//_delay_ms(3);
-	//
-	//status=TWI_API_read_data_ack_end_nack_stop(0x61, read, 3);
-	//if(status!=TWI_CODE_SUCCESS)
-		//return throw_error(status, 1);
-	//
-	//uart1_hal_send_message(read, 3);
-//}
-//
-//void throw_error(uint8_t status, uint8_t index){
-	//uint8_t msg[3];
-	//msg[0]=status;
-	//msg[1]=index;
-	//msg[2]=0xFF;
-	//uart1_hal_send_message(msg, 3);
-//}
+
+
 
