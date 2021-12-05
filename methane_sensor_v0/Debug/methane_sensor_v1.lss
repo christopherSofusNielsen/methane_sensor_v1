@@ -1091,7 +1091,7 @@ Disassembly of section .text:
 Disassembly of section .text:
 
 000072f4 <__bad_interrupt>:
-    72f4:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+    72f4:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 Disassembly of section .text.PM_HAL_adc_power_init:
 
