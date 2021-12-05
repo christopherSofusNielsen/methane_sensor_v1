@@ -42,9 +42,7 @@ static LM_STATUS join_lora();
 static MAINPG_STATES decode_join_response(LM_STATUS status);
 static MAINPG_STATES decode_header_tail_response(LM_STATUS status, MAINPG_STATES success, MAINPG_STATES tryAgain);
 static MAINPG_STATES decode_body_response(int16_t bodyIndex, LM_STATUS status, MAINPG_STATES success);
-static LM_STATUS send_body(int16_t bodyIndex);
-static LM_STATUS send_header();
-static LM_STATUS send_tail();
+static MAINPG_STATES decode_payload_inv_len_response(LM_STATUS status, MAINPG_STATES success, MAINPG_STATES tryAgain);
 static MAINPG_STATES decode_stage_response(STAGE_STATUS status, MAINPG_STATES onDone);
 static STAGE_STATUS stage_0();
 static STAGE_STATUS stage_1();
@@ -217,7 +215,9 @@ void MAINPG_start(){
 					break;
 				}
 				print_debug("State: SEND HEADER");
-				lmStatus=send_header();
+				comeBackToState=MAINPG_STAGE_0;
+				MRPP_get_header_package(package, &package_length);
+				lmStatus=LM_send_uplink(package, package_length);
 				state=decode_header_tail_response(lmStatus, MAINPG_STAGE_0, MAINPG_SEND_HEADER);
 			break;
 			
@@ -249,7 +249,8 @@ void MAINPG_start(){
 				state=comeBackToState;
 				if(MRPP_is_body_package_ready(&bodyIndex) && LM_is_free()){
 					print_debug("State: SEND DATA");
-					lmStatus=send_body(bodyIndex);
+					MRPP_get_ready_body_package(bodyIndex, package, &package_length);
+					lmStatus=LM_send_uplink(package, package_length);
 					state=decode_body_response(bodyIndex, lmStatus, comeBackToState);
 				}
 			break;
@@ -269,7 +270,9 @@ void MAINPG_start(){
 					break;
 				}
 				print_debug("State: SEND TAIL");
-				lmStatus=send_tail();
+				comeBackToState=MAINPG_SETUP_SLEEP;
+				MRPP_get_tail_package(package, &package_length);
+				lmStatus=LM_send_uplink(package, package_length);
 				state=decode_header_tail_response(lmStatus, MAINPG_SETUP_SLEEP, MAINPG_SEND_TAIL);
 				
 			break;
@@ -304,6 +307,12 @@ void MAINPG_start(){
 			/************************************************************************/
 			/* Error handling                                                       */
 			/************************************************************************/
+			
+			case MAINPG_PAYLOAD_INV_LEN:
+				print_debug("State: PAYLOAD INV LEN");
+				lmStatus=LM_send_uplink(package, 3);
+				state=decode_payload_inv_len_response(lmStatus, comeBackToState, MAINPG_PAYLOAD_INV_LEN);
+			break;
 			
 			case MAINPG_CONF_ERR:
 				print_debug("State: CONF ERR");
@@ -609,10 +618,6 @@ static MAINPG_STATES decode_join_response(LM_STATUS status){
 	}	
 }
 
-static LM_STATUS send_body(int16_t bodyIndex){
-	MRPP_get_ready_body_package(bodyIndex, package, &package_length);
-	return LM_send_uplink(package, package_length);
-}
 
 static MAINPG_STATES decode_body_response(int16_t bodyIndex, LM_STATUS status, MAINPG_STATES success){
 	switch(status){
@@ -623,10 +628,14 @@ static MAINPG_STATES decode_body_response(int16_t bodyIndex, LM_STATUS status, M
 		
 		
 		case LM_STATUS_MAC_ERR:
-		case LM_STATUS_INV_DATA_LEN:
 			print_debug("res: mac err");
 			MRPP_set_body_sent(bodyIndex);
 			return success;
+			
+		case LM_STATUS_INV_DATA_LEN:
+			print_debug("res: inv len");
+			MRPP_set_body_sent(bodyIndex);
+			return MAINPG_PAYLOAD_INV_LEN;
 		
 		case LM_STATUS_TRY_AGAIN:
 			print_debug("res: try again");
@@ -637,26 +646,33 @@ static MAINPG_STATES decode_body_response(int16_t bodyIndex, LM_STATUS status, M
 	}
 }
 
-static LM_STATUS send_header(){
-	MRPP_get_header_package(package, &package_length);
-	return LM_send_uplink(package, package_length);
-}
-
-static LM_STATUS send_tail(){
-	MRPP_get_tail_package(package, &package_length);
-	return LM_send_uplink(package, package_length);
-}
-
 static MAINPG_STATES decode_header_tail_response(LM_STATUS status, MAINPG_STATES success, MAINPG_STATES tryAgain){
 	switch(status){
 		case LM_STATUS_SUCCESS:
 		case LM_STATUS_MAC_ERR:
-		case LM_STATUS_INV_DATA_LEN:
 			return success;
 			
 		case LM_STATUS_TRY_AGAIN:
 			return tryAgain;
 			
+		case LM_STATUS_INV_DATA_LEN:
+			return MAINPG_PAYLOAD_INV_LEN;
+			
+		default:
+			return MAINPG_FATAL_ERROR;
+	}
+}
+
+static MAINPG_STATES decode_payload_inv_len_response(LM_STATUS status, MAINPG_STATES success, MAINPG_STATES tryAgain){
+	switch(status){
+		case LM_STATUS_SUCCESS:
+		case LM_STATUS_MAC_ERR:
+		case LM_STATUS_INV_DATA_LEN:
+			return success;
+		
+		case LM_STATUS_TRY_AGAIN:
+			return tryAgain;
+		
 		default:
 			return MAINPG_FATAL_ERROR;
 	}

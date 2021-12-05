@@ -30,8 +30,12 @@ LM_STATUS LM_join_network(char deveui[], char appeui[], char appkey[]){
 
 LM_STATUS LM_send_uplink(uint8_t data[], uint8_t length){
 	if(busy) return LM_STATUS_TRY_AGAIN;
-	set_block_uplink();
-	return SU_send_uplink(LORA_PORT, data, length);
+	LM_STATUS status=SU_send_uplink(LORA_PORT, data, length);
+	//Don't block if invalid length - no package was sent!
+	if(status!=LM_STATUS_INV_DATA_LEN){
+		set_block_uplink();
+	}
+	return status;
 }
 
 LM_STATUS LM_put_to_sleep(){
