@@ -11964,10 +11964,10 @@ static bool write_sp_interval(const char cmd[], char res[]){
     5c16:	80 e8       	ldi	r24, 0x80	; 128
     5c18:	0e 94 55 39 	call	0x72aa	; 0x72aa <atoi>
 	
-	if(val<6 || val>24) return false;
-    5c1c:	9a ef       	ldi	r25, 0xFA	; 250
+	if(val<2 || val>24) return false;
+    5c1c:	9e ef       	ldi	r25, 0xFE	; 254
     5c1e:	98 0f       	add	r25, r24
-    5c20:	93 31       	cpi	r25, 0x13	; 19
+    5c20:	97 31       	cpi	r25, 0x17	; 23
     5c22:	58 f4       	brcc	.+22     	; 0x5c3a <write_sp_interval+0x40>
 	
 	EM_set_sp_interval(val);
@@ -11988,7 +11988,7 @@ static bool write_sp_interval(const char cmd[], char res[]){
 	
 	uint8_t val=atoi(arg);
 	
-	if(val<6 || val>24) return false;
+	if(val<2 || val>24) return false;
     5c3a:	c0 e0       	ldi	r28, 0x00	; 0
 	
 	EM_set_sp_interval(val);

@@ -388,7 +388,7 @@ static bool write_sp_interval(const char cmd[], char res[]){
 	
 	uint8_t val=atoi(arg);
 	
-	if(val<6 || val>24) return false;
+	if(val<2 || val>24) return false;
 	
 	EM_set_sp_interval(val);
 	
