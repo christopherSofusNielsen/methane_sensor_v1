@@ -6,7 +6,7 @@ MRPP_STATE state;
 uint8_t MRPP_init_group(COLLECTION collections[], uint8_t nCollections, uint8_t groupId){
     mrpp_state_init(&state, groupId, collections, nCollections);
 
-    return groupId++;
+    return groupId+1;
 }
 
 
