@@ -2,7 +2,9 @@
 
 
 static void update_bodies(MRPP_STATE *state, uint8_t collectionId);
-static void add_data_types(MRPP_STATE *state, uint8_t package[]);
+static void add_dynamic_data_types(MRPP_STATE *state, uint8_t package[]);
+static uint8_t dynamic_data_type_length(uint8_t nCollections);
+static uint8_t generator_header_tail(MRPP_STATE *state, uint8_t package[], uint8_t subId);
 
 void mrpp_state_init(MRPP_STATE *state, uint8_t groupId, COLLECTION collections[], uint8_t nCollections){
     state->groupId=groupId;
@@ -15,6 +17,9 @@ void mrpp_state_init(MRPP_STATE *state, uint8_t groupId, COLLECTION collections[
 
         //type
         state->collections[i].type=collections[i].type;
+
+        //Samples
+        state->collections[i].nSamples=collections[i].samplings;
 
         //Calculate length and set starting index
         state->collections[i].startIndex=startingIndex;
@@ -52,33 +57,16 @@ void mrpp_state_init(MRPP_STATE *state, uint8_t groupId, COLLECTION collections[
     }
 }
 
-
 uint8_t mrpp_state_get_header(MRPP_STATE *state, uint8_t package[]){
-    package[0]=0;
-    package[1]=state->lastSubId;
-
-    //status bit
-    package[2]=0;
-
-    //N collections
-    package[3]=state->nCollections;
-
-    //add data type
-    add_data_types(state, &package[4]);
-
-    for (uint8_t i = 0; i < state->nCollections; i++)
-    {
-        package[i*4+10]=state->collections[i].startIndex >> 8;
-        package[i*4+11]=state->collections[i].startIndex;
-        package[i*4+12]=state->collections[i].length>>8;
-        package[i*4+13]=state->collections[i].length;
-    }
-    
-    return 10+state->nCollections*DR_HEADER_COLLECTION_META_SIZE;
+    return generator_header_tail(state, package, 0);
 }
 
 uint8_t mrpp_state_get_tail(MRPP_STATE *state, uint8_t package[]){
-    package[0]=state->lastSubId;
+    return generator_header_tail(state, package, state->lastSubId);
+}
+
+static uint8_t generator_header_tail(MRPP_STATE *state, uint8_t package[], uint8_t subId){
+    package[0]=subId;
     package[1]=state->lastSubId;
 
     //status bit
@@ -88,20 +76,28 @@ uint8_t mrpp_state_get_tail(MRPP_STATE *state, uint8_t package[]){
     package[3]=state->nCollections;
 
     //add data type
-    add_data_types(state, &package[4]);
+    add_dynamic_data_types(state, &package[4]);
+
+    //Calculate collection offset
+    uint8_t offset=dynamic_data_type_length(state->nCollections);
+    offset+=4; //subId+lastSubId+statusBit
 
     for (uint8_t i = 0; i < state->nCollections; i++)
     {
-        package[i*4+10]=state->collections[i].startIndex >> 8;
-        package[i*4+11]=state->collections[i].startIndex;
-        package[i*4+12]=state->collections[i].length>>8;
-        package[i*4+13]=state->collections[i].length;
+        package[i+offset]=state->collections[i].nSamples;
     }
-    return 10+state->nCollections*DR_HEADER_COLLECTION_META_SIZE;
+    
+    return offset+state->nCollections;
 }
 
-static void add_data_types(MRPP_STATE *state, uint8_t dt[]){
-    for (uint8_t bIndex = 0; bIndex < 6; bIndex++)
+static uint8_t dynamic_data_type_length(uint8_t nCollections){
+    return (nCollections/4)+1;
+}
+
+static void add_dynamic_data_types(MRPP_STATE *state, uint8_t dt[]){
+    uint8_t dataTypesLen=dynamic_data_type_length(state->nCollections);
+
+    for (uint8_t bIndex = 0; bIndex < dataTypesLen; bIndex++)
     {
         uint8_t bitArray=0x00;
         for (uint8_t index = 0; index < 4; index++)
@@ -131,7 +127,7 @@ static void add_data_types(MRPP_STATE *state, uint8_t dt[]){
 
         }
         //set from the end
-        dt[5-bIndex]=bitArray;
+        dt[dataTypesLen-bIndex-1]=bitArray;
         
     }
     

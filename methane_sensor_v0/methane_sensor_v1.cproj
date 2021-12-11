@@ -457,9 +457,9 @@
     <Folder Include="MODULES\LORA_module\RN2483_protocol" />
     <Folder Include="MODULES\EEPROM_module" />
     <Folder Include="MODULES\ADC_module" />
+    <Folder Include="MODULES\LED_module" />
     <Folder Include="MODULES\MRPP_module" />
     <Folder Include="MODULES\MRPP_module\util" />
-    <Folder Include="MODULES\LED_module" />
     <Folder Include="MODULES\PUMP_module" />
     <Folder Include="MODULES\RTC_module" />
     <Folder Include="MODULES\SCD30_module" />

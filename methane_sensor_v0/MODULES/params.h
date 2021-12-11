@@ -5,13 +5,13 @@
 /**
  * Length of buffer
  */
-#define BODY_BUFFER_DATA_SIZE 700
+#define BODY_BUFFER_DATA_SIZE 800
 
 /**
  * Maximum bodies
  * 
  */
-#define MAX_BODIES 15
+#define MAX_BODIES 30
 
 
 /**

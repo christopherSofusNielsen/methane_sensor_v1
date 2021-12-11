@@ -53,9 +53,9 @@ SUBDIRS :=  \
 ../MODULES/LORA_module/RN2483_protocol \
 ../MODULES/EEPROM_module \
 ../MODULES/ADC_module \
+../MODULES/LED_module \
 ../MODULES/MRPP_module \
 ../MODULES/MRPP_module/util \
-../MODULES/LED_module \
 ../MODULES/PUMP_module \
 ../MODULES/RTC_module \
 ../MODULES/SCD30_module \

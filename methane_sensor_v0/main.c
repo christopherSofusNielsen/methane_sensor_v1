@@ -13,7 +13,7 @@
 #include "HAL/PM/PM_HAL.h"
 #include "HAL/UI/UI_HAL.h"
 
-//#define _RUN_TEST
+#define _RUN_TEST
 
 int main(void)
 {
